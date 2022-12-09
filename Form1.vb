@@ -9,10 +9,10 @@ Public Class Form1
         Public Shared Terrain As Array = {"[Terrain]", "RenderFlora=", "off"}
         Public Shared General As Array = {"[General]", "AutoDetectPerformanceSettings=", 2, "MouseSensitivity=", 0.18, "ScopedMouseSensitivity=", 0.18, "ADSMouseSensitivity=", 0.18, "VehicleMouseSensitivity=", 0.18, "FlightMouseSensitivity=", 0.18, "JoystickSensitivity=", 0.5, "JoystickDeadzone=", 0.1, "InvertVerticalLook=", 0, "InvertVerticalFly=", 0, "InvertTankSteering=", 1, "MouseRawInput=", 1, "MouseSmoothing=", 0, "ToggleCrouch=", 0, "ZoomToggle=", 0, "SprintToggle=", 0, "SprintLegacyToggleMode=", 0, "DrawHud=", 1, "ReduceInputLag=", 0, "FixedMinimap=", 0, "Profanity=", 1, "GamepadSmoothing=", 1, "GamepadInvertLook=", 0, "GamepadInvertFlight=", 0, "GamepadEasyFlight=", 0, "DecloakOnFire=", 0, "AbilityQueueSeconds=", 0, "VehicleGunnerMouseSensitivity=", 0.18}
         Public Shared iniEdit As Array = {"[iniEdit]", "FontAutoReplace=", 0, "FontFilePath="}
-        Public Shared UI As Array = {"[UI]", "HudMode=", 1, "HudChatInactiveOpacity=", 0, "HudShowIndicatorNames=", 1, "HudShowAlertTimer=", 1, "ShowReticleIFF=", 1, "HudShowHealth=", 1, "HudShowTopCompass=", 1, "HudShow3PVehicleReticle=", 1, "DrawMission=", 1, "DrawKillSpam=", 1, "DrawLootDrop=", 1, "TintModeReticuleStyle=", 0, "TintModeReticuleColor=", 0, "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", 1, "TintModePlayer=", 1, "TintModeMap=", 1, "NoDeployZoneColor=", 13369344, "TintModeNoDeploy=", 13369344, "TintModeOrbitalStrike=", 13421568, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", 0.1, "ShowGroupNotifications=", 1, "ShowOutfitNotifications=", 1, "HideWarpZoneConfirmation=", 0, "SelectedChatChannel=", "General", "ChatFontSize=", "MapShowFactionColoredHotspots=", 0, "MapActiveToggleView=", 1, "MapFilterHeatMapMode=", 0, "MapFilterShowInfluenceCloud=", 0, "MapFilterShowGrid=", 0, "MapFilterShowFacilities=", 1, "MapFilterShowTerrain=", 1, "MapFilterShowFacilityLinks=", 1, "MapFilterShowTerritoryControl=", 1, "MapFilterShowResource1=", 1, "MapStatisticsView=", 0, "MapFilterShowHotspots=", 1, "MapCommandsSettingsShow2=", 1, "MapCommandsSettingsShow3=", 1, "MapCommandsSettingsAlpha3=", 1.0, "TrackedDirectives=", "OutfitShowOfflineMembers=", 0, "ShowVRTrainingTutorial=", 1, "ShowDirectivesTutorial=", 1, "ShowMapTutorial=", 1, "ShowImplantTutorial=", 1, "ShowTutorialIslandLandingPage=", 1, "ShowOutfitsTutorial=", 1, "LoadoutInfoInfiltrator=", 1, "LoadoutInfoLightAssault=", 1, "LoadoutInfoMedic=", 1, "LoadoutInfoEngineer=", 1, "LoadoutInfoHeavyAssault=", 1, "LoadoutInfoMax=", 1}
+        Public Shared UI As Array = {"[UI]", "HudMode=", 1, "HudChatInactiveOpacity=", 0, "HudShowIndicatorNames=", 1, "HudShowAlertTimer=", 1, "ShowReticleIFF=", 1, "HudShowHealth=", 1, "HudShowTopCompass=", 1, "HudShow3PVehicleReticle=", 1, "DrawMission=", 1, "DrawKillSpam=", 1, "DrawLootDrop=", 1, "TintModeReticuleStyle=", 0, "TintModeReticuleColor=", 0, "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", 1, "TintModePlayer=", 1, "TintModeMap=", 1, "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", 0.1, "ShowGroupNotifications=", 1, "ShowOutfitNotifications=", 1, "HideWarpZoneConfirmation=", 0, "SelectedChatChannel=", "General", "ChatFontSize=", "MapShowFactionColoredHotspots=", 0, "MapActiveToggleView=", 1, "MapFilterHeatMapMode=", 0, "MapFilterShowInfluenceCloud=", 0, "MapFilterShowGrid=", 0, "MapFilterShowFacilities=", 1, "MapFilterShowTerrain=", 1, "MapFilterShowFacilityLinks=", 1, "MapFilterShowTerritoryControl=", 1, "MapFilterShowResource1=", 1, "MapStatisticsView=", 0, "MapFilterShowHotspots=", 1, "MapCommandsSettingsShow2=", 1, "MapCommandsSettingsShow3=", 1, "MapCommandsSettingsAlpha3=", 1.0, "TrackedDirectives=", "OutfitShowOfflineMembers=", 0, "ShowVRTrainingTutorial=", 1, "ShowDirectivesTutorial=", 1, "ShowMapTutorial=", 1, "ShowImplantTutorial=", 1, "ShowTutorialIslandLandingPage=", 1, "ShowOutfitsTutorial=", 1, "LoadoutInfoInfiltrator=", 1, "LoadoutInfoLightAssault=", 1, "LoadoutInfoMedic=", 1, "LoadoutInfoEngineer=", 1, "LoadoutInfoHeavyAssault=", 1, "LoadoutInfoMax=", 1}
         Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, iniEdit, Display}
     End Class
-    Friend Sub Update(ByVal optionName As String, ByVal newVal As String)
+    Friend Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
         'Read ini into list
         Dim lines As List(Of String) = File.ReadAllLines("Useroptions.ini").ToList
         'Iterate over list looking for line with option
@@ -53,20 +53,6 @@ Public Class Form1
         For index As Integer = 0 To lines.Count - 1
             If lines(index).StartsWith(optionName) Then
                 Dim optionVal As Array = lines(index).Split("="c)
-                Console.WriteLine("split")
-                'doesnt work? If the option doesn't have a value, attempt to set a default
-                If IsNothing(optionVal(1)) Then
-                    Console.WriteLine("failed")
-                    For Each array In Arrays.bigOptions
-                        For Each item In array
-                            If item.Equals(optionName) Then
-                                Dim defaultVal As String = array.IndexOf(array, item) + 1
-                                Update(optionName, defaultVal)
-                                Console.WriteLine(String.Concat("Defaulted ", optionName, "to ", defaultVal))
-                            End If
-                        Next
-                    Next
-                End If
                 Console.WriteLine(String.Concat("Got ", optionName, "with ", optionVal(1)))
                 Return optionVal(1)
             End If
@@ -96,7 +82,7 @@ Public Class Form1
                             If lines(index).ToLower.StartsWith(array(0).ToString.ToLower) Then
                                 lines(index) = String.Concat(array(0), vbCrLf, item, newVal)
                                 File.WriteAllLines("Useroptions.ini", lines.ToArray)
-                                Console.WriteLine(String.Concat("Added ", optionName, " with val ", "4460130,19328,10357519"))
+                                Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
                                 Exit Sub
                             End If
                         Next
@@ -123,7 +109,7 @@ Public Class Form1
                         For Each item In array
                             If item.Equals(optionName) Then
                                 Dim defaultVal As String = array.IndexOf(array, item) + 1
-                                Update(optionName, defaultVal)
+                                UpdateVal(optionName, defaultVal)
                                 Console.WriteLine(String.Concat("Defaulted ", optionName, "to ", defaultVal))
                             End If
                         Next
@@ -276,138 +262,138 @@ Public Class Form1
     End Sub
     Private Sub vsyncCheck_CheckedChanged(sender As Object, e As EventArgs) Handles vsyncCheck.Click
         If (vsyncCheck.Checked) Then
-            Update("VSync=", 1)
+            UpdateVal("VSync=", 1)
         Else
-            Update("VSync=", 0)
+            UpdateVal("VSync=", 0)
         End If
     End Sub
     Private Sub fogShadCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fogShadCheck.Click
         If fogShadCheck.Checked Then
-            Update("FogShadowsEnable=", 1)
+            UpdateVal("FogShadowsEnable=", 1)
         Else
-            Update("FogShadowsEnable=", 0)
+            UpdateVal("FogShadowsEnable=", 0)
         End If
     End Sub
     Private Sub ambOccCheck_CheckedChanged(sender As Object, e As EventArgs) Handles ambOccCheck.Click
         If ambOccCheck.Checked Then
-            Update("AO=", 1)
+            UpdateVal("AO=", 1)
         Else
-            Update("AO=", 0)
+            UpdateVal("AO=", 0)
         End If
     End Sub
     Private Sub bloomCheck_CheckedChanged(sender As Object, e As EventArgs) Handles bloomCheck.Click
         If bloomCheck.Checked Then
-            Update("BloomEnabled=", 1)
+            UpdateVal("BloomEnabled=", 1)
         Else
-            Update("BloomEnabled=", 0)
+            UpdateVal("BloomEnabled=", 0)
         End If
     End Sub
     Private Sub blurCheck_CheckedChanged(sender As Object, e As EventArgs) Handles blurCheck.Click
         If blurCheck.Checked Then
-            Update("MotionBlur=", 1)
+            UpdateVal("MotionBlur=", 1)
         Else
-            Update("MotionBlur=", 0)
+            UpdateVal("MotionBlur=", 0)
         End If
     End Sub
     Private Sub smoothCheck_CheckedChanged(sender As Object, e As EventArgs) Handles smoothCheck.Click
         If smoothCheck.Checked Then
-            Update("Smoothing=", 1)
+            UpdateVal("Smoothing=", 1)
         Else
-            Update("Smoothing=", 0)
+            UpdateVal("Smoothing=", 0)
         End If
     End Sub
     Private Sub wideCheck_CheckedChanged(sender As Object, e As EventArgs) Handles wideCheck.Click
         If wideCheck.Checked Then
-            Update("UseAspectFOV=", 1)
+            UpdateVal("UseAspectFOV=", 1)
         Else
-            Update("UseAspectFOV=", 0)
+            UpdateVal("UseAspectFOV=", 0)
         End If
     End Sub
     Private Sub useGlobRenCheck_CheckedChanged(sender As Object, e As EventArgs) Handles useGlobRenCheck.Click
         If useGlobRenCheck.Checked Then
-            Update("UseGlobalRenderDistance=", 1)
+            UpdateVal("UseGlobalRenderDistance=", 1)
         Else
-            Update("UseGlobalRenderDistance=", 0)
+            UpdateVal("UseGlobalRenderDistance=", 0)
         End If
     End Sub
     Private Sub sensRawCheck_CheckedChanged(sender As Object, e As EventArgs) Handles sensRawCheck.Click
         If sensRawCheck.Checked Then
-            Update("MouseRawInput=", 1)
+            UpdateVal("MouseRawInput=", 1)
         Else
-            Update("MouseRawInput=", 0)
+            UpdateVal("MouseRawInput=", 0)
         End If
     End Sub
     Private Sub globRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles globRenDistBox.Validated
-        Update("RenderDistance=", globRenDistBox.Value)
+        UpdateVal("RenderDistance=", globRenDistBox.Value)
     End Sub
     Private Sub infRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles infRenDistBox.Validated
-        Update("InfantryRenderDistance=", infRenDistBox.Value)
+        UpdateVal("InfantryRenderDistance=", infRenDistBox.Value)
     End Sub
     Private Sub vehRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles vehRenDistbox.Validated
-        Update("GroundVehicleRenderDistance=", vehRenDistbox.Value)
+        UpdateVal("GroundVehicleRenderDistance=", vehRenDistbox.Value)
     End Sub
     Private Sub airRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles airRenDistBox.Validated
-        Update("AirVehicleRenderDistance=", airRenDistBox.Value)
+        UpdateVal("AirVehicleRenderDistance=", airRenDistBox.Value)
     End Sub
     Private Sub fovBox_TextChanged(sender As Object, e As EventArgs) Handles fovBox.Validated
-        Update("VerticalFOV=", fovBox.Value)
+        UpdateVal("VerticalFOV=", fovBox.Value)
     End Sub
     Private Sub renQualBox_TextChanged(sender As Object, e As EventArgs) Handles renQualBox.Validated
-        Update("RenderQuality=", renQualBox.Value)
+        UpdateVal("RenderQuality=", renQualBox.Value)
     End Sub
     Private Sub maxFPSBox_TextChanged(sender As Object, e As EventArgs) Handles maxFPSBox.Validated
-        Update("MaximumFPS=", maxFPSBox.Value)
+        UpdateVal("MaximumFPS=", maxFPSBox.Value)
     End Sub
     Private Sub gammaBox_TextChanged(sender As Object, e As EventArgs) Handles gammaBox.Validated
-        Update("Gamma=", gammaBox.Value)
+        UpdateVal("Gamma=", gammaBox.Value)
     End Sub
     Private Sub partDistScaleBox_TextChanged(sender As Object, e As EventArgs) Handles partDistScaleBox.Validated
-        Update("ParticleDistanceScale=", partDistScaleBox.Value)
+        UpdateVal("ParticleDistanceScale=", partDistScaleBox.Value)
     End Sub
     Private Sub graphQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles graphQualDrop.Validated
-        Update("GraphicsQuality=", graphQualDrop.SelectedItem.ToString.First)
+        UpdateVal("GraphicsQuality=", graphQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub texQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles texQualDrop.Validated
-        Update("TextureQuality=", texQualDrop.SelectedItem.ToString.First)
+        UpdateVal("TextureQuality=", texQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub shadQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles shadQualDrop.Validated
-        Update("ShadowQuality=", shadQualDrop.SelectedItem.ToString.First)
+        UpdateVal("ShadowQuality=", shadQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub lightQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lightQualDrop.Validated
-        Update("LightingQuality=", lightQualDrop.SelectedItem.ToString.First)
+        UpdateVal("LightingQuality=", lightQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub effQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles effQualDrop.Validated
-        Update("EffectsQuality=", effQualDrop.SelectedItem.ToString.First)
+        UpdateVal("EffectsQuality=", effQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub terrQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrQualDrop.Validated
-        Update("TerrainQuality=", terrQualDrop.SelectedItem.ToString.First)
+        UpdateVal("TerrainQuality=", terrQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub floraQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles floraQualDrop.Validated
         'Flora apparently has 2 lines in separate sections
-        Update("FloraQuality=", floraQualDrop.SelectedItem.ToString.First)
+        UpdateVal("FloraQuality=", floraQualDrop.SelectedItem.ToString.First)
         If floraQualDrop.SelectedIndex() = 3 Then
-            Update("RenderFlora=", "off")
+            UpdateVal("RenderFlora=", "off")
         Else
-            Update("RenderFlora=", "on")
+            UpdateVal("RenderFlora=", "on")
         End If
     End Sub
     Private Sub modQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles modQualDrop.Validated
-        Update("ModelQuality=", modQualDrop.SelectedItem.ToString.First)
+        UpdateVal("ModelQuality=", modQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub partQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles partQualDrop.Validated
-        Update("ParticleLOD=", partQualDrop.SelectedItem.ToString.First)
+        UpdateVal("ParticleLOD=", partQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub hipSensBox_TextChanged(sender As Object, e As EventArgs) Handles hipSensBox.Validated
-        Update("MouseSensitivity=", hipSensBox.Value)
+        UpdateVal("MouseSensitivity=", hipSensBox.Value)
         Label39.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
     End Sub
     Private Sub adsSensBox_TextChanged(sender As Object, e As EventArgs) Handles adsSensBox.Validated
-        Update("ADSMouseSensitivity=", adsSensBox.Value)
+        UpdateVal("ADSMouseSensitivity=", adsSensBox.Value)
         Label41.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
         Label43.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
     End Sub
     Private Sub scopSensBox_TextChanged(sender As Object, e As EventArgs) Handles scopSensBox.Validated
-        Update("ScopedMouseSensitivity=", scopSensBox.Value)
+        UpdateVal("ScopedMouseSensitivity=", scopSensBox.Value)
         Label37.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
         Label45.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
         Label44.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
@@ -416,13 +402,13 @@ Public Class Form1
         Label38.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
     End Sub
     Private Sub vehSensBox_TextChanged(sender As Object, e As EventArgs) Handles vehSensBox.Validated
-        Update("VehicleMouseSensitivity=", vehSensBox.Value)
+        UpdateVal("VehicleMouseSensitivity=", vehSensBox.Value)
     End Sub
     Private Sub gunSensBox_TextChanged(sender As Object, e As EventArgs) Handles gunSensBox.Validated
-        Update("VehicleGunnerMouseSensitivity=", gunSensBox.Value)
+        UpdateVal("VehicleGunnerMouseSensitivity=", gunSensBox.Value)
     End Sub
     Private Sub airSensBox_TextChanged(sender As Object, e As EventArgs) Handles airSensBox.Validated
-        Update("FlightMouseSensitivity=", airSensBox.Value)
+        UpdateVal("FlightMouseSensitivity=", airSensBox.Value)
     End Sub
     Private Sub sensTypeDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sensTypeDrop.SelectedIndexChanged
         'Switch what's visible on sens page
@@ -446,11 +432,11 @@ Public Class Form1
             Exit Sub
         ElseIf adsZoomBox.SelectedIndex = 0 Then
             Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
-            Update("ADSMouseSensitivity=", Sens)
+            UpdateVal("ADSMouseSensitivity=", Sens)
             Label55.Text() = Sens
         Else
             Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
-            Update("ADSMouseSensitivity=", Sens)
+            UpdateVal("ADSMouseSensitivity=", Sens)
             Label55.Text() = Sens
         End If
     End Sub
@@ -460,7 +446,7 @@ Public Class Form1
         Else
             Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
             Console.WriteLine(Sens)
-            Update("ScopedMouseSensitivity=", Sens)
+            UpdateVal("ScopedMouseSensitivity=", Sens)
             Label56.Text() = Sens
         End If
     End Sub
@@ -504,7 +490,7 @@ Public Class Form1
             fontPath = fontDialog.FileName.ToString
             'Show user selected font path
             selectedFontPath.Text() = fontPath
-            Update("FontFilePath=", fontPath)
+            UpdateVal("FontFilePath=", fontPath)
             'Create or update batch used to actually replace font
             File.WriteAllText(String.Concat(CurDir(), "\iniEditFont.bat"), String.Concat("@echo off", vbCrLf,
                                                                                             "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\Geo-Md.ttf""", vbCrLf,
@@ -516,7 +502,7 @@ Public Class Form1
         'If user desires automatic font replacement, create or update task to run the replacement batch
         Using ts As New TaskService()
             If fontAutoCheck.Checked Then
-                Update("FontAutoReplace=", "1")
+                UpdateVal("FontAutoReplace=", "1")
                 If ts.RootFolder.Tasks.Exists("iniEdit Font") Then
                     ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = True
                 Else
@@ -534,7 +520,7 @@ Public Class Form1
                     ts.RootFolder.RegisterTaskDefinition("iniEdit Font", td)
                 End If
             Else
-                Update("FontAutoReplace=", "0")
+                UpdateVal("FontAutoReplace=", "0")
                 ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
             End If
         End Using
@@ -542,106 +528,105 @@ Public Class Form1
     End Sub
     Private Sub hudHPCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudHPCheck.Click
         If hudHPCheck.Checked Then
-            Update("HudShowHealth=", 1)
+            UpdateVal("HudShowHealth=", 1)
         Else
-            Update("HudShowHealth=", 0)
+            UpdateVal("HudShowHealth=", 0)
         End If
     End Sub
     Private Sub hudIndCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudIndCheck.Click
         If hudIndCheck.Checked Then
-            Update("HudShowIndicatorNames=", 1)
+            UpdateVal("HudShowIndicatorNames=", 1)
         Else
-            Update("HudShowIndicatorNames=", 0)
+            UpdateVal("HudShowIndicatorNames=", 0)
         End If
     End Sub
     Private Sub hudAlertCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudAlertCheck.Click
         If hudAlertCheck.Checked Then
-            Update("HudShowAlertTimer=", 1)
+            UpdateVal("HudShowAlertTimer=", 1)
         Else
-            Update("HudShowAlertTimer=", 0)
+            UpdateVal("HudShowAlertTimer=", 0)
         End If
     End Sub
     Private Sub hudSpamCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudSpamCheck.Click
         If hudSpamCheck.Checked Then
-            Update("DrawKillSpam=", 1)
+            UpdateVal("DrawKillSpam=", 1)
         Else
-            Update("DrawKillSpam=", 0)
+            UpdateVal("DrawKillSpam=", 0)
         End If
     End Sub
     Private Sub hudLootCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudLootCheck.Click
         If hudLootCheck.Checked Then
-            Update("DrawLootDrop=", 1)
+            UpdateVal("DrawLootDrop=", 1)
         Else
-            Update("DrawLootDrop=", 0)
+            UpdateVal("DrawLootDrop=", 0)
         End If
     End Sub
     Private Sub hudCompCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudCompCheck.Click
         If hudCompCheck.Checked Then
-            Update("HudShowTopCompass=", 1)
+            UpdateVal("HudShowTopCompass=", 1)
         Else
-            Update("HudShowTopCompass=", 0)
+            UpdateVal("HudShowTopCompass=", 0)
         End If
     End Sub
     Private Sub hudDotCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudDotCheck.Click
         If hudDotCheck.Checked Then
-            Update("HudShow3PVehicleReticle=", 1)
+            UpdateVal("HudShow3PVehicleReticle=", 1)
         Else
-            Update("HudShow3PVehicleReticle=", 0)
+            UpdateVal("HudShow3PVehicleReticle=", 0)
         End If
     End Sub
     Private Sub custRetCheck_CheckedChanged(sender As Object, e As EventArgs) Handles custRetCheck.Click
         If custRetCheck.Checked Then
-            Update("TintModeReticuleStyle=", 1)
+            UpdateVal("TintModeReticuleStyle=", 1)
         Else
-            Update("TintModeReticuleStyle=", 0)
+            UpdateVal("TintModeReticuleStyle=", 0)
         End If
     End Sub
 
     Private Sub retColorButton_Click(sender As Object, e As EventArgs) Handles retColorButton.Click
         Dim chosenColor As Color = colorGetter()
         retColorButton.BackColor = chosenColor
-        Update("TintModeReticuleColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("TintModeReticuleColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub alphaColorButton_Click(sender As Object, e As EventArgs) Handles alphaColorButton.Click
         Dim chosenColor As Color = colorGetter()
         alphaColorButton.BackColor = chosenColor
-        Update("PlatoonSquadColor0=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor0=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub bravoColorButton_Click(sender As Object, e As EventArgs) Handles bravoColorButton.Click
         Dim chosenColor As Color = colorGetter()
         bravoColorButton.BackColor = chosenColor
-        Update("PlatoonSquadColor1=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor1=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub charlieColorButton_Click(sender As Object, e As EventArgs) Handles charlieColorButton.Click
         Dim chosenColor As Color = colorGetter()
         charlieColorButton.BackColor = chosenColor
-        Update("PlatoonSquadColor2=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor2=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub deltaColorButton_Click(sender As Object, e As EventArgs) Handles deltaColorButton.Click
         Dim chosenColor As Color = colorGetter()
         deltaColorButton.BackColor = chosenColor
-        Update("PlatoonSquadColor3=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor3=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub NDZColorButton_Click(sender As Object, e As EventArgs) Handles NDZColorButton.Click
         Dim chosenColor As Color = colorGetter()
         NDZColorButton.BackColor = chosenColor
-        Update("NoDeployZoneColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
-        Update("TintModeNoDeploy=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("NoDeployZoneColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("TintModeNoDeploy=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub OSColorButton_Click(sender As Object, e As EventArgs) Handles OSColorButton.Click
         Dim chosenColor As Color = colorGetter()
         OSColorButton.BackColor = chosenColor
-        Update("TintModeOrbitalStrike=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
-        Update("OrbitalStrikeColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("OrbitalStrikeColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.SelectedIndexChanged
         If playerColorDrop.SelectedIndex < 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
-            Update("TintModePlayer=", playerColorDrop.SelectedItem.ToString.First)
+            UpdateVal("TintModePlayer=", playerColorDrop.SelectedItem.ToString.First)
             hideControl(playerColorPanel)
         ElseIf playerColorDrop.SelectedIndex = 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
             showControl(playerColorPanel)
             If getState("TintModePlayer=") = "0" Or getState("TintModePlayer=") = "1" Then
-                Update("TintModePlayer=", "4460130,19328,10357519")
+                UpdateVal("TintModePlayer=", "4460130,19328,10357519")
             End If
             VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
             NCplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 2)))
@@ -650,12 +635,12 @@ Public Class Form1
     End Sub
     Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
         If facColorDrop.SelectedIndex < 2 And IsNothing(facColorDrop.SelectedItem) = False Then
-            Update("TintModeFacility=", facColorDrop.SelectedItem.ToString.First)
+            UpdateVal("TintModeFacility=", facColorDrop.SelectedItem.ToString.First)
             hideControl(facColorPanel)
         ElseIf facColorDrop.SelectedIndex = 2 And IsNothing(facColorDrop.SelectedItem) = False Then
             showControl(facColorPanel)
             If getState("TintModeFacility=") = "0" Or getState("TintModeFacility=") = "1" Then
-                Update("TintModeFacility=", "4460130,19328,10357519")
+                UpdateVal("TintModeFacility=", "4460130,19328,10357519")
             End If
             VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
             NCfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
@@ -664,12 +649,12 @@ Public Class Form1
     End Sub
     Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
         If terrColorDrop.SelectedIndex < 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
-            Update("TintModeMap=", terrColorDrop.SelectedItem.ToString.First)
+            UpdateVal("TintModeMap=", terrColorDrop.SelectedItem.ToString.First)
             hideControl(terrColorPanel)
         ElseIf terrColorDrop.SelectedIndex = 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
             showControl(terrColorPanel)
             If getState("TintModeMap=") = "0" Or getState("TintModeMap=") = "1" Then
-                Update("TintModeMap=", "4460130,19328,10357519")
+                UpdateVal("TintModeMap=", "4460130,19328,10357519")
             End If
             VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
             NCterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 2)))

@@ -319,6 +319,7 @@ Partial Class Form1
         Me.wideCheck.Size = New System.Drawing.Size(107, 17)
         Me.wideCheck.TabIndex = 26
         Me.wideCheck.Text = "Wide View Mode"
+        Me.ToolTip1.SetToolTip(Me.wideCheck, "This option is required for FoVs above around 80 to work properly")
         Me.wideCheck.UseVisualStyleBackColor = False
         '
         'Label1
@@ -566,6 +567,7 @@ Partial Class Form1
         Me.shadQualDrop.Name = "shadQualDrop"
         Me.shadQualDrop.Size = New System.Drawing.Size(121, 21)
         Me.shadQualDrop.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.shadQualDrop, "Affects the resolution, number of passes, and render range of shadows")
         '
         'lightQualDrop
         '
@@ -746,6 +748,7 @@ Partial Class Form1
         Me.renQualBox.Name = "renQualBox"
         Me.renQualBox.Size = New System.Drawing.Size(80, 20)
         Me.renQualBox.TabIndex = 42
+        Me.ToolTip1.SetToolTip(Me.renQualBox, "1.41 = 2x Sampling" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2.00 = 4x Sampling")
         Me.renQualBox.Value = New Decimal(New Integer() {5, 0, 0, 65536})
         '
         'partDistScaleBox
@@ -757,9 +760,11 @@ Partial Class Form1
         Me.partDistScaleBox.Name = "partDistScaleBox"
         Me.partDistScaleBox.Size = New System.Drawing.Size(80, 20)
         Me.partDistScaleBox.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.partDistScaleBox, "Default = 0.65")
         '
         'fovBox
         '
+        Me.fovBox.DecimalPlaces = 1
         Me.fovBox.Location = New System.Drawing.Point(3, 123)
         Me.fovBox.Maximum = New Decimal(New Integer() {170, 0, 0, 0})
         Me.fovBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
@@ -772,12 +777,12 @@ Partial Class Form1
         'maxFPSBox
         '
         Me.maxFPSBox.Location = New System.Drawing.Point(3, 166)
-        Me.maxFPSBox.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
+        Me.maxFPSBox.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
         Me.maxFPSBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.maxFPSBox.Name = "maxFPSBox"
         Me.maxFPSBox.Size = New System.Drawing.Size(80, 20)
         Me.maxFPSBox.TabIndex = 45
-        Me.ToolTip1.SetToolTip(Me.maxFPSBox, "10 - 5000")
+        Me.ToolTip1.SetToolTip(Me.maxFPSBox, "10 - 500")
         Me.maxFPSBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'gammaBox
