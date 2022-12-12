@@ -178,6 +178,7 @@ Partial Class Form1
         Me.fontSelectButton = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Label58 = New System.Windows.Forms.Label()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -847,6 +848,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(0, -1)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabControl1.Name = "TabControl1"
@@ -1998,7 +2000,6 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.selectedFontPath)
         Me.TabPage3.Controls.Add(Me.fontSelectButton)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(439, 412)
         Me.TabPage3.TabIndex = 2
@@ -2054,6 +2055,15 @@ Partial Class Form1
         Me.Label58.Size = New System.Drawing.Size(120, 13)
         Me.Label58.TabIndex = 71
         Me.Label58.Text = "github/PSBlockx/iniEdit"
+        '
+        'TabPage5
+        '
+        Me.TabPage5.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(439, 412)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Sound"
         '
         'Form1
         '
@@ -2290,4 +2300,5 @@ Partial Class Form1
     Friend WithEvents NCterrColorButton As Button
     Friend WithEvents TRterrColorButton As Button
     Friend WithEvents Label58 As Label
+    Friend WithEvents TabPage5 As TabPage
 End Class
