@@ -102,6 +102,7 @@ Public Class Form1
             End If
         Next
     End Function
+#Region "MiscFuncs"
     Function colorGetter()
         Dim chosenColor = Nothing
         Dim colorDialog As New ColorDialog()
@@ -154,6 +155,7 @@ Public Class Form1
             .Enabled = False
         End With
     End Function
+#End Region
     Function readAllOptions()
         'Big list of checking where the options are at cus i dont code good
         vsyncCheck.Checked = getState("VSync=")
@@ -236,6 +238,8 @@ Public Class Form1
         File.WriteAllLines("Useroptions.ini", curini.ToArray)
         Console.WriteLine("Saved INI")
     End Sub
+#Region "GraphicsControls"
+#Region "ChecksChanged"
     Private Sub vsyncCheck_CheckedChanged(sender As Object, e As EventArgs) Handles vsyncCheck.Click
         If (vsyncCheck.Checked) Then
             UpdateVal("VSync=", 1)
@@ -299,6 +303,8 @@ Public Class Form1
             UpdateVal("MouseRawInput=", 0)
         End If
     End Sub
+#End Region
+#Region "TextChanged"
     Private Sub globRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles globRenDistBox.Validated
         UpdateVal("RenderDistance=", globRenDistBox.Value)
     End Sub
@@ -326,6 +332,8 @@ Public Class Form1
     Private Sub partDistScaleBox_TextChanged(sender As Object, e As EventArgs) Handles partDistScaleBox.Validated
         UpdateVal("ParticleDistanceScale=", partDistScaleBox.Value)
     End Sub
+#End Region
+#Region "IndexChanged"
     Private Sub graphQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles graphQualDrop.Validated
         UpdateVal("GraphicsQuality=", graphQualDrop.SelectedItem.ToString.First)
     End Sub
@@ -359,6 +367,9 @@ Public Class Form1
     Private Sub partQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles partQualDrop.Validated
         UpdateVal("ParticleLOD=", partQualDrop.SelectedItem.ToString.First)
     End Sub
+#End Region
+#End Region
+#Region "SensStuff"
     Private Sub hipSensBox_TextChanged(sender As Object, e As EventArgs) Handles hipSensBox.Validated
         UpdateVal("MouseSensitivity=", hipSensBox.Value)
         Label39.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
@@ -454,6 +465,8 @@ Public Class Form1
             Label56.Text() = Sens
         End If
     End Sub
+#End Region
+#Region "FontStuff"
     Private Sub fontSelectButton_Click(sender As Object, e As EventArgs) Handles fontSelectButton.Click
         Dim fontPath As String = Nothing
         Dim fontDialog As New OpenFileDialog()
@@ -500,8 +513,10 @@ Public Class Form1
                 ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
             End If
         End Using
-
     End Sub
+#End Region
+#Region "InterfaceControls"
+#Region "CheckedChanged"
     Private Sub hudHPCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hudHPCheck.Click
         If hudHPCheck.Checked Then
             UpdateVal("HudShowHealth=", 1)
@@ -558,7 +573,8 @@ Public Class Form1
             UpdateVal("TintModeReticuleStyle=", 0)
         End If
     End Sub
-
+#End Region
+#Region "Buttons"
     Private Sub retColorButton_Click(sender As Object, e As EventArgs) Handles retColorButton.Click
         Dim chosenColor As Color = colorGetter()
         retColorButton.BackColor = chosenColor
@@ -594,48 +610,6 @@ Public Class Form1
         Dim chosenColor As Color = colorGetter()
         OSColorButton.BackColor = chosenColor
         UpdateVal("OrbitalStrikeColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
-    End Sub
-    Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.SelectedIndexChanged
-        If playerColorDrop.SelectedIndex < 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
-            UpdateVal("TintModePlayer=", playerColorDrop.SelectedItem.ToString.First)
-            hideControl(playerColorPanel)
-        ElseIf playerColorDrop.SelectedIndex = 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
-            showControl(playerColorPanel)
-            If getState("TintModePlayer=") = "0" Or getState("TintModePlayer=") = "1" Then
-                UpdateVal("TintModePlayer=", "4460130,19328,10357519")
-            End If
-            VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
-            NCplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 2)))
-            TRplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 3)))
-        End If
-    End Sub
-    Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
-        If facColorDrop.SelectedIndex < 2 And IsNothing(facColorDrop.SelectedItem) = False Then
-            UpdateVal("TintModeFacility=", facColorDrop.SelectedItem.ToString.First)
-            hideControl(facColorPanel)
-        ElseIf facColorDrop.SelectedIndex = 2 And IsNothing(facColorDrop.SelectedItem) = False Then
-            showControl(facColorPanel)
-            If getState("TintModeFacility=") = "0" Or getState("TintModeFacility=") = "1" Then
-                UpdateVal("TintModeFacility=", "4460130,19328,10357519")
-            End If
-            VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
-            NCfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
-            TRfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
-        End If
-    End Sub
-    Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
-        If terrColorDrop.SelectedIndex < 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
-            UpdateVal("TintModeMap=", terrColorDrop.SelectedItem.ToString.First)
-            hideControl(terrColorPanel)
-        ElseIf terrColorDrop.SelectedIndex = 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
-            showControl(terrColorPanel)
-            If getState("TintModeMap=") = "0" Or getState("TintModeMap=") = "1" Then
-                UpdateVal("TintModeMap=", "4460130,19328,10357519")
-            End If
-            VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
-            NCterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 2)))
-            TRterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 3)))
-        End If
     End Sub
     Private Sub VSplayerColorButton_Click(sender As Object, e As EventArgs) Handles VSplayerColorButton.Click
         Dim chosenColor As Color = colorGetter()
@@ -682,5 +656,50 @@ Public Class Form1
         TRterrColorButton.BackColor = chosenColor
         ColorUpdate("TintModeMap=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
     End Sub
-
+#End Region
+#Region "IndexChanged"
+    Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.SelectedIndexChanged
+        If playerColorDrop.SelectedIndex < 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
+            UpdateVal("TintModePlayer=", playerColorDrop.SelectedItem.ToString.First)
+            hideControl(playerColorPanel)
+        ElseIf playerColorDrop.SelectedIndex = 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
+            showControl(playerColorPanel)
+            If getState("TintModePlayer=") = "0" Or getState("TintModePlayer=") = "1" Then
+                UpdateVal("TintModePlayer=", "4460130,19328,10357519")
+            End If
+            VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
+            NCplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 2)))
+            TRplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 3)))
+        End If
+    End Sub
+    Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
+        If facColorDrop.SelectedIndex < 2 And IsNothing(facColorDrop.SelectedItem) = False Then
+            UpdateVal("TintModeFacility=", facColorDrop.SelectedItem.ToString.First)
+            hideControl(facColorPanel)
+        ElseIf facColorDrop.SelectedIndex = 2 And IsNothing(facColorDrop.SelectedItem) = False Then
+            showControl(facColorPanel)
+            If getState("TintModeFacility=") = "0" Or getState("TintModeFacility=") = "1" Then
+                UpdateVal("TintModeFacility=", "4460130,19328,10357519")
+            End If
+            VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
+            NCfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
+            TRfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
+        End If
+    End Sub
+    Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
+        If terrColorDrop.SelectedIndex < 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
+            UpdateVal("TintModeMap=", terrColorDrop.SelectedItem.ToString.First)
+            hideControl(terrColorPanel)
+        ElseIf terrColorDrop.SelectedIndex = 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
+            showControl(terrColorPanel)
+            If getState("TintModeMap=") = "0" Or getState("TintModeMap=") = "1" Then
+                UpdateVal("TintModeMap=", "4460130,19328,10357519")
+            End If
+            VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
+            NCterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 2)))
+            TRterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 3)))
+        End If
+    End Sub
+#End Region
+#End Region
 End Class
