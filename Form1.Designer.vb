@@ -176,9 +176,10 @@ Partial Class Form1
         Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
         Me.selectedFontPath = New System.Windows.Forms.Label()
         Me.fontSelectButton = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Label58 = New System.Windows.Forms.Label()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.saveButton = New System.Windows.Forms.Button()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -230,9 +231,9 @@ Partial Class Form1
         '
         Me.startLauncher.BackColor = System.Drawing.SystemColors.Control
         Me.startLauncher.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.startLauncher.Location = New System.Drawing.Point(12, 456)
+        Me.startLauncher.Location = New System.Drawing.Point(163, 456)
         Me.startLauncher.Name = "startLauncher"
-        Me.startLauncher.Size = New System.Drawing.Size(424, 38)
+        Me.startLauncher.Size = New System.Drawing.Size(273, 38)
         Me.startLauncher.TabIndex = 30
         Me.startLauncher.Text = "START LAUNCHER"
         Me.ToolTip1.SetToolTip(Me.startLauncher, "Start Daybreak Launcher")
@@ -2047,15 +2048,6 @@ Partial Class Form1
         Me.fontSelectButton.Text = "Select Font"
         Me.fontSelectButton.UseVisualStyleBackColor = True
         '
-        'Label58
-        '
-        Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(204, 440)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(120, 13)
-        Me.Label58.TabIndex = 71
-        Me.Label58.Text = "github/PSBlockx/iniEdit"
-        '
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -2065,6 +2057,27 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sound"
         '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Location = New System.Drawing.Point(204, 440)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(120, 13)
+        Me.Label58.TabIndex = 71
+        Me.Label58.Text = "github/PSBlockx/iniEdit"
+        '
+        'saveButton
+        '
+        Me.saveButton.BackColor = System.Drawing.SystemColors.Control
+        Me.saveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.saveButton.Location = New System.Drawing.Point(10, 456)
+        Me.saveButton.Name = "saveButton"
+        Me.saveButton.Size = New System.Drawing.Size(146, 38)
+        Me.saveButton.TabIndex = 72
+        Me.saveButton.Text = "SAVE"
+        Me.ToolTip1.SetToolTip(Me.saveButton, "Start Daybreak Launcher")
+        Me.saveButton.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2073,6 +2086,7 @@ Partial Class Form1
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(448, 503)
+        Me.Controls.Add(Me.saveButton)
         Me.Controls.Add(Me.Label58)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.startLauncher)
@@ -2301,4 +2315,5 @@ Partial Class Form1
     Friend WithEvents TRterrColorButton As Button
     Friend WithEvents Label58 As Label
     Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents saveButton As Button
 End Class

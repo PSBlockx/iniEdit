@@ -1,6 +1,9 @@
 ﻿Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
 Imports System.Text.RegularExpressions
+Imports System.Security.Cryptography.X509Certificates
+Imports System.Runtime.Remoting.Messaging
+
 Public Class Form1
     Public Class Arrays
         Public Shared Rendering As Array = {"[Rendering]", "GraphicsQuality=", "TextureQuality=", "ShadowQuality=", "LightingQuality=", "EffectsQuality=", "TerrainQuality=", "FloraQuality=", "ModelQuality=", "RenderDistance=", "Gamma=", "VerticalFOV=", "ParticleLOD=", "FogShadowsEnable", "MotionBlur=", "VSync=", "AO=", "MaximumFPS", "UseLod0a=", "BloomEnabed=", "InfantryRenderDistance=", "GroundVehicleRenderDistance=", "AirVehicleRenderDistance=", "UseGlobalRenderDistance=", "ParticleDistanceScale=", "Smoothing=", "UseAspectFOV=", "GpuPhysics=", "ShadowManagerQuality=", "ShadowMapCount=", "ShadowMapQuality=", "ShadowNearDistance=", "ShadowFarDistance=", "ShadowRSM=", "ColorBlindFilterType=", "ColorBlindFilterAmount=", "ColorBlindFilterStrength"}
@@ -15,28 +18,35 @@ Public Class Form1
 
         Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, iniEdit, Display}
     End Class
+    Public Shared curini As List(Of String) = Nothing
+
+    Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'If ini doesn't already have header for options added by this program, add one
+        curini = File.ReadAllLines("Useroptions.ini").ToList
+        If Not curini.Contains("[iniEdit]") Then
+            curini.Insert(0, "[iniEdit]")
+            File.WriteAllLines("Useroptions.ini", curini.ToArray)
+        End If
+        'Housekeeping
+        readAllOptions()
+        sensTypeDrop.SelectedIndex = 0
+    End Sub
     Friend Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
-        'Read ini into list
-        Dim lines As List(Of String) = File.ReadAllLines("Useroptions.ini").ToList
-        'Iterate over list looking for line with option
-        'If option exists update it
-        'If option doesn't exist, find where it goes and add it
         Dim found As Boolean = False
-        For index As Integer = 0 To lines.Count - 1
-            If lines(index).StartsWith(optionName) Then
+        For Each line In curini
+            If line.StartsWith(optionName) Then
                 found = True
-                lines(index) = String.Concat(optionName, newVal)
+                line = String.Concat(optionName, newVal)
             End If
         Next
-
+        Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
         If Not found Then
             For Each array In Arrays.bigOptions
                 For Each item In array
                     If item.Equals(optionName) Then
-                        For index As Integer = 0 To lines.Count - 1
-                            If lines(index).ToLower.StartsWith(array(0).ToString.ToLower) Then
-                                lines(index) = String.Concat(array(0), vbCrLf, item, newVal)
-                                File.WriteAllLines("Useroptions.ini", lines.ToArray)
+                        For Each line In curini
+                            If line.ToLower.StartsWith(array(0).ToString.ToLower) Then
+                                curini.Insert(curini.IndexOf(line) + 1, String.Concat(optionName, newVal))
                                 Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
                                 Exit Sub
                             End If
@@ -45,46 +55,35 @@ Public Class Form1
                 Next
             Next
         End If
-        'Save the updated option back to the file
-        File.WriteAllLines("Useroptions.ini", lines.ToArray)
-        Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
     End Sub
     Function getState(ByVal optionName As String)
-        'Read ini into list
-        Dim lines As List(Of String) = File.ReadAllLines("Useroptions.ini").ToList
-        'Find specified option and return value of line after = sign
-        For index As Integer = 0 To lines.Count - 1
-            If lines(index).StartsWith(optionName) Then
-                Dim optionVal As Array = lines(index).Split("="c)
-                Console.WriteLine(String.Concat("Got ", optionName, "with ", optionVal(1)))
+        'Find the line which has the desired option, and return the value after the = sign
+        For Each line In curini
+            If line.StartsWith(optionName) Then
+                Dim optionVal As Array = line.Split("="c)
+                Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1)))
                 Return optionVal(1)
             End If
         Next
     End Function
     Friend Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
-        'Read ini into list
-        Dim lines As List(Of String) = File.ReadAllLines("Useroptions.ini").ToList
-        'Iterate over list looking for line with option
-        'If option exists update it
-        'If option doesn't exist, find where it goes and add it
         Dim found As Boolean = False
-        For index As Integer = 0 To lines.Count - 1
-            If lines(index).StartsWith(optionName) Then
+        For Each line In curini
+            If line.StartsWith(optionName) Then
                 found = True
-                Dim lineList As List(Of String) = lines(index).Split("="c, ","c).ToList
+                Dim lineList As List(Of String) = line.Split("="c, ","c).ToList
                 lineList(faction) = newVal
-                lines(index) = String.Concat(optionName, lineList(1), ",", lineList(2), ",", lineList(3))
+                line = String.Concat(optionName, lineList(1), ",", lineList(2), ",", lineList(3))
             End If
         Next
-
+        Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
         If Not found Then
             For Each array In Arrays.bigOptions
                 For Each item In array
                     If item.Equals(optionName) Then
-                        For index As Integer = 0 To lines.Count - 1
-                            If lines(index).ToLower.StartsWith(array(0).ToString.ToLower) Then
-                                lines(index) = String.Concat(array(0), vbCrLf, item, newVal)
-                                File.WriteAllLines("Useroptions.ini", lines.ToArray)
+                        For Each line In curini
+                            If line.ToLower.StartsWith(array(0).ToString.ToLower) Then
+                                curini.Insert(curini.IndexOf(line) + 1, String.Concat(optionName, newVal))
                                 Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
                                 Exit Sub
                             End If
@@ -93,31 +92,11 @@ Public Class Form1
                 Next
             Next
         End If
-        'Save the updated option back to the file
-        File.WriteAllLines("Useroptions.ini", lines.ToArray)
-        Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
     End Sub
     Function ColorGetState(ByVal optionName As String, ByVal faction As Integer)
-        'Read ini into list
-        Dim lines As List(Of String) = File.ReadAllLines("Useroptions.ini").ToList
-        'Find specified option and return value of line after = sign
-        For index As Integer = 0 To lines.Count - 1
-            If lines(index).StartsWith(optionName) Then
-                Dim optionVal As Array = lines(index).Split("="c, ","c)
-                Console.WriteLine("split")
-                'doesnt work? If the option doesn't have a value, attempt to set a default
-                If IsNothing(optionVal(1)) Then
-                    Console.WriteLine("failed")
-                    For Each array In Arrays.bigOptions
-                        For Each item In array
-                            If item.Equals(optionName) Then
-                                Dim defaultVal As String = array.IndexOf(array, item) + 1
-                                UpdateVal(optionName, defaultVal)
-                                Console.WriteLine(String.Concat("Defaulted ", optionName, "to ", defaultVal))
-                            End If
-                        Next
-                    Next
-                End If
+        For Each line In curini
+            If line.StartsWith(optionName) Then
+                Dim optionVal As Array = line.Split("="c, ","c)
                 Console.WriteLine(String.Concat("Got ", optionName, "with ", optionVal(faction)))
                 Return optionVal(faction)
             End If
@@ -249,19 +228,13 @@ Public Class Form1
             terrColorDrop.SelectedIndex = 2
         End If
     End Function
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'If ini doesn't already have header for options added by this program, add one
-        Dim lines As List(Of String) = File.ReadAllLines("Useroptions.ini").ToList
-        If Not lines.Contains("[iniEdit]") Then
-            lines.Insert(0, "[iniEdit]")
-            File.WriteAllLines("Useroptions.ini", lines.ToArray)
-        End If
-        'Housekeeping
-        readAllOptions()
-        sensTypeDrop.SelectedIndex = 0
-    End Sub
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
         Process.Start("LaunchPad.exe")
+        Console.WriteLine("Starting Launcher")
+    End Sub
+    Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
+        File.WriteAllLines("Useroptions.ini", curini.ToArray)
+        Console.WriteLine("Saved INI")
     End Sub
     Private Sub vsyncCheck_CheckedChanged(sender As Object, e As EventArgs) Handles vsyncCheck.Click
         If (vsyncCheck.Checked) Then
@@ -709,4 +682,5 @@ Public Class Form1
         TRterrColorButton.BackColor = chosenColor
         ColorUpdate("TintModeMap=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
     End Sub
+
 End Class
