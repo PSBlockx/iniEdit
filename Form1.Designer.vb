@@ -178,8 +178,11 @@ Partial Class Form1
         Me.fontSelectButton = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label58 = New System.Windows.Forms.Label()
         Me.saveButton = New System.Windows.Forms.Button()
+        Me.saveToButton = New System.Windows.Forms.Button()
+        Me.openButton = New System.Windows.Forms.Button()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.Label62 = New System.Windows.Forms.Label()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -230,10 +233,11 @@ Partial Class Form1
         'startLauncher
         '
         Me.startLauncher.BackColor = System.Drawing.SystemColors.Control
-        Me.startLauncher.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.startLauncher.Location = New System.Drawing.Point(163, 456)
+        Me.startLauncher.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.startLauncher.Location = New System.Drawing.Point(412, 514)
+        Me.startLauncher.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.startLauncher.Name = "startLauncher"
-        Me.startLauncher.Size = New System.Drawing.Size(273, 38)
+        Me.startLauncher.Size = New System.Drawing.Size(162, 38)
         Me.startLauncher.TabIndex = 30
         Me.startLauncher.Text = "START LAUNCHER"
         Me.ToolTip1.SetToolTip(Me.startLauncher, "Start Daybreak Launcher")
@@ -828,7 +832,7 @@ Partial Class Form1
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(381, 440)
+        Me.Label19.Location = New System.Drawing.Point(529, 498)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(55, 13)
         Me.Label19.TabIndex = 67
@@ -837,7 +841,7 @@ Partial Class Form1
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(326, 440)
+        Me.Label20.Location = New System.Drawing.Point(474, 498)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(49, 13)
         Me.Label20.TabIndex = 68
@@ -854,7 +858,7 @@ Partial Class Form1
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(447, 438)
+        Me.TabControl1.Size = New System.Drawing.Size(584, 496)
         Me.TabControl1.TabIndex = 70
         Me.TabControl1.TabStop = False
         '
@@ -868,7 +872,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(439, 412)
+        Me.TabPage1.Size = New System.Drawing.Size(576, 470)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Graphics"
         '
@@ -883,7 +887,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(439, 412)
+        Me.TabPage2.Size = New System.Drawing.Size(576, 470)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sensitivity"
         '
@@ -1578,7 +1582,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.terrColorPanel)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(439, 412)
+        Me.TabPage4.Size = New System.Drawing.Size(576, 470)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Interface"
         '
@@ -2002,7 +2006,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.fontSelectButton)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(439, 412)
+        Me.TabPage3.Size = New System.Drawing.Size(576, 470)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Font"
         '
@@ -2053,30 +2057,67 @@ Partial Class Form1
         Me.TabPage5.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(439, 412)
+        Me.TabPage5.Size = New System.Drawing.Size(576, 470)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sound"
+        '
+        'saveButton
+        '
+        Me.saveButton.BackColor = System.Drawing.SystemColors.Control
+        Me.saveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.saveButton.Location = New System.Drawing.Point(301, 514)
+        Me.saveButton.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.saveButton.Name = "saveButton"
+        Me.saveButton.Size = New System.Drawing.Size(105, 38)
+        Me.saveButton.TabIndex = 72
+        Me.saveButton.Text = "Save Active"
+        Me.ToolTip1.SetToolTip(Me.saveButton, "Start Daybreak Launcher")
+        Me.saveButton.UseVisualStyleBackColor = False
+        '
+        'saveToButton
+        '
+        Me.saveToButton.BackColor = System.Drawing.SystemColors.Control
+        Me.saveToButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.saveToButton.Location = New System.Drawing.Point(125, 514)
+        Me.saveToButton.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.saveToButton.Name = "saveToButton"
+        Me.saveToButton.Size = New System.Drawing.Size(103, 38)
+        Me.saveToButton.TabIndex = 73
+        Me.saveToButton.Text = "Save Preset"
+        Me.ToolTip1.SetToolTip(Me.saveToButton, "Start Daybreak Launcher")
+        Me.saveToButton.UseVisualStyleBackColor = False
+        '
+        'openButton
+        '
+        Me.openButton.BackColor = System.Drawing.SystemColors.Control
+        Me.openButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.openButton.Location = New System.Drawing.Point(5, 514)
+        Me.openButton.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.openButton.Name = "openButton"
+        Me.openButton.Size = New System.Drawing.Size(114, 38)
+        Me.openButton.TabIndex = 74
+        Me.openButton.Text = "Open Preset"
+        Me.ToolTip1.SetToolTip(Me.openButton, "Start Daybreak Launcher")
+        Me.openButton.UseVisualStyleBackColor = False
         '
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(204, 440)
+        Me.Label58.Location = New System.Drawing.Point(352, 498)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(120, 13)
         Me.Label58.TabIndex = 71
         Me.Label58.Text = "github/PSBlockx/iniEdit"
         '
-        'saveButton
+        'Label62
         '
-        Me.saveButton.BackColor = System.Drawing.SystemColors.Control
-        Me.saveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.saveButton.Location = New System.Drawing.Point(10, 456)
-        Me.saveButton.Name = "saveButton"
-        Me.saveButton.Size = New System.Drawing.Size(146, 38)
-        Me.saveButton.TabIndex = 72
-        Me.saveButton.Text = "SAVE"
-        Me.ToolTip1.SetToolTip(Me.saveButton, "Start Daybreak Launcher")
-        Me.saveButton.UseVisualStyleBackColor = False
+        Me.Label62.AutoSize = True
+        Me.Label62.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label62.Location = New System.Drawing.Point(7, 498)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(89, 13)
+        Me.Label62.TabIndex = 75
+        Me.Label62.Text = "Currently Editing: "
         '
         'Form1
         '
@@ -2085,7 +2126,10 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(448, 503)
+        Me.ClientSize = New System.Drawing.Size(584, 561)
+        Me.Controls.Add(Me.Label62)
+        Me.Controls.Add(Me.openButton)
+        Me.Controls.Add(Me.saveToButton)
         Me.Controls.Add(Me.saveButton)
         Me.Controls.Add(Me.Label58)
         Me.Controls.Add(Me.TabControl1)
@@ -2316,4 +2360,7 @@ Partial Class Form1
     Friend WithEvents Label58 As Label
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents saveButton As Button
+    Friend WithEvents saveToButton As Button
+    Friend WithEvents openButton As Button
+    Friend WithEvents Label62 As Label
 End Class

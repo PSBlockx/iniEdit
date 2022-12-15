@@ -30,6 +30,7 @@ Public Class Form1
         'Housekeeping
         readAllOptions()
         sensTypeDrop.SelectedIndex = 0
+        Label62.Text = "Currently Editing: Useroptions.ini"
     End Sub
     Friend Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
         Dim found As Boolean = False
@@ -37,9 +38,9 @@ Public Class Form1
             If line.StartsWith(optionName) Then
                 found = True
                 line = String.Concat(optionName, newVal)
+                Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
             End If
         Next
-        Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
         If Not found Then
             For Each array In Arrays.bigOptions
                 For Each item In array
@@ -235,8 +236,34 @@ Public Class Form1
         Console.WriteLine("Starting Launcher")
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
-        File.WriteAllLines("Useroptions.ini", curini.ToArray)
+        File.WriteAllLines("Useroptions.ini", curini)
         Console.WriteLine("Saved INI")
+    End Sub
+    Private Sub saveToButton_Click(sender As Object, e As EventArgs) Handles saveToButton.Click
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.DefaultExt = "ini"
+        saveDialog.AddExtension = True
+        saveDialog.InitialDirectory = String.Concat(CurDir, "\Presets")
+        Console.WriteLine(String.Concat(CurDir, "\Presets"))
+        saveDialog.Filter = "All files (*.*)|*.*"
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            File.WriteAllLines(saveDialog.FileName, curini)
+        End If
+    End Sub
+    Private Sub openButton_Click(sender As Object, e As EventArgs) Handles openButton.Click
+        Dim openDialog As New OpenFileDialog()
+        openDialog.Filter = "Config Files (*.ini)|*.ini"
+        openDialog.RestoreDirectory = True
+        If openDialog.ShowDialog() = DialogResult.OK Then
+            curini = File.ReadAllLines(openDialog.FileName).ToList
+            If Not curini.Contains("[iniEdit]") Then
+                curini.Insert(0, "[iniEdit]")
+            End If
+            readAllOptions()
+            sensTypeDrop.SelectedIndex = 0
+            Dim chosenPreset As List(Of String) = openDialog.FileName.Split("\"c).ToList
+            Label62.Text = String.Concat("Currently Editing: ", chosenPreset.Last)
+        End If
     End Sub
 #Region "GraphicsControls"
 #Region "ChecksChanged"
@@ -474,7 +501,7 @@ Public Class Form1
         fontDialog.Filter = "TrueType Font files (*.ttf)|*.ttf"
         fontDialog.RestoreDirectory = True
 
-        If fontDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+        If fontDialog.ShowDialog() = DialogResult.OK Then
             'Using a dialog, get the desired font file path
             fontPath = fontDialog.FileName.ToString
             'Show user selected font path
