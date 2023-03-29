@@ -20,6 +20,7 @@ Public Class Form1
         Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, iniEdit, Display}
     End Class
     Public Shared curini As List(Of String) = Nothing
+    Public Shared curiniPath As String = "Useroptions.ini"
 
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Read ini into previously initialized empty list
@@ -31,7 +32,7 @@ Public Class Form1
         'Housekeeping
         readAllOptions()
         sensTypeDrop.SelectedIndex = 0
-        Label62.Text = "Currently Editing: Useroptions.ini"
+        Label62.Text = String.Concat("Currently Editing: ", curiniPath)
     End Sub
     Friend Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
         'Reads the ini line by line for the specified option
@@ -127,6 +128,7 @@ Public Class Form1
         Dim Result As Integer = Channel1 + Channel2 * 256 + Channel3 * 65536
         Return Result
     End Function
+#Region "AimCalcs"
     Function hipTurnCalc(DPI, Sens)
         Dim distance As Double = Math.Round((1 / DPI) * (11.7581 / (Sens + 0.3)) ^ 3, 2, MidpointRounding.AwayFromZero)
         Return distance.ToString()
@@ -149,6 +151,7 @@ Public Class Form1
         End If
         Return sens.ToString()
     End Function
+#End Region
     Function showControl(control)
         With control
             .Show()
@@ -237,6 +240,17 @@ Public Class Form1
         Else
             terrColorDrop.SelectedIndex = 2
         End If
+        masVolBox.Value = getState("Master=")
+        musVolBox.Value = getState("Music=")
+        gamVolBox.Value = getState("Game=")
+        diaVolBox.Value = getState("Dialog=")
+        uiVolBox.Value = getState("UI=")
+        floatOutCheck.Checked = getState("UseFloat32Output=")
+        exclusiveCheck.Checked = getState("ExclusiveMode=")
+        lowAmmCheck.Checked = getState("LowAmmoIndicator=")
+        vehChatterCheck.Checked = getState("VehicleChatter=")
+        idleMusicCheck.Checked = getState("IdleMusic=")
+        hiReverbCheck.Checked = getState("UseHighQualityReverb=")
     End Function
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
         Process.Start("LaunchPad.exe")
@@ -244,7 +258,7 @@ Public Class Form1
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
-        File.WriteAllLines("Useroptions.ini", curini)
+        File.WriteAllLines(curiniPath, curini)
         Console.WriteLine("Saved INI")
     End Sub
     Private Sub saveToButton_Click(sender As Object, e As EventArgs) Handles saveToButton.Click
@@ -273,8 +287,8 @@ Public Class Form1
             readAllOptions()
             sensTypeDrop.SelectedIndex = 0
             'This gets the full file path and grabs the file name from the end to update the currently editing label
-            Dim chosenPreset As List(Of String) = openDialog.FileName.Split("\"c).ToList
-            Label62.Text = String.Concat("Currently Editing: ", chosenPreset.Last)
+            curiniPath = openDialog.FileName
+            Label62.Text = String.Concat("Currently Editing: ", curiniPath.Split("\"c).ToList.Last)
         End If
     End Sub
 #Region "GraphicsControls"

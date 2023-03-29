@@ -199,24 +199,33 @@ Partial Class Form1
         Me.Label75 = New System.Windows.Forms.Label()
         Me.maxVoiceBox = New System.Windows.Forms.NumericUpDown()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown7 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown8 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel8 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown9 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel9 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown10 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel10 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown11 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel11 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown12 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.saveButton = New System.Windows.Forms.Button()
-        Me.saveToButton = New System.Windows.Forms.Button()
-        Me.openButton = New System.Windows.Forms.Button()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.openButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.saveButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.saveToButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -272,13 +281,20 @@ Partial Class Form1
         CType(Me.diaVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.maxVoiceBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
-        Me.FlowLayoutPanel2.SuspendLayout()
-        Me.FlowLayoutPanel4.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel5.SuspendLayout()
+        Me.FlowLayoutPanel6.SuspendLayout()
+        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel7.SuspendLayout()
+        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel8.SuspendLayout()
+        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel9.SuspendLayout()
+        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel10.SuspendLayout()
+        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel11.SuspendLayout()
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'startLauncher
@@ -906,11 +922,13 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
-        Me.TabControl1.Location = New System.Drawing.Point(0, -1)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 56)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.TabControl1.MaximumSize = New System.Drawing.Size(584, 496)
+        Me.TabControl1.MinimumSize = New System.Drawing.Size(150, 125)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(584, 496)
+        Me.TabControl1.Size = New System.Drawing.Size(584, 439)
         Me.TabControl1.TabIndex = 70
         Me.TabControl1.TabStop = False
         '
@@ -924,7 +942,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage1.Size = New System.Drawing.Size(576, 413)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Graphics"
         '
@@ -939,7 +957,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage2.Size = New System.Drawing.Size(576, 413)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sensitivity"
         '
@@ -1634,7 +1652,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.terrColorPanel)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage4.Size = New System.Drawing.Size(576, 413)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Interface"
         '
@@ -2058,7 +2076,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.fontSelectButton)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage3.Size = New System.Drawing.Size(576, 413)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Font"
         '
@@ -2111,7 +2129,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.FlowLayoutPanel1)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage5.Size = New System.Drawing.Size(576, 413)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sound"
         '
@@ -2383,49 +2401,244 @@ Partial Class Form1
         'TabPage6
         '
         Me.TabPage6.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage6.Controls.Add(Me.FlowLayoutPanel4)
-        Me.TabPage6.Controls.Add(Me.FlowLayoutPanel2)
+        Me.TabPage6.Controls.Add(Me.FlowLayoutPanel5)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage6.Size = New System.Drawing.Size(576, 413)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Chat"
         '
-        'saveButton
+        'FlowLayoutPanel5
         '
-        Me.saveButton.BackColor = System.Drawing.SystemColors.Control
-        Me.saveButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.saveButton.Location = New System.Drawing.Point(301, 514)
-        Me.saveButton.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
-        Me.saveButton.Name = "saveButton"
-        Me.saveButton.Size = New System.Drawing.Size(105, 38)
-        Me.saveButton.TabIndex = 72
-        Me.saveButton.Text = "Save Active"
-        Me.saveButton.UseVisualStyleBackColor = False
+        Me.FlowLayoutPanel5.AutoSize = True
+        Me.FlowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel5.Controls.Add(Me.FlowLayoutPanel6)
+        Me.FlowLayoutPanel5.Controls.Add(Me.FlowLayoutPanel7)
+        Me.FlowLayoutPanel5.Controls.Add(Me.FlowLayoutPanel8)
+        Me.FlowLayoutPanel5.Controls.Add(Me.FlowLayoutPanel9)
+        Me.FlowLayoutPanel5.Controls.Add(Me.FlowLayoutPanel10)
+        Me.FlowLayoutPanel5.Controls.Add(Me.FlowLayoutPanel11)
+        Me.FlowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(24, 30)
+        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
+        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(191, 192)
+        Me.FlowLayoutPanel5.TabIndex = 52
         '
-        'saveToButton
+        'FlowLayoutPanel6
         '
-        Me.saveToButton.BackColor = System.Drawing.SystemColors.Control
-        Me.saveToButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.saveToButton.Location = New System.Drawing.Point(125, 514)
-        Me.saveToButton.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
-        Me.saveToButton.Name = "saveToButton"
-        Me.saveToButton.Size = New System.Drawing.Size(103, 38)
-        Me.saveToButton.TabIndex = 73
-        Me.saveToButton.Text = "Save Preset"
-        Me.saveToButton.UseVisualStyleBackColor = False
+        Me.FlowLayoutPanel6.AutoSize = True
+        Me.FlowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel6.Controls.Add(Me.NumericUpDown7)
+        Me.FlowLayoutPanel6.Controls.Add(Me.CheckBox7)
+        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
+        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(185, 26)
+        Me.FlowLayoutPanel6.TabIndex = 53
         '
-        'openButton
+        'NumericUpDown7
         '
-        Me.openButton.BackColor = System.Drawing.SystemColors.Control
-        Me.openButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.openButton.Location = New System.Drawing.Point(5, 514)
-        Me.openButton.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
-        Me.openButton.Name = "openButton"
-        Me.openButton.Size = New System.Drawing.Size(114, 38)
-        Me.openButton.TabIndex = 74
-        Me.openButton.Text = "Open Preset"
-        Me.openButton.UseVisualStyleBackColor = False
+        Me.NumericUpDown7.DecimalPlaces = 2
+        Me.NumericUpDown7.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown7.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown7.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown7.Name = "NumericUpDown7"
+        Me.NumericUpDown7.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown7.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown7, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown7.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox7.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox7.Location = New System.Drawing.Point(89, 5)
+        Me.CheckBox7.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox7.TabIndex = 21
+        Me.CheckBox7.Text = "General Voice"
+        Me.CheckBox7.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel7
+        '
+        Me.FlowLayoutPanel7.AutoSize = True
+        Me.FlowLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel7.Controls.Add(Me.NumericUpDown8)
+        Me.FlowLayoutPanel7.Controls.Add(Me.CheckBox8)
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(3, 35)
+        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
+        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(185, 26)
+        Me.FlowLayoutPanel7.TabIndex = 54
+        '
+        'NumericUpDown8
+        '
+        Me.NumericUpDown8.DecimalPlaces = 2
+        Me.NumericUpDown8.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown8.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown8.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown8.Name = "NumericUpDown8"
+        Me.NumericUpDown8.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown8.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown8, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown8.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox8.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox8.Location = New System.Drawing.Point(89, 5)
+        Me.CheckBox8.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox8.TabIndex = 21
+        Me.CheckBox8.Text = "General Voice"
+        Me.CheckBox8.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel8
+        '
+        Me.FlowLayoutPanel8.AutoSize = True
+        Me.FlowLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel8.Controls.Add(Me.NumericUpDown9)
+        Me.FlowLayoutPanel8.Controls.Add(Me.CheckBox9)
+        Me.FlowLayoutPanel8.Location = New System.Drawing.Point(3, 67)
+        Me.FlowLayoutPanel8.Name = "FlowLayoutPanel8"
+        Me.FlowLayoutPanel8.Size = New System.Drawing.Size(185, 26)
+        Me.FlowLayoutPanel8.TabIndex = 55
+        '
+        'NumericUpDown9
+        '
+        Me.NumericUpDown9.DecimalPlaces = 2
+        Me.NumericUpDown9.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown9.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown9.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown9.Name = "NumericUpDown9"
+        Me.NumericUpDown9.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown9.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown9, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown9.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox9.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox9.Location = New System.Drawing.Point(89, 5)
+        Me.CheckBox9.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox9.TabIndex = 21
+        Me.CheckBox9.Text = "General Voice"
+        Me.CheckBox9.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel9
+        '
+        Me.FlowLayoutPanel9.AutoSize = True
+        Me.FlowLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel9.Controls.Add(Me.NumericUpDown10)
+        Me.FlowLayoutPanel9.Controls.Add(Me.CheckBox10)
+        Me.FlowLayoutPanel9.Location = New System.Drawing.Point(3, 99)
+        Me.FlowLayoutPanel9.Name = "FlowLayoutPanel9"
+        Me.FlowLayoutPanel9.Size = New System.Drawing.Size(185, 26)
+        Me.FlowLayoutPanel9.TabIndex = 56
+        '
+        'NumericUpDown10
+        '
+        Me.NumericUpDown10.DecimalPlaces = 2
+        Me.NumericUpDown10.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown10.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown10.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown10.Name = "NumericUpDown10"
+        Me.NumericUpDown10.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown10.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown10, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown10.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox10.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox10.Location = New System.Drawing.Point(89, 5)
+        Me.CheckBox10.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox10.TabIndex = 21
+        Me.CheckBox10.Text = "General Voice"
+        Me.CheckBox10.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel10
+        '
+        Me.FlowLayoutPanel10.AutoSize = True
+        Me.FlowLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel10.Controls.Add(Me.NumericUpDown11)
+        Me.FlowLayoutPanel10.Controls.Add(Me.CheckBox11)
+        Me.FlowLayoutPanel10.Location = New System.Drawing.Point(3, 131)
+        Me.FlowLayoutPanel10.Name = "FlowLayoutPanel10"
+        Me.FlowLayoutPanel10.Size = New System.Drawing.Size(185, 26)
+        Me.FlowLayoutPanel10.TabIndex = 57
+        '
+        'NumericUpDown11
+        '
+        Me.NumericUpDown11.DecimalPlaces = 2
+        Me.NumericUpDown11.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown11.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown11.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown11.Name = "NumericUpDown11"
+        Me.NumericUpDown11.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown11.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown11, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown11.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox11
+        '
+        Me.CheckBox11.AutoSize = True
+        Me.CheckBox11.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox11.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox11.Location = New System.Drawing.Point(89, 5)
+        Me.CheckBox11.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox11.Name = "CheckBox11"
+        Me.CheckBox11.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox11.TabIndex = 21
+        Me.CheckBox11.Text = "General Voice"
+        Me.CheckBox11.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel11
+        '
+        Me.FlowLayoutPanel11.AutoSize = True
+        Me.FlowLayoutPanel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel11.Controls.Add(Me.NumericUpDown12)
+        Me.FlowLayoutPanel11.Controls.Add(Me.CheckBox12)
+        Me.FlowLayoutPanel11.Location = New System.Drawing.Point(3, 163)
+        Me.FlowLayoutPanel11.Name = "FlowLayoutPanel11"
+        Me.FlowLayoutPanel11.Size = New System.Drawing.Size(185, 26)
+        Me.FlowLayoutPanel11.TabIndex = 58
+        '
+        'NumericUpDown12
+        '
+        Me.NumericUpDown12.DecimalPlaces = 2
+        Me.NumericUpDown12.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown12.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown12.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown12.Name = "NumericUpDown12"
+        Me.NumericUpDown12.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown12.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown12, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown12.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox12.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox12.Location = New System.Drawing.Point(89, 5)
+        Me.CheckBox12.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox12.TabIndex = 21
+        Me.CheckBox12.Text = "General Voice"
+        Me.CheckBox12.UseVisualStyleBackColor = False
         '
         'Label58
         '
@@ -2446,158 +2659,39 @@ Partial Class Form1
         Me.Label62.TabIndex = 75
         Me.Label62.Text = "Currently Editing: "
         '
-        'FlowLayoutPanel2
+        'MenuStrip1
         '
-        Me.FlowLayoutPanel2.AutoScroll = True
-        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox1)
-        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox2)
-        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox3)
-        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox4)
-        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox5)
-        Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(8, 6)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(136, 323)
-        Me.FlowLayoutPanel2.TabIndex = 50
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(584, 24)
+        Me.MenuStrip1.TabIndex = 76
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'CheckBox1
+        'FileToolStripMenuItem
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox1.Location = New System.Drawing.Point(3, 6)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox1.TabIndex = 20
-        Me.CheckBox1.Text = "Hit Indicator"
-        Me.CheckBox1.UseVisualStyleBackColor = False
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.openButton, Me.saveButton, Me.saveToButton})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
         '
-        'FlowLayoutPanel4
+        'openButton
         '
-        Me.FlowLayoutPanel4.AutoScroll = True
-        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown1)
-        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown2)
-        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown3)
-        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown4)
-        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown5)
-        Me.FlowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(150, 6)
-        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(109, 323)
-        Me.FlowLayoutPanel4.TabIndex = 51
+        Me.openButton.Name = "openButton"
+        Me.openButton.Size = New System.Drawing.Size(180, 22)
+        Me.openButton.Text = "Open Config"
         '
-        'NumericUpDown1
+        'saveButton
         '
-        Me.NumericUpDown1.DecimalPlaces = 2
-        Me.NumericUpDown1.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(3, 3)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown1.TabIndex = 42
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown1, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.saveButton.Name = "saveButton"
+        Me.saveButton.Size = New System.Drawing.Size(180, 22)
+        Me.saveButton.Text = "Save Config"
         '
-        'NumericUpDown2
+        'saveToButton
         '
-        Me.NumericUpDown2.DecimalPlaces = 2
-        Me.NumericUpDown2.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown2.Location = New System.Drawing.Point(3, 29)
-        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown2.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown2, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
-        Me.NumericUpDown2.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'NumericUpDown3
-        '
-        Me.NumericUpDown3.DecimalPlaces = 2
-        Me.NumericUpDown3.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown3.Location = New System.Drawing.Point(3, 55)
-        Me.NumericUpDown3.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown3.TabIndex = 44
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown3, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
-        Me.NumericUpDown3.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'NumericUpDown4
-        '
-        Me.NumericUpDown4.DecimalPlaces = 2
-        Me.NumericUpDown4.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown4.Location = New System.Drawing.Point(3, 81)
-        Me.NumericUpDown4.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown4.TabIndex = 45
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown4, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
-        Me.NumericUpDown4.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'NumericUpDown5
-        '
-        Me.NumericUpDown5.DecimalPlaces = 2
-        Me.NumericUpDown5.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown5.Location = New System.Drawing.Point(3, 107)
-        Me.NumericUpDown5.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.Size = New System.Drawing.Size(80, 20)
-        Me.NumericUpDown5.TabIndex = 46
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown5, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
-        Me.NumericUpDown5.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox5.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox5.Location = New System.Drawing.Point(3, 110)
-        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox5.TabIndex = 24
-        Me.CheckBox5.Text = "Hit Indicator"
-        Me.CheckBox5.UseVisualStyleBackColor = False
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox4.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox4.Location = New System.Drawing.Point(3, 84)
-        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox4.TabIndex = 23
-        Me.CheckBox4.Text = "Hit Indicator"
-        Me.CheckBox4.UseVisualStyleBackColor = False
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox3.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox3.Location = New System.Drawing.Point(3, 58)
-        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox3.TabIndex = 22
-        Me.CheckBox3.Text = "Hit Indicator"
-        Me.CheckBox3.UseVisualStyleBackColor = False
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox2.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox2.Location = New System.Drawing.Point(3, 32)
-        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox2.TabIndex = 21
-        Me.CheckBox2.Text = "Hit Indicator"
-        Me.CheckBox2.UseVisualStyleBackColor = False
+        Me.saveToButton.Name = "saveToButton"
+        Me.saveToButton.Size = New System.Drawing.Size(180, 22)
+        Me.saveToButton.Text = "Save Config As..."
         '
         'Form1
         '
@@ -2608,15 +2702,14 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ClientSize = New System.Drawing.Size(584, 561)
         Me.Controls.Add(Me.Label62)
-        Me.Controls.Add(Me.openButton)
-        Me.Controls.Add(Me.saveToButton)
-        Me.Controls.Add(Me.saveButton)
         Me.Controls.Add(Me.Label58)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.startLauncher)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.Text = "iniEdit"
         Me.graphPanel4.ResumeLayout(False)
@@ -2691,14 +2784,29 @@ Partial Class Form1
         CType(Me.diaVolBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.maxVoiceBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
-        Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.FlowLayoutPanel2.PerformLayout()
-        Me.FlowLayoutPanel4.ResumeLayout(False)
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.PerformLayout()
+        Me.FlowLayoutPanel5.ResumeLayout(False)
+        Me.FlowLayoutPanel5.PerformLayout()
+        Me.FlowLayoutPanel6.ResumeLayout(False)
+        Me.FlowLayoutPanel6.PerformLayout()
+        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel7.ResumeLayout(False)
+        Me.FlowLayoutPanel7.PerformLayout()
+        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel8.ResumeLayout(False)
+        Me.FlowLayoutPanel8.PerformLayout()
+        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel9.ResumeLayout(False)
+        Me.FlowLayoutPanel9.PerformLayout()
+        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel10.ResumeLayout(False)
+        Me.FlowLayoutPanel10.PerformLayout()
+        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel11.ResumeLayout(False)
+        Me.FlowLayoutPanel11.PerformLayout()
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2859,9 +2967,6 @@ Partial Class Form1
     Friend WithEvents TRterrColorButton As Button
     Friend WithEvents Label58 As Label
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents saveButton As Button
-    Friend WithEvents saveToButton As Button
-    Friend WithEvents openButton As Button
     Friend WithEvents Label62 As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label63 As Label
@@ -2885,16 +2990,28 @@ Partial Class Form1
     Friend WithEvents floatOutCheck As CheckBox
     Friend WithEvents exclusiveCheck As CheckBox
     Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
-    Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents NumericUpDown2 As NumericUpDown
-    Friend WithEvents NumericUpDown3 As NumericUpDown
-    Friend WithEvents NumericUpDown4 As NumericUpDown
-    Friend WithEvents NumericUpDown5 As NumericUpDown
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown7 As NumericUpDown
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents FlowLayoutPanel7 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown8 As NumericUpDown
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents FlowLayoutPanel8 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown9 As NumericUpDown
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents FlowLayoutPanel9 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown10 As NumericUpDown
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents FlowLayoutPanel10 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown11 As NumericUpDown
+    Friend WithEvents CheckBox11 As CheckBox
+    Friend WithEvents FlowLayoutPanel11 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown12 As NumericUpDown
+    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents openButton As ToolStripMenuItem
+    Friend WithEvents saveButton As ToolStripMenuItem
+    Friend WithEvents saveToButton As ToolStripMenuItem
 End Class
