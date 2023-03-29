@@ -177,12 +177,46 @@ Partial Class Form1
         Me.selectedFontPath = New System.Windows.Forms.Label()
         Me.fontSelectButton = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.hitIndCheck = New System.Windows.Forms.CheckBox()
+        Me.lowAmmCheck = New System.Windows.Forms.CheckBox()
+        Me.vehChatterCheck = New System.Windows.Forms.CheckBox()
+        Me.idleMusicCheck = New System.Windows.Forms.CheckBox()
+        Me.hiReverbCheck = New System.Windows.Forms.CheckBox()
+        Me.floatOutCheck = New System.Windows.Forms.CheckBox()
+        Me.exclusiveCheck = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.masVolBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.gamVolBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.musVolBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.uiVolBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.diaVolBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label75 = New System.Windows.Forms.Label()
+        Me.maxVoiceBox = New System.Windows.Forms.NumericUpDown()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.saveButton = New System.Windows.Forms.Button()
         Me.saveToButton = New System.Windows.Forms.Button()
         Me.openButton = New System.Windows.Forms.Button()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -228,6 +262,23 @@ Partial Class Form1
         Me.facColorPanel.SuspendLayout()
         Me.terrColorPanel.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.FlowLayoutPanel3.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        CType(Me.masVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gamVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.musVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.uiVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.diaVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.maxVoiceBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage6.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.FlowLayoutPanel4.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'startLauncher
@@ -240,7 +291,7 @@ Partial Class Form1
         Me.startLauncher.Size = New System.Drawing.Size(162, 38)
         Me.startLauncher.TabIndex = 30
         Me.startLauncher.Text = "START LAUNCHER"
-        Me.ToolTip1.SetToolTip(Me.startLauncher, "Start Daybreak Launcher")
+        Me.ToolTip1.SetToolTip(Me.startLauncher, "Start Daybreak Launcher" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Remember to save!")
         Me.startLauncher.UseVisualStyleBackColor = False
         '
         'vsyncCheck
@@ -854,6 +905,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Location = New System.Drawing.Point(0, -1)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
         Me.TabControl1.Name = "TabControl1"
@@ -2055,11 +2107,289 @@ Partial Class Form1
         'TabPage5
         '
         Me.TabPage5.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage5.Controls.Add(Me.FlowLayoutPanel3)
+        Me.TabPage5.Controls.Add(Me.FlowLayoutPanel1)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Size = New System.Drawing.Size(576, 470)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sound"
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.AutoScroll = True
+        Me.FlowLayoutPanel3.Controls.Add(Me.hitIndCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.lowAmmCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.vehChatterCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.idleMusicCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.hiReverbCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.floatOutCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.exclusiveCheck)
+        Me.FlowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(123, 9)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(136, 265)
+        Me.FlowLayoutPanel3.TabIndex = 49
+        '
+        'hitIndCheck
+        '
+        Me.hitIndCheck.AutoSize = True
+        Me.hitIndCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.hitIndCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hitIndCheck.Location = New System.Drawing.Point(3, 3)
+        Me.hitIndCheck.Name = "hitIndCheck"
+        Me.hitIndCheck.Size = New System.Drawing.Size(83, 17)
+        Me.hitIndCheck.TabIndex = 20
+        Me.hitIndCheck.Text = "Hit Indicator"
+        Me.hitIndCheck.UseVisualStyleBackColor = False
+        '
+        'lowAmmCheck
+        '
+        Me.lowAmmCheck.AutoSize = True
+        Me.lowAmmCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lowAmmCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.lowAmmCheck.Location = New System.Drawing.Point(3, 26)
+        Me.lowAmmCheck.Name = "lowAmmCheck"
+        Me.lowAmmCheck.Size = New System.Drawing.Size(122, 17)
+        Me.lowAmmCheck.TabIndex = 21
+        Me.lowAmmCheck.Text = "Low Ammo Indicator"
+        Me.lowAmmCheck.UseVisualStyleBackColor = False
+        '
+        'vehChatterCheck
+        '
+        Me.vehChatterCheck.AutoSize = True
+        Me.vehChatterCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.vehChatterCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.vehChatterCheck.Location = New System.Drawing.Point(3, 49)
+        Me.vehChatterCheck.Name = "vehChatterCheck"
+        Me.vehChatterCheck.Size = New System.Drawing.Size(98, 17)
+        Me.vehChatterCheck.TabIndex = 22
+        Me.vehChatterCheck.Text = "Vehicle Chatter"
+        Me.ToolTip1.SetToolTip(Me.vehChatterCheck, "Enables/disables the fake comms gibberish when driving/piloting")
+        Me.vehChatterCheck.UseVisualStyleBackColor = False
+        '
+        'idleMusicCheck
+        '
+        Me.idleMusicCheck.AutoSize = True
+        Me.idleMusicCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.idleMusicCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.idleMusicCheck.Location = New System.Drawing.Point(3, 72)
+        Me.idleMusicCheck.Name = "idleMusicCheck"
+        Me.idleMusicCheck.Size = New System.Drawing.Size(74, 17)
+        Me.idleMusicCheck.TabIndex = 23
+        Me.idleMusicCheck.Text = "Idle Music"
+        Me.idleMusicCheck.UseVisualStyleBackColor = False
+        '
+        'hiReverbCheck
+        '
+        Me.hiReverbCheck.AutoSize = True
+        Me.hiReverbCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.hiReverbCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hiReverbCheck.Location = New System.Drawing.Point(3, 95)
+        Me.hiReverbCheck.Name = "hiReverbCheck"
+        Me.hiReverbCheck.Size = New System.Drawing.Size(121, 17)
+        Me.hiReverbCheck.TabIndex = 24
+        Me.hiReverbCheck.Text = "High Quality Reverb"
+        Me.hiReverbCheck.UseVisualStyleBackColor = False
+        '
+        'floatOutCheck
+        '
+        Me.floatOutCheck.AutoSize = True
+        Me.floatOutCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.floatOutCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.floatOutCheck.Location = New System.Drawing.Point(3, 118)
+        Me.floatOutCheck.Name = "floatOutCheck"
+        Me.floatOutCheck.Size = New System.Drawing.Size(118, 17)
+        Me.floatOutCheck.TabIndex = 25
+        Me.floatOutCheck.Text = "Use Float32 Output"
+        Me.floatOutCheck.UseVisualStyleBackColor = False
+        '
+        'exclusiveCheck
+        '
+        Me.exclusiveCheck.AutoSize = True
+        Me.exclusiveCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.exclusiveCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.exclusiveCheck.Location = New System.Drawing.Point(3, 141)
+        Me.exclusiveCheck.Name = "exclusiveCheck"
+        Me.exclusiveCheck.Size = New System.Drawing.Size(101, 17)
+        Me.exclusiveCheck.TabIndex = 26
+        Me.exclusiveCheck.Text = "Exclusive Mode"
+        Me.ToolTip1.SetToolTip(Me.exclusiveCheck, "This option is required for FoVs above around 80 to work properly")
+        Me.exclusiveCheck.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label63)
+        Me.FlowLayoutPanel1.Controls.Add(Me.masVolBox)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label64)
+        Me.FlowLayoutPanel1.Controls.Add(Me.gamVolBox)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label65)
+        Me.FlowLayoutPanel1.Controls.Add(Me.musVolBox)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label66)
+        Me.FlowLayoutPanel1.Controls.Add(Me.uiVolBox)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label67)
+        Me.FlowLayoutPanel1.Controls.Add(Me.diaVolBox)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label75)
+        Me.FlowLayoutPanel1.Controls.Add(Me.maxVoiceBox)
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(8, 3)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(109, 271)
+        Me.FlowLayoutPanel1.TabIndex = 2
+        '
+        'Label63
+        '
+        Me.Label63.AutoSize = True
+        Me.Label63.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label63.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label63.Location = New System.Drawing.Point(3, 0)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Size = New System.Drawing.Size(102, 17)
+        Me.Label63.TabIndex = 29
+        Me.Label63.Text = "Master Volume"
+        '
+        'masVolBox
+        '
+        Me.masVolBox.DecimalPlaces = 2
+        Me.masVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.masVolBox.Location = New System.Drawing.Point(3, 20)
+        Me.masVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.masVolBox.Name = "masVolBox"
+        Me.masVolBox.Size = New System.Drawing.Size(80, 20)
+        Me.masVolBox.TabIndex = 42
+        Me.ToolTip1.SetToolTip(Me.masVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.masVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label64.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label64.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label64.Location = New System.Drawing.Point(3, 43)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(97, 17)
+        Me.Label64.TabIndex = 41
+        Me.Label64.Text = "Game Volume"
+        '
+        'gamVolBox
+        '
+        Me.gamVolBox.DecimalPlaces = 2
+        Me.gamVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.gamVolBox.Location = New System.Drawing.Point(3, 63)
+        Me.gamVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.gamVolBox.Name = "gamVolBox"
+        Me.gamVolBox.Size = New System.Drawing.Size(80, 20)
+        Me.gamVolBox.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.gamVolBox, "Affects volume of most gameplay sounds, such as weapons" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.gamVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label65
+        '
+        Me.Label65.AutoSize = True
+        Me.Label65.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label65.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label65.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label65.Location = New System.Drawing.Point(3, 86)
+        Me.Label65.Name = "Label65"
+        Me.Label65.Size = New System.Drawing.Size(95, 17)
+        Me.Label65.TabIndex = 30
+        Me.Label65.Text = "Music Volume"
+        '
+        'musVolBox
+        '
+        Me.musVolBox.DecimalPlaces = 2
+        Me.musVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.musVolBox.Location = New System.Drawing.Point(3, 106)
+        Me.musVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.musVolBox.Name = "musVolBox"
+        Me.musVolBox.Size = New System.Drawing.Size(80, 20)
+        Me.musVolBox.TabIndex = 44
+        Me.ToolTip1.SetToolTip(Me.musVolBox, "Default = 1.00")
+        Me.musVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label66.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label66.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label66.Location = New System.Drawing.Point(3, 129)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(72, 17)
+        Me.Label66.TabIndex = 31
+        Me.Label66.Text = "UI Volume"
+        '
+        'uiVolBox
+        '
+        Me.uiVolBox.DecimalPlaces = 2
+        Me.uiVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.uiVolBox.Location = New System.Drawing.Point(3, 149)
+        Me.uiVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.uiVolBox.Name = "uiVolBox"
+        Me.uiVolBox.Size = New System.Drawing.Size(80, 20)
+        Me.uiVolBox.TabIndex = 45
+        Me.ToolTip1.SetToolTip(Me.uiVolBox, "Affects volume of UI elements, indicators, and pop-ups" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.uiVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label67.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label67.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label67.Location = New System.Drawing.Point(3, 172)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(99, 17)
+        Me.Label67.TabIndex = 32
+        Me.Label67.Text = "Dialog Volume"
+        '
+        'diaVolBox
+        '
+        Me.diaVolBox.DecimalPlaces = 2
+        Me.diaVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.diaVolBox.Location = New System.Drawing.Point(3, 192)
+        Me.diaVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.diaVolBox.Name = "diaVolBox"
+        Me.diaVolBox.Size = New System.Drawing.Size(80, 20)
+        Me.diaVolBox.TabIndex = 46
+        Me.ToolTip1.SetToolTip(Me.diaVolBox, "Affects volume of NPC and announcer dialogs" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.diaVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label75
+        '
+        Me.Label75.AutoSize = True
+        Me.Label75.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label75.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label75.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label75.Location = New System.Drawing.Point(3, 215)
+        Me.Label75.Name = "Label75"
+        Me.Label75.Size = New System.Drawing.Size(79, 17)
+        Me.Label75.TabIndex = 47
+        Me.Label75.Text = "Max Voices"
+        '
+        'maxVoiceBox
+        '
+        Me.maxVoiceBox.Location = New System.Drawing.Point(3, 235)
+        Me.maxVoiceBox.Maximum = New Decimal(New Integer() {256, 0, 0, 0})
+        Me.maxVoiceBox.Name = "maxVoiceBox"
+        Me.maxVoiceBox.Size = New System.Drawing.Size(80, 20)
+        Me.maxVoiceBox.TabIndex = 48
+        Me.ToolTip1.SetToolTip(Me.maxVoiceBox, "The max number of sounds that can be played at once")
+        Me.maxVoiceBox.Value = New Decimal(New Integer() {64, 0, 0, 0})
+        '
+        'TabPage6
+        '
+        Me.TabPage6.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage6.Controls.Add(Me.FlowLayoutPanel4)
+        Me.TabPage6.Controls.Add(Me.FlowLayoutPanel2)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(576, 470)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Chat"
         '
         'saveButton
         '
@@ -2071,7 +2401,6 @@ Partial Class Form1
         Me.saveButton.Size = New System.Drawing.Size(105, 38)
         Me.saveButton.TabIndex = 72
         Me.saveButton.Text = "Save Active"
-        Me.ToolTip1.SetToolTip(Me.saveButton, "Start Daybreak Launcher")
         Me.saveButton.UseVisualStyleBackColor = False
         '
         'saveToButton
@@ -2084,7 +2413,6 @@ Partial Class Form1
         Me.saveToButton.Size = New System.Drawing.Size(103, 38)
         Me.saveToButton.TabIndex = 73
         Me.saveToButton.Text = "Save Preset"
-        Me.ToolTip1.SetToolTip(Me.saveToButton, "Start Daybreak Launcher")
         Me.saveToButton.UseVisualStyleBackColor = False
         '
         'openButton
@@ -2097,7 +2425,6 @@ Partial Class Form1
         Me.openButton.Size = New System.Drawing.Size(114, 38)
         Me.openButton.TabIndex = 74
         Me.openButton.Text = "Open Preset"
-        Me.ToolTip1.SetToolTip(Me.openButton, "Start Daybreak Launcher")
         Me.openButton.UseVisualStyleBackColor = False
         '
         'Label58
@@ -2118,6 +2445,159 @@ Partial Class Form1
         Me.Label62.Size = New System.Drawing.Size(89, 13)
         Me.Label62.TabIndex = 75
         Me.Label62.Text = "Currently Editing: "
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.AutoScroll = True
+        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox1)
+        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox2)
+        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox3)
+        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox4)
+        Me.FlowLayoutPanel2.Controls.Add(Me.CheckBox5)
+        Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(8, 6)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(136, 323)
+        Me.FlowLayoutPanel2.TabIndex = 50
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox1.Location = New System.Drawing.Point(3, 6)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(83, 17)
+        Me.CheckBox1.TabIndex = 20
+        Me.CheckBox1.Text = "Hit Indicator"
+        Me.CheckBox1.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel4
+        '
+        Me.FlowLayoutPanel4.AutoScroll = True
+        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown1)
+        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown2)
+        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown3)
+        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown4)
+        Me.FlowLayoutPanel4.Controls.Add(Me.NumericUpDown5)
+        Me.FlowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(150, 6)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(109, 323)
+        Me.FlowLayoutPanel4.TabIndex = 51
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.DecimalPlaces = 2
+        Me.NumericUpDown1.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown1.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown1.TabIndex = 42
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown1, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.DecimalPlaces = 2
+        Me.NumericUpDown2.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown2.Location = New System.Drawing.Point(3, 29)
+        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown2.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown2, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown2.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDown3
+        '
+        Me.NumericUpDown3.DecimalPlaces = 2
+        Me.NumericUpDown3.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown3.Location = New System.Drawing.Point(3, 55)
+        Me.NumericUpDown3.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown3.Name = "NumericUpDown3"
+        Me.NumericUpDown3.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown3.TabIndex = 44
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown3, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown3.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDown4
+        '
+        Me.NumericUpDown4.DecimalPlaces = 2
+        Me.NumericUpDown4.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown4.Location = New System.Drawing.Point(3, 81)
+        Me.NumericUpDown4.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown4.Name = "NumericUpDown4"
+        Me.NumericUpDown4.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown4.TabIndex = 45
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown4, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown4.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'NumericUpDown5
+        '
+        Me.NumericUpDown5.DecimalPlaces = 2
+        Me.NumericUpDown5.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.NumericUpDown5.Location = New System.Drawing.Point(3, 107)
+        Me.NumericUpDown5.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.NumericUpDown5.Name = "NumericUpDown5"
+        Me.NumericUpDown5.Size = New System.Drawing.Size(80, 20)
+        Me.NumericUpDown5.TabIndex = 46
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown5, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.NumericUpDown5.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox5.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox5.Location = New System.Drawing.Point(3, 110)
+        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(83, 17)
+        Me.CheckBox5.TabIndex = 24
+        Me.CheckBox5.Text = "Hit Indicator"
+        Me.CheckBox5.UseVisualStyleBackColor = False
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox4.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox4.Location = New System.Drawing.Point(3, 84)
+        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(83, 17)
+        Me.CheckBox4.TabIndex = 23
+        Me.CheckBox4.Text = "Hit Indicator"
+        Me.CheckBox4.UseVisualStyleBackColor = False
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox3.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox3.Location = New System.Drawing.Point(3, 58)
+        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(83, 17)
+        Me.CheckBox3.TabIndex = 22
+        Me.CheckBox3.Text = "Hit Indicator"
+        Me.CheckBox3.UseVisualStyleBackColor = False
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox2.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox2.Location = New System.Drawing.Point(3, 32)
+        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(3, 6, 3, 3)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(83, 17)
+        Me.CheckBox2.TabIndex = 21
+        Me.CheckBox2.Text = "Hit Indicator"
+        Me.CheckBox2.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -2199,6 +2679,26 @@ Partial Class Form1
         Me.terrColorPanel.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
+        Me.FlowLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel3.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
+        CType(Me.masVolBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gamVolBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.musVolBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.uiVolBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.diaVolBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.maxVoiceBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage6.ResumeLayout(False)
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2363,4 +2863,38 @@ Partial Class Form1
     Friend WithEvents saveToButton As Button
     Friend WithEvents openButton As Button
     Friend WithEvents Label62 As Label
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Label63 As Label
+    Friend WithEvents masVolBox As NumericUpDown
+    Friend WithEvents Label64 As Label
+    Friend WithEvents gamVolBox As NumericUpDown
+    Friend WithEvents Label65 As Label
+    Friend WithEvents musVolBox As NumericUpDown
+    Friend WithEvents Label66 As Label
+    Friend WithEvents uiVolBox As NumericUpDown
+    Friend WithEvents Label67 As Label
+    Friend WithEvents diaVolBox As NumericUpDown
+    Friend WithEvents Label75 As Label
+    Friend WithEvents maxVoiceBox As NumericUpDown
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents hitIndCheck As CheckBox
+    Friend WithEvents lowAmmCheck As CheckBox
+    Friend WithEvents vehChatterCheck As CheckBox
+    Friend WithEvents idleMusicCheck As CheckBox
+    Friend WithEvents hiReverbCheck As CheckBox
+    Friend WithEvents floatOutCheck As CheckBox
+    Friend WithEvents exclusiveCheck As CheckBox
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents NumericUpDown3 As NumericUpDown
+    Friend WithEvents NumericUpDown4 As NumericUpDown
+    Friend WithEvents NumericUpDown5 As NumericUpDown
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
 End Class

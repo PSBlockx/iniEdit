@@ -15,17 +15,18 @@ Public Class Form1
         Public Shared UI As Array = {"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax="}
         Public Shared AutoRefuse As Array = {"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="}
         Public Shared ChatChannels As Array = {"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="}
+        Public Shared Voice As Array = {"[Voice]", "Enable=", "ReceiveVolume=", "OutfitVolume=", "SquadVolume=", "RaidVolume=", "ProximityVolume=", "MicrophoneVolume=", "Ducking=", "EchoEnabled=", "ProximityEnabled=", "FactionEnabled=", "GroupEnabled=", "GroupLeaderEnabled=", "RaidEnabled=", "GuildEnabled=", "RadioEnabled=", "CBEnabled=", "CustomEnabled=", "SubGroupEnabled=", "MuteInactiveChannels=", "PushToTalk="}
 
-        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, iniEdit, Display}
+        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, iniEdit, Display}
     End Class
     Public Shared curini As List(Of String) = Nothing
 
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'If ini doesn't already have header for options added by this program, add one
+        'Read ini into previously initialized empty list
         curini = File.ReadAllLines("Useroptions.ini").ToList
+        'If ini doesn't already have header for options added by this program, add one at the top
         If Not curini.Contains("[iniEdit]") Then
             curini.Insert(0, "[iniEdit]")
-            File.WriteAllLines("Useroptions.ini", curini.ToArray)
         End If
         'Housekeeping
         readAllOptions()
@@ -33,6 +34,8 @@ Public Class Form1
         Label62.Text = "Currently Editing: Useroptions.ini"
     End Sub
     Friend Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
+        'Reads the ini line by line for the specified option
+        'If option isn't found, run through option arrays for option and insert a line for the correct category
         Dim found As Boolean = False
         For Each line In curini
             If line.StartsWith(optionName) Then
@@ -68,6 +71,7 @@ Public Class Form1
         Next
     End Function
     Friend Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
+        'Specialized update function for color options with multiple values separated by commas, could be used for other options with multiple values
         Dim found As Boolean = False
         For Each line In curini
             If line.StartsWith(optionName) Then
@@ -95,6 +99,7 @@ Public Class Form1
         End If
     End Sub
     Function ColorGetState(ByVal optionName As String, ByVal faction As Integer)
+        'Specialized getState for options with multiple values separated by commas
         For Each line In curini
             If line.StartsWith(optionName) Then
                 Dim optionVal As Array = line.Split("="c, ","c)
@@ -105,15 +110,17 @@ Public Class Form1
     End Function
 #Region "MiscFuncs"
     Function colorGetter()
+        'Opens Windows color picker and returns user-chosen color
+        'Value needs to be in BGR format, and is converted before use in update function
         Dim chosenColor = Nothing
         Dim colorDialog As New ColorDialog()
-        'Ask user for a color
         If colorDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
             chosenColor = colorDialog.Color
         End If
         Return chosenColor
     End Function
     Function colorDecimalSwap(ByVal color As Integer)
+        'Math-y way of bit swapping RGB<>BGR and vice versa from decimal color values
         Dim Channel1 As Integer = color \ 65536
         Dim Channel2 As Integer = (color - Channel1 * 65536) \ 256
         Dim Channel3 As Integer = color - (Channel1 * 65536 + Channel2 * 256)
@@ -236,10 +243,12 @@ Public Class Form1
         Console.WriteLine("Starting Launcher")
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
+        'Save current options to regular Useroptions.ini
         File.WriteAllLines("Useroptions.ini", curini)
         Console.WriteLine("Saved INI")
     End Sub
     Private Sub saveToButton_Click(sender As Object, e As EventArgs) Handles saveToButton.Click
+        'Save current options to user-specified file
         Dim saveDialog As New SaveFileDialog()
         saveDialog.DefaultExt = "ini"
         saveDialog.AddExtension = True
@@ -251,16 +260,19 @@ Public Class Form1
         End If
     End Sub
     Private Sub openButton_Click(sender As Object, e As EventArgs) Handles openButton.Click
+        'Open specified ini file
         Dim openDialog As New OpenFileDialog()
         openDialog.Filter = "Config Files (*.ini)|*.ini"
         openDialog.RestoreDirectory = True
         If openDialog.ShowDialog() = DialogResult.OK Then
+            'Re-run stuff that ran on load for new ini
             curini = File.ReadAllLines(openDialog.FileName).ToList
             If Not curini.Contains("[iniEdit]") Then
                 curini.Insert(0, "[iniEdit]")
             End If
             readAllOptions()
             sensTypeDrop.SelectedIndex = 0
+            'This gets the full file path and grabs the file name from the end to update the currently editing label
             Dim chosenPreset As List(Of String) = openDialog.FileName.Split("\"c).ToList
             Label62.Text = String.Concat("Currently Editing: ", chosenPreset.Last)
         End If
@@ -488,7 +500,6 @@ Public Class Form1
             Console.WriteLine("tweedledum")
         Else
             Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
-            Console.WriteLine(Sens)
             Label56.Text() = Sens
         End If
     End Sub
@@ -725,6 +736,79 @@ Public Class Form1
             VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
             NCterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 2)))
             TRterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 3)))
+        End If
+    End Sub
+#End Region
+#End Region
+#Region "SoundControls"
+#Region "TextChanged"
+    Private Sub masVolBox_TextChanged(sender As Object, e As EventArgs) Handles masVolBox.Validated
+        UpdateVal("Master=", masVolBox.Value)
+    End Sub
+    Private Sub gamVolBox_TextChanged(sender As Object, e As EventArgs) Handles gamVolBox.Validated
+        UpdateVal("Game=", gamVolBox.Value)
+    End Sub
+    Private Sub musVolBox_TextChanged(sender As Object, e As EventArgs) Handles musVolBox.Validated
+        UpdateVal("Music=", musVolBox.Value)
+    End Sub
+    Private Sub uiVolBox_TextChanged(sender As Object, e As EventArgs) Handles uiVolBox.Validated
+        UpdateVal("UI=", uiVolBox.Value)
+    End Sub
+    Private Sub diaVolBox_TextChanged(sender As Object, e As EventArgs) Handles diaVolBox.Validated
+        UpdateVal("Dialog=", diaVolBox.Value)
+    End Sub
+    Private Sub maxVoiceBox_TextChanged(sender As Object, e As EventArgs) Handles maxVoiceBox.Validated
+        UpdateVal("MaxVoices=", maxVoiceBox.Value)
+    End Sub
+#End Region
+#Region "ChecksChanged"
+    Private Sub hitIndCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hitIndCheck.Click
+        If hitIndCheck.Checked Then
+            UpdateVal("HitIndicator=", 1)
+        Else
+            UpdateVal("HitIndicator=", 0)
+        End If
+    End Sub
+    Private Sub lowAmmCheck_CheckedChanged(sender As Object, e As EventArgs) Handles lowAmmCheck.Click
+        If lowAmmCheck.Checked Then
+            UpdateVal("LowAmmoIndicator=", 1)
+        Else
+            UpdateVal("LowAmmoIndicator=", 0)
+        End If
+    End Sub
+    Private Sub vehChatterCheck_CheckedChanged(sender As Object, e As EventArgs) Handles vehChatterCheck.Click
+        If vehChatterCheck.Checked Then
+            UpdateVal("VehicleChatter=", 1)
+        Else
+            UpdateVal("VehicleChatter=", 0)
+        End If
+    End Sub
+    Private Sub idleMusicCheck_CheckedChanged(sender As Object, e As EventArgs) Handles idleMusicCheck.Click
+        If idleMusicCheck.Checked Then
+            UpdateVal("IdleMusic=", 1)
+        Else
+            UpdateVal("IdleMusic=", 0)
+        End If
+    End Sub
+    Private Sub hiReverbCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hiReverbCheck.Click
+        If hiReverbCheck.Checked Then
+            UpdateVal("UseHighQualityReverb=", 1)
+        Else
+            UpdateVal("UseHighQualityReverb=", 0)
+        End If
+    End Sub
+    Private Sub floatOutCheck_CheckedChanged(sender As Object, e As EventArgs) Handles floatOutCheck.Click
+        If floatOutCheck.Checked Then
+            UpdateVal("UseFloat32Output=", 1)
+        Else
+            UpdateVal("UseFloat32Output=", 0)
+        End If
+    End Sub
+    Private Sub exclusiveCheck_CheckedChanged(sender As Object, e As EventArgs) Handles exclusiveCheck.Click
+        If exclusiveCheck.Checked Then
+            UpdateVal("ExclusiveMode=", 1)
+        Else
+            UpdateVal("ExclusiveMode=", 0)
         End If
     End Sub
 #End Region
