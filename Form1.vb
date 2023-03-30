@@ -3,11 +3,12 @@ Imports Microsoft.Win32.TaskScheduler
 Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography.X509Certificates
 Imports System.Runtime.Remoting.Messaging
+Imports System.ComponentModel
 
 Public Class Form1
     Public Class Arrays
-        Public Shared Rendering As Array = {"[Rendering]", "GraphicsQuality=", "TextureQuality=", "ShadowQuality=", "LightingQuality=", "EffectsQuality=", "TerrainQuality=", "FloraQuality=", "ModelQuality=", "RenderDistance=", "Gamma=", "VerticalFOV=", "ParticleLOD=", "FogShadowsEnable", "MotionBlur=", "VSync=", "AO=", "MaximumFPS", "UseLod0a=", "BloomEnabed=", "InfantryRenderDistance=", "GroundVehicleRenderDistance=", "AirVehicleRenderDistance=", "UseGlobalRenderDistance=", "ParticleDistanceScale=", "Smoothing=", "UseAspectFOV=", "GpuPhysics=", "ShadowManagerQuality=", "ShadowMapCount=", "ShadowMapQuality=", "ShadowNearDistance=", "ShadowFarDistance=", "ShadowRSM=", "ColorBlindFilterType=", "ColorBlindFilterAmount=", "ColorBlindFilterStrength"}
-        Public Shared Display As Array = {"[Display]", "Mode=", "FullscreenMode=", "FullscreenRefresh=", "FullscreenWidth=", "FullscreenHeight=", "WindowedWidth=", "WindowedHeight=", "Maximized=", "RenderQuality="}
+        Public Shared Rendering As Array = {"[Rendering]", "GraphicsQuality=", "TextureQuality=", "ShadowQuality=", "LightingQuality=", "EffectsQuality=", "TerrainQuality=", "FloraQuality=", "ModelQuality=", "RenderDistance=", "Gamma=", "VerticalFOV=", "ParticleLOD=", "FogShadowsEnable", "MotionBlur=", "VSync=", "AO=", "MaximumFPS", "UseLod0a=", "BloomEnabed=", "InfantryRenderDistance=", "GroundVehicleRenderDistance=", "AirVehicleRenderDistance=", "UseGlobalRenderDistance=", "ParticleDistanceScale=", "Smoothing=", "UseAspectFOV=", "GpuPhysics=", "ShadowManagerQuality=", "ShadowMapCount=", "ShadowMapQuality=", "ShadowNearDistance=", "ShadowFarDistance=", "ShadowRSM=", "ColorBlindFilterType=", "ColorBlindFilterAmount=", "ColorBlindFilterStrength", "OverallQuality=", "FSRQuality=", "FSRSharpness=", "DLSSQuality=", "DLSSSharpness=", "UseFences=", "AAQuality=", "SmoothingMaxFramerate=", "SmoothingMinFramerate=", "UnderwaterGodRaysQuality=", "SSLRQuality=", "Tessellation=", "WaterQuality="}
+        Public Shared Display As Array = {"[Display]", "Mode=", "FullscreenMode=", "FullscreenRefresh=", "FullscreenWidth=", "FullscreenHeight=", "WindowedWidth=", "WindowedHeight=", "Maximized=", "RenderQuality=", "AllowToggleUI="}
         Public Shared Sound As Array = {"[Sound]", "Master=", "Music=", "Game=", "Dialog=", "UI=", "HitIndicator=", "LowAmmoIndicator=", "VehicleChatter=", "IdleMusic=", "MaxVoices=", "UseFloat32Output=", "ExclusiveMode=", "UseHighQualityReverb="}
         Public Shared Terrain As Array = {"[Terrain]", "RenderFlora="}
         Public Shared General As Array = {"[General]", "AutoDetectPerformanceSettings=", "MouseSensitivity=", "ScopedMouseSensitivity=", "ADSMouseSensitivity=", "VehicleMouseSensitivity=", "FlightMouseSensitivity=", "JoystickSensitivity=", "JoystickDeadzone=", "InvertVerticalLook=", "InvertVerticalFly=", "InvertTankSteering=", "MouseRawInput=", "MouseSmoothing=", "ToggleCrouch=", "ZoomToggle=", "SprintToggle=", "SprintLegacyToggleMode=", "DrawHud=", "ReduceInputLag=", "FixedMinimap=", "Profanity=", "GamepadSmoothing=", "GamepadInvertLook=", "GamepadInvertFlight=", "GamepadEasyFlight=", "DecloakOnFire=", "AbilityQueueSeconds=", "VehicleGunnerMouseSensitivity="}
@@ -16,6 +17,27 @@ Public Class Form1
         Public Shared AutoRefuse As Array = {"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="}
         Public Shared ChatChannels As Array = {"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="}
         Public Shared Voice As Array = {"[Voice]", "Enable=", "ReceiveVolume=", "OutfitVolume=", "SquadVolume=", "RaidVolume=", "ProximityVolume=", "MicrophoneVolume=", "Ducking=", "EchoEnabled=", "ProximityEnabled=", "FactionEnabled=", "GroupEnabled=", "GroupLeaderEnabled=", "RaidEnabled=", "GuildEnabled=", "RadioEnabled=", "CBEnabled=", "CustomEnabled=", "SubGroupEnabled=", "MuteInactiveChannels=", "PushToTalk="}
+        Public Shared Controls As Array = {"[Controls]", "CameraAutoAdjustment=", "ClickToMove=", "ClickToMoveRightButton=", "InfantryActionSetName=", "GroundVehicleSetName=", "AirVehicleActionSetName=", "Rumble=", "RailCamera="}
+        Public Shared Group As Array = {"[Group]", "AutoGroupOnLoginNew=", "AutoGroupAsLeaderNew=", "AutoGroupWithFriendsNew=", "AutoGroupWithGuildNew=", "AutoGroupOnLogin=", "AutoGroupAsLeader=", "AutoGroupwithFriends=", "AutoGroupWithGuild="}
+        Public Shared Guild As Array = {"[Guild]", "NotifyOnGuildPetitionRecieved="}
+        Public Shared Chat As Array = {"[Chat]", "HudChatInactiveOpacity=", "CanShowHudChat="}
+        Public Shared VoiceChat As Array = {"[VoiceChat]", "EchoEnabled=", "EchoVolume=", "ProximityEnabled=", "ProximityVolume=", "FactionEnabled=", "FactionVolume=", "GroupEnabled=", "GroupVolume=", "GroupLeaderEnabled=", "GroupLeaderVolume=", "RaidEnabled=", "RaidVolume=", "CBEnabled=", "CBVolume=", "CustomEnabled=", "CustomVolume=", "SubGroupEnabled=", "SubGroupVolume=", "InputDevice=", "OutputDevice="}
+        'Options below this comment are not currently, or may have never been used, but are listed here for
+        'Public Shared Social As Array = {"[Social]", "FriendNotifications="}
+        'Public Shared MinimapOptions As Array = {"[MinimapOptions]", "PathEnabled="}
+        'Public Shared Emote As Array = {"[Emote]", "Favorites="}
+        'Public Shared Logging As Array = {"[Logging]", "Directory=", "EnableDebugOutputString=", "LocalLogLevel=", "FileLogLevel=", "ServerLogLevel=", "OutputWindowLevel=", "LocalDirectory=", "FailureDirectory="}
+        'Public Shared UiDebug As Array = {"[UiDebug]", "WatchedColumns="}
+        'Public Shared CrashReporter As Array = {"[CrashReporter]", "MaxParameters=", "MaxUploaderPerDay=", "MaxUploadSec=", "MaxCrashAge=", "NoUploadFromInit=", "LocalFullDump=", "IncludeIndirectMemory=", "WaitForAttach=", "PipeCrashUploaderConsole="}
+        'Public Shared CrashUploader As Array = {"[CrashUploader]", "MaxPerDay=", "WaitForAttach=", "WriteResultsOnFailure="}
+        'Public Shared Promotion As Array = {"[Promotion]", "HasntOptedIn="}
+        'Public Shared Video As Array = {"[Video]", "VideoCapturePrefix="}
+        'Public Shared ImageCapture As Array = {"[ImageCapture]", "OutputFolder=", "OutputFilePrefix="}
+        'Public Shared VideoCapture As Array = {"[VideoCapture]", "Resolution=", "Quality=", "OutputFile=", "WorkingDir="}
+        'Public Shared VideoStreamer As Array = {"[VideoStreamer]", "Resolution=", "Fps=", "Kbps=", "MicRecordVolume=", "SpeakerRecordVolume=", "Username="}
+        'Public Shared Umbra As Array = {"[Umbra]", "Cull=", "TomeCollection="}
+        'Public Shared Graphics As Array = {"[Graphics]", "WindowWidth=", "WindowHeight="}
+
 
         Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, iniEdit, Display}
     End Class
@@ -259,7 +281,7 @@ Public Class Form1
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
         File.WriteAllLines(curiniPath, curini)
-        Console.WriteLine("Saved INI")
+        Console.WriteLine("Saved INI to ", curiniPath)
     End Sub
     Private Sub saveToButton_Click(sender As Object, e As EventArgs) Handles saveToButton.Click
         'Save current options to user-specified file
@@ -271,6 +293,7 @@ Public Class Form1
         saveDialog.Filter = "All files (*.*)|*.*"
         If saveDialog.ShowDialog() = DialogResult.OK Then
             File.WriteAllLines(saveDialog.FileName, curini)
+            Console.WriteLine("Saved INI to ", saveDialog.FileName)
         End If
     End Sub
     Private Sub openButton_Click(sender As Object, e As EventArgs) Handles openButton.Click
