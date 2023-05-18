@@ -54,9 +54,9 @@ Public Class Form1
         'Housekeeping
         readAllOptions()
         sensTypeDrop.SelectedIndex = 0
-        Label62.Text = String.Concat("Currently Editing: ", curiniPath)
+        curEditLabel.Text = String.Concat("Currently Editing: ", curiniPath)
     End Sub
-    Friend Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
+    Public Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
         'Reads the ini line by line for the specified option
         'If option isn't found, run through option arrays for option and insert a line for the correct category
         Dim found As Boolean = False
@@ -93,7 +93,7 @@ Public Class Form1
             End If
         Next
     End Function
-    Friend Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
+    Public Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
         'Specialized update function for color options with multiple values separated by commas, could be used for other options with multiple values
         Dim found As Boolean = False
         For Each line In curini
@@ -125,8 +125,12 @@ Public Class Form1
         'Specialized getState for options with multiple values separated by commas
         For Each line In curini
             If line.StartsWith(optionName) Then
+                Console.WriteLine(line)
                 Dim optionVal As Array = line.Split("="c, ","c)
-                Console.WriteLine(String.Concat("Got ", optionName, "with ", optionVal(faction)))
+                For Each item In optionVal
+                    Console.WriteLine(item)
+                Next
+                Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(faction)))
                 Return optionVal(faction)
             End If
         Next
@@ -275,8 +279,9 @@ Public Class Form1
         hiReverbCheck.Checked = getState("UseHighQualityReverb=")
     End Function
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
-        Process.Start("LaunchPad.exe")
-        Console.WriteLine("Starting Launcher")
+        'Process.Start("LaunchPad.exe")
+        'Console.WriteLine("Starting Launcher")
+        Console.WriteLine(getState("TintModePlayer="))
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
@@ -311,7 +316,7 @@ Public Class Form1
             sensTypeDrop.SelectedIndex = 0
             'This gets the full file path and grabs the file name from the end to update the currently editing label
             curiniPath = openDialog.FileName
-            Label62.Text = String.Concat("Currently Editing: ", curiniPath.Split("\"c).ToList.Last)
+            curEditLabel.Text = String.Concat("Currently Editing: ", curiniPath.Split("\"c).ToList.Last)
         End If
     End Sub
 #Region "GraphicsControls"
@@ -733,13 +738,16 @@ Public Class Form1
     End Sub
 #End Region
 #Region "IndexChanged"
-    Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.SelectedIndexChanged
-        If playerColorDrop.SelectedIndex < 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
-            UpdateVal("TintModePlayer=", playerColorDrop.SelectedItem.ToString.First)
-            hideControl(playerColorPanel)
-        ElseIf playerColorDrop.SelectedIndex = 2 And IsNothing(playerColorDrop.SelectedItem) = False Then
-            showControl(playerColorPanel)
-            If getState("TintModePlayer=") = "0" Or getState("TintModePlayer=") = "1" Then
+    Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.DropDownClosed
+        If playerColorDrop.SelectedIndex = 0 Then
+            UpdateVal("TintModePlayer=", 0)
+            playerColorPanelButtons.Visible = False
+        ElseIf playerColorDrop.SelectedIndex = 1 Then
+            UpdateVal("TintModePlayer=", 1)
+        ElseIf playerColorDrop.SelectedIndex = 2 Then
+            playerColorPanelButtons.Visible = True
+            If getState("TintModePlayer=").ToString.Length < 3 Then
+                Console.WriteLine("fuc")
                 UpdateVal("TintModePlayer=", "4460130,19328,10357519")
             End If
             VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
@@ -750,23 +758,29 @@ Public Class Form1
     Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
         If facColorDrop.SelectedIndex < 2 And IsNothing(facColorDrop.SelectedItem) = False Then
             UpdateVal("TintModeFacility=", facColorDrop.SelectedItem.ToString.First)
-            hideControl(facColorPanel)
+            facColorPanelButtons.Visible = False
         ElseIf facColorDrop.SelectedIndex = 2 And IsNothing(facColorDrop.SelectedItem) = False Then
-            showControl(facColorPanel)
+            facColorPanelButtons.Visible = True
+            Console.WriteLine("faccolorpanelbuttons visible")
             If getState("TintModeFacility=") = "0" Or getState("TintModeFacility=") = "1" Then
+                Console.WriteLine("beep")
                 UpdateVal("TintModeFacility=", "4460130,19328,10357519")
+                Console.WriteLine("bop)")
             End If
+            Console.WriteLine("top")
             VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
+            Console.WriteLine("bot")
             NCfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
+            Console.WriteLine("stop")
             TRfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
         End If
     End Sub
     Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
         If terrColorDrop.SelectedIndex < 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
             UpdateVal("TintModeMap=", terrColorDrop.SelectedItem.ToString.First)
-            hideControl(terrColorPanel)
+            terrColorPanelButtons.Visible = False
         ElseIf terrColorDrop.SelectedIndex = 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
-            showControl(terrColorPanel)
+            terrColorPanelButtons.Visible = True
             If getState("TintModeMap=") = "0" Or getState("TintModeMap=") = "1" Then
                 UpdateVal("TintModeMap=", "4460130,19328,10357519")
             End If
@@ -848,6 +862,7 @@ Public Class Form1
             UpdateVal("ExclusiveMode=", 0)
         End If
     End Sub
+
 #End Region
 #End Region
 End Class
