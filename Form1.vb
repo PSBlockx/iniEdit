@@ -22,7 +22,7 @@ Public Class Form1
         Public Shared Guild As Array = {"[Guild]", "NotifyOnGuildPetitionRecieved="}
         Public Shared Chat As Array = {"[Chat]", "HudChatInactiveOpacity=", "CanShowHudChat="}
         Public Shared VoiceChat As Array = {"[VoiceChat]", "EchoEnabled=", "EchoVolume=", "ProximityEnabled=", "ProximityVolume=", "FactionEnabled=", "FactionVolume=", "GroupEnabled=", "GroupVolume=", "GroupLeaderEnabled=", "GroupLeaderVolume=", "RaidEnabled=", "RaidVolume=", "CBEnabled=", "CBVolume=", "CustomEnabled=", "CustomVolume=", "SubGroupEnabled=", "SubGroupVolume=", "InputDevice=", "OutputDevice="}
-        'Options below this comment are not currently, or may have never been used, but are listed here for
+        'Options below this comment are not currently, or may have never been used, but are listed here anyway
         'Public Shared Social As Array = {"[Social]", "FriendNotifications="}
         'Public Shared MinimapOptions As Array = {"[MinimapOptions]", "PathEnabled="}
         'Public Shared Emote As Array = {"[Emote]", "Favorites="}
@@ -83,12 +83,59 @@ Public Class Form1
             Next
         End If
     End Sub
+    Public Sub Print(ByVal s As String)
+        Console.WriteLine(s)
+    End Sub
+    Public Sub UpdateValSpecific(ByVal optionName As String, ByVal newVal As String, ByVal optionGroup As String)
+        'Voice options are stupid
+        Dim found As Boolean = False
+        Dim optionIndexes = New ArrayList()
+        For Each line In curini
+            If line.StartsWith("[") Then
+                optionIndexes.Add(line)
+                optionIndexes.Add(curini.IndexOf(line))
+            End If
+        Next
+        Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
+        Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
+        For ctr As Integer = optionGroupIndex To optionGroupNextIndex
+            If curini(ctr).StartsWith(optionName) Then
+                found = True
+                curini(ctr) = String.Concat(optionName, newVal)
+                Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
+            End If
+        Next
+        If Not found Then
+            curini.Insert(curini(optionGroupIndex + 1), String.Concat(optionName, newVal))
+            Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
+        End If
+    End Sub
     Function getState(ByVal optionName As String)
         'Find the line which has the desired option, and return the value after the = sign
         For Each line In curini
             If line.StartsWith(optionName) Then
                 Dim optionVal As Array = line.Split("="c)
                 Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1)))
+                Return optionVal(1)
+            End If
+        Next
+
+    End Function
+    Function getStateSpecific(ByVal optionName As String, ByVal optionGroup As String)
+        'Voice options are stupid
+        Dim optionIndexes = New ArrayList()
+        For Each line In curini
+            If line.StartsWith("[") Then
+                optionIndexes.Add(line)
+                optionIndexes.Add(curini.IndexOf(line))
+            End If
+        Next
+        Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
+        Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
+        For ctr As Integer = optionGroupIndex To optionGroupNextIndex
+            If curini(ctr).StartsWith(optionName) Then
+                Dim optionVal As Array = curini(ctr).Split("="c)
+                Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1), " under ", optionGroup))
                 Return optionVal(1)
             End If
         Next
@@ -251,6 +298,7 @@ Public Class Form1
             playerColorDrop.SelectedIndex = 1
         Else
             playerColorDrop.SelectedIndex = 2
+            playerColorPanelButtons.Visible = True
         End If
         If getState("TintModeFacility=") = "0" Then
             facColorDrop.SelectedIndex = 0
@@ -258,6 +306,7 @@ Public Class Form1
             facColorDrop.SelectedIndex = 1
         Else
             facColorDrop.SelectedIndex = 2
+            facColorPanelButtons.Visible = True
         End If
         If getState("TintModeMap=") = "0" Then
             terrColorDrop.SelectedIndex = 0
@@ -265,23 +314,20 @@ Public Class Form1
             terrColorDrop.SelectedIndex = 1
         Else
             terrColorDrop.SelectedIndex = 2
+            terrColorPanelButtons.Visible = True
         End If
         masVolBox.Value = getState("Master=")
         musVolBox.Value = getState("Music=")
         gamVolBox.Value = getState("Game=")
         diaVolBox.Value = getState("Dialog=")
-        uiVolBox.Value = getState("UI=")
-        floatOutCheck.Checked = getState("UseFloat32Output=")
-        exclusiveCheck.Checked = getState("ExclusiveMode=")
         lowAmmCheck.Checked = getState("LowAmmoIndicator=")
         vehChatterCheck.Checked = getState("VehicleChatter=")
         idleMusicCheck.Checked = getState("IdleMusic=")
-        hiReverbCheck.Checked = getState("UseHighQualityReverb=")
     End Function
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
         'Process.Start("LaunchPad.exe")
         'Console.WriteLine("Starting Launcher")
-        Console.WriteLine(getState("TintModePlayer="))
+        UpdateValSpecific("ProximityVolume=", 0.7, "[VoiceChat]")
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
@@ -481,15 +527,15 @@ Public Class Form1
     Private Sub sensTypeDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sensTypeDrop.SelectedIndexChanged
         'Switch what's visible on sens page
         If sensTypeDrop.SelectedIndex = 0 Then
-            showControl(sensPanel1)
-            showControl(sensPanel2)
-            hideControl(sensPanel3)
-            hideControl(sensPanel4)
+            sensPanel1.Visible = True
+            sensPanel2.Visible = True
+            sensPanel3.Visible = False
+            sensPanel4.Visible = False
         Else
-            showControl(sensPanel3)
-            showControl(sensPanel4)
-            hideControl(sensPanel1)
-            hideControl(sensPanel2)
+            sensPanel3.Visible = True
+            sensPanel4.Visible = True
+            sensPanel1.Visible = False
+            sensPanel2.Visible = False
         End If
     End Sub
     Private Sub hip360Box_ValueChanged(sender As Object, e As EventArgs) Handles hip360Box.ValueChanged
@@ -738,16 +784,16 @@ Public Class Form1
     End Sub
 #End Region
 #Region "IndexChanged"
-    Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.DropDownClosed
+    Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.SelectedIndexChanged
         If playerColorDrop.SelectedIndex = 0 Then
             UpdateVal("TintModePlayer=", 0)
             playerColorPanelButtons.Visible = False
         ElseIf playerColorDrop.SelectedIndex = 1 Then
             UpdateVal("TintModePlayer=", 1)
+            playerColorPanelButtons.Visible = False
         ElseIf playerColorDrop.SelectedIndex = 2 Then
             playerColorPanelButtons.Visible = True
             If getState("TintModePlayer=").ToString.Length < 3 Then
-                Console.WriteLine("fuc")
                 UpdateVal("TintModePlayer=", "4460130,19328,10357519")
             End If
             VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
@@ -756,32 +802,32 @@ Public Class Form1
         End If
     End Sub
     Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
-        If facColorDrop.SelectedIndex < 2 And IsNothing(facColorDrop.SelectedItem) = False Then
-            UpdateVal("TintModeFacility=", facColorDrop.SelectedItem.ToString.First)
+        If facColorDrop.SelectedIndex = 0 Then
+            UpdateVal("TintModeFacility=", 0)
             facColorPanelButtons.Visible = False
-        ElseIf facColorDrop.SelectedIndex = 2 And IsNothing(facColorDrop.SelectedItem) = False Then
+        ElseIf facColorDrop.SelectedIndex = 1 Then
+            UpdateVal("TintModeFacility=", 1)
+            facColorPanelButtons.Visible = False
+        ElseIf facColorDrop.SelectedIndex = 2 Then
             facColorPanelButtons.Visible = True
-            Console.WriteLine("faccolorpanelbuttons visible")
-            If getState("TintModeFacility=") = "0" Or getState("TintModeFacility=") = "1" Then
-                Console.WriteLine("beep")
+            If getState("TintModeFacility=").ToString.Length < 3 Then
                 UpdateVal("TintModeFacility=", "4460130,19328,10357519")
-                Console.WriteLine("bop)")
             End If
-            Console.WriteLine("top")
             VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
-            Console.WriteLine("bot")
             NCfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
-            Console.WriteLine("stop")
             TRfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
         End If
     End Sub
     Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
-        If terrColorDrop.SelectedIndex < 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
-            UpdateVal("TintModeMap=", terrColorDrop.SelectedItem.ToString.First)
+        If terrColorDrop.SelectedIndex = 0 Then
+            UpdateVal("TintModeMap=", 0)
             terrColorPanelButtons.Visible = False
-        ElseIf terrColorDrop.SelectedIndex = 2 And IsNothing(terrColorDrop.SelectedItem) = False Then
+        ElseIf terrColorDrop.SelectedIndex = 1 Then
+            UpdateVal("TintModeMap=", 1)
+            terrColorPanelButtons.Visible = False
+        ElseIf terrColorDrop.SelectedIndex = 2 Then
             terrColorPanelButtons.Visible = True
-            If getState("TintModeMap=") = "0" Or getState("TintModeMap=") = "1" Then
+            If getState("TintModeMap=").ToString.Length < 3 Then
                 UpdateVal("TintModeMap=", "4460130,19328,10357519")
             End If
             VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
@@ -801,9 +847,6 @@ Public Class Form1
     End Sub
     Private Sub musVolBox_TextChanged(sender As Object, e As EventArgs) Handles musVolBox.Validated
         UpdateVal("Music=", musVolBox.Value)
-    End Sub
-    Private Sub uiVolBox_TextChanged(sender As Object, e As EventArgs) Handles uiVolBox.Validated
-        UpdateVal("UI=", uiVolBox.Value)
     End Sub
     Private Sub diaVolBox_TextChanged(sender As Object, e As EventArgs) Handles diaVolBox.Validated
         UpdateVal("Dialog=", diaVolBox.Value)
@@ -841,25 +884,99 @@ Public Class Form1
             UpdateVal("IdleMusic=", 0)
         End If
     End Sub
-    Private Sub hiReverbCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hiReverbCheck.Click
-        If hiReverbCheck.Checked Then
-            UpdateVal("UseHighQualityReverb=", 1)
+
+#End Region
+#End Region
+#Region "ChatControls"
+#Region "TextChanged"
+    Private Sub genVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles genVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub proxVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles proxVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub squadVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles squadVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub raidVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles raidVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub outfitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles outfitVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub leaderVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles leaderVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub transmitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles transmitVoiceVolBox.ValueChanged
+
+    End Sub
+    Private Sub duckVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles duckVoiceVolBox.ValueChanged
+
+    End Sub
+#End Region
+#Region "ChecksChanged"
+    Private Sub yellTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles yellTextCheck.Click
+        If yellTextCheck.Checked Then
+            UpdateVal("Yell=", 0)
         Else
-            UpdateVal("UseHighQualityReverb=", 0)
+            UpdateVal("Yell=", 1)
         End If
     End Sub
-    Private Sub floatOutCheck_CheckedChanged(sender As Object, e As EventArgs) Handles floatOutCheck.Click
-        If floatOutCheck.Checked Then
-            UpdateVal("UseFloat32Output=", 1)
+
+    Private Sub fireteamTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fireteamTextCheck.Click
+        If fireteamTextCheck.Checked Then
+            UpdateVal("Fireteam=", 0)
         Else
-            UpdateVal("UseFloat32Output=", 0)
+            UpdateVal("Fireteam=", 1)
         End If
     End Sub
-    Private Sub exclusiveCheck_CheckedChanged(sender As Object, e As EventArgs) Handles exclusiveCheck.Click
-        If exclusiveCheck.Checked Then
-            UpdateVal("ExclusiveMode=", 1)
+    Private Sub squadTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles squadTextCheck.Click
+        If squadTextCheck.Checked Then
+            UpdateVal("Squad=", 0)
         Else
-            UpdateVal("ExclusiveMode=", 0)
+            UpdateVal("Squad=", 1)
+        End If
+    End Sub
+    Private Sub raidTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles raidTextCheck.Click
+        If raidTextCheck.Checked Then
+            UpdateVal("Platoon=", 0)
+        Else
+            UpdateVal("Platoon=", 1)
+        End If
+    End Sub
+    Private Sub outfitTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles outfitTextCheck.Click
+        If outfitTextCheck.Checked Then
+            UpdateVal("Outfit=", 0)
+        Else
+            UpdateVal("Outfit=", 1)
+        End If
+    End Sub
+    Private Sub leaderTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles leaderTextCheck.Click
+        If leaderTextCheck.Checked Then
+            UpdateVal("Leader=", 0)
+        Else
+            UpdateVal("Leader=", 1)
+        End If
+    End Sub
+    Private Sub proxTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles proxTextCheck.Click
+        If proxTextCheck.Checked Then
+            UpdateVal("Proximity=", 0)
+        Else
+            UpdateVal("Proximity=", 1)
+        End If
+    End Sub
+    Private Sub regionTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles regionTextCheck.Click
+        If regionTextCheck.Checked Then
+            UpdateVal("Region=", 0)
+        Else
+            UpdateVal("Region=", 1)
+        End If
+    End Sub
+    Private Sub mentorTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles mentorTextCheck.Click
+        If mentorTextCheck.Checked Then
+            UpdateVal("Mentor=", 0)
+        Else
+            UpdateVal("Mentor=", 1)
         End If
     End Sub
 
