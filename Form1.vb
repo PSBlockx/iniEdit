@@ -4,6 +4,7 @@ Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography.X509Certificates
 Imports System.Runtime.Remoting.Messaging
 Imports System.ComponentModel
+Imports System.Windows.Forms.VisualStyles
 
 Public Class Form1
     Public Class Arrays
@@ -39,7 +40,7 @@ Public Class Form1
         'Public Shared Graphics As Array = {"[Graphics]", "WindowWidth=", "WindowHeight="}
 
 
-        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, iniEdit, Display}
+        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, ChatChannels, Voice, VoiceChat, iniEdit, Display}
     End Class
     Public Shared curini As List(Of String) = Nothing
     Public Shared curiniPath As String = "Useroptions.ini"
@@ -60,10 +61,10 @@ Public Class Form1
         'Reads the ini line by line for the specified option
         'If option isn't found, run through option arrays for option and insert a line for the correct category
         Dim found As Boolean = False
-        For Each line In curini
-            If line.StartsWith(optionName) Then
+        For index As Integer = 0 To curini.Count - 1
+            If curini(index).ToLower.StartsWith(optionName.ToLower) Then
                 found = True
-                line = String.Concat(optionName, newVal)
+                curini(index) = String.Concat(optionName, newVal)
                 Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
             End If
         Next
@@ -83,9 +84,7 @@ Public Class Form1
             Next
         End If
     End Sub
-    Public Sub Print(ByVal s As String)
-        Console.WriteLine(s)
-    End Sub
+#Region "UpdatesAndGets"
     Public Sub UpdateValSpecific(ByVal optionName As String, ByVal newVal As String, ByVal optionGroup As String)
         'Voice options are stupid
         Dim found As Boolean = False
@@ -99,7 +98,7 @@ Public Class Form1
         Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
         Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
         For ctr As Integer = optionGroupIndex To optionGroupNextIndex
-            If curini(ctr).StartsWith(optionName) Then
+            If curini(ctr).ToLower.StartsWith(optionName.ToLower) Then
                 found = True
                 curini(ctr) = String.Concat(optionName, newVal)
                 Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
@@ -113,13 +112,12 @@ Public Class Form1
     Function getState(ByVal optionName As String)
         'Find the line which has the desired option, and return the value after the = sign
         For Each line In curini
-            If line.StartsWith(optionName) Then
+            If line.ToLower.StartsWith(optionName.ToLower) Then
                 Dim optionVal As Array = line.Split("="c)
                 Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1)))
                 Return optionVal(1)
             End If
         Next
-
     End Function
     Function getStateSpecific(ByVal optionName As String, ByVal optionGroup As String)
         'Voice options are stupid
@@ -133,7 +131,7 @@ Public Class Form1
         Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
         Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
         For ctr As Integer = optionGroupIndex To optionGroupNextIndex
-            If curini(ctr).StartsWith(optionName) Then
+            If curini(ctr).ToLower.StartsWith(optionName.ToLower) Then
                 Dim optionVal As Array = curini(ctr).Split("="c)
                 Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1), " under ", optionGroup))
                 Return optionVal(1)
@@ -143,12 +141,12 @@ Public Class Form1
     Public Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
         'Specialized update function for color options with multiple values separated by commas, could be used for other options with multiple values
         Dim found As Boolean = False
-        For Each line In curini
-            If line.StartsWith(optionName) Then
+        For index As Integer = 0 To curini.Count - 1
+            If curini(index).ToLower.StartsWith(optionName.ToLower) Then
                 found = True
-                Dim lineList As List(Of String) = line.Split("="c, ","c).ToList
+                Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
                 lineList(faction) = newVal
-                line = String.Concat(optionName, lineList(1), ",", lineList(2), ",", lineList(3))
+                curini(index) = String.Concat(optionName, lineList(1), ",", lineList(2), ",", lineList(3))
             End If
         Next
         Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
@@ -171,17 +169,14 @@ Public Class Form1
     Function ColorGetState(ByVal optionName As String, ByVal faction As Integer)
         'Specialized getState for options with multiple values separated by commas
         For Each line In curini
-            If line.StartsWith(optionName) Then
-                Console.WriteLine(line)
+            If line.ToLower.StartsWith(optionName.ToLower) Then
                 Dim optionVal As Array = line.Split("="c, ","c)
-                For Each item In optionVal
-                    Console.WriteLine(item)
-                Next
                 Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(faction)))
                 Return optionVal(faction)
             End If
         Next
     End Function
+#End Region
 #Region "MiscFuncs"
     Function colorGetter()
         'Opens Windows color picker and returns user-chosen color
@@ -242,6 +237,7 @@ Public Class Form1
 #End Region
     Function readAllOptions()
         'Big list of checking where the options are at cus i dont code good
+#Region "GraphicsGets"
         vsyncCheck.Checked = getState("VSync=")
         fogShadCheck.Checked = getState("FogShadowsEnable=")
         ambOccCheck.Checked = getState("AO=")
@@ -268,6 +264,21 @@ Public Class Form1
         floraQualDrop.SelectedIndex = Integer.Parse(getState("FloraQuality=")) - 1
         modQualDrop.SelectedIndex = Integer.Parse(getState("ModelQuality=")) - 1
         partQualDrop.SelectedIndex = Integer.Parse(getState("ParticleLOD="))
+        If getState("DLSSQuality=") = "-1" And getState("FSRQuality=") = "-1" Then
+            upscaleDrop.SelectedIndex = 0
+        ElseIf getState("FSRQuality=") = "-1" Then
+            upscaleDrop.SelectedIndex = 1
+            DLSSQualDrop.SelectedIndex = getState("DLSSQuality=")
+            DLSSSharpBox.Value = getState("DLSSSharpness=")
+        ElseIf getState("DLSSQuality=") = "-1" Then
+            upscaleDrop.SelectedIndex = 2
+            FSRQualDrop.SelectedIndex = getState("FSRQuality=")
+            FSRSharpBox.Value = getState("FSRSharpness=")
+        Else
+            upscaleDrop.SelectedIndex = 0
+        End If
+#End Region
+#Region "SensGets"
         hipSensBox.Value = getState("MouseSensitivity=")
         adsSensBox.Value = getState("ADSMouseSensitivity=")
         scopSensBox.Value = getState("ScopedMouseSensitivity=")
@@ -275,8 +286,8 @@ Public Class Form1
         gunSensBox.Value = getState("VehicleGunnerMouseSensitivity=")
         airSensBox.Value = getState("FlightMouseSensitivity=")
         sensRawCheck.Checked = getState("MouseRawInput=")
-        fontAutoCheck.Checked = getState("FontAutoReplace=")
-        selectedFontPath.Text = getState("FontFilePath=")
+#End Region
+#Region "InterfaceGets"
         hudHPCheck.Checked = getState("HudShowHealth=")
         hudIndCheck.Checked = getState("HudShowIndicatorNames=")
         hudAlertCheck.Checked = getState("HudShowAlertTimer")
@@ -316,18 +327,37 @@ Public Class Form1
             terrColorDrop.SelectedIndex = 2
             terrColorPanelButtons.Visible = True
         End If
+#End Region
+#Region "SoundGets"
         masVolBox.Value = getState("Master=")
         musVolBox.Value = getState("Music=")
         gamVolBox.Value = getState("Game=")
         diaVolBox.Value = getState("Dialog=")
+        maxVoiceBox.Value = getState("MaxVoices=")
+        hitIndCheck.Checked = getState("HitIndicator=")
         lowAmmCheck.Checked = getState("LowAmmoIndicator=")
         vehChatterCheck.Checked = getState("VehicleChatter=")
         idleMusicCheck.Checked = getState("IdleMusic=")
+#End Region
+#Region "ChatGets"
+        yellTextCheck.Checked = getState("Yell=")
+        squadTextCheck.Checked = getState("Squad=")
+        raidTextCheck.Checked = getState("Platoon=")
+        fireteamTextCheck.Checked = getState("Fireteam=")
+        leaderTextCheck.Checked = getState("Leader=")
+        proxTextCheck.Checked = getState("Proximity=")
+        outfitTextCheck.Checked = getState("Outfit=")
+        regionTextCheck.Checked = getState("Region=")
+        mentorTextCheck.Checked = getState("Mentor=")
+#End Region
+        fontAutoCheck.Checked = getState("FontAutoReplace=")
+        selectedFontPath.Text = getState("FontFilePath=")
+
     End Function
+#Region "MenuStripControls"
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
-        'Process.Start("LaunchPad.exe")
-        'Console.WriteLine("Starting Launcher")
-        UpdateValSpecific("ProximityVolume=", 0.7, "[VoiceChat]")
+        Process.Start("LaunchPad.exe")
+        Console.WriteLine("Starting Launcher")
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
@@ -365,10 +395,11 @@ Public Class Form1
             curEditLabel.Text = String.Concat("Currently Editing: ", curiniPath.Split("\"c).ToList.Last)
         End If
     End Sub
+#End Region
 #Region "GraphicsControls"
 #Region "ChecksChanged"
     Private Sub vsyncCheck_CheckedChanged(sender As Object, e As EventArgs) Handles vsyncCheck.Click
-        If (vsyncCheck.Checked) Then
+        If vsyncCheck.Checked Then
             UpdateVal("VSync=", 1)
         Else
             UpdateVal("VSync=", 0)
@@ -459,6 +490,12 @@ Public Class Form1
     Private Sub partDistScaleBox_TextChanged(sender As Object, e As EventArgs) Handles partDistScaleBox.Validated
         UpdateVal("ParticleDistanceScale=", partDistScaleBox.Value)
     End Sub
+    Private Sub DLSSSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles DLSSSharpBox.Validated
+        UpdateVal("DLSSSharpness=", DLSSSharpBox.Value)
+    End Sub
+    Private Sub FSRSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles FSRSharpBox.Validated
+        UpdateVal("FSRSharpness=", FSRSharpBox.Value)
+    End Sub
 #End Region
 #Region "IndexChanged"
     Private Sub graphQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles graphQualDrop.Validated
@@ -494,26 +531,71 @@ Public Class Form1
     Private Sub partQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles partQualDrop.Validated
         UpdateVal("ParticleLOD=", partQualDrop.SelectedItem.ToString.First)
     End Sub
+    Private Sub AADrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AADrop.Validated
+        UpdateVal("AAQuality=", AADrop.SelectedItem.ToString.First)
+    End Sub
+    Private Sub waterReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles waterReflectDrop.Validated
+        UpdateVal("WaterQuality=", waterReflectDrop.SelectedItem.ToString.First)
+    End Sub
+    Private Sub objReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles objReflectDrop.Validated
+        UpdateVal("SSLRQuality=", objReflectDrop.SelectedItem.ToString.First)
+    End Sub
+    Private Sub upscaleDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles upscaleDrop.SelectedValueChanged
+        If upscaleDrop.SelectedIndex = 0 Then
+            UpdateVal("DLSSQuality=", -1)
+            UpdateVal("FSRQuality=", -1)
+            Label66.Visible = False
+            Label76.Visible = False
+            DLSSQualDrop.Visible = False
+            FSRQualDrop.Visible = False
+            DLSSSharpBox.Visible = False
+            FSRSharpBox.Visible = False
+        ElseIf upscaleDrop.SelectedIndex = 1 Then
+            UpdateVal("DLSSQuality=", 0)
+            UpdateVal("FSRQuality=", -1)
+            Label66.Visible = True
+            Label76.Visible = True
+            DLSSQualDrop.Visible = True
+            FSRQualDrop.Visible = False
+            DLSSSharpBox.Visible = True
+            FSRSharpBox.Visible = False
+        ElseIf upscaleDrop.SelectedIndex = 2 Then
+            UpdateVal("DLSSQuality=", -1)
+            UpdateVal("FSRQuality=", 0)
+            Label66.Visible = True
+            Label76.Visible = True
+            DLSSQualDrop.Visible = False
+            FSRQualDrop.Visible = True
+            DLSSSharpBox.Visible = False
+            FSRSharpBox.Visible = True
+        End If
+    End Sub
+    Private Sub DLSSQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DLSSQualDrop.Validated
+        UpdateVal("DLSSQuality=", DLSSQualDrop.SelectedItem.ToString.First)
+    End Sub
+    Private Sub FSRQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FSRQualDrop.Validated
+        UpdateVal("FSRQuality=", FSRQualDrop.SelectedItem.ToString.First)
+    End Sub
 #End Region
 #End Region
 #Region "SensStuff"
     Private Sub hipSensBox_TextChanged(sender As Object, e As EventArgs) Handles hipSensBox.Validated
         UpdateVal("MouseSensitivity=", hipSensBox.Value)
-        Label39.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
+        LabelHipcm360.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
     End Sub
     Private Sub adsSensBox_TextChanged(sender As Object, e As EventArgs) Handles adsSensBox.Validated
         UpdateVal("ADSMouseSensitivity=", adsSensBox.Value)
-        Label41.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
-        Label43.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
+        Label1cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
+        Label2cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
     End Sub
     Private Sub scopSensBox_TextChanged(sender As Object, e As EventArgs) Handles scopSensBox.Validated
         UpdateVal("ScopedMouseSensitivity=", scopSensBox.Value)
-        Label37.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
-        Label45.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
-        Label44.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
-        Label42.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
-        Label40.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
-        Label38.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
+        Label3cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
+        Label4cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
+        Label6cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
+        Label8cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
+        Label10cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
+        Label12cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
     End Sub
     Private Sub vehSensBox_TextChanged(sender As Object, e As EventArgs) Handles vehSensBox.Validated
         UpdateVal("VehicleMouseSensitivity=", vehSensBox.Value)
@@ -524,7 +606,7 @@ Public Class Form1
     Private Sub airSensBox_TextChanged(sender As Object, e As EventArgs) Handles airSensBox.Validated
         UpdateVal("FlightMouseSensitivity=", airSensBox.Value)
     End Sub
-    Private Sub sensTypeDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sensTypeDrop.SelectedIndexChanged
+    Private Sub sensTypeDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sensTypeDrop.SelectedValueChanged
         'Switch what's visible on sens page
         If sensTypeDrop.SelectedIndex = 0 Then
             sensPanel1.Visible = True
@@ -539,7 +621,7 @@ Public Class Form1
         End If
     End Sub
     Private Sub hip360Box_ValueChanged(sender As Object, e As EventArgs) Handles hip360Box.ValueChanged
-        Label54.Text() = hipSensCalc(DPIBox.Value, hip360Box.Value)
+        LabelHipSens.Text() = hipSensCalc(DPIBox.Value, hip360Box.Value)
     End Sub
     Private Sub ads360Box_ValueChanged(sender As Object, e As EventArgs) Handles ads360Box.ValueChanged, adsZoomBox.SelectedValueChanged
         If IsNothing(adsZoomBox.SelectedItem) Then
@@ -547,11 +629,11 @@ Public Class Form1
         ElseIf adsZoomBox.SelectedIndex = 0 Then
             Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
             UpdateVal("ADSMouseSensitivity=", Sens)
-            Label55.Text() = Sens
+            LabelAdsSens.Text() = Sens
         Else
             Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
             UpdateVal("ADSMouseSensitivity=", Sens)
-            Label55.Text() = Sens
+            LabelAdsSens.Text() = Sens
         End If
     End Sub
     Private Sub scop360Box_ValueChanged(sender As Object, e As EventArgs) Handles scop360Box.ValueChanged, scopZoomBox.SelectedValueChanged
@@ -559,36 +641,32 @@ Public Class Form1
             Exit Sub
         Else
             Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
-            Console.WriteLine(Sens)
             UpdateVal("ScopedMouseSensitivity=", Sens)
-            Label56.Text() = Sens
+            LabelScopSens.Text() = Sens
         End If
     End Sub
-    Private Sub recalcSensButton_Click(sender As Object, e As EventArgs) Handles recalcSensButton.Click
-        Label39.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
-        Label41.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
-        Label43.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
-        Label37.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
-        Label45.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
-        Label44.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
-        Label42.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
-        Label40.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
-        Label38.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
-        Label54.Text() = hipSensCalc(DPIBox.Value, hip360Box.Value)
+    Private Sub DPIBox_ValueChanged(sender As Object, e As EventArgs) Handles DPIBox.ValueChanged
+        LabelHipcm360.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
+        Label1cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
+        Label2cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
+        Label3cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
+        Label4cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
+        Label6cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
+        Label8cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
+        Label10cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
+        Label12cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
+        LabelHipSens.Text() = hipSensCalc(DPIBox.Value, hip360Box.Value)
         If IsNothing(adsZoomBox.SelectedItem) Then
-            Console.WriteLine("tweedledee")
         ElseIf adsZoomBox.SelectedIndex = 0 Then
             Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
-            Label55.Text() = Sens
+            LabelAdsSens.Text() = Sens
         Else
             Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
-            Label55.Text() = Sens
+            LabelAdsSens.Text() = Sens
         End If
-        If IsNothing(scopZoomBox.SelectedItem) Then
-            Console.WriteLine("tweedledum")
-        Else
+        If Not IsNothing(scopZoomBox.SelectedItem) Then
             Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
-            Label56.Text() = Sens
+            LabelScopSens.Text() = Sens
         End If
     End Sub
 #End Region
@@ -613,33 +691,33 @@ Public Class Form1
                                                                                             "exit"))
         End If
     End Sub
-    Private Sub fontAutoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
-        'If user desires automatic font replacement, create or update task to run the replacement batch
-        Using ts As New TaskService()
-            If fontAutoCheck.Checked Then
-                UpdateVal("FontAutoReplace=", "1")
-                If ts.RootFolder.Tasks.Exists("iniEdit Font") Then
-                    ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = True
-                Else
-                    Dim td As TaskDefinition = ts.NewTask
-                    'Set description for the task
-                    td.RegistrationInfo.Description = "iniEdit Font Replacement"
-                    'Create eventlog trigger
-                    Dim eTrigger As New EventTrigger()
-                    eTrigger.Subscription = "<QueryList><Query Id=""0"" Path=""System""><Select Path=""System"">*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]</Select></Query></QueryList>"
-                    td.Triggers.Add(eTrigger)
-                    'Create task action
-                    Dim path As String = CurDir()
-                    td.Actions.Add(New ExecAction(String.Concat(path, "\iniEditFont.bat")))
-                    'Save task
-                    ts.RootFolder.RegisterTaskDefinition("iniEdit Font", td)
-                End If
-            Else
-                UpdateVal("FontAutoReplace=", "0")
-                ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
-            End If
-        End Using
-    End Sub
+    'Private Sub fontAutoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
+    '    'If user desires automatic font replacement, create or update task to run the replacement batch
+    '    Using ts As New TaskService()
+    '        If fontAutoCheck.Checked Then
+    '            UpdateVal("FontAutoReplace=", "1")
+    '            If ts.RootFolder.Tasks.Exists("iniEdit Font") Then
+    '                ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = True
+    '            Else
+    '                Dim td As TaskDefinition = ts.NewTask
+    '                'Set description for the task
+    '                td.RegistrationInfo.Description = "iniEdit Font Replacement"
+    '                'Create eventlog trigger
+    '                Dim eTrigger As New EventTrigger()
+    '                eTrigger.Subscription = "<QueryList><Query Id=""0"" Path=""System""><Select Path=""System"">*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]</Select></Query></QueryList>"
+    '                td.Triggers.Add(eTrigger)
+    '                'Create task action
+    '                Dim path As String = CurDir()
+    '                td.Actions.Add(New ExecAction(String.Concat(path, "\iniEditFont.bat")))
+    '                'Save task
+    '                ts.RootFolder.RegisterTaskDefinition("iniEdit Font", td)
+    '            End If
+    '        Else
+    '            UpdateVal("FontAutoReplace=", "0")
+    '            ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
+    '        End If
+    '    End Using
+    'End Sub
 #End Region
 #Region "InterfaceControls"
 #Region "CheckedChanged"
@@ -889,95 +967,121 @@ Public Class Form1
 #End Region
 #Region "ChatControls"
 #Region "TextChanged"
-    Private Sub genVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles genVoiceVolBox.ValueChanged
-
+    Private Sub genVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles genVoiceVolBox.Validated
+        UpdateVal("ReceiveVolume=", genVoiceVolBox.Value)
     End Sub
-    Private Sub proxVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles proxVoiceVolBox.ValueChanged
-
+    Private Sub proxVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles proxVoiceVolBox.Validated
+        UpdateValSpecific("ProximityVolume=", proxVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub squadVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles squadVoiceVolBox.ValueChanged
-
+    Private Sub squadVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles squadVoiceVolBox.Validated
+        UpdateValSpecific("GroupVolume=", squadVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub raidVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles raidVoiceVolBox.ValueChanged
-
+    Private Sub raidVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles raidVoiceVolBox.Validated
+        UpdateValSpecific("RaidVolume=", raidVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub outfitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles outfitVoiceVolBox.ValueChanged
-
+    Private Sub outfitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles outfitVoiceVolBox.Validated
+        UpdateValSpecific("GuildVolume=", outfitVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub leaderVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles leaderVoiceVolBox.ValueChanged
-
+    Private Sub leaderVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles leaderVoiceVolBox.Validated
+        UpdateValSpecific("GroupLeaderVolume=", leaderVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub transmitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles transmitVoiceVolBox.ValueChanged
-
+    Private Sub transmitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles transmitVoiceVolBox.Validated
+        UpdateVal("MicrophoneVolume=", transmitVoiceVolBox.Value)
     End Sub
-    Private Sub duckVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles duckVoiceVolBox.ValueChanged
-
+    Private Sub duckVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles duckVoiceVolBox.Validated
+        UpdateVal("Ducking=", duckVoiceVolBox.Value)
     End Sub
 #End Region
 #Region "ChecksChanged"
     Private Sub yellTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles yellTextCheck.Click
         If yellTextCheck.Checked Then
-            UpdateVal("Yell=", 0)
-        Else
             UpdateVal("Yell=", 1)
+        Else
+            UpdateVal("Yell=", 0)
         End If
     End Sub
 
     Private Sub fireteamTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fireteamTextCheck.Click
         If fireteamTextCheck.Checked Then
-            UpdateVal("Fireteam=", 0)
-        Else
             UpdateVal("Fireteam=", 1)
+        Else
+            UpdateVal("Fireteam=", 0)
         End If
     End Sub
     Private Sub squadTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles squadTextCheck.Click
         If squadTextCheck.Checked Then
-            UpdateVal("Squad=", 0)
-        Else
             UpdateVal("Squad=", 1)
+        Else
+            UpdateVal("Squad=", 0)
         End If
     End Sub
     Private Sub raidTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles raidTextCheck.Click
         If raidTextCheck.Checked Then
-            UpdateVal("Platoon=", 0)
-        Else
             UpdateVal("Platoon=", 1)
+        Else
+            UpdateVal("Platoon=", 0)
         End If
     End Sub
     Private Sub outfitTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles outfitTextCheck.Click
         If outfitTextCheck.Checked Then
-            UpdateVal("Outfit=", 0)
-        Else
             UpdateVal("Outfit=", 1)
+        Else
+            UpdateVal("Outfit=", 0)
         End If
     End Sub
     Private Sub leaderTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles leaderTextCheck.Click
         If leaderTextCheck.Checked Then
-            UpdateVal("Leader=", 0)
-        Else
             UpdateVal("Leader=", 1)
+        Else
+            UpdateVal("Leader=", 0)
         End If
     End Sub
     Private Sub proxTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles proxTextCheck.Click
         If proxTextCheck.Checked Then
-            UpdateVal("Proximity=", 0)
-        Else
             UpdateVal("Proximity=", 1)
+        Else
+            UpdateVal("Proximity=", 0)
         End If
     End Sub
     Private Sub regionTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles regionTextCheck.Click
         If regionTextCheck.Checked Then
-            UpdateVal("Region=", 0)
-        Else
             UpdateVal("Region=", 1)
+        Else
+            UpdateVal("Region=", 0)
         End If
     End Sub
     Private Sub mentorTextCheck_CheckedChanged(sender As Object, e As EventArgs) Handles mentorTextCheck.Click
         If mentorTextCheck.Checked Then
-            UpdateVal("Mentor=", 0)
-        Else
             UpdateVal("Mentor=", 1)
+        Else
+            UpdateVal("Mentor=", 0)
         End If
+    End Sub
+    Private Sub genVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles genVoiceCheck.Click
+        If genVoiceCheck.Checked Then
+            UpdateValSpecific("Enable=", 1, "[Voice]")
+        Else
+            UpdateValSpecific("Enable=", 0, "[Voice]")
+        End If
+    End Sub
+    Private Sub proxVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles proxVoiceCheck.Click
+        If proxVoiceCheck.Checked Then
+            UpdateValSpecific("ProximityEnabled=", 1, "[Voice]")
+        Else
+            UpdateValSpecific("ProximityEnabled=", 0, "[Voice]")
+        End If
+    End Sub
+    Private Sub squadVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles squadVoiceCheck.Click
+
+    End Sub
+    Private Sub raidVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles raidVoiceCheck.Click
+
+    End Sub
+    Private Sub outfitVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles outfitVoiceCheck.Click
+
+    End Sub
+    Private Sub leaderVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles leaderVoiceCheck.Click
+
     End Sub
 
 #End Region

@@ -71,13 +71,27 @@ Partial Class Form1
         Me.fovBox = New System.Windows.Forms.NumericUpDown()
         Me.maxFPSBox = New System.Windows.Forms.NumericUpDown()
         Me.gammaBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.AADrop = New System.Windows.Forms.ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.waterReflectDrop = New System.Windows.Forms.ComboBox()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.objReflectDrop = New System.Windows.Forms.ComboBox()
         Me.graphPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.graphPanel0 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.graphPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.upscaleDrop = New System.Windows.Forms.ComboBox()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.DLSSQualDrop = New System.Windows.Forms.ComboBox()
+        Me.FSRQualDrop = New System.Windows.Forms.ComboBox()
+        Me.Label76 = New System.Windows.Forms.Label()
+        Me.DLSSSharpBox = New System.Windows.Forms.NumericUpDown()
+        Me.FSRSharpBox = New System.Windows.Forms.NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.recalcSensButton = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.sensPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.sensPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.hipSensBox = New System.Windows.Forms.NumericUpDown()
@@ -101,15 +115,15 @@ Partial Class Form1
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label3cm360 = New System.Windows.Forms.Label()
+        Me.Label4cm360 = New System.Windows.Forms.Label()
+        Me.Label12cm360 = New System.Windows.Forms.Label()
+        Me.Label6cm360 = New System.Windows.Forms.Label()
+        Me.LabelHipcm360 = New System.Windows.Forms.Label()
+        Me.Label2cm360 = New System.Windows.Forms.Label()
+        Me.Label10cm360 = New System.Windows.Forms.Label()
+        Me.Label8cm360 = New System.Windows.Forms.Label()
+        Me.Label1cm360 = New System.Windows.Forms.Label()
         Me.sensPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.hip360Box = New System.Windows.Forms.NumericUpDown()
@@ -125,18 +139,13 @@ Partial Class Form1
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
+        Me.LabelScopSens = New System.Windows.Forms.Label()
+        Me.LabelAdsSens = New System.Windows.Forms.Label()
+        Me.LabelHipSens = New System.Windows.Forms.Label()
         Me.DPIBox = New System.Windows.Forms.NumericUpDown()
         Me.sensRawCheck = New System.Windows.Forms.CheckBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.sensTypeDrop = New System.Windows.Forms.ComboBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
-        Me.selectedFontPath = New System.Windows.Forms.Label()
-        Me.fontSelectButton = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.intPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.intPanel2 = New System.Windows.Forms.FlowLayoutPanel()
@@ -181,6 +190,68 @@ Partial Class Form1
         Me.hudLootCheck = New System.Windows.Forms.CheckBox()
         Me.hudCompCheck = New System.Windows.Forms.CheckBox()
         Me.hudDotCheck = New System.Windows.Forms.CheckBox()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.iconPanel0 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel12 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox16 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox19 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox20 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox49 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox50 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel13 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox25 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox26 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox27 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox28 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox51 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox52 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox53 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox54 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox55 = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel15 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox29 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox30 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox31 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox32 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox33 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox34 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox35 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox36 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox37 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox38 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox39 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox40 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox41 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox42 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox43 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox44 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox45 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox46 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox47 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox48 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox56 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox57 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox58 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox59 = New System.Windows.Forms.CheckBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.FlowLayoutPanel14 = New System.Windows.Forms.FlowLayoutPanel()
         Me.soundPanel0 = New System.Windows.Forms.FlowLayoutPanel()
@@ -201,7 +272,6 @@ Partial Class Form1
         Me.vehChatterCheck = New System.Windows.Forms.CheckBox()
         Me.idleMusicCheck = New System.Windows.Forms.CheckBox()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.FlowLayoutPanel13 = New System.Windows.Forms.FlowLayoutPanel()
         Me.chatPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.chatPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
@@ -213,15 +283,19 @@ Partial Class Form1
         Me.FlowLayoutPanel8 = New System.Windows.Forms.FlowLayoutPanel()
         Me.squadVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.squadVoiceCheck = New System.Windows.Forms.CheckBox()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel9 = New System.Windows.Forms.FlowLayoutPanel()
         Me.raidVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.raidVoiceCheck = New System.Windows.Forms.CheckBox()
+        Me.Label38 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel10 = New System.Windows.Forms.FlowLayoutPanel()
         Me.outfitVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.outfitVoiceCheck = New System.Windows.Forms.CheckBox()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.leaderVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.leaderVoiceCheck = New System.Windows.Forms.CheckBox()
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel11 = New System.Windows.Forms.FlowLayoutPanel()
         Me.transmitVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.Label68 = New System.Windows.Forms.Label()
@@ -239,6 +313,11 @@ Partial Class Form1
         Me.proxTextCheck = New System.Windows.Forms.CheckBox()
         Me.regionTextCheck = New System.Windows.Forms.CheckBox()
         Me.mentorTextCheck = New System.Windows.Forms.CheckBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
+        Me.selectedFontPath = New System.Windows.Forms.Label()
+        Me.fontSelectButton = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -266,8 +345,11 @@ Partial Class Form1
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.graphPanel0.SuspendLayout()
+        Me.graphPanel5.SuspendLayout()
+        CType(Me.DLSSSharpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FSRSharpBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.sensPanel0.SuspendLayout()
         Me.sensPanel1.SuspendLayout()
         CType(Me.hipSensBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.adsSensBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -288,7 +370,6 @@ Partial Class Form1
         Me.sensPanel4.Panel2.SuspendLayout()
         Me.sensPanel4.SuspendLayout()
         CType(Me.DPIBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.intPanel0.SuspendLayout()
         Me.intPanel2.SuspendLayout()
@@ -303,6 +384,13 @@ Partial Class Form1
         Me.FlowLayoutPanel21.SuspendLayout()
         Me.facColorPanelButtons.SuspendLayout()
         Me.intPanel1.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        Me.iconPanel0.SuspendLayout()
+        Me.FlowLayoutPanel3.SuspendLayout()
+        Me.FlowLayoutPanel5.SuspendLayout()
+        Me.FlowLayoutPanel12.SuspendLayout()
+        Me.FlowLayoutPanel13.SuspendLayout()
+        Me.FlowLayoutPanel15.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.FlowLayoutPanel14.SuspendLayout()
         Me.soundPanel0.SuspendLayout()
@@ -314,7 +402,6 @@ Partial Class Form1
         CType(Me.maxVoiceBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.soundPanel2.SuspendLayout()
         Me.TabPage6.SuspendLayout()
-        Me.FlowLayoutPanel13.SuspendLayout()
         Me.chatPanel0.SuspendLayout()
         Me.chatPanel1.SuspendLayout()
         Me.FlowLayoutPanel6.SuspendLayout()
@@ -334,6 +421,7 @@ Partial Class Form1
         Me.FlowLayoutPanel2.SuspendLayout()
         CType(Me.duckVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.chatPanel2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -355,7 +443,7 @@ Partial Class Form1
         Me.fogShadCheck.AutoSize = True
         Me.fogShadCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.fogShadCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.fogShadCheck.Location = New System.Drawing.Point(3, 72)
+        Me.fogShadCheck.Location = New System.Drawing.Point(268, 3)
         Me.fogShadCheck.Name = "fogShadCheck"
         Me.fogShadCheck.Size = New System.Drawing.Size(91, 17)
         Me.fogShadCheck.TabIndex = 23
@@ -367,7 +455,7 @@ Partial Class Form1
         Me.ambOccCheck.AutoSize = True
         Me.ambOccCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ambOccCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.ambOccCheck.Location = New System.Drawing.Point(3, 49)
+        Me.ambOccCheck.Location = New System.Drawing.Point(148, 3)
         Me.ambOccCheck.Name = "ambOccCheck"
         Me.ambOccCheck.Size = New System.Drawing.Size(114, 17)
         Me.ambOccCheck.TabIndex = 22
@@ -379,7 +467,7 @@ Partial Class Form1
         Me.bloomCheck.AutoSize = True
         Me.bloomCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.bloomCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.bloomCheck.Location = New System.Drawing.Point(3, 118)
+        Me.bloomCheck.Location = New System.Drawing.Point(450, 3)
         Me.bloomCheck.Name = "bloomCheck"
         Me.bloomCheck.Size = New System.Drawing.Size(55, 17)
         Me.bloomCheck.TabIndex = 25
@@ -391,7 +479,7 @@ Partial Class Form1
         Me.blurCheck.AutoSize = True
         Me.blurCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.blurCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.blurCheck.Location = New System.Drawing.Point(3, 95)
+        Me.blurCheck.Location = New System.Drawing.Point(365, 3)
         Me.blurCheck.Name = "blurCheck"
         Me.blurCheck.Size = New System.Drawing.Size(79, 17)
         Me.blurCheck.TabIndex = 24
@@ -403,7 +491,7 @@ Partial Class Form1
         Me.smoothCheck.AutoSize = True
         Me.smoothCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.smoothCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.smoothCheck.Location = New System.Drawing.Point(3, 26)
+        Me.smoothCheck.Location = New System.Drawing.Point(66, 3)
         Me.smoothCheck.Name = "smoothCheck"
         Me.smoothCheck.Size = New System.Drawing.Size(76, 17)
         Me.smoothCheck.TabIndex = 21
@@ -415,7 +503,7 @@ Partial Class Form1
         Me.wideCheck.AutoSize = True
         Me.wideCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.wideCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.wideCheck.Location = New System.Drawing.Point(3, 141)
+        Me.wideCheck.Location = New System.Drawing.Point(511, 3)
         Me.wideCheck.Name = "wideCheck"
         Me.wideCheck.Size = New System.Drawing.Size(107, 17)
         Me.wideCheck.TabIndex = 26
@@ -754,10 +842,9 @@ Partial Class Form1
         Me.graphPanel4.Controls.Add(Me.blurCheck)
         Me.graphPanel4.Controls.Add(Me.bloomCheck)
         Me.graphPanel4.Controls.Add(Me.wideCheck)
-        Me.graphPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.graphPanel4.Location = New System.Drawing.Point(478, 3)
+        Me.graphPanel4.Location = New System.Drawing.Point(3, 405)
         Me.graphPanel4.Name = "graphPanel4"
-        Me.graphPanel4.Size = New System.Drawing.Size(120, 161)
+        Me.graphPanel4.Size = New System.Drawing.Size(621, 23)
         Me.graphPanel4.TabIndex = 3
         '
         'graphPanel3
@@ -839,16 +926,22 @@ Partial Class Form1
         Me.graphPanel2.Controls.Add(Me.maxFPSBox)
         Me.graphPanel2.Controls.Add(Me.Label8)
         Me.graphPanel2.Controls.Add(Me.gammaBox)
+        Me.graphPanel2.Controls.Add(Me.Label19)
+        Me.graphPanel2.Controls.Add(Me.AADrop)
+        Me.graphPanel2.Controls.Add(Me.Label20)
+        Me.graphPanel2.Controls.Add(Me.waterReflectDrop)
+        Me.graphPanel2.Controls.Add(Me.Label58)
+        Me.graphPanel2.Controls.Add(Me.objReflectDrop)
         Me.graphPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.graphPanel2.Location = New System.Drawing.Point(136, 3)
         Me.graphPanel2.Name = "graphPanel2"
-        Me.graphPanel2.Size = New System.Drawing.Size(159, 215)
+        Me.graphPanel2.Size = New System.Drawing.Size(159, 347)
         Me.graphPanel2.TabIndex = 1
         '
         'renQualBox
         '
-        Me.renQualBox.DecimalPlaces = 6
-        Me.renQualBox.Increment = New Decimal(New Integer() {1, 0, 0, 393216})
+        Me.renQualBox.DecimalPlaces = 2
+        Me.renQualBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.renQualBox.Location = New System.Drawing.Point(3, 20)
         Me.renQualBox.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.renQualBox.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
@@ -860,8 +953,8 @@ Partial Class Form1
         '
         'partDistScaleBox
         '
-        Me.partDistScaleBox.DecimalPlaces = 6
-        Me.partDistScaleBox.Increment = New Decimal(New Integer() {1, 0, 0, 393216})
+        Me.partDistScaleBox.DecimalPlaces = 2
+        Me.partDistScaleBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.partDistScaleBox.Location = New System.Drawing.Point(3, 63)
         Me.partDistScaleBox.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.partDistScaleBox.Name = "partDistScaleBox"
@@ -894,14 +987,80 @@ Partial Class Form1
         '
         'gammaBox
         '
-        Me.gammaBox.DecimalPlaces = 6
-        Me.gammaBox.Increment = New Decimal(New Integer() {1, 0, 0, 393216})
+        Me.gammaBox.DecimalPlaces = 2
+        Me.gammaBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.gammaBox.Location = New System.Drawing.Point(3, 192)
         Me.gammaBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.gammaBox.Name = "gammaBox"
         Me.gammaBox.Size = New System.Drawing.Size(80, 20)
         Me.gammaBox.TabIndex = 46
         Me.ToolTip1.SetToolTip(Me.gammaBox, "0 - 1")
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label19.Location = New System.Drawing.Point(3, 215)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(86, 17)
+        Me.Label19.TabIndex = 61
+        Me.Label19.Text = "Anti-Aliasing"
+        '
+        'AADrop
+        '
+        Me.AADrop.FormattingEnabled = True
+        Me.AADrop.Items.AddRange(New Object() {"0. Edge AA", "1. FXAA", "2. TAA", "3. TAA+FXAA"})
+        Me.AADrop.Location = New System.Drawing.Point(3, 235)
+        Me.AADrop.MaxDropDownItems = 4
+        Me.AADrop.Name = "AADrop"
+        Me.AADrop.Size = New System.Drawing.Size(121, 21)
+        Me.AADrop.TabIndex = 60
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label20.Location = New System.Drawing.Point(3, 259)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(120, 17)
+        Me.Label20.TabIndex = 63
+        Me.Label20.Text = "Water Reflections"
+        '
+        'waterReflectDrop
+        '
+        Me.waterReflectDrop.FormattingEnabled = True
+        Me.waterReflectDrop.Items.AddRange(New Object() {"0. Off", "1. Low", "2. High"})
+        Me.waterReflectDrop.Location = New System.Drawing.Point(3, 279)
+        Me.waterReflectDrop.MaxDropDownItems = 4
+        Me.waterReflectDrop.Name = "waterReflectDrop"
+        Me.waterReflectDrop.Size = New System.Drawing.Size(121, 21)
+        Me.waterReflectDrop.TabIndex = 62
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label58.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label58.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label58.Location = New System.Drawing.Point(3, 303)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(123, 17)
+        Me.Label58.TabIndex = 65
+        Me.Label58.Text = "Object Reflections"
+        '
+        'objReflectDrop
+        '
+        Me.objReflectDrop.FormattingEnabled = True
+        Me.objReflectDrop.Items.AddRange(New Object() {"0. Off", "1. Low", "2. High"})
+        Me.objReflectDrop.Location = New System.Drawing.Point(3, 323)
+        Me.objReflectDrop.MaxDropDownItems = 4
+        Me.objReflectDrop.Name = "objReflectDrop"
+        Me.objReflectDrop.Size = New System.Drawing.Size(121, 21)
+        Me.objReflectDrop.TabIndex = 64
         '
         'graphPanel1
         '
@@ -936,10 +1095,11 @@ Partial Class Form1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 24)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
@@ -972,19 +1132,132 @@ Partial Class Form1
         Me.graphPanel0.Controls.Add(Me.graphPanel1)
         Me.graphPanel0.Controls.Add(Me.graphPanel2)
         Me.graphPanel0.Controls.Add(Me.graphPanel3)
+        Me.graphPanel0.Controls.Add(Me.graphPanel5)
         Me.graphPanel0.Controls.Add(Me.graphPanel4)
-        Me.graphPanel0.Location = New System.Drawing.Point(9, 0)
+        Me.graphPanel0.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.graphPanel0.Location = New System.Drawing.Point(0, 0)
         Me.graphPanel0.MaximumSize = New System.Drawing.Size(0, 450)
         Me.graphPanel0.Name = "graphPanel0"
-        Me.graphPanel0.Size = New System.Drawing.Size(601, 402)
+        Me.graphPanel0.Size = New System.Drawing.Size(739, 450)
         Me.graphPanel0.TabIndex = 51
+        '
+        'graphPanel5
+        '
+        Me.graphPanel5.AutoSize = True
+        Me.graphPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.graphPanel5.Controls.Add(Me.Label62)
+        Me.graphPanel5.Controls.Add(Me.upscaleDrop)
+        Me.graphPanel5.Controls.Add(Me.Label66)
+        Me.graphPanel5.Controls.Add(Me.DLSSQualDrop)
+        Me.graphPanel5.Controls.Add(Me.FSRQualDrop)
+        Me.graphPanel5.Controls.Add(Me.Label76)
+        Me.graphPanel5.Controls.Add(Me.DLSSSharpBox)
+        Me.graphPanel5.Controls.Add(Me.FSRSharpBox)
+        Me.graphPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.graphPanel5.Location = New System.Drawing.Point(478, 3)
+        Me.graphPanel5.Name = "graphPanel5"
+        Me.graphPanel5.Size = New System.Drawing.Size(127, 184)
+        Me.graphPanel5.TabIndex = 4
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label62.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label62.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label62.Location = New System.Drawing.Point(3, 0)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(70, 17)
+        Me.Label62.TabIndex = 61
+        Me.Label62.Text = "Upscaling"
+        '
+        'upscaleDrop
+        '
+        Me.upscaleDrop.FormattingEnabled = True
+        Me.upscaleDrop.Items.AddRange(New Object() {"None", "DLSS", "FSR"})
+        Me.upscaleDrop.Location = New System.Drawing.Point(3, 20)
+        Me.upscaleDrop.MaxDropDownItems = 4
+        Me.upscaleDrop.Name = "upscaleDrop"
+        Me.upscaleDrop.Size = New System.Drawing.Size(121, 21)
+        Me.upscaleDrop.TabIndex = 60
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label66.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label66.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label66.Location = New System.Drawing.Point(3, 44)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(52, 17)
+        Me.Label66.TabIndex = 63
+        Me.Label66.Text = "Quality"
+        Me.Label66.Visible = False
+        '
+        'DLSSQualDrop
+        '
+        Me.DLSSQualDrop.FormattingEnabled = True
+        Me.DLSSQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
+        Me.DLSSQualDrop.Location = New System.Drawing.Point(3, 64)
+        Me.DLSSQualDrop.MaxDropDownItems = 4
+        Me.DLSSQualDrop.Name = "DLSSQualDrop"
+        Me.DLSSQualDrop.Size = New System.Drawing.Size(121, 21)
+        Me.DLSSQualDrop.TabIndex = 62
+        Me.DLSSQualDrop.Visible = False
+        '
+        'FSRQualDrop
+        '
+        Me.FSRQualDrop.FormattingEnabled = True
+        Me.FSRQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
+        Me.FSRQualDrop.Location = New System.Drawing.Point(3, 91)
+        Me.FSRQualDrop.MaxDropDownItems = 4
+        Me.FSRQualDrop.Name = "FSRQualDrop"
+        Me.FSRQualDrop.Size = New System.Drawing.Size(121, 21)
+        Me.FSRQualDrop.TabIndex = 64
+        Me.FSRQualDrop.Visible = False
+        '
+        'Label76
+        '
+        Me.Label76.AutoSize = True
+        Me.Label76.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label76.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label76.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label76.Location = New System.Drawing.Point(3, 115)
+        Me.Label76.Name = "Label76"
+        Me.Label76.Size = New System.Drawing.Size(76, 17)
+        Me.Label76.TabIndex = 72
+        Me.Label76.Text = "Sharpness"
+        Me.Label76.Visible = False
+        '
+        'DLSSSharpBox
+        '
+        Me.DLSSSharpBox.DecimalPlaces = 6
+        Me.DLSSSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.DLSSSharpBox.Location = New System.Drawing.Point(3, 135)
+        Me.DLSSSharpBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.DLSSSharpBox.Name = "DLSSSharpBox"
+        Me.DLSSSharpBox.Size = New System.Drawing.Size(80, 20)
+        Me.DLSSSharpBox.TabIndex = 71
+        Me.ToolTip1.SetToolTip(Me.DLSSSharpBox, "0 - 1")
+        Me.DLSSSharpBox.Visible = False
+        '
+        'FSRSharpBox
+        '
+        Me.FSRSharpBox.DecimalPlaces = 6
+        Me.FSRSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.FSRSharpBox.Location = New System.Drawing.Point(3, 161)
+        Me.FSRSharpBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.FSRSharpBox.Name = "FSRSharpBox"
+        Me.FSRSharpBox.Size = New System.Drawing.Size(80, 20)
+        Me.FSRSharpBox.TabIndex = 73
+        Me.ToolTip1.SetToolTip(Me.FSRSharpBox, "0 - 1")
+        Me.FSRSharpBox.Visible = False
         '
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
         Me.TabPage2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage2.Controls.Add(Me.recalcSensButton)
-        Me.TabPage2.Controls.Add(Me.FlowLayoutPanel1)
+        Me.TabPage2.Controls.Add(Me.sensPanel0)
         Me.TabPage2.Controls.Add(Me.DPIBox)
         Me.TabPage2.Controls.Add(Me.sensRawCheck)
         Me.TabPage2.Controls.Add(Me.Label21)
@@ -995,28 +1268,19 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sensitivity"
         '
-        'recalcSensButton
+        'sensPanel0
         '
-        Me.recalcSensButton.Location = New System.Drawing.Point(374, 6)
-        Me.recalcSensButton.Name = "recalcSensButton"
-        Me.recalcSensButton.Size = New System.Drawing.Size(75, 23)
-        Me.recalcSensButton.TabIndex = 5
-        Me.recalcSensButton.Text = "Recalculate"
-        Me.recalcSensButton.UseVisualStyleBackColor = True
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.AutoSize = True
-        Me.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel1.Controls.Add(Me.sensPanel1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.sensPanel2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.sensPanel3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.sensPanel4)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(8, 33)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(770, 288)
-        Me.FlowLayoutPanel1.TabIndex = 6
+        Me.sensPanel0.AutoScroll = True
+        Me.sensPanel0.AutoSize = True
+        Me.sensPanel0.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.sensPanel0.Controls.Add(Me.sensPanel1)
+        Me.sensPanel0.Controls.Add(Me.sensPanel2)
+        Me.sensPanel0.Controls.Add(Me.sensPanel3)
+        Me.sensPanel0.Controls.Add(Me.sensPanel4)
+        Me.sensPanel0.Location = New System.Drawing.Point(8, 33)
+        Me.sensPanel0.Name = "sensPanel0"
+        Me.sensPanel0.Size = New System.Drawing.Size(915, 288)
+        Me.sensPanel0.TabIndex = 6
         '
         'sensPanel1
         '
@@ -1190,15 +1454,15 @@ Partial Class Form1
         '
         'sensPanel2.Panel2
         '
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label37)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label45)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label38)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label44)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label39)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label43)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label40)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label42)
-        Me.sensPanel2.Panel2.Controls.Add(Me.Label41)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label3cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label4cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label12cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label6cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.LabelHipcm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label2cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label10cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label8cm360)
+        Me.sensPanel2.Panel2.Controls.Add(Me.Label1cm360)
         Me.sensPanel2.Size = New System.Drawing.Size(255, 177)
         Me.sensPanel2.SplitterDistance = 125
         Me.sensPanel2.TabIndex = 2
@@ -1312,104 +1576,104 @@ Partial Class Form1
         Me.Label32.TabIndex = 67
         Me.Label32.Text = "4x cm/360:"
         '
-        'Label37
+        'Label3cm360
         '
-        Me.Label37.AutoSize = True
-        Me.Label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label37.Location = New System.Drawing.Point(3, 70)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(0, 17)
-        Me.Label37.TabIndex = 75
+        Me.Label3cm360.AutoSize = True
+        Me.Label3cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label3cm360.Location = New System.Drawing.Point(3, 70)
+        Me.Label3cm360.Name = "Label3cm360"
+        Me.Label3cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label3cm360.TabIndex = 75
         '
-        'Label45
+        'Label4cm360
         '
-        Me.Label45.AutoSize = True
-        Me.Label45.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label45.Location = New System.Drawing.Point(3, 87)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(0, 17)
-        Me.Label45.TabIndex = 76
+        Me.Label4cm360.AutoSize = True
+        Me.Label4cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label4cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label4cm360.Location = New System.Drawing.Point(3, 87)
+        Me.Label4cm360.Name = "Label4cm360"
+        Me.Label4cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label4cm360.TabIndex = 76
         '
-        'Label38
+        'Label12cm360
         '
-        Me.Label38.AutoSize = True
-        Me.Label38.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label38.Location = New System.Drawing.Point(3, 155)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(0, 17)
-        Me.Label38.TabIndex = 80
+        Me.Label12cm360.AutoSize = True
+        Me.Label12cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label12cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label12cm360.Location = New System.Drawing.Point(3, 155)
+        Me.Label12cm360.Name = "Label12cm360"
+        Me.Label12cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label12cm360.TabIndex = 80
         '
-        'Label44
+        'Label6cm360
         '
-        Me.Label44.AutoSize = True
-        Me.Label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label44.Location = New System.Drawing.Point(3, 104)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(0, 17)
-        Me.Label44.TabIndex = 77
+        Me.Label6cm360.AutoSize = True
+        Me.Label6cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label6cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label6cm360.Location = New System.Drawing.Point(3, 104)
+        Me.Label6cm360.Name = "Label6cm360"
+        Me.Label6cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label6cm360.TabIndex = 77
         '
-        'Label39
+        'LabelHipcm360
         '
-        Me.Label39.AutoSize = True
-        Me.Label39.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label39.Location = New System.Drawing.Point(3, 3)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(0, 17)
-        Me.Label39.TabIndex = 72
+        Me.LabelHipcm360.AutoSize = True
+        Me.LabelHipcm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LabelHipcm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHipcm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.LabelHipcm360.Location = New System.Drawing.Point(3, 3)
+        Me.LabelHipcm360.Name = "LabelHipcm360"
+        Me.LabelHipcm360.Size = New System.Drawing.Size(0, 17)
+        Me.LabelHipcm360.TabIndex = 72
         '
-        'Label43
+        'Label2cm360
         '
-        Me.Label43.AutoSize = True
-        Me.Label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label43.Location = New System.Drawing.Point(3, 46)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(0, 17)
-        Me.Label43.TabIndex = 74
+        Me.Label2cm360.AutoSize = True
+        Me.Label2cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label2cm360.Location = New System.Drawing.Point(3, 46)
+        Me.Label2cm360.Name = "Label2cm360"
+        Me.Label2cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label2cm360.TabIndex = 74
         '
-        'Label40
+        'Label10cm360
         '
-        Me.Label40.AutoSize = True
-        Me.Label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label40.Location = New System.Drawing.Point(3, 138)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(0, 17)
-        Me.Label40.TabIndex = 79
+        Me.Label10cm360.AutoSize = True
+        Me.Label10cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label10cm360.Location = New System.Drawing.Point(3, 138)
+        Me.Label10cm360.Name = "Label10cm360"
+        Me.Label10cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label10cm360.TabIndex = 79
         '
-        'Label42
+        'Label8cm360
         '
-        Me.Label42.AutoSize = True
-        Me.Label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label42.Location = New System.Drawing.Point(3, 121)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(0, 17)
-        Me.Label42.TabIndex = 78
+        Me.Label8cm360.AutoSize = True
+        Me.Label8cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label8cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label8cm360.Location = New System.Drawing.Point(3, 121)
+        Me.Label8cm360.Name = "Label8cm360"
+        Me.Label8cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label8cm360.TabIndex = 78
         '
-        'Label41
+        'Label1cm360
         '
-        Me.Label41.AutoSize = True
-        Me.Label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label41.Location = New System.Drawing.Point(3, 29)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(0, 17)
-        Me.Label41.TabIndex = 73
+        Me.Label1cm360.AutoSize = True
+        Me.Label1cm360.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label1cm360.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1cm360.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1cm360.Location = New System.Drawing.Point(3, 29)
+        Me.Label1cm360.Name = "Label1cm360"
+        Me.Label1cm360.Size = New System.Drawing.Size(0, 17)
+        Me.Label1cm360.TabIndex = 73
         '
         'sensPanel3
         '
@@ -1558,11 +1822,11 @@ Partial Class Form1
         '
         'sensPanel4.Panel2
         '
-        Me.sensPanel4.Panel2.Controls.Add(Me.Label56)
-        Me.sensPanel4.Panel2.Controls.Add(Me.Label55)
-        Me.sensPanel4.Panel2.Controls.Add(Me.Label54)
-        Me.sensPanel4.Size = New System.Drawing.Size(255, 177)
-        Me.sensPanel4.SplitterDistance = 168
+        Me.sensPanel4.Panel2.Controls.Add(Me.LabelScopSens)
+        Me.sensPanel4.Panel2.Controls.Add(Me.LabelAdsSens)
+        Me.sensPanel4.Panel2.Controls.Add(Me.LabelHipSens)
+        Me.sensPanel4.Size = New System.Drawing.Size(400, 177)
+        Me.sensPanel4.SplitterDistance = 171
         Me.sensPanel4.TabIndex = 4
         '
         'Label53
@@ -1601,43 +1865,46 @@ Partial Class Form1
         Me.Label51.TabIndex = 63
         Me.Label51.Text = "Hipfire sensitivity set to:"
         '
-        'Label56
+        'LabelScopSens
         '
-        Me.Label56.AutoSize = True
-        Me.Label56.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label56.Location = New System.Drawing.Point(3, 66)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(0, 17)
-        Me.Label56.TabIndex = 88
+        Me.LabelScopSens.AutoSize = True
+        Me.LabelScopSens.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LabelScopSens.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelScopSens.ForeColor = System.Drawing.SystemColors.Control
+        Me.LabelScopSens.Location = New System.Drawing.Point(3, 66)
+        Me.LabelScopSens.Name = "LabelScopSens"
+        Me.LabelScopSens.Size = New System.Drawing.Size(217, 17)
+        Me.LabelScopSens.TabIndex = 88
+        Me.LabelScopSens.Text = "Please select a scope zoom level"
         '
-        'Label55
+        'LabelAdsSens
         '
-        Me.Label55.AutoSize = True
-        Me.Label55.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label55.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label55.Location = New System.Drawing.Point(3, 39)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(0, 17)
-        Me.Label55.TabIndex = 87
+        Me.LabelAdsSens.AutoSize = True
+        Me.LabelAdsSens.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LabelAdsSens.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelAdsSens.ForeColor = System.Drawing.SystemColors.Control
+        Me.LabelAdsSens.Location = New System.Drawing.Point(3, 39)
+        Me.LabelAdsSens.Name = "LabelAdsSens"
+        Me.LabelAdsSens.Size = New System.Drawing.Size(215, 17)
+        Me.LabelAdsSens.TabIndex = 87
+        Me.LabelAdsSens.Text = "Please select an ADS zoom level"
         '
-        'Label54
+        'LabelHipSens
         '
-        Me.Label54.AutoSize = True
-        Me.Label54.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label54.Location = New System.Drawing.Point(3, 11)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(0, 17)
-        Me.Label54.TabIndex = 86
+        Me.LabelHipSens.AutoSize = True
+        Me.LabelHipSens.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LabelHipSens.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHipSens.ForeColor = System.Drawing.SystemColors.Control
+        Me.LabelHipSens.Location = New System.Drawing.Point(3, 11)
+        Me.LabelHipSens.Name = "LabelHipSens"
+        Me.LabelHipSens.Size = New System.Drawing.Size(0, 17)
+        Me.LabelHipSens.TabIndex = 86
         '
         'DPIBox
         '
+        Me.DPIBox.Increment = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DPIBox.Location = New System.Drawing.Point(167, 7)
-        Me.DPIBox.Maximum = New Decimal(New Integer() {8000, 0, 0, 0})
+        Me.DPIBox.Maximum = New Decimal(New Integer() {32000, 0, 0, 0})
         Me.DPIBox.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DPIBox.Name = "DPIBox"
         Me.DPIBox.Size = New System.Drawing.Size(100, 20)
@@ -1676,62 +1943,6 @@ Partial Class Form1
         Me.sensTypeDrop.Name = "sensTypeDrop"
         Me.sensTypeDrop.Size = New System.Drawing.Size(121, 21)
         Me.sensTypeDrop.TabIndex = 2
-        '
-        'TabPage3
-        '
-        Me.TabPage3.AutoScroll = True
-        Me.TabPage3.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage3.Controls.Add(Me.Label57)
-        Me.TabPage3.Controls.Add(Me.fontAutoCheck)
-        Me.TabPage3.Controls.Add(Me.selectedFontPath)
-        Me.TabPage3.Controls.Add(Me.fontSelectButton)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(739, 537)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Font"
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.ForeColor = System.Drawing.Color.White
-        Me.Label57.Location = New System.Drawing.Point(5, 112)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(418, 160)
-        Me.Label57.TabIndex = 64
-        Me.Label57.Text = resources.GetString("Label57.Text")
-        '
-        'fontAutoCheck
-        '
-        Me.fontAutoCheck.AutoSize = True
-        Me.fontAutoCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.fontAutoCheck.Location = New System.Drawing.Point(8, 17)
-        Me.fontAutoCheck.Name = "fontAutoCheck"
-        Me.fontAutoCheck.Size = New System.Drawing.Size(155, 17)
-        Me.fontAutoCheck.TabIndex = 2
-        Me.fontAutoCheck.Text = "Automatically Replace Font"
-        Me.fontAutoCheck.UseVisualStyleBackColor = True
-        '
-        'selectedFontPath
-        '
-        Me.selectedFontPath.AutoSize = True
-        Me.selectedFontPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.selectedFontPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.selectedFontPath.ForeColor = System.Drawing.SystemColors.Control
-        Me.selectedFontPath.Location = New System.Drawing.Point(8, 66)
-        Me.selectedFontPath.Name = "selectedFontPath"
-        Me.selectedFontPath.Size = New System.Drawing.Size(0, 17)
-        Me.selectedFontPath.TabIndex = 63
-        '
-        'fontSelectButton
-        '
-        Me.fontSelectButton.Location = New System.Drawing.Point(8, 40)
-        Me.fontSelectButton.Name = "fontSelectButton"
-        Me.fontSelectButton.Size = New System.Drawing.Size(75, 23)
-        Me.fontSelectButton.TabIndex = 3
-        Me.fontSelectButton.Text = "Select Font"
-        Me.fontSelectButton.UseVisualStyleBackColor = True
         '
         'TabPage4
         '
@@ -2250,6 +2461,847 @@ Partial Class Form1
         Me.hudDotCheck.Text = "3rd Person Vehicle Dot"
         Me.hudDotCheck.UseVisualStyleBackColor = True
         '
+        'TabPage7
+        '
+        Me.TabPage7.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage7.Controls.Add(Me.iconPanel0)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "HUD Icons"
+        '
+        'iconPanel0
+        '
+        Me.iconPanel0.AutoSize = True
+        Me.iconPanel0.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.iconPanel0.Controls.Add(Me.FlowLayoutPanel3)
+        Me.iconPanel0.Controls.Add(Me.FlowLayoutPanel5)
+        Me.iconPanel0.Controls.Add(Me.FlowLayoutPanel12)
+        Me.iconPanel0.Controls.Add(Me.FlowLayoutPanel13)
+        Me.iconPanel0.Controls.Add(Me.FlowLayoutPanel15)
+        Me.iconPanel0.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.iconPanel0.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.iconPanel0.Location = New System.Drawing.Point(0, 0)
+        Me.iconPanel0.Name = "iconPanel0"
+        Me.iconPanel0.Size = New System.Drawing.Size(739, 537)
+        Me.iconPanel0.TabIndex = 0
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.AutoSize = True
+        Me.FlowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel3.Controls.Add(Me.CheckBox1)
+        Me.FlowLayoutPanel3.Controls.Add(Me.CheckBox8)
+        Me.FlowLayoutPanel3.Controls.Add(Me.CheckBox9)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(264, 26)
+        Me.FlowLayoutPanel3.TabIndex = 26
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox1.Location = New System.Drawing.Point(3, 5)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(61, 17)
+        Me.CheckBox1.TabIndex = 25
+        Me.CheckBox1.Text = "Infantry"
+        Me.CheckBox1.UseVisualStyleBackColor = False
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox8.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox8.Location = New System.Drawing.Point(70, 5)
+        Me.CheckBox8.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(89, 17)
+        Me.CheckBox8.TabIndex = 26
+        Me.CheckBox8.Text = "Allied Infantry"
+        Me.CheckBox8.UseVisualStyleBackColor = False
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox9.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox9.Location = New System.Drawing.Point(165, 5)
+        Me.CheckBox9.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(96, 17)
+        Me.CheckBox9.TabIndex = 27
+        Me.CheckBox9.Text = "Enemy Infantry"
+        Me.CheckBox9.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel5
+        '
+        Me.FlowLayoutPanel5.AutoSize = True
+        Me.FlowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox2)
+        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox12)
+        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox13)
+        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox14)
+        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(3, 35)
+        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
+        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(403, 26)
+        Me.FlowLayoutPanel5.TabIndex = 27
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox2.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox2.Location = New System.Drawing.Point(3, 5)
+        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(61, 17)
+        Me.CheckBox2.TabIndex = 25
+        Me.CheckBox2.Text = "Vehicle"
+        Me.CheckBox2.UseVisualStyleBackColor = False
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox12.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox12.Location = New System.Drawing.Point(70, 5)
+        Me.CheckBox12.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(94, 17)
+        Me.CheckBox12.TabIndex = 26
+        Me.CheckBox12.Text = "Allied Vehicles"
+        Me.CheckBox12.UseVisualStyleBackColor = False
+        '
+        'CheckBox13
+        '
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox13.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox13.Location = New System.Drawing.Point(170, 5)
+        Me.CheckBox13.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(101, 17)
+        Me.CheckBox13.TabIndex = 27
+        Me.CheckBox13.Text = "Enemy Vehicles"
+        Me.CheckBox13.UseVisualStyleBackColor = False
+        '
+        'CheckBox14
+        '
+        Me.CheckBox14.AutoSize = True
+        Me.CheckBox14.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox14.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox14.Location = New System.Drawing.Point(277, 5)
+        Me.CheckBox14.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox14.Name = "CheckBox14"
+        Me.CheckBox14.Size = New System.Drawing.Size(123, 17)
+        Me.CheckBox14.TabIndex = 28
+        Me.CheckBox14.Text = "Bastion Components"
+        Me.CheckBox14.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel12
+        '
+        Me.FlowLayoutPanel12.AutoSize = True
+        Me.FlowLayoutPanel12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox3)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox16)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox17)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox18)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox19)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox20)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox21)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox22)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox49)
+        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox50)
+        Me.FlowLayoutPanel12.Location = New System.Drawing.Point(3, 67)
+        Me.FlowLayoutPanel12.Name = "FlowLayoutPanel12"
+        Me.FlowLayoutPanel12.Size = New System.Drawing.Size(688, 52)
+        Me.FlowLayoutPanel12.TabIndex = 28
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox3.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox3.Location = New System.Drawing.Point(3, 5)
+        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(79, 17)
+        Me.CheckBox3.TabIndex = 25
+        Me.CheckBox3.Text = "Deployable"
+        Me.CheckBox3.UseVisualStyleBackColor = False
+        '
+        'CheckBox16
+        '
+        Me.CheckBox16.AutoSize = True
+        Me.CheckBox16.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox16.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox16.Location = New System.Drawing.Point(88, 5)
+        Me.CheckBox16.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox16.Name = "CheckBox16"
+        Me.CheckBox16.Size = New System.Drawing.Size(72, 17)
+        Me.CheckBox16.TabIndex = 26
+        Me.CheckBox16.Text = "Grenades"
+        Me.CheckBox16.UseVisualStyleBackColor = False
+        '
+        'CheckBox17
+        '
+        Me.CheckBox17.AutoSize = True
+        Me.CheckBox17.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox17.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox17.Location = New System.Drawing.Point(166, 5)
+        Me.CheckBox17.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox17.Name = "CheckBox17"
+        Me.CheckBox17.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox17.TabIndex = 27
+        Me.CheckBox17.Text = "Debuff Grenades"
+        Me.CheckBox17.UseVisualStyleBackColor = False
+        '
+        'CheckBox18
+        '
+        Me.CheckBox18.AutoSize = True
+        Me.CheckBox18.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox18.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox18.Location = New System.Drawing.Point(279, 5)
+        Me.CheckBox18.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox18.Name = "CheckBox18"
+        Me.CheckBox18.Size = New System.Drawing.Size(54, 17)
+        Me.CheckBox18.TabIndex = 28
+        Me.CheckBox18.Text = "Mines"
+        Me.CheckBox18.UseVisualStyleBackColor = False
+        '
+        'CheckBox19
+        '
+        Me.CheckBox19.AutoSize = True
+        Me.CheckBox19.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox19.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox19.Location = New System.Drawing.Point(339, 5)
+        Me.CheckBox19.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox19.Name = "CheckBox19"
+        Me.CheckBox19.Size = New System.Drawing.Size(39, 17)
+        Me.CheckBox19.TabIndex = 29
+        Me.CheckBox19.Text = "C4"
+        Me.CheckBox19.UseVisualStyleBackColor = False
+        '
+        'CheckBox20
+        '
+        Me.CheckBox20.AutoSize = True
+        Me.CheckBox20.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox20.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox20.Location = New System.Drawing.Point(384, 5)
+        Me.CheckBox20.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox20.Name = "CheckBox20"
+        Me.CheckBox20.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox20.TabIndex = 30
+        Me.CheckBox20.Text = "Regen Shield"
+        Me.CheckBox20.UseVisualStyleBackColor = False
+        '
+        'CheckBox21
+        '
+        Me.CheckBox21.AutoSize = True
+        Me.CheckBox21.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox21.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox21.Location = New System.Drawing.Point(480, 5)
+        Me.CheckBox21.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox21.Name = "CheckBox21"
+        Me.CheckBox21.Size = New System.Drawing.Size(94, 17)
+        Me.CheckBox21.TabIndex = 31
+        Me.CheckBox21.Text = "Motion Sensor"
+        Me.CheckBox21.UseVisualStyleBackColor = False
+        '
+        'CheckBox22
+        '
+        Me.CheckBox22.AutoSize = True
+        Me.CheckBox22.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox22.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox22.Location = New System.Drawing.Point(580, 5)
+        Me.CheckBox22.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox22.Name = "CheckBox22"
+        Me.CheckBox22.Size = New System.Drawing.Size(105, 17)
+        Me.CheckBox22.TabIndex = 32
+        Me.CheckBox22.Text = "Ammo Placeable"
+        Me.CheckBox22.UseVisualStyleBackColor = False
+        '
+        'CheckBox49
+        '
+        Me.CheckBox49.AutoSize = True
+        Me.CheckBox49.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox49.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox49.Location = New System.Drawing.Point(3, 31)
+        Me.CheckBox49.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox49.Name = "CheckBox49"
+        Me.CheckBox49.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox49.TabIndex = 33
+        Me.CheckBox49.Text = "Recon Drone"
+        Me.CheckBox49.UseVisualStyleBackColor = False
+        '
+        'CheckBox50
+        '
+        Me.CheckBox50.AutoSize = True
+        Me.CheckBox50.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox50.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox50.Location = New System.Drawing.Point(99, 31)
+        Me.CheckBox50.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox50.Name = "CheckBox50"
+        Me.CheckBox50.Size = New System.Drawing.Size(83, 17)
+        Me.CheckBox50.TabIndex = 34
+        Me.CheckBox50.Text = "Engi Turrets"
+        Me.CheckBox50.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel13
+        '
+        Me.FlowLayoutPanel13.AutoSize = True
+        Me.FlowLayoutPanel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox4)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox23)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox24)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox25)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox10)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox26)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox27)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox28)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox51)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox52)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox53)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox54)
+        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox55)
+        Me.FlowLayoutPanel13.Location = New System.Drawing.Point(3, 125)
+        Me.FlowLayoutPanel13.Name = "FlowLayoutPanel13"
+        Me.FlowLayoutPanel13.Size = New System.Drawing.Size(732, 52)
+        Me.FlowLayoutPanel13.TabIndex = 29
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox4.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox4.Location = New System.Drawing.Point(3, 5)
+        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(54, 17)
+        Me.CheckBox4.TabIndex = 25
+        Me.CheckBox4.Text = "World"
+        Me.CheckBox4.UseVisualStyleBackColor = False
+        '
+        'CheckBox23
+        '
+        Me.CheckBox23.AutoSize = True
+        Me.CheckBox23.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox23.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox23.Location = New System.Drawing.Point(63, 5)
+        Me.CheckBox23.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox23.Name = "CheckBox23"
+        Me.CheckBox23.Size = New System.Drawing.Size(66, 17)
+        Me.CheckBox23.TabIndex = 26
+        Me.CheckBox23.Text = "Anomaly"
+        Me.CheckBox23.UseVisualStyleBackColor = False
+        '
+        'CheckBox24
+        '
+        Me.CheckBox24.AutoSize = True
+        Me.CheckBox24.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox24.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox24.Location = New System.Drawing.Point(135, 5)
+        Me.CheckBox24.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox24.Name = "CheckBox24"
+        Me.CheckBox24.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox24.TabIndex = 27
+        Me.CheckBox24.Text = "Elysium Drill"
+        Me.CheckBox24.UseVisualStyleBackColor = False
+        '
+        'CheckBox25
+        '
+        Me.CheckBox25.AutoSize = True
+        Me.CheckBox25.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox25.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox25.Location = New System.Drawing.Point(222, 5)
+        Me.CheckBox25.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox25.Name = "CheckBox25"
+        Me.CheckBox25.Size = New System.Drawing.Size(76, 17)
+        Me.CheckBox25.TabIndex = 28
+        Me.CheckBox25.Text = "Data Buoy"
+        Me.CheckBox25.UseVisualStyleBackColor = False
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox10.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox10.Location = New System.Drawing.Point(304, 5)
+        Me.CheckBox10.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(61, 17)
+        Me.CheckBox10.TabIndex = 37
+        Me.CheckBox10.Text = "Mission"
+        Me.CheckBox10.UseVisualStyleBackColor = False
+        '
+        'CheckBox26
+        '
+        Me.CheckBox26.AutoSize = True
+        Me.CheckBox26.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox26.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox26.Location = New System.Drawing.Point(371, 5)
+        Me.CheckBox26.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox26.Name = "CheckBox26"
+        Me.CheckBox26.Size = New System.Drawing.Size(128, 17)
+        Me.CheckBox26.TabIndex = 29
+        Me.CheckBox26.Text = "Analysis HUD Implant"
+        Me.CheckBox26.UseVisualStyleBackColor = False
+        '
+        'CheckBox27
+        '
+        Me.CheckBox27.AutoSize = True
+        Me.CheckBox27.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox27.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox27.Location = New System.Drawing.Point(505, 5)
+        Me.CheckBox27.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox27.Name = "CheckBox27"
+        Me.CheckBox27.Size = New System.Drawing.Size(158, 17)
+        Me.CheckBox27.TabIndex = 30
+        Me.CheckBox27.Text = "Analysis HUD Strange Plant"
+        Me.CheckBox27.UseVisualStyleBackColor = False
+        '
+        'CheckBox28
+        '
+        Me.CheckBox28.AutoSize = True
+        Me.CheckBox28.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox28.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox28.Location = New System.Drawing.Point(3, 31)
+        Me.CheckBox28.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox28.Name = "CheckBox28"
+        Me.CheckBox28.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox28.TabIndex = 31
+        Me.CheckBox28.Text = "Named NPCs"
+        Me.CheckBox28.UseVisualStyleBackColor = False
+        '
+        'CheckBox51
+        '
+        Me.CheckBox51.AutoSize = True
+        Me.CheckBox51.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox51.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox51.Location = New System.Drawing.Point(99, 31)
+        Me.CheckBox51.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox51.Name = "CheckBox51"
+        Me.CheckBox51.Size = New System.Drawing.Size(100, 17)
+        Me.CheckBox51.TabIndex = 32
+        Me.CheckBox51.Text = "Forward Station"
+        Me.CheckBox51.UseVisualStyleBackColor = False
+        '
+        'CheckBox52
+        '
+        Me.CheckBox52.AutoSize = True
+        Me.CheckBox52.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox52.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox52.Location = New System.Drawing.Point(205, 31)
+        Me.CheckBox52.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox52.Name = "CheckBox52"
+        Me.CheckBox52.Size = New System.Drawing.Size(159, 17)
+        Me.CheckBox52.TabIndex = 33
+        Me.CheckBox52.Text = "War Asset Waypoint Marker"
+        Me.CheckBox52.UseVisualStyleBackColor = False
+        '
+        'CheckBox53
+        '
+        Me.CheckBox53.AutoSize = True
+        Me.CheckBox53.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox53.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox53.Location = New System.Drawing.Point(370, 31)
+        Me.CheckBox53.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox53.Name = "CheckBox53"
+        Me.CheckBox53.Size = New System.Drawing.Size(151, 17)
+        Me.CheckBox53.TabIndex = 34
+        Me.CheckBox53.Text = "Construction Crystal Radar"
+        Me.CheckBox53.UseVisualStyleBackColor = False
+        '
+        'CheckBox54
+        '
+        Me.CheckBox54.AutoSize = True
+        Me.CheckBox54.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox54.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox54.Location = New System.Drawing.Point(527, 31)
+        Me.CheckBox54.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox54.Name = "CheckBox54"
+        Me.CheckBox54.Size = New System.Drawing.Size(135, 17)
+        Me.CheckBox54.TabIndex = 35
+        Me.CheckBox54.Text = "Construction Placeable"
+        Me.CheckBox54.UseVisualStyleBackColor = False
+        '
+        'CheckBox55
+        '
+        Me.CheckBox55.AutoSize = True
+        Me.CheckBox55.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox55.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox55.Location = New System.Drawing.Point(668, 31)
+        Me.CheckBox55.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox55.Name = "CheckBox55"
+        Me.CheckBox55.Size = New System.Drawing.Size(61, 17)
+        Me.CheckBox55.TabIndex = 36
+        Me.CheckBox55.Text = "Cortium"
+        Me.CheckBox55.UseVisualStyleBackColor = False
+        '
+        'FlowLayoutPanel15
+        '
+        Me.FlowLayoutPanel15.AutoSize = True
+        Me.FlowLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox5)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox29)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox30)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox31)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox32)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox33)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox34)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox35)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox36)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox37)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox38)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox39)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox40)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox41)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox42)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox43)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox44)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox45)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox46)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox47)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox48)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox56)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox57)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox58)
+        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox59)
+        Me.FlowLayoutPanel15.Location = New System.Drawing.Point(3, 183)
+        Me.FlowLayoutPanel15.Name = "FlowLayoutPanel15"
+        Me.FlowLayoutPanel15.Size = New System.Drawing.Size(723, 104)
+        Me.FlowLayoutPanel15.TabIndex = 30
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox5.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox5.Location = New System.Drawing.Point(3, 5)
+        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(58, 17)
+        Me.CheckBox5.TabIndex = 25
+        Me.CheckBox5.Text = "Facility"
+        Me.CheckBox5.UseVisualStyleBackColor = False
+        '
+        'CheckBox29
+        '
+        Me.CheckBox29.AutoSize = True
+        Me.CheckBox29.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox29.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox29.Location = New System.Drawing.Point(67, 5)
+        Me.CheckBox29.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox29.Name = "CheckBox29"
+        Me.CheckBox29.Size = New System.Drawing.Size(93, 17)
+        Me.CheckBox29.TabIndex = 26
+        Me.CheckBox29.Text = "Ground Ammo"
+        Me.CheckBox29.UseVisualStyleBackColor = False
+        '
+        'CheckBox30
+        '
+        Me.CheckBox30.AutoSize = True
+        Me.CheckBox30.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox30.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox30.Location = New System.Drawing.Point(166, 5)
+        Me.CheckBox30.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox30.Name = "CheckBox30"
+        Me.CheckBox30.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBox30.TabIndex = 27
+        Me.CheckBox30.Text = "Air Ammo"
+        Me.CheckBox30.UseVisualStyleBackColor = False
+        '
+        'CheckBox31
+        '
+        Me.CheckBox31.AutoSize = True
+        Me.CheckBox31.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox31.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox31.Location = New System.Drawing.Point(242, 5)
+        Me.CheckBox31.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox31.Name = "CheckBox31"
+        Me.CheckBox31.Size = New System.Drawing.Size(124, 17)
+        Me.CheckBox31.TabIndex = 28
+        Me.CheckBox31.Text = "Equipment Terminals"
+        Me.CheckBox31.UseVisualStyleBackColor = False
+        '
+        'CheckBox32
+        '
+        Me.CheckBox32.AutoSize = True
+        Me.CheckBox32.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox32.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox32.Location = New System.Drawing.Point(372, 5)
+        Me.CheckBox32.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox32.Name = "CheckBox32"
+        Me.CheckBox32.Size = New System.Drawing.Size(121, 17)
+        Me.CheckBox32.TabIndex = 29
+        Me.CheckBox32.Text = "Warpgate Terminals"
+        Me.CheckBox32.UseVisualStyleBackColor = False
+        '
+        'CheckBox33
+        '
+        Me.CheckBox33.AutoSize = True
+        Me.CheckBox33.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox33.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox33.Location = New System.Drawing.Point(499, 5)
+        Me.CheckBox33.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox33.Name = "CheckBox33"
+        Me.CheckBox33.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox33.TabIndex = 30
+        Me.CheckBox33.Text = "Air Terminal"
+        Me.CheckBox33.UseVisualStyleBackColor = False
+        '
+        'CheckBox34
+        '
+        Me.CheckBox34.AutoSize = True
+        Me.CheckBox34.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox34.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox34.Location = New System.Drawing.Point(586, 5)
+        Me.CheckBox34.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox34.Name = "CheckBox34"
+        Me.CheckBox34.Size = New System.Drawing.Size(99, 17)
+        Me.CheckBox34.TabIndex = 31
+        Me.CheckBox34.Text = "Ground Vehicle"
+        Me.CheckBox34.UseVisualStyleBackColor = False
+        '
+        'CheckBox35
+        '
+        Me.CheckBox35.AutoSize = True
+        Me.CheckBox35.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox35.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox35.Location = New System.Drawing.Point(3, 31)
+        Me.CheckBox35.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox35.Name = "CheckBox35"
+        Me.CheckBox35.Size = New System.Drawing.Size(101, 17)
+        Me.CheckBox35.TabIndex = 32
+        Me.CheckBox35.Text = "Galaxy Terminal"
+        Me.CheckBox35.UseVisualStyleBackColor = False
+        '
+        'CheckBox36
+        '
+        Me.CheckBox36.AutoSize = True
+        Me.CheckBox36.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox36.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox36.Location = New System.Drawing.Point(110, 31)
+        Me.CheckBox36.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox36.Name = "CheckBox36"
+        Me.CheckBox36.Size = New System.Drawing.Size(94, 17)
+        Me.CheckBox36.TabIndex = 33
+        Me.CheckBox36.Text = "Flash Terminal"
+        Me.CheckBox36.UseVisualStyleBackColor = False
+        '
+        'CheckBox37
+        '
+        Me.CheckBox37.AutoSize = True
+        Me.CheckBox37.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox37.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox37.Location = New System.Drawing.Point(210, 31)
+        Me.CheckBox37.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox37.Name = "CheckBox37"
+        Me.CheckBox37.Size = New System.Drawing.Size(87, 17)
+        Me.CheckBox37.TabIndex = 34
+        Me.CheckBox37.Text = "Light Ground"
+        Me.CheckBox37.UseVisualStyleBackColor = False
+        '
+        'CheckBox38
+        '
+        Me.CheckBox38.AutoSize = True
+        Me.CheckBox38.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox38.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox38.Location = New System.Drawing.Point(303, 31)
+        Me.CheckBox38.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox38.Name = "CheckBox38"
+        Me.CheckBox38.Size = New System.Drawing.Size(112, 17)
+        Me.CheckBox38.TabIndex = 35
+        Me.CheckBox38.Text = "Sunderer Terminal"
+        Me.CheckBox38.UseVisualStyleBackColor = False
+        '
+        'CheckBox39
+        '
+        Me.CheckBox39.AutoSize = True
+        Me.CheckBox39.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox39.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox39.Location = New System.Drawing.Point(421, 31)
+        Me.CheckBox39.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox39.Name = "CheckBox39"
+        Me.CheckBox39.Size = New System.Drawing.Size(79, 17)
+        Me.CheckBox39.TabIndex = 36
+        Me.CheckBox39.Text = "Teleporters"
+        Me.CheckBox39.UseVisualStyleBackColor = False
+        '
+        'CheckBox40
+        '
+        Me.CheckBox40.AutoSize = True
+        Me.CheckBox40.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox40.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox40.Location = New System.Drawing.Point(506, 31)
+        Me.CheckBox40.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox40.Name = "CheckBox40"
+        Me.CheckBox40.Size = New System.Drawing.Size(91, 17)
+        Me.CheckBox40.TabIndex = 37
+        Me.CheckBox40.Text = "Control Points"
+        Me.CheckBox40.UseVisualStyleBackColor = False
+        '
+        'CheckBox41
+        '
+        Me.CheckBox41.AutoSize = True
+        Me.CheckBox41.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox41.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox41.Location = New System.Drawing.Point(603, 31)
+        Me.CheckBox41.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox41.Name = "CheckBox41"
+        Me.CheckBox41.Size = New System.Drawing.Size(104, 17)
+        Me.CheckBox41.TabIndex = 38
+        Me.CheckBox41.Text = "OW Relic Points"
+        Me.CheckBox41.UseVisualStyleBackColor = False
+        '
+        'CheckBox42
+        '
+        Me.CheckBox42.AutoSize = True
+        Me.CheckBox42.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox42.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox42.Location = New System.Drawing.Point(3, 57)
+        Me.CheckBox42.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox42.Name = "CheckBox42"
+        Me.CheckBox42.Size = New System.Drawing.Size(112, 17)
+        Me.CheckBox42.TabIndex = 39
+        Me.CheckBox42.Text = "Neighbor Facilities"
+        Me.CheckBox42.UseVisualStyleBackColor = False
+        '
+        'CheckBox43
+        '
+        Me.CheckBox43.AutoSize = True
+        Me.CheckBox43.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox43.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox43.Location = New System.Drawing.Point(121, 57)
+        Me.CheckBox43.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox43.Name = "CheckBox43"
+        Me.CheckBox43.Size = New System.Drawing.Size(48, 17)
+        Me.CheckBox43.TabIndex = 40
+        Me.CheckBox43.Text = "SCU"
+        Me.CheckBox43.UseVisualStyleBackColor = False
+        '
+        'CheckBox44
+        '
+        Me.CheckBox44.AutoSize = True
+        Me.CheckBox44.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox44.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox44.Location = New System.Drawing.Point(175, 57)
+        Me.CheckBox44.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox44.Name = "CheckBox44"
+        Me.CheckBox44.Size = New System.Drawing.Size(96, 17)
+        Me.CheckBox44.TabIndex = 41
+        Me.CheckBox44.Text = "Horizontal Gen"
+        Me.CheckBox44.UseVisualStyleBackColor = False
+        '
+        'CheckBox45
+        '
+        Me.CheckBox45.AutoSize = True
+        Me.CheckBox45.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox45.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox45.Location = New System.Drawing.Point(277, 57)
+        Me.CheckBox45.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox45.Name = "CheckBox45"
+        Me.CheckBox45.Size = New System.Drawing.Size(84, 17)
+        Me.CheckBox45.TabIndex = 42
+        Me.CheckBox45.Text = "Vertical Gen"
+        Me.CheckBox45.UseVisualStyleBackColor = False
+        '
+        'CheckBox46
+        '
+        Me.CheckBox46.AutoSize = True
+        Me.CheckBox46.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox46.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox46.Location = New System.Drawing.Point(367, 57)
+        Me.CheckBox46.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox46.Name = "CheckBox46"
+        Me.CheckBox46.Size = New System.Drawing.Size(116, 17)
+        Me.CheckBox46.TabIndex = 43
+        Me.CheckBox46.Text = "Vehicle Shield Gen"
+        Me.CheckBox46.UseVisualStyleBackColor = False
+        '
+        'CheckBox47
+        '
+        Me.CheckBox47.AutoSize = True
+        Me.CheckBox47.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox47.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox47.Location = New System.Drawing.Point(489, 57)
+        Me.CheckBox47.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox47.Name = "CheckBox47"
+        Me.CheckBox47.Size = New System.Drawing.Size(103, 17)
+        Me.CheckBox47.TabIndex = 44
+        Me.CheckBox47.Text = "SCU Shield Gen"
+        Me.CheckBox47.UseVisualStyleBackColor = False
+        '
+        'CheckBox48
+        '
+        Me.CheckBox48.AutoSize = True
+        Me.CheckBox48.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox48.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox48.Location = New System.Drawing.Point(598, 57)
+        Me.CheckBox48.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox48.Name = "CheckBox48"
+        Me.CheckBox48.Size = New System.Drawing.Size(122, 17)
+        Me.CheckBox48.TabIndex = 45
+        Me.CheckBox48.Text = "Forward Spawn Unit"
+        Me.CheckBox48.UseVisualStyleBackColor = False
+        '
+        'CheckBox56
+        '
+        Me.CheckBox56.AutoSize = True
+        Me.CheckBox56.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox56.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox56.Location = New System.Drawing.Point(3, 83)
+        Me.CheckBox56.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox56.Name = "CheckBox56"
+        Me.CheckBox56.Size = New System.Drawing.Size(99, 17)
+        Me.CheckBox56.TabIndex = 46
+        Me.CheckBox56.Text = "Bridge Terminal"
+        Me.CheckBox56.UseVisualStyleBackColor = False
+        '
+        'CheckBox57
+        '
+        Me.CheckBox57.AutoSize = True
+        Me.CheckBox57.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox57.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox57.Location = New System.Drawing.Point(108, 83)
+        Me.CheckBox57.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox57.Name = "CheckBox57"
+        Me.CheckBox57.Size = New System.Drawing.Size(102, 17)
+        Me.CheckBox57.TabIndex = 47
+        Me.CheckBox57.Text = "Attackable SCU"
+        Me.CheckBox57.UseVisualStyleBackColor = False
+        '
+        'CheckBox58
+        '
+        Me.CheckBox58.AutoSize = True
+        Me.CheckBox58.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox58.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox58.Location = New System.Drawing.Point(216, 83)
+        Me.CheckBox58.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox58.Name = "CheckBox58"
+        Me.CheckBox58.Size = New System.Drawing.Size(135, 17)
+        Me.CheckBox58.TabIndex = 48
+        Me.CheckBox58.Text = "Attackable Gate Shield"
+        Me.CheckBox58.UseVisualStyleBackColor = False
+        '
+        'CheckBox59
+        '
+        Me.CheckBox59.AutoSize = True
+        Me.CheckBox59.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CheckBox59.ForeColor = System.Drawing.SystemColors.Control
+        Me.CheckBox59.Location = New System.Drawing.Point(357, 83)
+        Me.CheckBox59.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.CheckBox59.Name = "CheckBox59"
+        Me.CheckBox59.Size = New System.Drawing.Size(96, 17)
+        Me.CheckBox59.TabIndex = 49
+        Me.CheckBox59.Text = "Reliquary Door"
+        Me.CheckBox59.UseVisualStyleBackColor = False
+        '
         'TabPage5
         '
         Me.TabPage5.AutoScroll = True
@@ -2492,24 +3544,12 @@ Partial Class Form1
         '
         Me.TabPage6.AutoScroll = True
         Me.TabPage6.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.TabPage6.Controls.Add(Me.FlowLayoutPanel13)
+        Me.TabPage6.Controls.Add(Me.chatPanel0)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Size = New System.Drawing.Size(739, 537)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Chat"
-        '
-        'FlowLayoutPanel13
-        '
-        Me.FlowLayoutPanel13.AutoScroll = True
-        Me.FlowLayoutPanel13.AutoSize = True
-        Me.FlowLayoutPanel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel13.Controls.Add(Me.chatPanel0)
-        Me.FlowLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel13.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel13.Name = "FlowLayoutPanel13"
-        Me.FlowLayoutPanel13.Size = New System.Drawing.Size(739, 537)
-        Me.FlowLayoutPanel13.TabIndex = 54
         '
         'chatPanel0
         '
@@ -2518,9 +3558,9 @@ Partial Class Form1
         Me.chatPanel0.Controls.Add(Me.chatPanel1)
         Me.chatPanel0.Controls.Add(Me.chatPanel2)
         Me.chatPanel0.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.chatPanel0.Location = New System.Drawing.Point(3, 3)
+        Me.chatPanel0.Location = New System.Drawing.Point(0, 0)
         Me.chatPanel0.Name = "chatPanel0"
-        Me.chatPanel0.Size = New System.Drawing.Size(311, 262)
+        Me.chatPanel0.Size = New System.Drawing.Size(739, 537)
         Me.chatPanel0.TabIndex = 79
         '
         'chatPanel1
@@ -2538,7 +3578,7 @@ Partial Class Form1
         Me.chatPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.chatPanel1.Location = New System.Drawing.Point(3, 3)
         Me.chatPanel1.Name = "chatPanel1"
-        Me.chatPanel1.Size = New System.Drawing.Size(195, 256)
+        Me.chatPanel1.Size = New System.Drawing.Size(269, 256)
         Me.chatPanel1.TabIndex = 52
         '
         'FlowLayoutPanel6
@@ -2619,9 +3659,10 @@ Partial Class Form1
         Me.FlowLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.FlowLayoutPanel8.Controls.Add(Me.squadVoiceVolBox)
         Me.FlowLayoutPanel8.Controls.Add(Me.squadVoiceCheck)
+        Me.FlowLayoutPanel8.Controls.Add(Me.Label37)
         Me.FlowLayoutPanel8.Location = New System.Drawing.Point(3, 67)
         Me.FlowLayoutPanel8.Name = "FlowLayoutPanel8"
-        Me.FlowLayoutPanel8.Size = New System.Drawing.Size(179, 26)
+        Me.FlowLayoutPanel8.Size = New System.Drawing.Size(253, 26)
         Me.FlowLayoutPanel8.TabIndex = 55
         '
         'squadVoiceVolBox
@@ -2648,6 +3689,21 @@ Partial Class Form1
         Me.squadVoiceCheck.TabIndex = 21
         Me.squadVoiceCheck.Text = "Squad Voice"
         Me.squadVoiceCheck.UseVisualStyleBackColor = False
+        Me.squadVoiceCheck.Visible = False
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label37.Location = New System.Drawing.Point(182, 6)
+        Me.Label37.Margin = New System.Windows.Forms.Padding(3, 6, 3, 0)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(68, 13)
+        Me.Label37.TabIndex = 61
+        Me.Label37.Text = "Squad Voice"
+        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FlowLayoutPanel9
         '
@@ -2655,9 +3711,10 @@ Partial Class Form1
         Me.FlowLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.FlowLayoutPanel9.Controls.Add(Me.raidVoiceVolBox)
         Me.FlowLayoutPanel9.Controls.Add(Me.raidVoiceCheck)
+        Me.FlowLayoutPanel9.Controls.Add(Me.Label38)
         Me.FlowLayoutPanel9.Location = New System.Drawing.Point(3, 99)
         Me.FlowLayoutPanel9.Name = "FlowLayoutPanel9"
-        Me.FlowLayoutPanel9.Size = New System.Drawing.Size(184, 26)
+        Me.FlowLayoutPanel9.Size = New System.Drawing.Size(263, 26)
         Me.FlowLayoutPanel9.TabIndex = 56
         '
         'raidVoiceVolBox
@@ -2684,6 +3741,21 @@ Partial Class Form1
         Me.raidVoiceCheck.TabIndex = 21
         Me.raidVoiceCheck.Text = "Platoon Voice"
         Me.raidVoiceCheck.UseVisualStyleBackColor = False
+        Me.raidVoiceCheck.Visible = False
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label38.Location = New System.Drawing.Point(187, 6)
+        Me.Label38.Margin = New System.Windows.Forms.Padding(3, 6, 3, 0)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(73, 13)
+        Me.Label38.TabIndex = 61
+        Me.Label38.Text = "Platoon Voice"
+        Me.Label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FlowLayoutPanel10
         '
@@ -2691,9 +3763,10 @@ Partial Class Form1
         Me.FlowLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.FlowLayoutPanel10.Controls.Add(Me.outfitVoiceVolBox)
         Me.FlowLayoutPanel10.Controls.Add(Me.outfitVoiceCheck)
+        Me.FlowLayoutPanel10.Controls.Add(Me.Label39)
         Me.FlowLayoutPanel10.Location = New System.Drawing.Point(3, 131)
         Me.FlowLayoutPanel10.Name = "FlowLayoutPanel10"
-        Me.FlowLayoutPanel10.Size = New System.Drawing.Size(173, 26)
+        Me.FlowLayoutPanel10.Size = New System.Drawing.Size(241, 26)
         Me.FlowLayoutPanel10.TabIndex = 57
         '
         'outfitVoiceVolBox
@@ -2720,6 +3793,21 @@ Partial Class Form1
         Me.outfitVoiceCheck.TabIndex = 21
         Me.outfitVoiceCheck.Text = "Outfit Voice"
         Me.outfitVoiceCheck.UseVisualStyleBackColor = False
+        Me.outfitVoiceCheck.Visible = False
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label39.Location = New System.Drawing.Point(176, 6)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(3, 6, 3, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(62, 13)
+        Me.Label39.TabIndex = 61
+        Me.Label39.Text = "Outfit Voice"
+        Me.Label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FlowLayoutPanel4
         '
@@ -2727,9 +3815,10 @@ Partial Class Form1
         Me.FlowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.FlowLayoutPanel4.Controls.Add(Me.leaderVoiceVolBox)
         Me.FlowLayoutPanel4.Controls.Add(Me.leaderVoiceCheck)
+        Me.FlowLayoutPanel4.Controls.Add(Me.Label40)
         Me.FlowLayoutPanel4.Location = New System.Drawing.Point(3, 163)
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(181, 26)
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(257, 26)
         Me.FlowLayoutPanel4.TabIndex = 60
         '
         'leaderVoiceVolBox
@@ -2756,6 +3845,21 @@ Partial Class Form1
         Me.leaderVoiceCheck.TabIndex = 21
         Me.leaderVoiceCheck.Text = "Leader Voice"
         Me.leaderVoiceCheck.UseVisualStyleBackColor = False
+        Me.leaderVoiceCheck.Visible = False
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label40.Location = New System.Drawing.Point(184, 6)
+        Me.Label40.Margin = New System.Windows.Forms.Padding(3, 6, 3, 0)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(70, 13)
+        Me.Label40.TabIndex = 61
+        Me.Label40.Text = "Leader Voice"
+        Me.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FlowLayoutPanel11
         '
@@ -2846,9 +3950,9 @@ Partial Class Form1
         Me.chatPanel2.Controls.Add(Me.regionTextCheck)
         Me.chatPanel2.Controls.Add(Me.mentorTextCheck)
         Me.chatPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.chatPanel2.Location = New System.Drawing.Point(204, 3)
+        Me.chatPanel2.Location = New System.Drawing.Point(278, 3)
         Me.chatPanel2.Name = "chatPanel2"
-        Me.chatPanel2.Size = New System.Drawing.Size(104, 251)
+        Me.chatPanel2.Size = New System.Drawing.Size(163, 251)
         Me.chatPanel2.TabIndex = 53
         '
         'Label70
@@ -2859,9 +3963,9 @@ Partial Class Form1
         Me.Label70.ForeColor = System.Drawing.SystemColors.Control
         Me.Label70.Location = New System.Drawing.Point(3, 0)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(98, 17)
+        Me.Label70.Size = New System.Drawing.Size(157, 17)
         Me.Label70.TabIndex = 31
-        Me.Label70.Text = "Text Channels"
+        Me.Label70.Text = "Disabled Text Channels"
         '
         'yellTextCheck
         '
@@ -2980,6 +4084,62 @@ Partial Class Form1
         Me.mentorTextCheck.Text = "Mentor"
         Me.mentorTextCheck.UseVisualStyleBackColor = False
         '
+        'TabPage3
+        '
+        Me.TabPage3.AutoScroll = True
+        Me.TabPage3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage3.Controls.Add(Me.Label57)
+        Me.TabPage3.Controls.Add(Me.fontAutoCheck)
+        Me.TabPage3.Controls.Add(Me.selectedFontPath)
+        Me.TabPage3.Controls.Add(Me.fontSelectButton)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Font"
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.ForeColor = System.Drawing.Color.White
+        Me.Label57.Location = New System.Drawing.Point(5, 112)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(418, 160)
+        Me.Label57.TabIndex = 64
+        Me.Label57.Text = resources.GetString("Label57.Text")
+        '
+        'fontAutoCheck
+        '
+        Me.fontAutoCheck.AutoSize = True
+        Me.fontAutoCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.fontAutoCheck.Location = New System.Drawing.Point(8, 17)
+        Me.fontAutoCheck.Name = "fontAutoCheck"
+        Me.fontAutoCheck.Size = New System.Drawing.Size(155, 17)
+        Me.fontAutoCheck.TabIndex = 2
+        Me.fontAutoCheck.Text = "Automatically Replace Font"
+        Me.fontAutoCheck.UseVisualStyleBackColor = True
+        '
+        'selectedFontPath
+        '
+        Me.selectedFontPath.AutoSize = True
+        Me.selectedFontPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.selectedFontPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.selectedFontPath.ForeColor = System.Drawing.SystemColors.Control
+        Me.selectedFontPath.Location = New System.Drawing.Point(8, 66)
+        Me.selectedFontPath.Name = "selectedFontPath"
+        Me.selectedFontPath.Size = New System.Drawing.Size(0, 17)
+        Me.selectedFontPath.TabIndex = 63
+        '
+        'fontSelectButton
+        '
+        Me.fontSelectButton.Location = New System.Drawing.Point(8, 40)
+        Me.fontSelectButton.Name = "fontSelectButton"
+        Me.fontSelectButton.Size = New System.Drawing.Size(75, 23)
+        Me.fontSelectButton.TabIndex = 3
+        Me.fontSelectButton.Text = "Select Font"
+        Me.fontSelectButton.UseVisualStyleBackColor = True
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.startLauncher})
@@ -3089,9 +4249,13 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         Me.graphPanel0.ResumeLayout(False)
         Me.graphPanel0.PerformLayout()
+        Me.graphPanel5.ResumeLayout(False)
+        Me.graphPanel5.PerformLayout()
+        CType(Me.DLSSSharpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FSRSharpBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.sensPanel0.ResumeLayout(False)
         Me.sensPanel1.ResumeLayout(False)
         Me.sensPanel1.PerformLayout()
         CType(Me.hipSensBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3118,8 +4282,6 @@ Partial Class Form1
         CType(Me.sensPanel4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.sensPanel4.ResumeLayout(False)
         CType(Me.DPIBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.intPanel0.ResumeLayout(False)
@@ -3145,6 +4307,20 @@ Partial Class Form1
         Me.facColorPanelButtons.ResumeLayout(False)
         Me.intPanel1.ResumeLayout(False)
         Me.intPanel1.PerformLayout()
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
+        Me.iconPanel0.ResumeLayout(False)
+        Me.iconPanel0.PerformLayout()
+        Me.FlowLayoutPanel3.ResumeLayout(False)
+        Me.FlowLayoutPanel3.PerformLayout()
+        Me.FlowLayoutPanel5.ResumeLayout(False)
+        Me.FlowLayoutPanel5.PerformLayout()
+        Me.FlowLayoutPanel12.ResumeLayout(False)
+        Me.FlowLayoutPanel12.PerformLayout()
+        Me.FlowLayoutPanel13.ResumeLayout(False)
+        Me.FlowLayoutPanel13.PerformLayout()
+        Me.FlowLayoutPanel15.ResumeLayout(False)
+        Me.FlowLayoutPanel15.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         Me.FlowLayoutPanel14.ResumeLayout(False)
@@ -3162,8 +4338,6 @@ Partial Class Form1
         Me.soundPanel2.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
-        Me.FlowLayoutPanel13.ResumeLayout(False)
-        Me.FlowLayoutPanel13.PerformLayout()
         Me.chatPanel0.ResumeLayout(False)
         Me.chatPanel0.PerformLayout()
         Me.chatPanel1.ResumeLayout(False)
@@ -3194,6 +4368,8 @@ Partial Class Form1
         CType(Me.duckVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.chatPanel2.ResumeLayout(False)
         Me.chatPanel2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -3265,15 +4441,15 @@ Partial Class Form1
     Friend WithEvents Label31 As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents sensPanel2 As SplitContainer
-    Friend WithEvents Label37 As Label
-    Friend WithEvents Label45 As Label
-    Friend WithEvents Label38 As Label
-    Friend WithEvents Label44 As Label
-    Friend WithEvents Label39 As Label
-    Friend WithEvents Label43 As Label
-    Friend WithEvents Label40 As Label
-    Friend WithEvents Label42 As Label
-    Friend WithEvents Label41 As Label
+    Friend WithEvents Label3cm360 As Label
+    Friend WithEvents Label4cm360 As Label
+    Friend WithEvents Label12cm360 As Label
+    Friend WithEvents Label6cm360 As Label
+    Friend WithEvents LabelHipcm360 As Label
+    Friend WithEvents Label2cm360 As Label
+    Friend WithEvents Label10cm360 As Label
+    Friend WithEvents Label8cm360 As Label
+    Friend WithEvents Label1cm360 As Label
     Friend WithEvents globRenDistBox As NumericUpDown
     Friend WithEvents infRenDistBox As NumericUpDown
     Friend WithEvents vehRenDistbox As NumericUpDown
@@ -3306,10 +4482,9 @@ Partial Class Form1
     Friend WithEvents adsZoomBox As ComboBox
     Friend WithEvents Label49 As Label
     Friend WithEvents scopZoomBox As ComboBox
-    Friend WithEvents Label56 As Label
-    Friend WithEvents Label55 As Label
-    Friend WithEvents Label54 As Label
-    Friend WithEvents recalcSensButton As Button
+    Friend WithEvents LabelScopSens As Label
+    Friend WithEvents LabelAdsSens As Label
+    Friend WithEvents LabelHipSens As Label
     Friend WithEvents fontAutoCheck As CheckBox
     Friend WithEvents Label57 As Label
     Friend WithEvents TabPage4 As TabPage
@@ -3410,7 +4585,6 @@ Partial Class Form1
     Friend WithEvents fireteamTextCheck As CheckBox
     Friend WithEvents graphPanel0 As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel14 As FlowLayoutPanel
-    Friend WithEvents FlowLayoutPanel13 As FlowLayoutPanel
     Friend WithEvents leaderTextCheck As CheckBox
     Friend WithEvents intPanel0 As FlowLayoutPanel
     Friend WithEvents playerColorPanel As FlowLayoutPanel
@@ -3426,6 +4600,87 @@ Partial Class Form1
     Friend WithEvents curEditLabel As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents startLauncher As ToolStripMenuItem
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents sensPanel0 As FlowLayoutPanel
     Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents Label19 As Label
+    Friend WithEvents AADrop As ComboBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents waterReflectDrop As ComboBox
+    Friend WithEvents Label58 As Label
+    Friend WithEvents objReflectDrop As ComboBox
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents iconPanel0 As FlowLayoutPanel
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents FlowLayoutPanel12 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel13 As FlowLayoutPanel
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents FlowLayoutPanel15 As FlowLayoutPanel
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents CheckBox13 As CheckBox
+    Friend WithEvents CheckBox14 As CheckBox
+    Friend WithEvents CheckBox16 As CheckBox
+    Friend WithEvents CheckBox17 As CheckBox
+    Friend WithEvents CheckBox18 As CheckBox
+    Friend WithEvents CheckBox19 As CheckBox
+    Friend WithEvents CheckBox20 As CheckBox
+    Friend WithEvents CheckBox21 As CheckBox
+    Friend WithEvents CheckBox22 As CheckBox
+    Friend WithEvents CheckBox23 As CheckBox
+    Friend WithEvents CheckBox24 As CheckBox
+    Friend WithEvents CheckBox25 As CheckBox
+    Friend WithEvents CheckBox26 As CheckBox
+    Friend WithEvents CheckBox27 As CheckBox
+    Friend WithEvents CheckBox28 As CheckBox
+    Friend WithEvents CheckBox29 As CheckBox
+    Friend WithEvents CheckBox30 As CheckBox
+    Friend WithEvents CheckBox31 As CheckBox
+    Friend WithEvents CheckBox32 As CheckBox
+    Friend WithEvents CheckBox33 As CheckBox
+    Friend WithEvents CheckBox34 As CheckBox
+    Friend WithEvents CheckBox35 As CheckBox
+    Friend WithEvents CheckBox36 As CheckBox
+    Friend WithEvents CheckBox37 As CheckBox
+    Friend WithEvents CheckBox38 As CheckBox
+    Friend WithEvents CheckBox39 As CheckBox
+    Friend WithEvents CheckBox40 As CheckBox
+    Friend WithEvents CheckBox41 As CheckBox
+    Friend WithEvents CheckBox42 As CheckBox
+    Friend WithEvents CheckBox43 As CheckBox
+    Friend WithEvents CheckBox44 As CheckBox
+    Friend WithEvents CheckBox45 As CheckBox
+    Friend WithEvents CheckBox46 As CheckBox
+    Friend WithEvents CheckBox47 As CheckBox
+    Friend WithEvents CheckBox48 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox49 As CheckBox
+    Friend WithEvents CheckBox50 As CheckBox
+    Friend WithEvents CheckBox51 As CheckBox
+    Friend WithEvents CheckBox52 As CheckBox
+    Friend WithEvents CheckBox53 As CheckBox
+    Friend WithEvents CheckBox54 As CheckBox
+    Friend WithEvents CheckBox55 As CheckBox
+    Friend WithEvents CheckBox56 As CheckBox
+    Friend WithEvents CheckBox57 As CheckBox
+    Friend WithEvents CheckBox58 As CheckBox
+    Friend WithEvents CheckBox59 As CheckBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents graphPanel5 As FlowLayoutPanel
+    Friend WithEvents Label62 As Label
+    Friend WithEvents upscaleDrop As ComboBox
+    Friend WithEvents Label66 As Label
+    Friend WithEvents DLSSQualDrop As ComboBox
+    Friend WithEvents DLSSSharpBox As NumericUpDown
+    Friend WithEvents FSRQualDrop As ComboBox
+    Friend WithEvents Label76 As Label
+    Friend WithEvents FSRSharpBox As NumericUpDown
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label40 As Label
 End Class
