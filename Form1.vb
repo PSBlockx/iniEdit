@@ -5,45 +5,47 @@ Imports System.Security.Cryptography.X509Certificates
 Imports System.Runtime.Remoting.Messaging
 Imports System.ComponentModel
 Imports System.Windows.Forms.VisualStyles
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
 
 Public Class Form1
-    Public Class Arrays
-        Public Shared Rendering As Array = {"[Rendering]", "GraphicsQuality=", "TextureQuality=", "ShadowQuality=", "LightingQuality=", "EffectsQuality=", "TerrainQuality=", "FloraQuality=", "ModelQuality=", "RenderDistance=", "Gamma=", "VerticalFOV=", "ParticleLOD=", "FogShadowsEnable", "MotionBlur=", "VSync=", "AO=", "MaximumFPS", "UseLod0a=", "BloomEnabed=", "InfantryRenderDistance=", "GroundVehicleRenderDistance=", "AirVehicleRenderDistance=", "UseGlobalRenderDistance=", "ParticleDistanceScale=", "Smoothing=", "UseAspectFOV=", "GpuPhysics=", "ShadowManagerQuality=", "ShadowMapCount=", "ShadowMapQuality=", "ShadowNearDistance=", "ShadowFarDistance=", "ShadowRSM=", "ColorBlindFilterType=", "ColorBlindFilterAmount=", "ColorBlindFilterStrength", "OverallQuality=", "FSRQuality=", "FSRSharpness=", "DLSSQuality=", "DLSSSharpness=", "UseFences=", "AAQuality=", "SmoothingMaxFramerate=", "SmoothingMinFramerate=", "UnderwaterGodRaysQuality=", "SSLRQuality=", "Tessellation=", "WaterQuality="}
-        Public Shared Display As Array = {"[Display]", "Mode=", "FullscreenMode=", "FullscreenRefresh=", "FullscreenWidth=", "FullscreenHeight=", "WindowedWidth=", "WindowedHeight=", "Maximized=", "RenderQuality=", "AllowToggleUI="}
-        Public Shared Sound As Array = {"[Sound]", "Master=", "Music=", "Game=", "Dialog=", "UI=", "HitIndicator=", "LowAmmoIndicator=", "VehicleChatter=", "IdleMusic=", "MaxVoices=", "UseFloat32Output=", "ExclusiveMode=", "UseHighQualityReverb="}
-        Public Shared Terrain As Array = {"[Terrain]", "RenderFlora="}
-        Public Shared General As Array = {"[General]", "AutoDetectPerformanceSettings=", "MouseSensitivity=", "ScopedMouseSensitivity=", "ADSMouseSensitivity=", "VehicleMouseSensitivity=", "FlightMouseSensitivity=", "JoystickSensitivity=", "JoystickDeadzone=", "InvertVerticalLook=", "InvertVerticalFly=", "InvertTankSteering=", "MouseRawInput=", "MouseSmoothing=", "ToggleCrouch=", "ZoomToggle=", "SprintToggle=", "SprintLegacyToggleMode=", "DrawHud=", "ReduceInputLag=", "FixedMinimap=", "Profanity=", "GamepadSmoothing=", "GamepadInvertLook=", "GamepadInvertFlight=", "GamepadEasyFlight=", "DecloakOnFire=", "AbilityQueueSeconds=", "VehicleGunnerMouseSensitivity="}
-        Public Shared iniEdit As Array = {"[iniEdit]", "FontAutoReplace=", "FontFilePath="}
-        Public Shared UI As Array = {"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax="}
-        Public Shared AutoRefuse As Array = {"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="}
-        Public Shared ChatChannels As Array = {"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="}
-        Public Shared Voice As Array = {"[Voice]", "Enable=", "ReceiveVolume=", "OutfitVolume=", "SquadVolume=", "RaidVolume=", "ProximityVolume=", "MicrophoneVolume=", "Ducking=", "EchoEnabled=", "ProximityEnabled=", "FactionEnabled=", "GroupEnabled=", "GroupLeaderEnabled=", "RaidEnabled=", "GuildEnabled=", "RadioEnabled=", "CBEnabled=", "CustomEnabled=", "SubGroupEnabled=", "MuteInactiveChannels=", "PushToTalk="}
-        Public Shared Controls As Array = {"[Controls]", "CameraAutoAdjustment=", "ClickToMove=", "ClickToMoveRightButton=", "InfantryActionSetName=", "GroundVehicleSetName=", "AirVehicleActionSetName=", "Rumble=", "RailCamera="}
-        Public Shared Group As Array = {"[Group]", "AutoGroupOnLoginNew=", "AutoGroupAsLeaderNew=", "AutoGroupWithFriendsNew=", "AutoGroupWithGuildNew=", "AutoGroupOnLogin=", "AutoGroupAsLeader=", "AutoGroupwithFriends=", "AutoGroupWithGuild="}
-        Public Shared Guild As Array = {"[Guild]", "NotifyOnGuildPetitionRecieved="}
-        Public Shared Chat As Array = {"[Chat]", "HudChatInactiveOpacity=", "CanShowHudChat="}
-        Public Shared VoiceChat As Array = {"[VoiceChat]", "EchoEnabled=", "EchoVolume=", "ProximityEnabled=", "ProximityVolume=", "FactionEnabled=", "FactionVolume=", "GroupEnabled=", "GroupVolume=", "GroupLeaderEnabled=", "GroupLeaderVolume=", "RaidEnabled=", "RaidVolume=", "CBEnabled=", "CBVolume=", "CustomEnabled=", "CustomVolume=", "SubGroupEnabled=", "SubGroupVolume=", "InputDevice=", "OutputDevice="}
+    Public Class Lists
+        Public Shared Rendering As New List(Of String)({"[Rendering]", "GraphicsQuality=", "TextureQuality=", "ShadowQuality=", "LightingQuality=", "EffectsQuality=", "TerrainQuality=", "FloraQuality=", "ModelQuality=", "RenderDistance=", "Gamma=", "VerticalFOV=", "ParticleLOD=", "FogShadowsEnable", "MotionBlur=", "VSync=", "AO=", "MaximumFPS", "UseLod0a=", "BloomEnabed=", "InfantryRenderDistance=", "GroundVehicleRenderDistance=", "AirVehicleRenderDistance=", "UseGlobalRenderDistance=", "ParticleDistanceScale=", "Smoothing=", "UseAspectFOV=", "GpuPhysics=", "ShadowManagerQuality=", "ShadowMapCount=", "ShadowMapQuality=", "ShadowNearDistance=", "ShadowFarDistance=", "ShadowRSM=", "ColorBlindFilterType=", "ColorBlindFilterAmount=", "ColorBlindFilterStrength", "OverallQuality=", "FSRQuality=", "FSRSharpness=", "DLSSQuality=", "DLSSSharpness=", "UseFences=", "AAQuality=", "SmoothingMaxFramerate=", "SmoothingMinFramerate=", "UnderwaterGodRaysQuality=", "SSLRQuality=", "Tessellation=", "WaterQuality="})
+        Public Shared Display As New List(Of String)({"[Display]", "Mode=", "FullscreenMode=", "FullscreenRefresh=", "FullscreenWidth=", "FullscreenHeight=", "WindowedWidth=", "WindowedHeight=", "Maximized=", "RenderQuality=", "AllowToggleUI="})
+        Public Shared Sound As New List(Of String)({"[Sound]", "Master=", "Music=", "Game=", "Dialog=", "UI=", "HitIndicator=", "LowAmmoIndicator=", "VehicleChatter=", "IdleMusic=", "MaxVoices=", "UseFloat32Output=", "ExclusiveMode=", "UseHighQualityReverb="})
+        Public Shared Terrain As New List(Of String)({"[Terrain]", "RenderFlora="})
+        Public Shared General As New List(Of String)({"[General]", "AutoDetectPerformanceSettings=", "MouseSensitivity=", "ScopedMouseSensitivity=", "ADSMouseSensitivity=", "VehicleMouseSensitivity=", "FlightMouseSensitivity=", "JoystickSensitivity=", "JoystickDeadzone=", "InvertVerticalLook=", "InvertVerticalFly=", "InvertTankSteering=", "MouseRawInput=", "MouseSmoothing=", "ToggleCrouch=", "ZoomToggle=", "SprintToggle=", "SprintLegacyToggleMode=", "DrawHud=", "ReduceInputLag=", "FixedMinimap=", "Profanity=", "GamepadSmoothing=", "GamepadInvertLook=", "GamepadInvertFlight=", "GamepadEasyFlight=", "DecloakOnFire=", "AbilityQueueSeconds=", "VehicleGunnerMouseSensitivity="})
+        Public Shared iniEdit As New List(Of String)({"[iniEdit]", "FontAutoReplace=", "FontFilePath="})
+        Public Shared UI As New List(Of String)({"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax=", "HiddenHUDIndicators=", "HideReticule=", "HudChatOpacity=", "ConstructionFavorites="})
+        Public Shared AutoRefuse As New List(Of String)({"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="})
+        Public Shared ChatChannels As New List(Of String)({"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="})
+        Public Shared Voice As New List(Of String)({"[Voice]", "Enable=", "ReceiveVolume=", "OutfitVolume=", "SquadVolume=", "RaidVolume=", "ProximityVolume=", "MicrophoneVolume=", "Ducking=", "EchoEnabled=", "ProximityEnabled=", "FactionEnabled=", "GroupEnabled=", "GroupLeaderEnabled=", "RaidEnabled=", "GuildEnabled=", "RadioEnabled=", "CBEnabled=", "CustomEnabled=", "SubGroupEnabled=", "MuteInactiveChannels=", "PushToTalk="})
+        Public Shared Controls As New List(Of String)({"[Controls]", "CameraAutoAdjustment=", "ClickToMove=", "ClickToMoveRightButton=", "InfantryActionSetName=", "GroundVehicleSetName=", "AirVehicleActionSetName=", "Rumble=", "RailCamera="})
+        Public Shared Group As New List(Of String)({"[Group]", "AutoGroupOnLoginNew=", "AutoGroupAsLeaderNew=", "AutoGroupWithFriendsNew=", "AutoGroupWithGuildNew=", "AutoGroupOnLogin=", "AutoGroupAsLeader=", "AutoGroupwithFriends=", "AutoGroupWithGuild="})
+        Public Shared Guild As New List(Of String)({"[Guild]", "NotifyOnGuildPetitionRecieved="})
+        Public Shared Chat As New List(Of String)({"[Chat]", "HudChatInactiveOpacity=", "CanShowHudChat="})
+        Public Shared VoiceChat As New List(Of String)({"[VoiceChat]", "EchoEnabled=", "EchoVolume=", "ProximityEnabled=", "ProximityVolume=", "FactionEnabled=", "FactionVolume=", "GroupEnabled=", "GroupVolume=", "GroupLeaderEnabled=", "GroupLeaderVolume=", "RaidEnabled=", "RaidVolume=", "CBEnabled=", "CBVolume=", "CustomEnabled=", "CustomVolume=", "SubGroupEnabled=", "SubGroupVolume=", "InputDevice=", "OutputDevice="})
         'Options below this comment are not currently, or may have never been used, but are listed here anyway
-        'Public Shared Social As Array = {"[Social]", "FriendNotifications="}
-        'Public Shared MinimapOptions As Array = {"[MinimapOptions]", "PathEnabled="}
-        'Public Shared Emote As Array = {"[Emote]", "Favorites="}
-        'Public Shared Logging As Array = {"[Logging]", "Directory=", "EnableDebugOutputString=", "LocalLogLevel=", "FileLogLevel=", "ServerLogLevel=", "OutputWindowLevel=", "LocalDirectory=", "FailureDirectory="}
-        'Public Shared UiDebug As Array = {"[UiDebug]", "WatchedColumns="}
-        'Public Shared CrashReporter As Array = {"[CrashReporter]", "MaxParameters=", "MaxUploaderPerDay=", "MaxUploadSec=", "MaxCrashAge=", "NoUploadFromInit=", "LocalFullDump=", "IncludeIndirectMemory=", "WaitForAttach=", "PipeCrashUploaderConsole="}
-        'Public Shared CrashUploader As Array = {"[CrashUploader]", "MaxPerDay=", "WaitForAttach=", "WriteResultsOnFailure="}
-        'Public Shared Promotion As Array = {"[Promotion]", "HasntOptedIn="}
-        'Public Shared Video As Array = {"[Video]", "VideoCapturePrefix="}
-        'Public Shared ImageCapture As Array = {"[ImageCapture]", "OutputFolder=", "OutputFilePrefix="}
-        'Public Shared VideoCapture As Array = {"[VideoCapture]", "Resolution=", "Quality=", "OutputFile=", "WorkingDir="}
-        'Public Shared VideoStreamer As Array = {"[VideoStreamer]", "Resolution=", "Fps=", "Kbps=", "MicRecordVolume=", "SpeakerRecordVolume=", "Username="}
-        'Public Shared Umbra As Array = {"[Umbra]", "Cull=", "TomeCollection="}
-        'Public Shared Graphics As Array = {"[Graphics]", "WindowWidth=", "WindowHeight="}
+        'Public Shared Social As New List(Of String)({"[Social]", "FriendNotifications="})
+        'Public Shared MinimapOptions As New List(Of String)({"[MinimapOptions]", "PathEnabled="})
+        'Public Shared Emote As New List(Of String)({"[Emote]", "Favorites="})
+        'Public Shared Logging As New List(Of String)({"[Logging]", "Directory=", "EnableDebugOutputString=", "LocalLogLevel=", "FileLogLevel=", "ServerLogLevel=", "OutputWindowLevel=", "LocalDirectory=", "FailureDirectory="})
+        'Public Shared UiDebug As New List(Of String)({"[UiDebug]", "WatchedColumns="})
+        'Public Shared CrashReporter As New List(Of String)({"[CrashReporter]", "MaxParameters=", "MaxUploaderPerDay=", "MaxUploadSec=", "MaxCrashAge=", "NoUploadFromInit=", "LocalFullDump=", "IncludeIndirectMemory=", "WaitForAttach=", "PipeCrashUploaderConsole="})
+        'Public Shared CrashUploader As New List(Of String)({"[CrashUploader]", "MaxPerDay=", "WaitForAttach=", "WriteResultsOnFailure="})
+        'Public Shared Promotion As New List(Of String)({"[Promotion]", "HasntOptedIn="})
+        'Public Shared Video As New List(Of String)({"[Video]", "VideoCapturePrefix="})
+        'Public Shared ImageCapture As New List(Of String)({"[ImageCapture]", "OutputFolder=", "OutputFilePrefix="})
+        'Public Shared VideoCapture As New List(Of String)({"[VideoCapture]", "Resolution=", "Quality=", "OutputFile=", "WorkingDir="})
+        'Public Shared VideoStreamer As New List(Of String)({"[VideoStreamer]", "Resolution=", "Fps=", "Kbps=", "MicRecordVolume=", "SpeakerRecordVolume=", "Username="})
+        'Public Shared Umbra As New List(Of String)({"[Umbra]", "Cull=", "TomeCollection="})
+        'Public Shared Graphics As New List(Of String)({"[Graphics]", "WindowWidth=", "WindowHeight="})
 
 
         Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, ChatChannels, Voice, VoiceChat, iniEdit, Display}
     End Class
     Public Shared curini As List(Of String) = Nothing
     Public Shared curiniPath As String = "Useroptions.ini"
+    Public Shared doneLoading As Boolean = False
 
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Read ini into previously initialized empty list
@@ -56,37 +58,42 @@ Public Class Form1
         readAllOptions()
         sensTypeDrop.SelectedIndex = 0
         curEditLabel.Text = String.Concat("Currently Editing: ", curiniPath)
+        doneLoading = True
     End Sub
+#Region "UpdatesAndGets"
     Public Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
         'Reads the ini line by line for the specified option
         'If option isn't found, run through option arrays for option and insert a line for the correct category
+        If Not doneLoading Then
+            Exit Sub
+        End If
         Dim found As Boolean = False
         For index As Integer = 0 To curini.Count - 1
-            If curini(index).ToLower.StartsWith(optionName.ToLower) Then
+            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 found = True
-                curini(index) = String.Concat(optionName, newVal)
-                Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
+                curini(index) = optionName & newVal
+                Console.WriteLine($"Updated {optionName} to {newVal}")
             End If
         Next
         If Not found Then
-            For Each array In Arrays.bigOptions
-                For Each item In array
-                    If item.Equals(optionName) Then
-                        For Each line In curini
-                            If line.ToLower.StartsWith(array(0).ToString.ToLower) Then
-                                curini.Insert(curini.IndexOf(line) + 1, String.Concat(optionName, newVal))
-                                Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
-                                Exit Sub
-                            End If
-                        Next
-                    End If
-                Next
+            For Each list As List(Of String) In Lists.bigOptions
+                If list.Contains(optionName) Then
+                    For Each line In curini
+                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
+                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
+                            Console.WriteLine($"Added {optionName} with val {newVal}")
+                            Exit Sub
+                        End If
+                    Next
+                End If
             Next
         End If
     End Sub
-#Region "UpdatesAndGets"
     Public Sub UpdateValSpecific(ByVal optionName As String, ByVal newVal As String, ByVal optionGroup As String)
         'Voice options are stupid
+        If Not doneLoading Then
+            Exit Sub
+        End If
         Dim found As Boolean = False
         Dim optionIndexes = New ArrayList()
         For Each line In curini
@@ -98,28 +105,28 @@ Public Class Form1
         Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
         Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
         For ctr As Integer = optionGroupIndex To optionGroupNextIndex
-            If curini(ctr).ToLower.StartsWith(optionName.ToLower) Then
+            If curini(ctr).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 found = True
-                curini(ctr) = String.Concat(optionName, newVal)
-                Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
+                curini(ctr) = optionName & newVal
+                Console.WriteLine($"Updated {optionName} to {newVal}")
             End If
         Next
         If Not found Then
-            curini.Insert(curini(optionGroupIndex + 1), String.Concat(optionName, newVal))
-            Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
+            curini.Insert(curini(optionGroupIndex + 1), optionName & newVal)
+            Console.WriteLine($"Added {optionName} with val {newVal}")
         End If
     End Sub
-    Function getState(ByVal optionName As String)
+    Function GetState(ByVal optionName As String)
         'Find the line which has the desired option, and return the value after the = sign
         For Each line In curini
-            If line.ToLower.StartsWith(optionName.ToLower) Then
+            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 Dim optionVal As Array = line.Split("="c)
-                Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1)))
+                Console.WriteLine($"Got {optionName} with {optionVal(1)}")
                 Return optionVal(1)
             End If
         Next
     End Function
-    Function getStateSpecific(ByVal optionName As String, ByVal optionGroup As String)
+    Function GetStateSpecific(ByVal optionName As String, ByVal optionGroup As String)
         'Voice options are stupid
         Dim optionIndexes = New ArrayList()
         For Each line In curini
@@ -131,51 +138,102 @@ Public Class Form1
         Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
         Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
         For ctr As Integer = optionGroupIndex To optionGroupNextIndex
-            If curini(ctr).ToLower.StartsWith(optionName.ToLower) Then
+            If curini(ctr).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 Dim optionVal As Array = curini(ctr).Split("="c)
-                Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(1), " under ", optionGroup))
+                Console.WriteLine($"Got {optionName} with {optionVal(1)} under {optionGroup}")
                 Return optionVal(1)
             End If
         Next
     End Function
     Public Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
         'Specialized update function for color options with multiple values separated by commas, could be used for other options with multiple values
+        If Not doneLoading Then
+            Exit Sub
+        End If
         Dim found As Boolean = False
         For index As Integer = 0 To curini.Count - 1
-            If curini(index).ToLower.StartsWith(optionName.ToLower) Then
+            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 found = True
                 Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
                 lineList(faction) = newVal
-                curini(index) = String.Concat(optionName, lineList(1), ",", lineList(2), ",", lineList(3))
+                curini(index) = optionName & lineList(1) & lineList(2) & lineList(3)
             End If
         Next
-        Console.WriteLine(String.Concat("Updated ", optionName, " to ", newVal))
+        Console.WriteLine($"Updated {optionName} to {newVal}")
         If Not found Then
-            For Each array In Arrays.bigOptions
-                For Each item In array
-                    If item.Equals(optionName) Then
-                        For Each line In curini
-                            If line.ToLower.StartsWith(array(0).ToString.ToLower) Then
-                                curini.Insert(curini.IndexOf(line) + 1, String.Concat(optionName, newVal))
-                                Console.WriteLine(String.Concat("Added ", optionName, " with val ", newVal))
-                                Exit Sub
-                            End If
-                        Next
-                    End If
-                Next
+            For Each list As List(Of String) In Lists.bigOptions
+                If list.Contains(optionName) Then
+                    For Each line In curini
+                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
+                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
+                            Console.WriteLine($"Added {optionName} with val {newVal}")
+                            Exit Sub
+                        End If
+                    Next
+                End If
             Next
         End If
     End Sub
     Function ColorGetState(ByVal optionName As String, ByVal faction As Integer)
         'Specialized getState for options with multiple values separated by commas
         For Each line In curini
-            If line.ToLower.StartsWith(optionName.ToLower) Then
+            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 Dim optionVal As Array = line.Split("="c, ","c)
-                Console.WriteLine(String.Concat("Got ", optionName, " with ", optionVal(faction)))
+                Console.WriteLine($"Got {optionName} with {optionVal(faction)}")
                 Return optionVal(faction)
             End If
         Next
     End Function
+    Function GetStateContains(ByVal optionName As String, ByVal findVal As String)
+        For Each line In curini
+            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                Dim optionVal As List(Of String) = line.Split("="c, ","c).ToList
+                Return optionVal.Contains(findVal)
+            End If
+        Next
+    End Function
+    Public Sub UpdateValContains(ByVal optionName As String, ByVal newVal As String, ByVal addremove As Boolean)
+        If Not doneLoading Then
+            Exit Sub
+        End If
+        Dim found As Boolean = False
+        For index As Integer = 0 To curini.Count - 1
+            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                found = True
+                Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
+                If lineList.Contains(newVal) And addremove = True Then
+                    Console.WriteLine("option already in list")
+                    Exit Sub
+                ElseIf Not lineList.Contains(newVal) And addremove = False Then
+                    Console.WriteLine("option already not in list")
+                    Exit Sub
+                ElseIf lineList.Contains(newVal) And addremove = False Then
+                    Console.WriteLine("option removed from list")
+                    lineList.Remove(newVal)
+                ElseIf Not lineList.Contains(newVal) And addremove = True Then
+                    Console.WriteLine("option added to list")
+                    lineList.Append(newVal)
+                    Console.WriteLine(GetState("hiddenhudindicators="))
+                End If
+                curini(index) = String.Concat(lineList(0), "=")
+                Console.WriteLine(curini(index))
+            End If
+        Next
+        Console.WriteLine($"Updated {optionName} to {newVal}")
+        If Not found Then
+            For Each list As List(Of String) In Lists.bigOptions
+                If list.Contains(optionName) Then
+                    For Each line In curini
+                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
+                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
+                            Console.WriteLine($"Added {optionName} with val {newVal}")
+                            Exit Sub
+                        End If
+                    Next
+                End If
+            Next
+        End If
+    End Sub
 #End Region
 #Region "MiscFuncs"
     Function colorGetter()
@@ -220,108 +278,94 @@ Public Class Form1
         Return sens.ToString()
     End Function
 #End Region
-    Function showControl(control)
-        With control
-            .Show()
-            .BringToFront()
-            .Enabled = True
-        End With
-    End Function
-    Function hideControl(control)
-        With control
-            .Hide()
-            .SendToBack()
-            .Enabled = False
-        End With
-    End Function
 #End Region
     Function readAllOptions()
         'Big list of checking where the options are at cus i dont code good
 #Region "GraphicsGets"
-        vsyncCheck.Checked = getState("VSync=")
-        fogShadCheck.Checked = getState("FogShadowsEnable=")
-        ambOccCheck.Checked = getState("AO=")
-        bloomCheck.Checked = getState("BloomEnabled=")
-        blurCheck.Checked = getState("MotionBlur=")
-        smoothCheck.Checked = getState("Smoothing=")
-        wideCheck.Checked = getState("UseAspectFOV=")
-        useGlobRenCheck.Checked = getState("UseGlobalRenderDistance=")
-        globRenDistBox.Text = getState("RenderDistance=")
-        infRenDistBox.Text = getState("InfantryRenderDistance=")
-        vehRenDistbox.Text = getState("GroundVehicleRenderDistance=")
-        airRenDistBox.Text = getState("AirVehicleRenderDistance=")
-        fovBox.Text = getState("VerticalFOV=")
-        renQualBox.Text = getState("RenderQuality=")
-        maxFPSBox.Text = getState("MaximumFPS=")
-        gammaBox.Text = getState("Gamma=")
-        partDistScaleBox.Text = getState("ParticleDistanceScale=")
-        graphQualDrop.SelectedIndex = Integer.Parse(getState("GraphicsQuality=")) - 1
-        texQualDrop.SelectedIndex = Integer.Parse(getState("TextureQuality="))
-        shadQualDrop.SelectedIndex = Integer.Parse(getState("ShadowQuality="))
-        lightQualDrop.SelectedIndex = Integer.Parse(getState("LightingQuality=")) - 1
-        effQualDrop.SelectedIndex = Integer.Parse(getState("EffectsQuality=")) - 1
-        terrQualDrop.SelectedIndex = Integer.Parse(getState("TerrainQuality=")) - 1
-        floraQualDrop.SelectedIndex = Integer.Parse(getState("FloraQuality=")) - 1
-        modQualDrop.SelectedIndex = Integer.Parse(getState("ModelQuality=")) - 1
-        partQualDrop.SelectedIndex = Integer.Parse(getState("ParticleLOD="))
-        If getState("DLSSQuality=") = "-1" And getState("FSRQuality=") = "-1" Then
+        vsyncCheck.Checked = GetState("VSync=")
+        fogShadCheck.Checked = GetState("FogShadowsEnable=")
+        ambOccCheck.Checked = GetState("AO=")
+        bloomCheck.Checked = GetState("BloomEnabled=")
+        blurCheck.Checked = GetState("MotionBlur=")
+        smoothCheck.Checked = GetState("Smoothing=")
+        wideCheck.Checked = GetState("UseAspectFOV=")
+        useGlobRenCheck.Checked = GetState("UseGlobalRenderDistance=")
+        globRenDistBox.Text = GetState("RenderDistance=")
+        infRenDistBox.Text = GetState("InfantryRenderDistance=")
+        vehRenDistbox.Text = GetState("GroundVehicleRenderDistance=")
+        airRenDistBox.Text = GetState("AirVehicleRenderDistance=")
+        fovBox.Text = GetState("VerticalFOV=")
+        renQualBox.Text = GetState("RenderQuality=")
+        maxFPSBox.Text = GetState("MaximumFPS=")
+        gammaBox.Text = GetState("Gamma=")
+        partDistScaleBox.Text = GetState("ParticleDistanceScale=")
+        graphQualDrop.SelectedIndex = Integer.Parse(GetState("GraphicsQuality=")) - 1
+        texQualDrop.SelectedIndex = Integer.Parse(GetState("TextureQuality="))
+        shadQualDrop.SelectedIndex = Integer.Parse(GetState("ShadowQuality="))
+        lightQualDrop.SelectedIndex = Integer.Parse(GetState("LightingQuality=")) - 1
+        effQualDrop.SelectedIndex = Integer.Parse(GetState("EffectsQuality=")) - 1
+        terrQualDrop.SelectedIndex = Integer.Parse(GetState("TerrainQuality=")) - 1
+        floraQualDrop.SelectedIndex = Integer.Parse(GetState("FloraQuality=")) - 1
+        modQualDrop.SelectedIndex = Integer.Parse(GetState("ModelQuality=")) - 1
+        partQualDrop.SelectedIndex = Integer.Parse(GetState("ParticleLOD="))
+        If GetState("DLSSQuality=") = "-1" And GetState("FSRQuality=") = "-1" Then
             upscaleDrop.SelectedIndex = 0
-        ElseIf getState("FSRQuality=") = "-1" Then
+        ElseIf GetState("FSRQuality=") = "-1" Then
             upscaleDrop.SelectedIndex = 1
-            DLSSQualDrop.SelectedIndex = getState("DLSSQuality=")
-            DLSSSharpBox.Value = getState("DLSSSharpness=")
-        ElseIf getState("DLSSQuality=") = "-1" Then
+            DLSSQualDrop.SelectedIndex = GetState("DLSSQuality=")
+            DLSSSharpBox.Value = GetState("DLSSSharpness=")
+        ElseIf GetState("DLSSQuality=") = "-1" Then
             upscaleDrop.SelectedIndex = 2
-            FSRQualDrop.SelectedIndex = getState("FSRQuality=")
-            FSRSharpBox.Value = getState("FSRSharpness=")
+            FSRQualDrop.SelectedIndex = GetState("FSRQuality=")
+            FSRSharpBox.Value = GetState("FSRSharpness=")
         Else
             upscaleDrop.SelectedIndex = 0
         End If
 #End Region
 #Region "SensGets"
-        hipSensBox.Value = getState("MouseSensitivity=")
-        adsSensBox.Value = getState("ADSMouseSensitivity=")
-        scopSensBox.Value = getState("ScopedMouseSensitivity=")
-        vehSensBox.Value = getState("VehicleMouseSensitivity=")
-        gunSensBox.Value = getState("VehicleGunnerMouseSensitivity=")
-        airSensBox.Value = getState("FlightMouseSensitivity=")
-        sensRawCheck.Checked = getState("MouseRawInput=")
+        hipSensBox.Value = GetState("MouseSensitivity=")
+        adsSensBox.Value = GetState("ADSMouseSensitivity=")
+        scopSensBox.Value = GetState("ScopedMouseSensitivity=")
+        vehSensBox.Value = GetState("VehicleMouseSensitivity=")
+        gunSensBox.Value = GetState("VehicleGunnerMouseSensitivity=")
+        airSensBox.Value = GetState("FlightMouseSensitivity=")
+        sensRawCheck.Checked = GetState("MouseRawInput=")
 #End Region
 #Region "InterfaceGets"
-        hudHPCheck.Checked = getState("HudShowHealth=")
-        hudIndCheck.Checked = getState("HudShowIndicatorNames=")
-        hudAlertCheck.Checked = getState("HudShowAlertTimer")
-        hudLootCheck.Checked = getState("DrawLootDrop=")
-        hudSpamCheck.Checked = getState("DrawKillSpam=")
-        hudCompCheck.Checked = getState("HudShowTopCompass=")
-        hudDotCheck.Checked = getState("HudShow3PVehicleReticle=")
-        custRetCheck.Checked = getState("TintModeReticuleStyle=")
-        retColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("TintModeReticuleColor=")))
-        alphaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("PlatoonSquadColor0=")))
-        bravoColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("PlatoonSquadColor1=")))
-        charlieColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("PlatoonSquadColor2=")))
-        deltaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("PlatoonSquadColor3=")))
-        NDZColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("NoDeployZoneColor=")))
-        OSColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(getState("OrbitalStrikeColor=")))
-        If getState("TintModePlayer=") = "0" Then
+        hudHPCheck.Checked = GetState("HudShowHealth=")
+        hudIndCheck.Checked = GetState("HudShowIndicatorNames=")
+        hudAlertCheck.Checked = GetState("HudShowAlertTimer")
+        hudLootCheck.Checked = GetState("DrawLootDrop=")
+        hudSpamCheck.Checked = GetState("DrawKillSpam=")
+        hudCompCheck.Checked = GetState("HudShowTopCompass=")
+        hudDotCheck.Checked = GetState("HudShow3PVehicleReticle=")
+        custRetCheck.Checked = GetState("TintModeReticuleStyle=")
+        retColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("TintModeReticuleColor=")))
+        alphaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor0=")))
+        bravoColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor1=")))
+        charlieColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor2=")))
+        deltaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor3=")))
+        NDZColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("NoDeployZoneColor=")))
+        OSColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("OrbitalStrikeColor=")))
+        If GetState("TintModePlayer=") = "0" Then
             playerColorDrop.SelectedIndex = 0
-        ElseIf getState("TintModePlayer=") = "1" Then
+        ElseIf GetState("TintModePlayer=") = "1" Then
             playerColorDrop.SelectedIndex = 1
         Else
             playerColorDrop.SelectedIndex = 2
             playerColorPanelButtons.Visible = True
         End If
-        If getState("TintModeFacility=") = "0" Then
+        If GetState("TintModeFacility=") = "0" Then
             facColorDrop.SelectedIndex = 0
-        ElseIf getState("TintModeFacility=") = "1" Then
+        ElseIf GetState("TintModeFacility=") = "1" Then
             facColorDrop.SelectedIndex = 1
         Else
             facColorDrop.SelectedIndex = 2
             facColorPanelButtons.Visible = True
         End If
-        If getState("TintModeMap=") = "0" Then
+        If GetState("TintModeMap=") = "0" Then
             terrColorDrop.SelectedIndex = 0
-        ElseIf getState("TintModeMap=") = "1" Then
+        ElseIf GetState("TintModeMap=") = "1" Then
             terrColorDrop.SelectedIndex = 1
         Else
             terrColorDrop.SelectedIndex = 2
@@ -329,30 +373,29 @@ Public Class Form1
         End If
 #End Region
 #Region "SoundGets"
-        masVolBox.Value = getState("Master=")
-        musVolBox.Value = getState("Music=")
-        gamVolBox.Value = getState("Game=")
-        diaVolBox.Value = getState("Dialog=")
-        maxVoiceBox.Value = getState("MaxVoices=")
-        hitIndCheck.Checked = getState("HitIndicator=")
-        lowAmmCheck.Checked = getState("LowAmmoIndicator=")
-        vehChatterCheck.Checked = getState("VehicleChatter=")
-        idleMusicCheck.Checked = getState("IdleMusic=")
+        masVolBox.Value = GetState("Master=")
+        musVolBox.Value = GetState("Music=")
+        gamVolBox.Value = GetState("Game=")
+        diaVolBox.Value = GetState("Dialog=")
+        maxVoiceBox.Value = GetState("MaxVoices=")
+        hitIndCheck.Checked = GetState("HitIndicator=")
+        lowAmmCheck.Checked = GetState("LowAmmoIndicator=")
+        vehChatterCheck.Checked = GetState("VehicleChatter=")
+        idleMusicCheck.Checked = GetState("IdleMusic=")
 #End Region
 #Region "ChatGets"
-        yellTextCheck.Checked = getState("Yell=")
-        squadTextCheck.Checked = getState("Squad=")
-        raidTextCheck.Checked = getState("Platoon=")
-        fireteamTextCheck.Checked = getState("Fireteam=")
-        leaderTextCheck.Checked = getState("Leader=")
-        proxTextCheck.Checked = getState("Proximity=")
-        outfitTextCheck.Checked = getState("Outfit=")
-        regionTextCheck.Checked = getState("Region=")
-        mentorTextCheck.Checked = getState("Mentor=")
+        yellTextCheck.Checked = GetState("Yell=")
+        squadTextCheck.Checked = GetState("Squad=")
+        raidTextCheck.Checked = GetState("Platoon=")
+        fireteamTextCheck.Checked = GetState("Fireteam=")
+        leaderTextCheck.Checked = GetState("Leader=")
+        proxTextCheck.Checked = GetState("Proximity=")
+        outfitTextCheck.Checked = GetState("Outfit=")
+        regionTextCheck.Checked = GetState("Region=")
+        mentorTextCheck.Checked = GetState("Mentor=")
 #End Region
-        fontAutoCheck.Checked = getState("FontAutoReplace=")
-        selectedFontPath.Text = getState("FontFilePath=")
-
+        fontAutoCheck.Checked = GetState("FontAutoReplace=")
+        selectedFontPath.Text = GetState("FontFilePath=")
     End Function
 #Region "MenuStripControls"
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
@@ -463,60 +506,60 @@ Public Class Form1
     End Sub
 #End Region
 #Region "TextChanged"
-    Private Sub globRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles globRenDistBox.Validated
+    Private Sub globRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles globRenDistBox.TextChanged
         UpdateVal("RenderDistance=", globRenDistBox.Value)
     End Sub
-    Private Sub infRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles infRenDistBox.Validated
+    Private Sub infRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles infRenDistBox.TextChanged
         UpdateVal("InfantryRenderDistance=", infRenDistBox.Value)
     End Sub
-    Private Sub vehRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles vehRenDistbox.Validated
+    Private Sub vehRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles vehRenDistbox.TextChanged
         UpdateVal("GroundVehicleRenderDistance=", vehRenDistbox.Value)
     End Sub
-    Private Sub airRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles airRenDistBox.Validated
+    Private Sub airRenDistBox_TextChanged(sender As Object, e As EventArgs) Handles airRenDistBox.TextChanged
         UpdateVal("AirVehicleRenderDistance=", airRenDistBox.Value)
     End Sub
-    Private Sub fovBox_TextChanged(sender As Object, e As EventArgs) Handles fovBox.Validated
+    Private Sub fovBox_TextChanged(sender As Object, e As EventArgs) Handles fovBox.TextChanged
         UpdateVal("VerticalFOV=", fovBox.Value)
     End Sub
-    Private Sub renQualBox_TextChanged(sender As Object, e As EventArgs) Handles renQualBox.Validated
+    Private Sub renQualBox_TextChanged(sender As Object, e As EventArgs) Handles renQualBox.TextChanged
         UpdateVal("RenderQuality=", renQualBox.Value)
     End Sub
-    Private Sub maxFPSBox_TextChanged(sender As Object, e As EventArgs) Handles maxFPSBox.Validated
+    Private Sub maxFPSBox_TextChanged(sender As Object, e As EventArgs) Handles maxFPSBox.TextChanged
         UpdateVal("MaximumFPS=", maxFPSBox.Value)
     End Sub
-    Private Sub gammaBox_TextChanged(sender As Object, e As EventArgs) Handles gammaBox.Validated
+    Private Sub gammaBox_TextChanged(sender As Object, e As EventArgs) Handles gammaBox.TextChanged
         UpdateVal("Gamma=", gammaBox.Value)
     End Sub
-    Private Sub partDistScaleBox_TextChanged(sender As Object, e As EventArgs) Handles partDistScaleBox.Validated
+    Private Sub partDistScaleBox_TextChanged(sender As Object, e As EventArgs) Handles partDistScaleBox.TextChanged
         UpdateVal("ParticleDistanceScale=", partDistScaleBox.Value)
     End Sub
-    Private Sub DLSSSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles DLSSSharpBox.Validated
+    Private Sub DLSSSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles DLSSSharpBox.TextChanged
         UpdateVal("DLSSSharpness=", DLSSSharpBox.Value)
     End Sub
-    Private Sub FSRSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles FSRSharpBox.Validated
+    Private Sub FSRSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles FSRSharpBox.TextChanged
         UpdateVal("FSRSharpness=", FSRSharpBox.Value)
     End Sub
 #End Region
 #Region "IndexChanged"
-    Private Sub graphQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles graphQualDrop.Validated
+    Private Sub graphQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles graphQualDrop.SelectedValueChanged
         UpdateVal("GraphicsQuality=", graphQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub texQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles texQualDrop.Validated
+    Private Sub texQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles texQualDrop.SelectedValueChanged
         UpdateVal("TextureQuality=", texQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub shadQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles shadQualDrop.Validated
+    Private Sub shadQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles shadQualDrop.SelectedValueChanged
         UpdateVal("ShadowQuality=", shadQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub lightQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lightQualDrop.Validated
+    Private Sub lightQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lightQualDrop.SelectedValueChanged
         UpdateVal("LightingQuality=", lightQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub effQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles effQualDrop.Validated
+    Private Sub effQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles effQualDrop.SelectedValueChanged
         UpdateVal("EffectsQuality=", effQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub terrQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrQualDrop.Validated
+    Private Sub terrQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrQualDrop.SelectedValueChanged
         UpdateVal("TerrainQuality=", terrQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub floraQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles floraQualDrop.Validated
+    Private Sub floraQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles floraQualDrop.SelectedValueChanged
         'Flora apparently has 2 lines in separate sections
         UpdateVal("FloraQuality=", floraQualDrop.SelectedItem.ToString.First)
         If floraQualDrop.SelectedIndex() = 3 Then
@@ -525,19 +568,19 @@ Public Class Form1
             UpdateVal("RenderFlora=", "on")
         End If
     End Sub
-    Private Sub modQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles modQualDrop.Validated
+    Private Sub modQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles modQualDrop.SelectedValueChanged
         UpdateVal("ModelQuality=", modQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub partQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles partQualDrop.Validated
+    Private Sub partQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles partQualDrop.SelectedValueChanged
         UpdateVal("ParticleLOD=", partQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub AADrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AADrop.Validated
+    Private Sub AADrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AADrop.SelectedValueChanged
         UpdateVal("AAQuality=", AADrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub waterReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles waterReflectDrop.Validated
+    Private Sub waterReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles waterReflectDrop.SelectedValueChanged
         UpdateVal("WaterQuality=", waterReflectDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub objReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles objReflectDrop.Validated
+    Private Sub objReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles objReflectDrop.SelectedValueChanged
         UpdateVal("SSLRQuality=", objReflectDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub upscaleDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles upscaleDrop.SelectedValueChanged
@@ -570,25 +613,25 @@ Public Class Form1
             FSRSharpBox.Visible = True
         End If
     End Sub
-    Private Sub DLSSQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DLSSQualDrop.Validated
+    Private Sub DLSSQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DLSSQualDrop.SelectedValueChanged
         UpdateVal("DLSSQuality=", DLSSQualDrop.SelectedItem.ToString.First)
     End Sub
-    Private Sub FSRQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FSRQualDrop.Validated
+    Private Sub FSRQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FSRQualDrop.SelectedValueChanged
         UpdateVal("FSRQuality=", FSRQualDrop.SelectedItem.ToString.First)
     End Sub
 #End Region
 #End Region
 #Region "SensStuff"
-    Private Sub hipSensBox_TextChanged(sender As Object, e As EventArgs) Handles hipSensBox.Validated
+    Private Sub hipSensBox_TextChanged(sender As Object, e As EventArgs) Handles hipSensBox.TextChanged
         UpdateVal("MouseSensitivity=", hipSensBox.Value)
         LabelHipcm360.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
     End Sub
-    Private Sub adsSensBox_TextChanged(sender As Object, e As EventArgs) Handles adsSensBox.Validated
+    Private Sub adsSensBox_TextChanged(sender As Object, e As EventArgs) Handles adsSensBox.TextChanged
         UpdateVal("ADSMouseSensitivity=", adsSensBox.Value)
         Label1cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
         Label2cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
     End Sub
-    Private Sub scopSensBox_TextChanged(sender As Object, e As EventArgs) Handles scopSensBox.Validated
+    Private Sub scopSensBox_TextChanged(sender As Object, e As EventArgs) Handles scopSensBox.TextChanged
         UpdateVal("ScopedMouseSensitivity=", scopSensBox.Value)
         Label3cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
         Label4cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
@@ -597,13 +640,13 @@ Public Class Form1
         Label10cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
         Label12cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
     End Sub
-    Private Sub vehSensBox_TextChanged(sender As Object, e As EventArgs) Handles vehSensBox.Validated
+    Private Sub vehSensBox_TextChanged(sender As Object, e As EventArgs) Handles vehSensBox.TextChanged
         UpdateVal("VehicleMouseSensitivity=", vehSensBox.Value)
     End Sub
-    Private Sub gunSensBox_TextChanged(sender As Object, e As EventArgs) Handles gunSensBox.Validated
+    Private Sub gunSensBox_TextChanged(sender As Object, e As EventArgs) Handles gunSensBox.TextChanged
         UpdateVal("VehicleGunnerMouseSensitivity=", gunSensBox.Value)
     End Sub
-    Private Sub airSensBox_TextChanged(sender As Object, e As EventArgs) Handles airSensBox.Validated
+    Private Sub airSensBox_TextChanged(sender As Object, e As EventArgs) Handles airSensBox.TextChanged
         UpdateVal("FlightMouseSensitivity=", airSensBox.Value)
     End Sub
     Private Sub sensTypeDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sensTypeDrop.SelectedValueChanged
@@ -871,7 +914,7 @@ Public Class Form1
             playerColorPanelButtons.Visible = False
         ElseIf playerColorDrop.SelectedIndex = 2 Then
             playerColorPanelButtons.Visible = True
-            If getState("TintModePlayer=").ToString.Length < 3 Then
+            If GetState("TintModePlayer=").ToString.Length < 3 Then
                 UpdateVal("TintModePlayer=", "4460130,19328,10357519")
             End If
             VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
@@ -888,7 +931,7 @@ Public Class Form1
             facColorPanelButtons.Visible = False
         ElseIf facColorDrop.SelectedIndex = 2 Then
             facColorPanelButtons.Visible = True
-            If getState("TintModeFacility=").ToString.Length < 3 Then
+            If GetState("TintModeFacility=").ToString.Length < 3 Then
                 UpdateVal("TintModeFacility=", "4460130,19328,10357519")
             End If
             VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
@@ -917,19 +960,19 @@ Public Class Form1
 #End Region
 #Region "SoundControls"
 #Region "TextChanged"
-    Private Sub masVolBox_TextChanged(sender As Object, e As EventArgs) Handles masVolBox.Validated
+    Private Sub masVolBox_TextChanged(sender As Object, e As EventArgs) Handles masVolBox.TextChanged
         UpdateVal("Master=", masVolBox.Value)
     End Sub
-    Private Sub gamVolBox_TextChanged(sender As Object, e As EventArgs) Handles gamVolBox.Validated
+    Private Sub gamVolBox_TextChanged(sender As Object, e As EventArgs) Handles gamVolBox.TextChanged
         UpdateVal("Game=", gamVolBox.Value)
     End Sub
-    Private Sub musVolBox_TextChanged(sender As Object, e As EventArgs) Handles musVolBox.Validated
+    Private Sub musVolBox_TextChanged(sender As Object, e As EventArgs) Handles musVolBox.TextChanged
         UpdateVal("Music=", musVolBox.Value)
     End Sub
-    Private Sub diaVolBox_TextChanged(sender As Object, e As EventArgs) Handles diaVolBox.Validated
+    Private Sub diaVolBox_TextChanged(sender As Object, e As EventArgs) Handles diaVolBox.TextChanged
         UpdateVal("Dialog=", diaVolBox.Value)
     End Sub
-    Private Sub maxVoiceBox_TextChanged(sender As Object, e As EventArgs) Handles maxVoiceBox.Validated
+    Private Sub maxVoiceBox_TextChanged(sender As Object, e As EventArgs) Handles maxVoiceBox.TextChanged
         UpdateVal("MaxVoices=", maxVoiceBox.Value)
     End Sub
 #End Region
@@ -967,28 +1010,28 @@ Public Class Form1
 #End Region
 #Region "ChatControls"
 #Region "TextChanged"
-    Private Sub genVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles genVoiceVolBox.Validated
+    Private Sub genVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles genVoiceVolBox.TextChanged
         UpdateVal("ReceiveVolume=", genVoiceVolBox.Value)
     End Sub
-    Private Sub proxVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles proxVoiceVolBox.Validated
+    Private Sub proxVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles proxVoiceVolBox.TextChanged
         UpdateValSpecific("ProximityVolume=", proxVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub squadVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles squadVoiceVolBox.Validated
+    Private Sub squadVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles squadVoiceVolBox.TextChanged
         UpdateValSpecific("GroupVolume=", squadVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub raidVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles raidVoiceVolBox.Validated
+    Private Sub raidVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles raidVoiceVolBox.TextChanged
         UpdateValSpecific("RaidVolume=", raidVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub outfitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles outfitVoiceVolBox.Validated
+    Private Sub outfitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles outfitVoiceVolBox.TextChanged
         UpdateValSpecific("GuildVolume=", outfitVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub leaderVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles leaderVoiceVolBox.Validated
+    Private Sub leaderVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles leaderVoiceVolBox.TextChanged
         UpdateValSpecific("GroupLeaderVolume=", leaderVoiceVolBox.Value, "[VoiceChat]")
     End Sub
-    Private Sub transmitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles transmitVoiceVolBox.Validated
+    Private Sub transmitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles transmitVoiceVolBox.TextChanged
         UpdateVal("MicrophoneVolume=", transmitVoiceVolBox.Value)
     End Sub
-    Private Sub duckVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles duckVoiceVolBox.Validated
+    Private Sub duckVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles duckVoiceVolBox.TextChanged
         UpdateVal("Ducking=", duckVoiceVolBox.Value)
     End Sub
 #End Region
@@ -1072,18 +1115,514 @@ Public Class Form1
         End If
     End Sub
     Private Sub squadVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles squadVoiceCheck.Click
-
+        If squadVoiceCheck.Checked Then
+            UpdateValSpecific("GroupEnabled=", 1, "[Voice]")
+        Else
+            UpdateValSpecific("GroupEnabled=", 0, "[Voice]")
+        End If
     End Sub
     Private Sub raidVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles raidVoiceCheck.Click
-
+        If raidVoiceCheck.Checked Then
+            UpdateValSpecific("RaidEnabled=", 1, "[Voice]")
+        Else
+            UpdateValSpecific("RaidEnabled=", 0, "[Voice]")
+        End If
     End Sub
     Private Sub outfitVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles outfitVoiceCheck.Click
-
+        If squadVoiceCheck.Checked Then
+            UpdateValSpecific("GuildEnabled=", 1, "[Voice]")
+        Else
+            UpdateValSpecific("GuildEnabled=", 0, "[Voice]")
+        End If
     End Sub
     Private Sub leaderVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles leaderVoiceCheck.Click
-
+        If squadVoiceCheck.Checked Then
+            UpdateValSpecific("GroupEnabled=", 1, "[Voice]")
+        Else
+            UpdateValSpecific("GroupEnabled=", 0, "[Voice]")
+        End If
     End Sub
-
+#End Region
+#End Region
+#Region "HudIconControls"
+#Region "GroupChecks"
+    Private Sub iconsInfantryGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsInfantryGroupCheck.CheckedChanged
+        If iconsInfantryGroupCheck.Checked = True Then
+            iconsInfantryAllyCheck.Checked = True
+            iconsInfantryEnemyCheck.Checked = True
+        Else
+            iconsInfantryAllyCheck.Checked = False
+            iconsInfantryEnemyCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsVehicleGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehicleGroupCheck.CheckedChanged
+        If iconsVehicleGroupCheck.Checked = True Then
+            iconsVehAllyCheck.Checked = True
+            iconsVehEnemyCheck.Checked = True
+            iconsVehBastionCheck.Checked = True
+        Else
+            iconsVehAllyCheck.Checked = False
+            iconsVehEnemyCheck.Checked = False
+            iconsVehBastionCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsDeployGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDeployGroupCheck.CheckedChanged
+        If iconsDeployGroupCheck.Checked = True Then
+            iconsDepDildarCheck.Checked = True
+            iconsDepC4Check.Checked = True
+            iconsDepAmmoBoxCheck.Checked = True
+            iconsDepDMGNadeCheck.Checked = True
+            iconsDepDroneCheck.Checked = True
+            iconsDepMinesCheck.Checked = True
+            iconsDepShieldRegenCheck.Checked = True
+            iconsDepStatusNadeCheck.Checked = True
+            iconsDepTurretsCheck.Checked = True
+        Else
+            iconsDepDildarCheck.Checked = False
+            iconsDepC4Check.Checked = False
+            iconsDepAmmoBoxCheck.Checked = False
+            iconsDepDMGNadeCheck.Checked = False
+            iconsDepDroneCheck.Checked = False
+            iconsDepMinesCheck.Checked = False
+            iconsDepShieldRegenCheck.Checked = False
+            iconsDepStatusNadeCheck.Checked = False
+            iconsDepTurretsCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsWorldGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldGroupCheck.CheckedChanged
+        If iconsWorldGroupCheck.Checked = True Then
+            iconsWorldAnomalyCheck.Checked = True
+            iconsWorldAssetCheck.Checked = True
+            iconsWorldBuoyCheck.Checked = True
+            iconsWorldConstructionCheck.Checked = True
+            iconsWorldCortiumCheck.Checked = True
+            iconsWorldCrystalCheck.Checked = True
+            iconsWorldDrillCheck.Checked = True
+            iconsWorldImplantCheck.Checked = True
+            iconsWorldMissionCheck.Checked = True
+            iconsWorldNPCCheck.Checked = True
+            iconsWorldPlantCheck.Checked = True
+            iconsWorldStationCheck.Checked = True
+        Else
+            iconsWorldAnomalyCheck.Checked = False
+            iconsWorldAssetCheck.Checked = False
+            iconsWorldBuoyCheck.Checked = False
+            iconsWorldConstructionCheck.Checked = False
+            iconsWorldCortiumCheck.Checked = False
+            iconsWorldCrystalCheck.Checked = False
+            iconsWorldDrillCheck.Checked = False
+            iconsWorldImplantCheck.Checked = False
+            iconsWorldMissionCheck.Checked = False
+            iconsWorldNPCCheck.Checked = False
+            iconsWorldPlantCheck.Checked = False
+            iconsWorldStationCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsFacilityGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacilityGroupCheck.CheckedChanged
+        If iconsFacilityGroupCheck.Checked = True Then
+            iconsFacAirAmmoCheck.Checked = True
+            iconsFacAirTermCheck.Checked = True
+            iconsFacBridgeTermCheck.Checked = True
+            iconsFacBusTermCheck.Checked = True
+            iconsFacEquipTermCheck.Checked = True
+            iconsFacFlashTermCheck.Checked = True
+            iconsFacForwardCheck.Checked = True
+            iconsFacGalTermCheck.Checked = True
+            iconsFacGateAttackCheck.Checked = True
+            iconsFacHorzCheck.Checked = True
+            iconsFacLightTermCheck.Checked = True
+            iconsFacNearbyCheck.Checked = True
+            iconsFacOWPointsCheck.Checked = True
+            iconsFacPointCheck.Checked = True
+            iconsFacRelicDoorCheck.Checked = True
+            iconsFacSCUAttackCheck.Checked = True
+            iconsFacSCUCheck.Checked = True
+            iconsFacSCUShieldCheck.Checked = True
+            iconsFacTeleCheck.Checked = True
+            iconsFacVehAmmoCheck.Checked = True
+            iconsFacVehShieldCheck.Checked = True
+            iconsFacVehTermCheck.Checked = True
+            iconsFacVertCheck.Checked = True
+            iconsFacWGTermCheck.Checked = True
+        Else
+            iconsFacAirAmmoCheck.Checked = False
+            iconsFacAirTermCheck.Checked = False
+            iconsFacBridgeTermCheck.Checked = False
+            iconsFacBusTermCheck.Checked = False
+            iconsFacEquipTermCheck.Checked = False
+            iconsFacFlashTermCheck.Checked = False
+            iconsFacForwardCheck.Checked = False
+            iconsFacGalTermCheck.Checked = False
+            iconsFacGateAttackCheck.Checked = False
+            iconsFacHorzCheck.Checked = False
+            iconsFacLightTermCheck.Checked = False
+            iconsFacNearbyCheck.Checked = False
+            iconsFacOWPointsCheck.Checked = False
+            iconsFacPointCheck.Checked = False
+            iconsFacRelicDoorCheck.Checked = False
+            iconsFacSCUAttackCheck.Checked = False
+            iconsFacSCUCheck.Checked = False
+            iconsFacSCUShieldCheck.Checked = False
+            iconsFacTeleCheck.Checked = False
+            iconsFacVehAmmoCheck.Checked = False
+            iconsFacVehShieldCheck.Checked = False
+            iconsFacVehTermCheck.Checked = False
+            iconsFacVertCheck.Checked = False
+            iconsFacWGTermCheck.Checked = False
+        End If
+    End Sub
+#End Region
+#Region "IndividualChecks"
+    Private Sub iconsInfantryAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsInfantryAllyCheck.CheckedChanged
+        If iconsInfantryAllyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 84, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 84, False)
+        End If
+    End Sub
+    Private Sub iconsInfantryEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsInfantryEnemyCheck.CheckedChanged
+        If iconsInfantryEnemyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 85, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 85, False)
+        End If
+    End Sub
+    Private Sub iconsVehAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehAllyCheck.CheckedChanged
+        If iconsVehAllyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 86, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 86, False)
+        End If
+    End Sub
+    Private Sub iconsVehEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehEnemyCheck.CheckedChanged
+        If iconsVehEnemyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 87, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 87, False)
+        End If
+    End Sub
+    Private Sub iconsVehBastionCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehBastionCheck.CheckedChanged
+        If iconsVehBastionCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 62, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 62, False)
+        End If
+    End Sub
+    Private Sub iconsDepDMGNadeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDMGNadeCheck.CheckedChanged
+        If iconsDepDMGNadeCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 3, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 3, False)
+        End If
+    End Sub
+    Private Sub iconsDepStatusNadeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepStatusNadeCheck.CheckedChanged
+        If iconsDepStatusNadeCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 82, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 82, False)
+        End If
+    End Sub
+    Private Sub iconsDepMinesCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepMinesCheck.CheckedChanged
+        If iconsDepMinesCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 34, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 34, False)
+        End If
+    End Sub
+    Private Sub iconsDepC4Check_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepC4Check.CheckedChanged
+        If iconsDepC4Check.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 10, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 10, False)
+        End If
+    End Sub
+    Private Sub iconsDepShieldRegenCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepShieldRegenCheck.CheckedChanged
+        If iconsDepShieldRegenCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 38, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 38, False)
+        End If
+    End Sub
+    Private Sub iconsDepDildarCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDildarCheck.CheckedChanged
+        If iconsDepDildarCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 39, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 39, False)
+        End If
+    End Sub
+    Private Sub iconsDepAmmoBoxCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepAmmoBoxCheck.CheckedChanged
+        If iconsDepAmmoBoxCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 33, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 33, False)
+        End If
+    End Sub
+    Private Sub iconsDepDroneCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDroneCheck.CheckedChanged
+        If iconsDepDroneCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 65, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 65, False)
+        End If
+    End Sub
+    Private Sub iconsDepTurretsCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepTurretsCheck.CheckedChanged
+        If iconsDepTurretsCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 88, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 88, False)
+        End If
+    End Sub
+    Private Sub iconsWorldAnomalyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldAnomalyCheck.CheckedChanged
+        If iconsWorldAnomalyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 49, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 49, False)
+        End If
+    End Sub
+    Private Sub iconsWorldDrillCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldDrillCheck.CheckedChanged
+        If iconsWorldDrillCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 53, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 53, False)
+        End If
+    End Sub
+    Private Sub iconsWorldBuoyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldBuoyCheck.CheckedChanged
+        If iconsWorldBuoyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 58, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 58, False)
+        End If
+    End Sub
+    Private Sub iconsWorldMissionCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldMissionCheck.CheckedChanged
+        If iconsWorldMissionCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 68, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 68, False)
+        End If
+    End Sub
+    Private Sub iconsWorldImplantCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldImplantCheck.CheckedChanged
+        If iconsWorldImplantCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 67, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 67, False)
+        End If
+    End Sub
+    Private Sub iconsWorldPlantCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldPlantCheck.CheckedChanged
+        If iconsWorldPlantCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 71, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 71, False)
+        End If
+    End Sub
+    Private Sub iconsWorldNPCCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldNPCCheck.CheckedChanged
+        If iconsWorldNPCCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 79, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 79, False)
+        End If
+    End Sub
+    Private Sub iconsWorldStationCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldStationCheck.CheckedChanged
+        If iconsWorldStationCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 44, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 44, False)
+        End If
+    End Sub
+    Private Sub iconsWorldAssetCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldAssetCheck.CheckedChanged
+        If iconsWorldAssetCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 63, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 63, False)
+        End If
+    End Sub
+    Private Sub iconsWorldCrystalCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldCrystalCheck.CheckedChanged
+        If iconsWorldCrystalCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 43, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 43, False)
+        End If
+    End Sub
+    Private Sub iconsWorldConstructionCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldConstructionCheck.CheckedChanged
+        If iconsWorldConstructionCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 117, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 117, False)
+        End If
+    End Sub
+    Private Sub iconsWorldCortiumCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldCortiumCheck.CheckedChanged
+        If iconsWorldCortiumCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 116, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 116, False)
+        End If
+    End Sub
+    Private Sub iconsFacVehAmmoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehAmmoCheck.CheckedChanged
+        If iconsFacVehAmmoCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 11, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 11, False)
+        End If
+    End Sub
+    Private Sub iconsFacAirAmmoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacAirAmmoCheck.CheckedChanged
+        If iconsFacAirAmmoCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 18, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 18, False)
+        End If
+    End Sub
+    Private Sub iconsFacEquipTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacEquipTermCheck.CheckedChanged
+        If iconsFacEquipTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 7, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 7, False)
+        End If
+    End Sub
+    Private Sub iconsFacWGTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacWGTermCheck.CheckedChanged
+        If iconsFacWGTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 26, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 26, False)
+        End If
+    End Sub
+    Private Sub iconsFacAirTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacAirTermCheck.CheckedChanged
+        If iconsFacAirTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 4, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 4, False)
+        End If
+    End Sub
+    Private Sub iconsFacVehTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehTermCheck.CheckedChanged
+        If iconsFacVehTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 5, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 5, False)
+        End If
+    End Sub
+    Private Sub iconsFacGalTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacGalTermCheck.CheckedChanged
+        If iconsFacGalTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 6, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 6, False)
+        End If
+    End Sub
+    Private Sub iconsFacFlashTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacFlashTermCheck.CheckedChanged
+        If iconsFacFlashTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 15, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 15, False)
+        End If
+    End Sub
+    Private Sub iconsFacLightTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacLightTermCheck.CheckedChanged
+        If iconsFacLightTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 20, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 20, False)
+        End If
+    End Sub
+    Private Sub iconsFacBusTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacBusTermCheck.CheckedChanged
+        If iconsFacBusTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 115, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 115, False)
+        End If
+    End Sub
+    Private Sub iconsFacTeleCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacTeleCheck.CheckedChanged
+        If iconsFacTeleCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 13, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 13, False)
+        End If
+    End Sub
+    Private Sub iconsFacPointCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacPointCheck.CheckedChanged
+        If iconsFacPointCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 2, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 2, False)
+        End If
+    End Sub
+    Private Sub iconsFacOWPointsCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacOWPointsCheck.CheckedChanged
+        If iconsFacOWPointsCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 61, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 61, False)
+        End If
+    End Sub
+    Private Sub iconsFacNearbyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacNearbyCheck.CheckedChanged
+        If iconsFacNearbyCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 83, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 83, False)
+        End If
+    End Sub
+    Private Sub iconsFacSCUCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacSCUCheck.CheckedChanged
+        If iconsFacSCUCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 17, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 17, False)
+        End If
+    End Sub
+    Private Sub iconsFacHorzCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacHorzCheck.CheckedChanged
+        If iconsFacHorzCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 22, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 22, False)
+        End If
+    End Sub
+    Private Sub iconsFacVertCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVertCheck.CheckedChanged
+        If iconsFacVertCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 23, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 23, False)
+        End If
+    End Sub
+    Private Sub iconsFacVehShieldCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehShieldCheck.CheckedChanged
+        If iconsFacVehShieldCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 24, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 24, False)
+        End If
+    End Sub
+    Private Sub iconsFacSCUShieldCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacSCUShieldCheck.CheckedChanged
+        If iconsFacSCUShieldCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 25, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 25, False)
+        End If
+    End Sub
+    Private Sub iconsFacForwardCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacForwardCheck.CheckedChanged
+        If iconsFacForwardCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 27, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 27, False)
+        End If
+    End Sub
+    Private Sub iconsFacBridgeTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacBridgeTermCheck.CheckedChanged
+        If iconsFacBridgeTermCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 35, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 35, False)
+        End If
+    End Sub
+    Private Sub iconsFacSCUAttackCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacSCUAttackCheck.CheckedChanged
+        If iconsFacSCUAttackCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 75, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 75, False)
+        End If
+    End Sub
+    Private Sub iconsFacGateAttackCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacGateAttackCheck.CheckedChanged
+        If iconsFacGateAttackCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 76, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 76, False)
+        End If
+    End Sub
+    Private Sub iconsFacRelicDoorCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacRelicDoorCheck.CheckedChanged
+        If iconsFacRelicDoorCheck.Checked = True Then
+            UpdateValContains("HiddenHUDIndicators=", 77, True)
+        Else
+            UpdateValContains("HiddenHUDIndicators=", 77, False)
+        End If
+    End Sub
 #End Region
 #End Region
 End Class

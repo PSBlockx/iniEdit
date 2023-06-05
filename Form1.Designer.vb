@@ -193,65 +193,65 @@ Partial Class Form1
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.iconPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.iconsInfantryGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsInfantryAllyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsInfantryEnemyCheck = New System.Windows.Forms.CheckBox()
         Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.iconsVehicleGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsVehAllyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsVehEnemyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsVehBastionCheck = New System.Windows.Forms.CheckBox()
         Me.FlowLayoutPanel12 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox16 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox19 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox20 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox49 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox50 = New System.Windows.Forms.CheckBox()
+        Me.iconsDeployGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepDMGNadeCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepStatusNadeCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepMinesCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepC4Check = New System.Windows.Forms.CheckBox()
+        Me.iconsDepShieldRegenCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepDildarCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepAmmoBoxCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepDroneCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDepTurretsCheck = New System.Windows.Forms.CheckBox()
         Me.FlowLayoutPanel13 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox25 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox26 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox27 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox28 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox51 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox52 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox53 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox54 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox55 = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldAnomalyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldDrillCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldBuoyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldMissionCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldImplantCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldPlantCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldNPCCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldStationCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldAssetCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldCrystalCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldConstructionCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsWorldCortiumCheck = New System.Windows.Forms.CheckBox()
         Me.FlowLayoutPanel15 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox29 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox30 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox31 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox32 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox33 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox34 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox35 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox36 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox37 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox38 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox39 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox40 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox41 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox42 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox43 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox44 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox45 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox46 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox47 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox48 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox56 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox57 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox58 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.iconsFacilityGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacVehAmmoCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacAirAmmoCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacEquipTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacWGTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacAirTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacVehTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacGalTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacFlashTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacLightTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacBusTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacTeleCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacPointCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacOWPointsCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacNearbyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacSCUCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacHorzCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacVertCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacVehShieldCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacSCUShieldCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacForwardCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacBridgeTermCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacSCUAttackCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacGateAttackCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsFacRelicDoorCheck = New System.Windows.Forms.CheckBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.FlowLayoutPanel14 = New System.Windows.Forms.FlowLayoutPanel()
         Me.soundPanel0 = New System.Windows.Forms.FlowLayoutPanel()
@@ -2491,816 +2491,816 @@ Partial Class Form1
         '
         Me.FlowLayoutPanel3.AutoSize = True
         Me.FlowLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel3.Controls.Add(Me.CheckBox1)
-        Me.FlowLayoutPanel3.Controls.Add(Me.CheckBox8)
-        Me.FlowLayoutPanel3.Controls.Add(Me.CheckBox9)
+        Me.FlowLayoutPanel3.Controls.Add(Me.iconsInfantryGroupCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.iconsInfantryAllyCheck)
+        Me.FlowLayoutPanel3.Controls.Add(Me.iconsInfantryEnemyCheck)
         Me.FlowLayoutPanel3.Location = New System.Drawing.Point(3, 3)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Size = New System.Drawing.Size(264, 26)
         Me.FlowLayoutPanel3.TabIndex = 26
         '
-        'CheckBox1
+        'iconsInfantryGroupCheck
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox1.Location = New System.Drawing.Point(3, 5)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(61, 17)
-        Me.CheckBox1.TabIndex = 25
-        Me.CheckBox1.Text = "Infantry"
-        Me.CheckBox1.UseVisualStyleBackColor = False
+        Me.iconsInfantryGroupCheck.AutoSize = True
+        Me.iconsInfantryGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsInfantryGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsInfantryGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsInfantryGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsInfantryGroupCheck.Name = "iconsInfantryGroupCheck"
+        Me.iconsInfantryGroupCheck.Size = New System.Drawing.Size(61, 17)
+        Me.iconsInfantryGroupCheck.TabIndex = 25
+        Me.iconsInfantryGroupCheck.Text = "Infantry"
+        Me.iconsInfantryGroupCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox8
+        'iconsInfantryAllyCheck
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox8.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox8.Location = New System.Drawing.Point(70, 5)
-        Me.CheckBox8.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(89, 17)
-        Me.CheckBox8.TabIndex = 26
-        Me.CheckBox8.Text = "Allied Infantry"
-        Me.CheckBox8.UseVisualStyleBackColor = False
+        Me.iconsInfantryAllyCheck.AutoSize = True
+        Me.iconsInfantryAllyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsInfantryAllyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsInfantryAllyCheck.Location = New System.Drawing.Point(70, 5)
+        Me.iconsInfantryAllyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsInfantryAllyCheck.Name = "iconsInfantryAllyCheck"
+        Me.iconsInfantryAllyCheck.Size = New System.Drawing.Size(89, 17)
+        Me.iconsInfantryAllyCheck.TabIndex = 26
+        Me.iconsInfantryAllyCheck.Text = "Allied Infantry"
+        Me.iconsInfantryAllyCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox9
+        'iconsInfantryEnemyCheck
         '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox9.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox9.Location = New System.Drawing.Point(165, 5)
-        Me.CheckBox9.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(96, 17)
-        Me.CheckBox9.TabIndex = 27
-        Me.CheckBox9.Text = "Enemy Infantry"
-        Me.CheckBox9.UseVisualStyleBackColor = False
+        Me.iconsInfantryEnemyCheck.AutoSize = True
+        Me.iconsInfantryEnemyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsInfantryEnemyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsInfantryEnemyCheck.Location = New System.Drawing.Point(165, 5)
+        Me.iconsInfantryEnemyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsInfantryEnemyCheck.Name = "iconsInfantryEnemyCheck"
+        Me.iconsInfantryEnemyCheck.Size = New System.Drawing.Size(96, 17)
+        Me.iconsInfantryEnemyCheck.TabIndex = 27
+        Me.iconsInfantryEnemyCheck.Text = "Enemy Infantry"
+        Me.iconsInfantryEnemyCheck.UseVisualStyleBackColor = False
         '
         'FlowLayoutPanel5
         '
         Me.FlowLayoutPanel5.AutoSize = True
         Me.FlowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox2)
-        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox12)
-        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox13)
-        Me.FlowLayoutPanel5.Controls.Add(Me.CheckBox14)
+        Me.FlowLayoutPanel5.Controls.Add(Me.iconsVehicleGroupCheck)
+        Me.FlowLayoutPanel5.Controls.Add(Me.iconsVehAllyCheck)
+        Me.FlowLayoutPanel5.Controls.Add(Me.iconsVehEnemyCheck)
+        Me.FlowLayoutPanel5.Controls.Add(Me.iconsVehBastionCheck)
         Me.FlowLayoutPanel5.Location = New System.Drawing.Point(3, 35)
         Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
         Me.FlowLayoutPanel5.Size = New System.Drawing.Size(403, 26)
         Me.FlowLayoutPanel5.TabIndex = 27
         '
-        'CheckBox2
+        'iconsVehicleGroupCheck
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox2.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox2.Location = New System.Drawing.Point(3, 5)
-        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(61, 17)
-        Me.CheckBox2.TabIndex = 25
-        Me.CheckBox2.Text = "Vehicle"
-        Me.CheckBox2.UseVisualStyleBackColor = False
+        Me.iconsVehicleGroupCheck.AutoSize = True
+        Me.iconsVehicleGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsVehicleGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsVehicleGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsVehicleGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsVehicleGroupCheck.Name = "iconsVehicleGroupCheck"
+        Me.iconsVehicleGroupCheck.Size = New System.Drawing.Size(61, 17)
+        Me.iconsVehicleGroupCheck.TabIndex = 25
+        Me.iconsVehicleGroupCheck.Text = "Vehicle"
+        Me.iconsVehicleGroupCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox12
+        'iconsVehAllyCheck
         '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox12.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox12.Location = New System.Drawing.Point(70, 5)
-        Me.CheckBox12.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(94, 17)
-        Me.CheckBox12.TabIndex = 26
-        Me.CheckBox12.Text = "Allied Vehicles"
-        Me.CheckBox12.UseVisualStyleBackColor = False
+        Me.iconsVehAllyCheck.AutoSize = True
+        Me.iconsVehAllyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsVehAllyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsVehAllyCheck.Location = New System.Drawing.Point(70, 5)
+        Me.iconsVehAllyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsVehAllyCheck.Name = "iconsVehAllyCheck"
+        Me.iconsVehAllyCheck.Size = New System.Drawing.Size(94, 17)
+        Me.iconsVehAllyCheck.TabIndex = 26
+        Me.iconsVehAllyCheck.Text = "Allied Vehicles"
+        Me.iconsVehAllyCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox13
+        'iconsVehEnemyCheck
         '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox13.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox13.Location = New System.Drawing.Point(170, 5)
-        Me.CheckBox13.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(101, 17)
-        Me.CheckBox13.TabIndex = 27
-        Me.CheckBox13.Text = "Enemy Vehicles"
-        Me.CheckBox13.UseVisualStyleBackColor = False
+        Me.iconsVehEnemyCheck.AutoSize = True
+        Me.iconsVehEnemyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsVehEnemyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsVehEnemyCheck.Location = New System.Drawing.Point(170, 5)
+        Me.iconsVehEnemyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsVehEnemyCheck.Name = "iconsVehEnemyCheck"
+        Me.iconsVehEnemyCheck.Size = New System.Drawing.Size(101, 17)
+        Me.iconsVehEnemyCheck.TabIndex = 27
+        Me.iconsVehEnemyCheck.Text = "Enemy Vehicles"
+        Me.iconsVehEnemyCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox14
+        'iconsVehBastionCheck
         '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox14.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox14.Location = New System.Drawing.Point(277, 5)
-        Me.CheckBox14.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(123, 17)
-        Me.CheckBox14.TabIndex = 28
-        Me.CheckBox14.Text = "Bastion Components"
-        Me.CheckBox14.UseVisualStyleBackColor = False
+        Me.iconsVehBastionCheck.AutoSize = True
+        Me.iconsVehBastionCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsVehBastionCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsVehBastionCheck.Location = New System.Drawing.Point(277, 5)
+        Me.iconsVehBastionCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsVehBastionCheck.Name = "iconsVehBastionCheck"
+        Me.iconsVehBastionCheck.Size = New System.Drawing.Size(123, 17)
+        Me.iconsVehBastionCheck.TabIndex = 28
+        Me.iconsVehBastionCheck.Text = "Bastion Components"
+        Me.iconsVehBastionCheck.UseVisualStyleBackColor = False
         '
         'FlowLayoutPanel12
         '
         Me.FlowLayoutPanel12.AutoSize = True
         Me.FlowLayoutPanel12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox3)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox16)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox17)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox18)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox19)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox20)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox21)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox22)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox49)
-        Me.FlowLayoutPanel12.Controls.Add(Me.CheckBox50)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDeployGroupCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepDMGNadeCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepStatusNadeCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepMinesCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepC4Check)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepShieldRegenCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepDildarCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepAmmoBoxCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepDroneCheck)
+        Me.FlowLayoutPanel12.Controls.Add(Me.iconsDepTurretsCheck)
         Me.FlowLayoutPanel12.Location = New System.Drawing.Point(3, 67)
         Me.FlowLayoutPanel12.Name = "FlowLayoutPanel12"
         Me.FlowLayoutPanel12.Size = New System.Drawing.Size(688, 52)
         Me.FlowLayoutPanel12.TabIndex = 28
         '
-        'CheckBox3
+        'iconsDeployGroupCheck
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox3.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox3.Location = New System.Drawing.Point(3, 5)
-        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox3.TabIndex = 25
-        Me.CheckBox3.Text = "Deployable"
-        Me.CheckBox3.UseVisualStyleBackColor = False
+        Me.iconsDeployGroupCheck.AutoSize = True
+        Me.iconsDeployGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDeployGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDeployGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsDeployGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDeployGroupCheck.Name = "iconsDeployGroupCheck"
+        Me.iconsDeployGroupCheck.Size = New System.Drawing.Size(79, 17)
+        Me.iconsDeployGroupCheck.TabIndex = 25
+        Me.iconsDeployGroupCheck.Text = "Deployable"
+        Me.iconsDeployGroupCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox16
+        'iconsDepDMGNadeCheck
         '
-        Me.CheckBox16.AutoSize = True
-        Me.CheckBox16.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox16.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox16.Location = New System.Drawing.Point(88, 5)
-        Me.CheckBox16.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(72, 17)
-        Me.CheckBox16.TabIndex = 26
-        Me.CheckBox16.Text = "Grenades"
-        Me.CheckBox16.UseVisualStyleBackColor = False
+        Me.iconsDepDMGNadeCheck.AutoSize = True
+        Me.iconsDepDMGNadeCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepDMGNadeCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepDMGNadeCheck.Location = New System.Drawing.Point(88, 5)
+        Me.iconsDepDMGNadeCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepDMGNadeCheck.Name = "iconsDepDMGNadeCheck"
+        Me.iconsDepDMGNadeCheck.Size = New System.Drawing.Size(72, 17)
+        Me.iconsDepDMGNadeCheck.TabIndex = 26
+        Me.iconsDepDMGNadeCheck.Text = "Grenades"
+        Me.iconsDepDMGNadeCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox17
+        'iconsDepStatusNadeCheck
         '
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox17.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox17.Location = New System.Drawing.Point(166, 5)
-        Me.CheckBox17.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(107, 17)
-        Me.CheckBox17.TabIndex = 27
-        Me.CheckBox17.Text = "Debuff Grenades"
-        Me.CheckBox17.UseVisualStyleBackColor = False
+        Me.iconsDepStatusNadeCheck.AutoSize = True
+        Me.iconsDepStatusNadeCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepStatusNadeCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepStatusNadeCheck.Location = New System.Drawing.Point(166, 5)
+        Me.iconsDepStatusNadeCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepStatusNadeCheck.Name = "iconsDepStatusNadeCheck"
+        Me.iconsDepStatusNadeCheck.Size = New System.Drawing.Size(107, 17)
+        Me.iconsDepStatusNadeCheck.TabIndex = 27
+        Me.iconsDepStatusNadeCheck.Text = "Debuff Grenades"
+        Me.iconsDepStatusNadeCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox18
+        'iconsDepMinesCheck
         '
-        Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox18.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox18.Location = New System.Drawing.Point(279, 5)
-        Me.CheckBox18.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox18.Name = "CheckBox18"
-        Me.CheckBox18.Size = New System.Drawing.Size(54, 17)
-        Me.CheckBox18.TabIndex = 28
-        Me.CheckBox18.Text = "Mines"
-        Me.CheckBox18.UseVisualStyleBackColor = False
+        Me.iconsDepMinesCheck.AutoSize = True
+        Me.iconsDepMinesCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepMinesCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepMinesCheck.Location = New System.Drawing.Point(279, 5)
+        Me.iconsDepMinesCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepMinesCheck.Name = "iconsDepMinesCheck"
+        Me.iconsDepMinesCheck.Size = New System.Drawing.Size(54, 17)
+        Me.iconsDepMinesCheck.TabIndex = 28
+        Me.iconsDepMinesCheck.Text = "Mines"
+        Me.iconsDepMinesCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox19
+        'iconsDepC4Check
         '
-        Me.CheckBox19.AutoSize = True
-        Me.CheckBox19.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox19.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox19.Location = New System.Drawing.Point(339, 5)
-        Me.CheckBox19.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox19.Name = "CheckBox19"
-        Me.CheckBox19.Size = New System.Drawing.Size(39, 17)
-        Me.CheckBox19.TabIndex = 29
-        Me.CheckBox19.Text = "C4"
-        Me.CheckBox19.UseVisualStyleBackColor = False
+        Me.iconsDepC4Check.AutoSize = True
+        Me.iconsDepC4Check.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepC4Check.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepC4Check.Location = New System.Drawing.Point(339, 5)
+        Me.iconsDepC4Check.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepC4Check.Name = "iconsDepC4Check"
+        Me.iconsDepC4Check.Size = New System.Drawing.Size(39, 17)
+        Me.iconsDepC4Check.TabIndex = 29
+        Me.iconsDepC4Check.Text = "C4"
+        Me.iconsDepC4Check.UseVisualStyleBackColor = False
         '
-        'CheckBox20
+        'iconsDepShieldRegenCheck
         '
-        Me.CheckBox20.AutoSize = True
-        Me.CheckBox20.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox20.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox20.Location = New System.Drawing.Point(384, 5)
-        Me.CheckBox20.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox20.Name = "CheckBox20"
-        Me.CheckBox20.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox20.TabIndex = 30
-        Me.CheckBox20.Text = "Regen Shield"
-        Me.CheckBox20.UseVisualStyleBackColor = False
+        Me.iconsDepShieldRegenCheck.AutoSize = True
+        Me.iconsDepShieldRegenCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepShieldRegenCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepShieldRegenCheck.Location = New System.Drawing.Point(384, 5)
+        Me.iconsDepShieldRegenCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepShieldRegenCheck.Name = "iconsDepShieldRegenCheck"
+        Me.iconsDepShieldRegenCheck.Size = New System.Drawing.Size(90, 17)
+        Me.iconsDepShieldRegenCheck.TabIndex = 30
+        Me.iconsDepShieldRegenCheck.Text = "Regen Shield"
+        Me.iconsDepShieldRegenCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox21
+        'iconsDepDildarCheck
         '
-        Me.CheckBox21.AutoSize = True
-        Me.CheckBox21.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox21.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox21.Location = New System.Drawing.Point(480, 5)
-        Me.CheckBox21.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox21.Name = "CheckBox21"
-        Me.CheckBox21.Size = New System.Drawing.Size(94, 17)
-        Me.CheckBox21.TabIndex = 31
-        Me.CheckBox21.Text = "Motion Sensor"
-        Me.CheckBox21.UseVisualStyleBackColor = False
+        Me.iconsDepDildarCheck.AutoSize = True
+        Me.iconsDepDildarCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepDildarCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepDildarCheck.Location = New System.Drawing.Point(480, 5)
+        Me.iconsDepDildarCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepDildarCheck.Name = "iconsDepDildarCheck"
+        Me.iconsDepDildarCheck.Size = New System.Drawing.Size(94, 17)
+        Me.iconsDepDildarCheck.TabIndex = 31
+        Me.iconsDepDildarCheck.Text = "Motion Sensor"
+        Me.iconsDepDildarCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox22
+        'iconsDepAmmoBoxCheck
         '
-        Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox22.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox22.Location = New System.Drawing.Point(580, 5)
-        Me.CheckBox22.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Size = New System.Drawing.Size(105, 17)
-        Me.CheckBox22.TabIndex = 32
-        Me.CheckBox22.Text = "Ammo Placeable"
-        Me.CheckBox22.UseVisualStyleBackColor = False
+        Me.iconsDepAmmoBoxCheck.AutoSize = True
+        Me.iconsDepAmmoBoxCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepAmmoBoxCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepAmmoBoxCheck.Location = New System.Drawing.Point(580, 5)
+        Me.iconsDepAmmoBoxCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepAmmoBoxCheck.Name = "iconsDepAmmoBoxCheck"
+        Me.iconsDepAmmoBoxCheck.Size = New System.Drawing.Size(105, 17)
+        Me.iconsDepAmmoBoxCheck.TabIndex = 32
+        Me.iconsDepAmmoBoxCheck.Text = "Ammo Placeable"
+        Me.iconsDepAmmoBoxCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox49
+        'iconsDepDroneCheck
         '
-        Me.CheckBox49.AutoSize = True
-        Me.CheckBox49.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox49.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox49.Location = New System.Drawing.Point(3, 31)
-        Me.CheckBox49.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox49.Name = "CheckBox49"
-        Me.CheckBox49.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox49.TabIndex = 33
-        Me.CheckBox49.Text = "Recon Drone"
-        Me.CheckBox49.UseVisualStyleBackColor = False
+        Me.iconsDepDroneCheck.AutoSize = True
+        Me.iconsDepDroneCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepDroneCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepDroneCheck.Location = New System.Drawing.Point(3, 31)
+        Me.iconsDepDroneCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepDroneCheck.Name = "iconsDepDroneCheck"
+        Me.iconsDepDroneCheck.Size = New System.Drawing.Size(90, 17)
+        Me.iconsDepDroneCheck.TabIndex = 33
+        Me.iconsDepDroneCheck.Text = "Recon Drone"
+        Me.iconsDepDroneCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox50
+        'iconsDepTurretsCheck
         '
-        Me.CheckBox50.AutoSize = True
-        Me.CheckBox50.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox50.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox50.Location = New System.Drawing.Point(99, 31)
-        Me.CheckBox50.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox50.Name = "CheckBox50"
-        Me.CheckBox50.Size = New System.Drawing.Size(83, 17)
-        Me.CheckBox50.TabIndex = 34
-        Me.CheckBox50.Text = "Engi Turrets"
-        Me.CheckBox50.UseVisualStyleBackColor = False
+        Me.iconsDepTurretsCheck.AutoSize = True
+        Me.iconsDepTurretsCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDepTurretsCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDepTurretsCheck.Location = New System.Drawing.Point(99, 31)
+        Me.iconsDepTurretsCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDepTurretsCheck.Name = "iconsDepTurretsCheck"
+        Me.iconsDepTurretsCheck.Size = New System.Drawing.Size(83, 17)
+        Me.iconsDepTurretsCheck.TabIndex = 34
+        Me.iconsDepTurretsCheck.Text = "Engi Turrets"
+        Me.iconsDepTurretsCheck.UseVisualStyleBackColor = False
         '
         'FlowLayoutPanel13
         '
         Me.FlowLayoutPanel13.AutoSize = True
         Me.FlowLayoutPanel13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox4)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox23)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox24)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox25)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox10)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox26)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox27)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox28)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox51)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox52)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox53)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox54)
-        Me.FlowLayoutPanel13.Controls.Add(Me.CheckBox55)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldGroupCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldAnomalyCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldDrillCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldBuoyCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldMissionCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldImplantCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldPlantCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldNPCCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldStationCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldAssetCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldCrystalCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldConstructionCheck)
+        Me.FlowLayoutPanel13.Controls.Add(Me.iconsWorldCortiumCheck)
         Me.FlowLayoutPanel13.Location = New System.Drawing.Point(3, 125)
         Me.FlowLayoutPanel13.Name = "FlowLayoutPanel13"
         Me.FlowLayoutPanel13.Size = New System.Drawing.Size(732, 52)
         Me.FlowLayoutPanel13.TabIndex = 29
         '
-        'CheckBox4
+        'iconsWorldGroupCheck
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox4.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox4.Location = New System.Drawing.Point(3, 5)
-        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(54, 17)
-        Me.CheckBox4.TabIndex = 25
-        Me.CheckBox4.Text = "World"
-        Me.CheckBox4.UseVisualStyleBackColor = False
+        Me.iconsWorldGroupCheck.AutoSize = True
+        Me.iconsWorldGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsWorldGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldGroupCheck.Name = "iconsWorldGroupCheck"
+        Me.iconsWorldGroupCheck.Size = New System.Drawing.Size(54, 17)
+        Me.iconsWorldGroupCheck.TabIndex = 25
+        Me.iconsWorldGroupCheck.Text = "World"
+        Me.iconsWorldGroupCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox23
+        'iconsWorldAnomalyCheck
         '
-        Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox23.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox23.Location = New System.Drawing.Point(63, 5)
-        Me.CheckBox23.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox23.Name = "CheckBox23"
-        Me.CheckBox23.Size = New System.Drawing.Size(66, 17)
-        Me.CheckBox23.TabIndex = 26
-        Me.CheckBox23.Text = "Anomaly"
-        Me.CheckBox23.UseVisualStyleBackColor = False
+        Me.iconsWorldAnomalyCheck.AutoSize = True
+        Me.iconsWorldAnomalyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldAnomalyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldAnomalyCheck.Location = New System.Drawing.Point(63, 5)
+        Me.iconsWorldAnomalyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldAnomalyCheck.Name = "iconsWorldAnomalyCheck"
+        Me.iconsWorldAnomalyCheck.Size = New System.Drawing.Size(66, 17)
+        Me.iconsWorldAnomalyCheck.TabIndex = 26
+        Me.iconsWorldAnomalyCheck.Text = "Anomaly"
+        Me.iconsWorldAnomalyCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox24
+        'iconsWorldDrillCheck
         '
-        Me.CheckBox24.AutoSize = True
-        Me.CheckBox24.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox24.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox24.Location = New System.Drawing.Point(135, 5)
-        Me.CheckBox24.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox24.Name = "CheckBox24"
-        Me.CheckBox24.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox24.TabIndex = 27
-        Me.CheckBox24.Text = "Elysium Drill"
-        Me.CheckBox24.UseVisualStyleBackColor = False
+        Me.iconsWorldDrillCheck.AutoSize = True
+        Me.iconsWorldDrillCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldDrillCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldDrillCheck.Location = New System.Drawing.Point(135, 5)
+        Me.iconsWorldDrillCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldDrillCheck.Name = "iconsWorldDrillCheck"
+        Me.iconsWorldDrillCheck.Size = New System.Drawing.Size(81, 17)
+        Me.iconsWorldDrillCheck.TabIndex = 27
+        Me.iconsWorldDrillCheck.Text = "Elysium Drill"
+        Me.iconsWorldDrillCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox25
+        'iconsWorldBuoyCheck
         '
-        Me.CheckBox25.AutoSize = True
-        Me.CheckBox25.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox25.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox25.Location = New System.Drawing.Point(222, 5)
-        Me.CheckBox25.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox25.Name = "CheckBox25"
-        Me.CheckBox25.Size = New System.Drawing.Size(76, 17)
-        Me.CheckBox25.TabIndex = 28
-        Me.CheckBox25.Text = "Data Buoy"
-        Me.CheckBox25.UseVisualStyleBackColor = False
+        Me.iconsWorldBuoyCheck.AutoSize = True
+        Me.iconsWorldBuoyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldBuoyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldBuoyCheck.Location = New System.Drawing.Point(222, 5)
+        Me.iconsWorldBuoyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldBuoyCheck.Name = "iconsWorldBuoyCheck"
+        Me.iconsWorldBuoyCheck.Size = New System.Drawing.Size(76, 17)
+        Me.iconsWorldBuoyCheck.TabIndex = 28
+        Me.iconsWorldBuoyCheck.Text = "Data Buoy"
+        Me.iconsWorldBuoyCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox10
+        'iconsWorldMissionCheck
         '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox10.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox10.Location = New System.Drawing.Point(304, 5)
-        Me.CheckBox10.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(61, 17)
-        Me.CheckBox10.TabIndex = 37
-        Me.CheckBox10.Text = "Mission"
-        Me.CheckBox10.UseVisualStyleBackColor = False
+        Me.iconsWorldMissionCheck.AutoSize = True
+        Me.iconsWorldMissionCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldMissionCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldMissionCheck.Location = New System.Drawing.Point(304, 5)
+        Me.iconsWorldMissionCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldMissionCheck.Name = "iconsWorldMissionCheck"
+        Me.iconsWorldMissionCheck.Size = New System.Drawing.Size(61, 17)
+        Me.iconsWorldMissionCheck.TabIndex = 37
+        Me.iconsWorldMissionCheck.Text = "Mission"
+        Me.iconsWorldMissionCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox26
+        'iconsWorldImplantCheck
         '
-        Me.CheckBox26.AutoSize = True
-        Me.CheckBox26.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox26.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox26.Location = New System.Drawing.Point(371, 5)
-        Me.CheckBox26.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox26.Name = "CheckBox26"
-        Me.CheckBox26.Size = New System.Drawing.Size(128, 17)
-        Me.CheckBox26.TabIndex = 29
-        Me.CheckBox26.Text = "Analysis HUD Implant"
-        Me.CheckBox26.UseVisualStyleBackColor = False
+        Me.iconsWorldImplantCheck.AutoSize = True
+        Me.iconsWorldImplantCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldImplantCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldImplantCheck.Location = New System.Drawing.Point(371, 5)
+        Me.iconsWorldImplantCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldImplantCheck.Name = "iconsWorldImplantCheck"
+        Me.iconsWorldImplantCheck.Size = New System.Drawing.Size(128, 17)
+        Me.iconsWorldImplantCheck.TabIndex = 29
+        Me.iconsWorldImplantCheck.Text = "Analysis HUD Implant"
+        Me.iconsWorldImplantCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox27
+        'iconsWorldPlantCheck
         '
-        Me.CheckBox27.AutoSize = True
-        Me.CheckBox27.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox27.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox27.Location = New System.Drawing.Point(505, 5)
-        Me.CheckBox27.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox27.Name = "CheckBox27"
-        Me.CheckBox27.Size = New System.Drawing.Size(158, 17)
-        Me.CheckBox27.TabIndex = 30
-        Me.CheckBox27.Text = "Analysis HUD Strange Plant"
-        Me.CheckBox27.UseVisualStyleBackColor = False
+        Me.iconsWorldPlantCheck.AutoSize = True
+        Me.iconsWorldPlantCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldPlantCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldPlantCheck.Location = New System.Drawing.Point(505, 5)
+        Me.iconsWorldPlantCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldPlantCheck.Name = "iconsWorldPlantCheck"
+        Me.iconsWorldPlantCheck.Size = New System.Drawing.Size(158, 17)
+        Me.iconsWorldPlantCheck.TabIndex = 30
+        Me.iconsWorldPlantCheck.Text = "Analysis HUD Strange Plant"
+        Me.iconsWorldPlantCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox28
+        'iconsWorldNPCCheck
         '
-        Me.CheckBox28.AutoSize = True
-        Me.CheckBox28.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox28.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox28.Location = New System.Drawing.Point(3, 31)
-        Me.CheckBox28.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox28.Name = "CheckBox28"
-        Me.CheckBox28.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox28.TabIndex = 31
-        Me.CheckBox28.Text = "Named NPCs"
-        Me.CheckBox28.UseVisualStyleBackColor = False
+        Me.iconsWorldNPCCheck.AutoSize = True
+        Me.iconsWorldNPCCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldNPCCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldNPCCheck.Location = New System.Drawing.Point(3, 31)
+        Me.iconsWorldNPCCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldNPCCheck.Name = "iconsWorldNPCCheck"
+        Me.iconsWorldNPCCheck.Size = New System.Drawing.Size(90, 17)
+        Me.iconsWorldNPCCheck.TabIndex = 31
+        Me.iconsWorldNPCCheck.Text = "Named NPCs"
+        Me.iconsWorldNPCCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox51
+        'iconsWorldStationCheck
         '
-        Me.CheckBox51.AutoSize = True
-        Me.CheckBox51.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox51.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox51.Location = New System.Drawing.Point(99, 31)
-        Me.CheckBox51.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox51.Name = "CheckBox51"
-        Me.CheckBox51.Size = New System.Drawing.Size(100, 17)
-        Me.CheckBox51.TabIndex = 32
-        Me.CheckBox51.Text = "Forward Station"
-        Me.CheckBox51.UseVisualStyleBackColor = False
+        Me.iconsWorldStationCheck.AutoSize = True
+        Me.iconsWorldStationCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldStationCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldStationCheck.Location = New System.Drawing.Point(99, 31)
+        Me.iconsWorldStationCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldStationCheck.Name = "iconsWorldStationCheck"
+        Me.iconsWorldStationCheck.Size = New System.Drawing.Size(100, 17)
+        Me.iconsWorldStationCheck.TabIndex = 32
+        Me.iconsWorldStationCheck.Text = "Forward Station"
+        Me.iconsWorldStationCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox52
+        'iconsWorldAssetCheck
         '
-        Me.CheckBox52.AutoSize = True
-        Me.CheckBox52.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox52.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox52.Location = New System.Drawing.Point(205, 31)
-        Me.CheckBox52.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox52.Name = "CheckBox52"
-        Me.CheckBox52.Size = New System.Drawing.Size(159, 17)
-        Me.CheckBox52.TabIndex = 33
-        Me.CheckBox52.Text = "War Asset Waypoint Marker"
-        Me.CheckBox52.UseVisualStyleBackColor = False
+        Me.iconsWorldAssetCheck.AutoSize = True
+        Me.iconsWorldAssetCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldAssetCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldAssetCheck.Location = New System.Drawing.Point(205, 31)
+        Me.iconsWorldAssetCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldAssetCheck.Name = "iconsWorldAssetCheck"
+        Me.iconsWorldAssetCheck.Size = New System.Drawing.Size(159, 17)
+        Me.iconsWorldAssetCheck.TabIndex = 33
+        Me.iconsWorldAssetCheck.Text = "War Asset Waypoint Marker"
+        Me.iconsWorldAssetCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox53
+        'iconsWorldCrystalCheck
         '
-        Me.CheckBox53.AutoSize = True
-        Me.CheckBox53.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox53.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox53.Location = New System.Drawing.Point(370, 31)
-        Me.CheckBox53.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox53.Name = "CheckBox53"
-        Me.CheckBox53.Size = New System.Drawing.Size(151, 17)
-        Me.CheckBox53.TabIndex = 34
-        Me.CheckBox53.Text = "Construction Crystal Radar"
-        Me.CheckBox53.UseVisualStyleBackColor = False
+        Me.iconsWorldCrystalCheck.AutoSize = True
+        Me.iconsWorldCrystalCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldCrystalCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldCrystalCheck.Location = New System.Drawing.Point(370, 31)
+        Me.iconsWorldCrystalCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldCrystalCheck.Name = "iconsWorldCrystalCheck"
+        Me.iconsWorldCrystalCheck.Size = New System.Drawing.Size(151, 17)
+        Me.iconsWorldCrystalCheck.TabIndex = 34
+        Me.iconsWorldCrystalCheck.Text = "Construction Crystal Radar"
+        Me.iconsWorldCrystalCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox54
+        'iconsWorldConstructionCheck
         '
-        Me.CheckBox54.AutoSize = True
-        Me.CheckBox54.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox54.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox54.Location = New System.Drawing.Point(527, 31)
-        Me.CheckBox54.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox54.Name = "CheckBox54"
-        Me.CheckBox54.Size = New System.Drawing.Size(135, 17)
-        Me.CheckBox54.TabIndex = 35
-        Me.CheckBox54.Text = "Construction Placeable"
-        Me.CheckBox54.UseVisualStyleBackColor = False
+        Me.iconsWorldConstructionCheck.AutoSize = True
+        Me.iconsWorldConstructionCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldConstructionCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldConstructionCheck.Location = New System.Drawing.Point(527, 31)
+        Me.iconsWorldConstructionCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldConstructionCheck.Name = "iconsWorldConstructionCheck"
+        Me.iconsWorldConstructionCheck.Size = New System.Drawing.Size(135, 17)
+        Me.iconsWorldConstructionCheck.TabIndex = 35
+        Me.iconsWorldConstructionCheck.Text = "Construction Placeable"
+        Me.iconsWorldConstructionCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox55
+        'iconsWorldCortiumCheck
         '
-        Me.CheckBox55.AutoSize = True
-        Me.CheckBox55.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox55.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox55.Location = New System.Drawing.Point(668, 31)
-        Me.CheckBox55.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox55.Name = "CheckBox55"
-        Me.CheckBox55.Size = New System.Drawing.Size(61, 17)
-        Me.CheckBox55.TabIndex = 36
-        Me.CheckBox55.Text = "Cortium"
-        Me.CheckBox55.UseVisualStyleBackColor = False
+        Me.iconsWorldCortiumCheck.AutoSize = True
+        Me.iconsWorldCortiumCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsWorldCortiumCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsWorldCortiumCheck.Location = New System.Drawing.Point(668, 31)
+        Me.iconsWorldCortiumCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsWorldCortiumCheck.Name = "iconsWorldCortiumCheck"
+        Me.iconsWorldCortiumCheck.Size = New System.Drawing.Size(61, 17)
+        Me.iconsWorldCortiumCheck.TabIndex = 36
+        Me.iconsWorldCortiumCheck.Text = "Cortium"
+        Me.iconsWorldCortiumCheck.UseVisualStyleBackColor = False
         '
         'FlowLayoutPanel15
         '
         Me.FlowLayoutPanel15.AutoSize = True
         Me.FlowLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox5)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox29)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox30)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox31)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox32)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox33)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox34)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox35)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox36)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox37)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox38)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox39)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox40)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox41)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox42)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox43)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox44)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox45)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox46)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox47)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox48)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox56)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox57)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox58)
-        Me.FlowLayoutPanel15.Controls.Add(Me.CheckBox59)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacilityGroupCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacVehAmmoCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacAirAmmoCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacEquipTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacWGTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacAirTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacVehTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacGalTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacFlashTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacLightTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacBusTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacTeleCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacPointCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacOWPointsCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacNearbyCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacSCUCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacHorzCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacVertCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacVehShieldCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacSCUShieldCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacForwardCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacBridgeTermCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacSCUAttackCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacGateAttackCheck)
+        Me.FlowLayoutPanel15.Controls.Add(Me.iconsFacRelicDoorCheck)
         Me.FlowLayoutPanel15.Location = New System.Drawing.Point(3, 183)
         Me.FlowLayoutPanel15.Name = "FlowLayoutPanel15"
         Me.FlowLayoutPanel15.Size = New System.Drawing.Size(723, 104)
         Me.FlowLayoutPanel15.TabIndex = 30
         '
-        'CheckBox5
+        'iconsFacilityGroupCheck
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox5.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox5.Location = New System.Drawing.Point(3, 5)
-        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(58, 17)
-        Me.CheckBox5.TabIndex = 25
-        Me.CheckBox5.Text = "Facility"
-        Me.CheckBox5.UseVisualStyleBackColor = False
+        Me.iconsFacilityGroupCheck.AutoSize = True
+        Me.iconsFacilityGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacilityGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacilityGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsFacilityGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacilityGroupCheck.Name = "iconsFacilityGroupCheck"
+        Me.iconsFacilityGroupCheck.Size = New System.Drawing.Size(58, 17)
+        Me.iconsFacilityGroupCheck.TabIndex = 25
+        Me.iconsFacilityGroupCheck.Text = "Facility"
+        Me.iconsFacilityGroupCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox29
+        'iconsFacVehAmmoCheck
         '
-        Me.CheckBox29.AutoSize = True
-        Me.CheckBox29.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox29.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox29.Location = New System.Drawing.Point(67, 5)
-        Me.CheckBox29.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox29.Name = "CheckBox29"
-        Me.CheckBox29.Size = New System.Drawing.Size(93, 17)
-        Me.CheckBox29.TabIndex = 26
-        Me.CheckBox29.Text = "Ground Ammo"
-        Me.CheckBox29.UseVisualStyleBackColor = False
+        Me.iconsFacVehAmmoCheck.AutoSize = True
+        Me.iconsFacVehAmmoCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacVehAmmoCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacVehAmmoCheck.Location = New System.Drawing.Point(67, 5)
+        Me.iconsFacVehAmmoCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacVehAmmoCheck.Name = "iconsFacVehAmmoCheck"
+        Me.iconsFacVehAmmoCheck.Size = New System.Drawing.Size(93, 17)
+        Me.iconsFacVehAmmoCheck.TabIndex = 26
+        Me.iconsFacVehAmmoCheck.Text = "Ground Ammo"
+        Me.iconsFacVehAmmoCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox30
+        'iconsFacAirAmmoCheck
         '
-        Me.CheckBox30.AutoSize = True
-        Me.CheckBox30.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox30.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox30.Location = New System.Drawing.Point(166, 5)
-        Me.CheckBox30.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox30.Name = "CheckBox30"
-        Me.CheckBox30.Size = New System.Drawing.Size(70, 17)
-        Me.CheckBox30.TabIndex = 27
-        Me.CheckBox30.Text = "Air Ammo"
-        Me.CheckBox30.UseVisualStyleBackColor = False
+        Me.iconsFacAirAmmoCheck.AutoSize = True
+        Me.iconsFacAirAmmoCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacAirAmmoCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacAirAmmoCheck.Location = New System.Drawing.Point(166, 5)
+        Me.iconsFacAirAmmoCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacAirAmmoCheck.Name = "iconsFacAirAmmoCheck"
+        Me.iconsFacAirAmmoCheck.Size = New System.Drawing.Size(70, 17)
+        Me.iconsFacAirAmmoCheck.TabIndex = 27
+        Me.iconsFacAirAmmoCheck.Text = "Air Ammo"
+        Me.iconsFacAirAmmoCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox31
+        'iconsFacEquipTermCheck
         '
-        Me.CheckBox31.AutoSize = True
-        Me.CheckBox31.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox31.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox31.Location = New System.Drawing.Point(242, 5)
-        Me.CheckBox31.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox31.Name = "CheckBox31"
-        Me.CheckBox31.Size = New System.Drawing.Size(124, 17)
-        Me.CheckBox31.TabIndex = 28
-        Me.CheckBox31.Text = "Equipment Terminals"
-        Me.CheckBox31.UseVisualStyleBackColor = False
+        Me.iconsFacEquipTermCheck.AutoSize = True
+        Me.iconsFacEquipTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacEquipTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacEquipTermCheck.Location = New System.Drawing.Point(242, 5)
+        Me.iconsFacEquipTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacEquipTermCheck.Name = "iconsFacEquipTermCheck"
+        Me.iconsFacEquipTermCheck.Size = New System.Drawing.Size(124, 17)
+        Me.iconsFacEquipTermCheck.TabIndex = 28
+        Me.iconsFacEquipTermCheck.Text = "Equipment Terminals"
+        Me.iconsFacEquipTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox32
+        'iconsFacWGTermCheck
         '
-        Me.CheckBox32.AutoSize = True
-        Me.CheckBox32.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox32.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox32.Location = New System.Drawing.Point(372, 5)
-        Me.CheckBox32.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox32.Name = "CheckBox32"
-        Me.CheckBox32.Size = New System.Drawing.Size(121, 17)
-        Me.CheckBox32.TabIndex = 29
-        Me.CheckBox32.Text = "Warpgate Terminals"
-        Me.CheckBox32.UseVisualStyleBackColor = False
+        Me.iconsFacWGTermCheck.AutoSize = True
+        Me.iconsFacWGTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacWGTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacWGTermCheck.Location = New System.Drawing.Point(372, 5)
+        Me.iconsFacWGTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacWGTermCheck.Name = "iconsFacWGTermCheck"
+        Me.iconsFacWGTermCheck.Size = New System.Drawing.Size(121, 17)
+        Me.iconsFacWGTermCheck.TabIndex = 29
+        Me.iconsFacWGTermCheck.Text = "Warpgate Terminals"
+        Me.iconsFacWGTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox33
+        'iconsFacAirTermCheck
         '
-        Me.CheckBox33.AutoSize = True
-        Me.CheckBox33.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox33.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox33.Location = New System.Drawing.Point(499, 5)
-        Me.CheckBox33.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox33.Name = "CheckBox33"
-        Me.CheckBox33.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox33.TabIndex = 30
-        Me.CheckBox33.Text = "Air Terminal"
-        Me.CheckBox33.UseVisualStyleBackColor = False
+        Me.iconsFacAirTermCheck.AutoSize = True
+        Me.iconsFacAirTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacAirTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacAirTermCheck.Location = New System.Drawing.Point(499, 5)
+        Me.iconsFacAirTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacAirTermCheck.Name = "iconsFacAirTermCheck"
+        Me.iconsFacAirTermCheck.Size = New System.Drawing.Size(81, 17)
+        Me.iconsFacAirTermCheck.TabIndex = 30
+        Me.iconsFacAirTermCheck.Text = "Air Terminal"
+        Me.iconsFacAirTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox34
+        'iconsFacVehTermCheck
         '
-        Me.CheckBox34.AutoSize = True
-        Me.CheckBox34.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox34.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox34.Location = New System.Drawing.Point(586, 5)
-        Me.CheckBox34.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox34.Name = "CheckBox34"
-        Me.CheckBox34.Size = New System.Drawing.Size(99, 17)
-        Me.CheckBox34.TabIndex = 31
-        Me.CheckBox34.Text = "Ground Vehicle"
-        Me.CheckBox34.UseVisualStyleBackColor = False
+        Me.iconsFacVehTermCheck.AutoSize = True
+        Me.iconsFacVehTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacVehTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacVehTermCheck.Location = New System.Drawing.Point(586, 5)
+        Me.iconsFacVehTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacVehTermCheck.Name = "iconsFacVehTermCheck"
+        Me.iconsFacVehTermCheck.Size = New System.Drawing.Size(99, 17)
+        Me.iconsFacVehTermCheck.TabIndex = 31
+        Me.iconsFacVehTermCheck.Text = "Ground Vehicle"
+        Me.iconsFacVehTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox35
+        'iconsFacGalTermCheck
         '
-        Me.CheckBox35.AutoSize = True
-        Me.CheckBox35.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox35.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox35.Location = New System.Drawing.Point(3, 31)
-        Me.CheckBox35.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox35.Name = "CheckBox35"
-        Me.CheckBox35.Size = New System.Drawing.Size(101, 17)
-        Me.CheckBox35.TabIndex = 32
-        Me.CheckBox35.Text = "Galaxy Terminal"
-        Me.CheckBox35.UseVisualStyleBackColor = False
+        Me.iconsFacGalTermCheck.AutoSize = True
+        Me.iconsFacGalTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacGalTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacGalTermCheck.Location = New System.Drawing.Point(3, 31)
+        Me.iconsFacGalTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacGalTermCheck.Name = "iconsFacGalTermCheck"
+        Me.iconsFacGalTermCheck.Size = New System.Drawing.Size(101, 17)
+        Me.iconsFacGalTermCheck.TabIndex = 32
+        Me.iconsFacGalTermCheck.Text = "Galaxy Terminal"
+        Me.iconsFacGalTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox36
+        'iconsFacFlashTermCheck
         '
-        Me.CheckBox36.AutoSize = True
-        Me.CheckBox36.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox36.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox36.Location = New System.Drawing.Point(110, 31)
-        Me.CheckBox36.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox36.Name = "CheckBox36"
-        Me.CheckBox36.Size = New System.Drawing.Size(94, 17)
-        Me.CheckBox36.TabIndex = 33
-        Me.CheckBox36.Text = "Flash Terminal"
-        Me.CheckBox36.UseVisualStyleBackColor = False
+        Me.iconsFacFlashTermCheck.AutoSize = True
+        Me.iconsFacFlashTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacFlashTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacFlashTermCheck.Location = New System.Drawing.Point(110, 31)
+        Me.iconsFacFlashTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacFlashTermCheck.Name = "iconsFacFlashTermCheck"
+        Me.iconsFacFlashTermCheck.Size = New System.Drawing.Size(94, 17)
+        Me.iconsFacFlashTermCheck.TabIndex = 33
+        Me.iconsFacFlashTermCheck.Text = "Flash Terminal"
+        Me.iconsFacFlashTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox37
+        'iconsFacLightTermCheck
         '
-        Me.CheckBox37.AutoSize = True
-        Me.CheckBox37.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox37.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox37.Location = New System.Drawing.Point(210, 31)
-        Me.CheckBox37.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox37.Name = "CheckBox37"
-        Me.CheckBox37.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox37.TabIndex = 34
-        Me.CheckBox37.Text = "Light Ground"
-        Me.CheckBox37.UseVisualStyleBackColor = False
+        Me.iconsFacLightTermCheck.AutoSize = True
+        Me.iconsFacLightTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacLightTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacLightTermCheck.Location = New System.Drawing.Point(210, 31)
+        Me.iconsFacLightTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacLightTermCheck.Name = "iconsFacLightTermCheck"
+        Me.iconsFacLightTermCheck.Size = New System.Drawing.Size(87, 17)
+        Me.iconsFacLightTermCheck.TabIndex = 34
+        Me.iconsFacLightTermCheck.Text = "Light Ground"
+        Me.iconsFacLightTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox38
+        'iconsFacBusTermCheck
         '
-        Me.CheckBox38.AutoSize = True
-        Me.CheckBox38.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox38.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox38.Location = New System.Drawing.Point(303, 31)
-        Me.CheckBox38.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox38.Name = "CheckBox38"
-        Me.CheckBox38.Size = New System.Drawing.Size(112, 17)
-        Me.CheckBox38.TabIndex = 35
-        Me.CheckBox38.Text = "Sunderer Terminal"
-        Me.CheckBox38.UseVisualStyleBackColor = False
+        Me.iconsFacBusTermCheck.AutoSize = True
+        Me.iconsFacBusTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacBusTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacBusTermCheck.Location = New System.Drawing.Point(303, 31)
+        Me.iconsFacBusTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacBusTermCheck.Name = "iconsFacBusTermCheck"
+        Me.iconsFacBusTermCheck.Size = New System.Drawing.Size(112, 17)
+        Me.iconsFacBusTermCheck.TabIndex = 35
+        Me.iconsFacBusTermCheck.Text = "Sunderer Terminal"
+        Me.iconsFacBusTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox39
+        'iconsFacTeleCheck
         '
-        Me.CheckBox39.AutoSize = True
-        Me.CheckBox39.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox39.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox39.Location = New System.Drawing.Point(421, 31)
-        Me.CheckBox39.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox39.Name = "CheckBox39"
-        Me.CheckBox39.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox39.TabIndex = 36
-        Me.CheckBox39.Text = "Teleporters"
-        Me.CheckBox39.UseVisualStyleBackColor = False
+        Me.iconsFacTeleCheck.AutoSize = True
+        Me.iconsFacTeleCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacTeleCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacTeleCheck.Location = New System.Drawing.Point(421, 31)
+        Me.iconsFacTeleCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacTeleCheck.Name = "iconsFacTeleCheck"
+        Me.iconsFacTeleCheck.Size = New System.Drawing.Size(79, 17)
+        Me.iconsFacTeleCheck.TabIndex = 36
+        Me.iconsFacTeleCheck.Text = "Teleporters"
+        Me.iconsFacTeleCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox40
+        'iconsFacPointCheck
         '
-        Me.CheckBox40.AutoSize = True
-        Me.CheckBox40.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox40.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox40.Location = New System.Drawing.Point(506, 31)
-        Me.CheckBox40.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox40.Name = "CheckBox40"
-        Me.CheckBox40.Size = New System.Drawing.Size(91, 17)
-        Me.CheckBox40.TabIndex = 37
-        Me.CheckBox40.Text = "Control Points"
-        Me.CheckBox40.UseVisualStyleBackColor = False
+        Me.iconsFacPointCheck.AutoSize = True
+        Me.iconsFacPointCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacPointCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacPointCheck.Location = New System.Drawing.Point(506, 31)
+        Me.iconsFacPointCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacPointCheck.Name = "iconsFacPointCheck"
+        Me.iconsFacPointCheck.Size = New System.Drawing.Size(91, 17)
+        Me.iconsFacPointCheck.TabIndex = 37
+        Me.iconsFacPointCheck.Text = "Control Points"
+        Me.iconsFacPointCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox41
+        'iconsFacOWPointsCheck
         '
-        Me.CheckBox41.AutoSize = True
-        Me.CheckBox41.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox41.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox41.Location = New System.Drawing.Point(603, 31)
-        Me.CheckBox41.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox41.Name = "CheckBox41"
-        Me.CheckBox41.Size = New System.Drawing.Size(104, 17)
-        Me.CheckBox41.TabIndex = 38
-        Me.CheckBox41.Text = "OW Relic Points"
-        Me.CheckBox41.UseVisualStyleBackColor = False
+        Me.iconsFacOWPointsCheck.AutoSize = True
+        Me.iconsFacOWPointsCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacOWPointsCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacOWPointsCheck.Location = New System.Drawing.Point(603, 31)
+        Me.iconsFacOWPointsCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacOWPointsCheck.Name = "iconsFacOWPointsCheck"
+        Me.iconsFacOWPointsCheck.Size = New System.Drawing.Size(104, 17)
+        Me.iconsFacOWPointsCheck.TabIndex = 38
+        Me.iconsFacOWPointsCheck.Text = "OW Relic Points"
+        Me.iconsFacOWPointsCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox42
+        'iconsFacNearbyCheck
         '
-        Me.CheckBox42.AutoSize = True
-        Me.CheckBox42.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox42.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox42.Location = New System.Drawing.Point(3, 57)
-        Me.CheckBox42.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox42.Name = "CheckBox42"
-        Me.CheckBox42.Size = New System.Drawing.Size(112, 17)
-        Me.CheckBox42.TabIndex = 39
-        Me.CheckBox42.Text = "Neighbor Facilities"
-        Me.CheckBox42.UseVisualStyleBackColor = False
+        Me.iconsFacNearbyCheck.AutoSize = True
+        Me.iconsFacNearbyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacNearbyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacNearbyCheck.Location = New System.Drawing.Point(3, 57)
+        Me.iconsFacNearbyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacNearbyCheck.Name = "iconsFacNearbyCheck"
+        Me.iconsFacNearbyCheck.Size = New System.Drawing.Size(112, 17)
+        Me.iconsFacNearbyCheck.TabIndex = 39
+        Me.iconsFacNearbyCheck.Text = "Neighbor Facilities"
+        Me.iconsFacNearbyCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox43
+        'iconsFacSCUCheck
         '
-        Me.CheckBox43.AutoSize = True
-        Me.CheckBox43.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox43.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox43.Location = New System.Drawing.Point(121, 57)
-        Me.CheckBox43.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox43.Name = "CheckBox43"
-        Me.CheckBox43.Size = New System.Drawing.Size(48, 17)
-        Me.CheckBox43.TabIndex = 40
-        Me.CheckBox43.Text = "SCU"
-        Me.CheckBox43.UseVisualStyleBackColor = False
+        Me.iconsFacSCUCheck.AutoSize = True
+        Me.iconsFacSCUCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacSCUCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacSCUCheck.Location = New System.Drawing.Point(121, 57)
+        Me.iconsFacSCUCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacSCUCheck.Name = "iconsFacSCUCheck"
+        Me.iconsFacSCUCheck.Size = New System.Drawing.Size(48, 17)
+        Me.iconsFacSCUCheck.TabIndex = 40
+        Me.iconsFacSCUCheck.Text = "SCU"
+        Me.iconsFacSCUCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox44
+        'iconsFacHorzCheck
         '
-        Me.CheckBox44.AutoSize = True
-        Me.CheckBox44.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox44.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox44.Location = New System.Drawing.Point(175, 57)
-        Me.CheckBox44.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox44.Name = "CheckBox44"
-        Me.CheckBox44.Size = New System.Drawing.Size(96, 17)
-        Me.CheckBox44.TabIndex = 41
-        Me.CheckBox44.Text = "Horizontal Gen"
-        Me.CheckBox44.UseVisualStyleBackColor = False
+        Me.iconsFacHorzCheck.AutoSize = True
+        Me.iconsFacHorzCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacHorzCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacHorzCheck.Location = New System.Drawing.Point(175, 57)
+        Me.iconsFacHorzCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacHorzCheck.Name = "iconsFacHorzCheck"
+        Me.iconsFacHorzCheck.Size = New System.Drawing.Size(96, 17)
+        Me.iconsFacHorzCheck.TabIndex = 41
+        Me.iconsFacHorzCheck.Text = "Horizontal Gen"
+        Me.iconsFacHorzCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox45
+        'iconsFacVertCheck
         '
-        Me.CheckBox45.AutoSize = True
-        Me.CheckBox45.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox45.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox45.Location = New System.Drawing.Point(277, 57)
-        Me.CheckBox45.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox45.Name = "CheckBox45"
-        Me.CheckBox45.Size = New System.Drawing.Size(84, 17)
-        Me.CheckBox45.TabIndex = 42
-        Me.CheckBox45.Text = "Vertical Gen"
-        Me.CheckBox45.UseVisualStyleBackColor = False
+        Me.iconsFacVertCheck.AutoSize = True
+        Me.iconsFacVertCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacVertCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacVertCheck.Location = New System.Drawing.Point(277, 57)
+        Me.iconsFacVertCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacVertCheck.Name = "iconsFacVertCheck"
+        Me.iconsFacVertCheck.Size = New System.Drawing.Size(84, 17)
+        Me.iconsFacVertCheck.TabIndex = 42
+        Me.iconsFacVertCheck.Text = "Vertical Gen"
+        Me.iconsFacVertCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox46
+        'iconsFacVehShieldCheck
         '
-        Me.CheckBox46.AutoSize = True
-        Me.CheckBox46.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox46.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox46.Location = New System.Drawing.Point(367, 57)
-        Me.CheckBox46.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox46.Name = "CheckBox46"
-        Me.CheckBox46.Size = New System.Drawing.Size(116, 17)
-        Me.CheckBox46.TabIndex = 43
-        Me.CheckBox46.Text = "Vehicle Shield Gen"
-        Me.CheckBox46.UseVisualStyleBackColor = False
+        Me.iconsFacVehShieldCheck.AutoSize = True
+        Me.iconsFacVehShieldCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacVehShieldCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacVehShieldCheck.Location = New System.Drawing.Point(367, 57)
+        Me.iconsFacVehShieldCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacVehShieldCheck.Name = "iconsFacVehShieldCheck"
+        Me.iconsFacVehShieldCheck.Size = New System.Drawing.Size(116, 17)
+        Me.iconsFacVehShieldCheck.TabIndex = 43
+        Me.iconsFacVehShieldCheck.Text = "Vehicle Shield Gen"
+        Me.iconsFacVehShieldCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox47
+        'iconsFacSCUShieldCheck
         '
-        Me.CheckBox47.AutoSize = True
-        Me.CheckBox47.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox47.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox47.Location = New System.Drawing.Point(489, 57)
-        Me.CheckBox47.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox47.Name = "CheckBox47"
-        Me.CheckBox47.Size = New System.Drawing.Size(103, 17)
-        Me.CheckBox47.TabIndex = 44
-        Me.CheckBox47.Text = "SCU Shield Gen"
-        Me.CheckBox47.UseVisualStyleBackColor = False
+        Me.iconsFacSCUShieldCheck.AutoSize = True
+        Me.iconsFacSCUShieldCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacSCUShieldCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacSCUShieldCheck.Location = New System.Drawing.Point(489, 57)
+        Me.iconsFacSCUShieldCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacSCUShieldCheck.Name = "iconsFacSCUShieldCheck"
+        Me.iconsFacSCUShieldCheck.Size = New System.Drawing.Size(103, 17)
+        Me.iconsFacSCUShieldCheck.TabIndex = 44
+        Me.iconsFacSCUShieldCheck.Text = "SCU Shield Gen"
+        Me.iconsFacSCUShieldCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox48
+        'iconsFacForwardCheck
         '
-        Me.CheckBox48.AutoSize = True
-        Me.CheckBox48.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox48.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox48.Location = New System.Drawing.Point(598, 57)
-        Me.CheckBox48.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox48.Name = "CheckBox48"
-        Me.CheckBox48.Size = New System.Drawing.Size(122, 17)
-        Me.CheckBox48.TabIndex = 45
-        Me.CheckBox48.Text = "Forward Spawn Unit"
-        Me.CheckBox48.UseVisualStyleBackColor = False
+        Me.iconsFacForwardCheck.AutoSize = True
+        Me.iconsFacForwardCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacForwardCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacForwardCheck.Location = New System.Drawing.Point(598, 57)
+        Me.iconsFacForwardCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacForwardCheck.Name = "iconsFacForwardCheck"
+        Me.iconsFacForwardCheck.Size = New System.Drawing.Size(122, 17)
+        Me.iconsFacForwardCheck.TabIndex = 45
+        Me.iconsFacForwardCheck.Text = "Forward Spawn Unit"
+        Me.iconsFacForwardCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox56
+        'iconsFacBridgeTermCheck
         '
-        Me.CheckBox56.AutoSize = True
-        Me.CheckBox56.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox56.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox56.Location = New System.Drawing.Point(3, 83)
-        Me.CheckBox56.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox56.Name = "CheckBox56"
-        Me.CheckBox56.Size = New System.Drawing.Size(99, 17)
-        Me.CheckBox56.TabIndex = 46
-        Me.CheckBox56.Text = "Bridge Terminal"
-        Me.CheckBox56.UseVisualStyleBackColor = False
+        Me.iconsFacBridgeTermCheck.AutoSize = True
+        Me.iconsFacBridgeTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacBridgeTermCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacBridgeTermCheck.Location = New System.Drawing.Point(3, 83)
+        Me.iconsFacBridgeTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacBridgeTermCheck.Name = "iconsFacBridgeTermCheck"
+        Me.iconsFacBridgeTermCheck.Size = New System.Drawing.Size(99, 17)
+        Me.iconsFacBridgeTermCheck.TabIndex = 46
+        Me.iconsFacBridgeTermCheck.Text = "Bridge Terminal"
+        Me.iconsFacBridgeTermCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox57
+        'iconsFacSCUAttackCheck
         '
-        Me.CheckBox57.AutoSize = True
-        Me.CheckBox57.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox57.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox57.Location = New System.Drawing.Point(108, 83)
-        Me.CheckBox57.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox57.Name = "CheckBox57"
-        Me.CheckBox57.Size = New System.Drawing.Size(102, 17)
-        Me.CheckBox57.TabIndex = 47
-        Me.CheckBox57.Text = "Attackable SCU"
-        Me.CheckBox57.UseVisualStyleBackColor = False
+        Me.iconsFacSCUAttackCheck.AutoSize = True
+        Me.iconsFacSCUAttackCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacSCUAttackCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacSCUAttackCheck.Location = New System.Drawing.Point(108, 83)
+        Me.iconsFacSCUAttackCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacSCUAttackCheck.Name = "iconsFacSCUAttackCheck"
+        Me.iconsFacSCUAttackCheck.Size = New System.Drawing.Size(102, 17)
+        Me.iconsFacSCUAttackCheck.TabIndex = 47
+        Me.iconsFacSCUAttackCheck.Text = "Attackable SCU"
+        Me.iconsFacSCUAttackCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox58
+        'iconsFacGateAttackCheck
         '
-        Me.CheckBox58.AutoSize = True
-        Me.CheckBox58.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox58.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox58.Location = New System.Drawing.Point(216, 83)
-        Me.CheckBox58.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox58.Name = "CheckBox58"
-        Me.CheckBox58.Size = New System.Drawing.Size(135, 17)
-        Me.CheckBox58.TabIndex = 48
-        Me.CheckBox58.Text = "Attackable Gate Shield"
-        Me.CheckBox58.UseVisualStyleBackColor = False
+        Me.iconsFacGateAttackCheck.AutoSize = True
+        Me.iconsFacGateAttackCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacGateAttackCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacGateAttackCheck.Location = New System.Drawing.Point(216, 83)
+        Me.iconsFacGateAttackCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacGateAttackCheck.Name = "iconsFacGateAttackCheck"
+        Me.iconsFacGateAttackCheck.Size = New System.Drawing.Size(135, 17)
+        Me.iconsFacGateAttackCheck.TabIndex = 48
+        Me.iconsFacGateAttackCheck.Text = "Attackable Gate Shield"
+        Me.iconsFacGateAttackCheck.UseVisualStyleBackColor = False
         '
-        'CheckBox59
+        'iconsFacRelicDoorCheck
         '
-        Me.CheckBox59.AutoSize = True
-        Me.CheckBox59.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CheckBox59.ForeColor = System.Drawing.SystemColors.Control
-        Me.CheckBox59.Location = New System.Drawing.Point(357, 83)
-        Me.CheckBox59.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
-        Me.CheckBox59.Name = "CheckBox59"
-        Me.CheckBox59.Size = New System.Drawing.Size(96, 17)
-        Me.CheckBox59.TabIndex = 49
-        Me.CheckBox59.Text = "Reliquary Door"
-        Me.CheckBox59.UseVisualStyleBackColor = False
+        Me.iconsFacRelicDoorCheck.AutoSize = True
+        Me.iconsFacRelicDoorCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsFacRelicDoorCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsFacRelicDoorCheck.Location = New System.Drawing.Point(357, 83)
+        Me.iconsFacRelicDoorCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsFacRelicDoorCheck.Name = "iconsFacRelicDoorCheck"
+        Me.iconsFacRelicDoorCheck.Size = New System.Drawing.Size(96, 17)
+        Me.iconsFacRelicDoorCheck.TabIndex = 49
+        Me.iconsFacRelicDoorCheck.Text = "Reliquary Door"
+        Me.iconsFacRelicDoorCheck.UseVisualStyleBackColor = False
         '
         'TabPage5
         '
@@ -4610,66 +4610,65 @@ Partial Class Form1
     Friend WithEvents objReflectDrop As ComboBox
     Friend WithEvents TabPage7 As TabPage
     Friend WithEvents iconPanel0 As FlowLayoutPanel
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents iconsInfantryGroupCheck As CheckBox
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents iconsInfantryAllyCheck As CheckBox
+    Friend WithEvents iconsInfantryEnemyCheck As CheckBox
     Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
-    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents iconsVehicleGroupCheck As CheckBox
     Friend WithEvents FlowLayoutPanel12 As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel13 As FlowLayoutPanel
-    Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents FlowLayoutPanel15 As FlowLayoutPanel
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox12 As CheckBox
-    Friend WithEvents CheckBox13 As CheckBox
-    Friend WithEvents CheckBox14 As CheckBox
-    Friend WithEvents CheckBox16 As CheckBox
-    Friend WithEvents CheckBox17 As CheckBox
-    Friend WithEvents CheckBox18 As CheckBox
-    Friend WithEvents CheckBox19 As CheckBox
-    Friend WithEvents CheckBox20 As CheckBox
-    Friend WithEvents CheckBox21 As CheckBox
-    Friend WithEvents CheckBox22 As CheckBox
-    Friend WithEvents CheckBox23 As CheckBox
-    Friend WithEvents CheckBox24 As CheckBox
-    Friend WithEvents CheckBox25 As CheckBox
-    Friend WithEvents CheckBox26 As CheckBox
-    Friend WithEvents CheckBox27 As CheckBox
-    Friend WithEvents CheckBox28 As CheckBox
-    Friend WithEvents CheckBox29 As CheckBox
-    Friend WithEvents CheckBox30 As CheckBox
-    Friend WithEvents CheckBox31 As CheckBox
-    Friend WithEvents CheckBox32 As CheckBox
-    Friend WithEvents CheckBox33 As CheckBox
-    Friend WithEvents CheckBox34 As CheckBox
-    Friend WithEvents CheckBox35 As CheckBox
-    Friend WithEvents CheckBox36 As CheckBox
-    Friend WithEvents CheckBox37 As CheckBox
-    Friend WithEvents CheckBox38 As CheckBox
-    Friend WithEvents CheckBox39 As CheckBox
-    Friend WithEvents CheckBox40 As CheckBox
-    Friend WithEvents CheckBox41 As CheckBox
-    Friend WithEvents CheckBox42 As CheckBox
-    Friend WithEvents CheckBox43 As CheckBox
-    Friend WithEvents CheckBox44 As CheckBox
-    Friend WithEvents CheckBox45 As CheckBox
-    Friend WithEvents CheckBox46 As CheckBox
-    Friend WithEvents CheckBox47 As CheckBox
-    Friend WithEvents CheckBox48 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox49 As CheckBox
-    Friend WithEvents CheckBox50 As CheckBox
-    Friend WithEvents CheckBox51 As CheckBox
-    Friend WithEvents CheckBox52 As CheckBox
-    Friend WithEvents CheckBox53 As CheckBox
-    Friend WithEvents CheckBox54 As CheckBox
-    Friend WithEvents CheckBox55 As CheckBox
-    Friend WithEvents CheckBox56 As CheckBox
-    Friend WithEvents CheckBox57 As CheckBox
-    Friend WithEvents CheckBox58 As CheckBox
-    Friend WithEvents CheckBox59 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents iconsFacilityGroupCheck As CheckBox
+    Friend WithEvents iconsVehAllyCheck As CheckBox
+    Friend WithEvents iconsVehEnemyCheck As CheckBox
+    Friend WithEvents iconsVehBastionCheck As CheckBox
+    Friend WithEvents iconsDepDMGNadeCheck As CheckBox
+    Friend WithEvents iconsDepStatusNadeCheck As CheckBox
+    Friend WithEvents iconsDepMinesCheck As CheckBox
+    Friend WithEvents iconsDepC4Check As CheckBox
+    Friend WithEvents iconsDepShieldRegenCheck As CheckBox
+    Friend WithEvents iconsDepDildarCheck As CheckBox
+    Friend WithEvents iconsDepAmmoBoxCheck As CheckBox
+    Friend WithEvents iconsWorldAnomalyCheck As CheckBox
+    Friend WithEvents iconsWorldDrillCheck As CheckBox
+    Friend WithEvents iconsWorldBuoyCheck As CheckBox
+    Friend WithEvents iconsWorldImplantCheck As CheckBox
+    Friend WithEvents iconsWorldPlantCheck As CheckBox
+    Friend WithEvents iconsWorldNPCCheck As CheckBox
+    Friend WithEvents iconsFacVehAmmoCheck As CheckBox
+    Friend WithEvents iconsFacAirAmmoCheck As CheckBox
+    Friend WithEvents iconsFacEquipTermCheck As CheckBox
+    Friend WithEvents iconsFacWGTermCheck As CheckBox
+    Friend WithEvents iconsFacAirTermCheck As CheckBox
+    Friend WithEvents iconsFacVehTermCheck As CheckBox
+    Friend WithEvents iconsFacGalTermCheck As CheckBox
+    Friend WithEvents iconsFacFlashTermCheck As CheckBox
+    Friend WithEvents iconsFacLightTermCheck As CheckBox
+    Friend WithEvents iconsFacBusTermCheck As CheckBox
+    Friend WithEvents iconsFacTeleCheck As CheckBox
+    Friend WithEvents iconsFacPointCheck As CheckBox
+    Friend WithEvents iconsFacOWPointsCheck As CheckBox
+    Friend WithEvents iconsFacNearbyCheck As CheckBox
+    Friend WithEvents iconsFacSCUCheck As CheckBox
+    Friend WithEvents iconsFacHorzCheck As CheckBox
+    Friend WithEvents iconsFacVertCheck As CheckBox
+    Friend WithEvents iconsFacVehShieldCheck As CheckBox
+    Friend WithEvents iconsFacSCUShieldCheck As CheckBox
+    Friend WithEvents iconsFacForwardCheck As CheckBox
+    Friend WithEvents iconsDeployGroupCheck As CheckBox
+    Friend WithEvents iconsDepDroneCheck As CheckBox
+    Friend WithEvents iconsDepTurretsCheck As CheckBox
+    Friend WithEvents iconsWorldStationCheck As CheckBox
+    Friend WithEvents iconsWorldAssetCheck As CheckBox
+    Friend WithEvents iconsWorldCrystalCheck As CheckBox
+    Friend WithEvents iconsWorldConstructionCheck As CheckBox
+    Friend WithEvents iconsWorldCortiumCheck As CheckBox
+    Friend WithEvents iconsFacBridgeTermCheck As CheckBox
+    Friend WithEvents iconsFacSCUAttackCheck As CheckBox
+    Friend WithEvents iconsFacGateAttackCheck As CheckBox
+    Friend WithEvents iconsFacRelicDoorCheck As CheckBox
+    Friend WithEvents iconsWorldMissionCheck As CheckBox
     Friend WithEvents graphPanel5 As FlowLayoutPanel
     Friend WithEvents Label62 As Label
     Friend WithEvents upscaleDrop As ComboBox
@@ -4683,4 +4682,5 @@ Partial Class Form1
     Friend WithEvents Label38 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Label40 As Label
+    Friend WithEvents iconsWorldGroupCheck As CheckBox
 End Class
