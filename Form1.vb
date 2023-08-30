@@ -6,6 +6,7 @@ Imports System.Runtime.Remoting.Messaging
 Imports System.ComponentModel
 Imports System.Windows.Forms.VisualStyles
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
+Imports System.Data.SqlTypes
 
 Public Class Form1
     Public Class Lists
@@ -200,7 +201,9 @@ Public Class Form1
         For index As Integer = 0 To curini.Count - 1
             If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 found = True
+                Console.WriteLine(curini(index))
                 Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
+                lineList.RemoveAll(Function(str) String.IsNullOrEmpty(str))
                 If lineList.Contains(newVal) And addremove = True Then
                     Console.WriteLine("option already in list")
                     Exit Sub
@@ -212,10 +215,19 @@ Public Class Form1
                     lineList.Remove(newVal)
                 ElseIf Not lineList.Contains(newVal) And addremove = True Then
                     Console.WriteLine("option added to list")
-                    lineList.Append(newVal)
-                    Console.WriteLine(GetState("hiddenhudindicators="))
+                    lineList.Add(newVal)
                 End If
-                curini(index) = String.Concat(lineList(0), "=")
+                Dim newLine As String
+                For index2 As Integer = 0 To lineList.Count - 1
+                    If index2 = 0 Then
+                        newLine = lineList(index2) + "="
+                    ElseIf index2 = lineList.Count - 1 Then
+                        newLine = newLine + lineList(index2)
+                    Else
+                        newLine = newLine + lineList(index2) + ","
+                    End If
+                Next
+                curini(index) = newLine
                 Console.WriteLine(curini(index))
             End If
         Next
@@ -394,8 +406,87 @@ Public Class Form1
         regionTextCheck.Checked = GetState("Region=")
         mentorTextCheck.Checked = GetState("Mentor=")
 #End Region
+#Region "iniEditGets"
         fontAutoCheck.Checked = GetState("FontAutoReplace=")
         selectedFontPath.Text = GetState("FontFilePath=")
+#End Region
+#Region "HudIndGets"
+#Region "Infantry"
+        iconsInfantryAllyCheck = GetStateContains("HiddenHUDIndicators=", 84)
+        iconsInfantryEnemyCheck = GetStateContains("HiddenHUDIndicators=", 85)
+        If iconsInfantryAllyCheck.Checked And iconsInfantryEnemyCheck.Checked Then
+            iconsInfantryGroupCheck.Checked = True
+        Else
+            iconsInfantryGroupCheck.Checked = False
+        End If
+
+#End Region
+#Region "Vehicle"
+        iconsVehAllyCheck = GetStateContains("HiddenHUDIndicators=", 86)
+        iconsVehEnemyCheck = GetStateContains("HiddenHUDIndicators=", 87)
+        iconsVehBastionCheck = GetStateContains("HiddenHUDIndicators=", 62)
+        If iconsVehAllyCheck.Checked And
+                iconsVehEnemyCheck.Checked And
+                iconsVehBastionCheck.Checked Then
+            iconsVehicleGroupCheck.Checked = True
+        Else
+            iconsVehicleGroupCheck.Checked = False
+        End If
+#End Region
+#Region "Deployables"
+        iconsDepDMGNadeCheck = GetStateContains("HiddenHUDIndicators=", 3)
+        iconsDepStatusNadeCheck = GetStateContains("HiddenHUDIndicators=", 82)
+        iconsDepMinesCheck = GetStateContains("HiddenHUDIndicators=", 34)
+        iconsDepC4Check = GetStateContains("HiddenHUDIndicators=", 10)
+        iconsDepShieldRegenCheck = GetStateContains("HiddenHUDIndicators=", 38)
+        iconsDepDildarCheck = GetStateContains("HiddenHUDIndicators=", 39)
+        iconsDepAmmoBoxCheck = GetStateContains("HiddenHUDIndicators=", 33)
+        iconsDepDroneCheck = GetStateContains("HiddenHUDIndicators=", 65)
+        iconsDepTurretsCheck = GetStateContains("HiddenHUDIndicators=", 88)
+#End Region
+#Region "World"
+        iconsWorldGroupCheck = GetStateContains("HiddenHUDIndicators=",)
+        iconsWorldAnomalyCheck = GetStateContains("HiddenHUDIndicators=", 49)
+        iconsWorldDrillCheck = GetStateContains("HiddenHUDIndicators=", 53)
+        iconsWorldBuoyCheck = GetStateContains("HiddenHUDIndicators=", 58)
+        iconsWorldMissionCheck = GetStateContains("HiddenHUDIndicators=", 68)
+        iconsWorldImplantCheck = GetStateContains("HiddenHUDIndicators=", 67)
+        iconsWorldPlantCheck = GetStateContains("HiddenHUDIndicators=", 71)
+        iconsWorldNPCCheck = GetStateContains("HiddenHUDIndicators=", 79)
+        iconsWorldStationCheck = GetStateContains("HiddenHUDIndicators=", 44)
+        iconsWorldAssetCheck = GetStateContains("HiddenHUDIndicators=", 63)
+        iconsWorldCrystalCheck = GetStateContains("HiddenHUDIndicators=", 43)
+        iconsWorldConstructionCheck = GetStateContains("HiddenHUDIndicators=", 117)
+        iconsWorldCortiumCheck = GetStateContains("HiddenHUDIndicators=", 116)
+#End Region
+#Region "Facility"
+        iconsFacilityGroupCheck = GetStateContains("HiddenHUDIndicators=",)
+        iconsFacVehAmmoCheck = GetStateContains("HiddenHUDIndicators=", 11)
+        iconsFacAirAmmoCheck = GetStateContains("HiddenHUDIndicators=", 18)
+        iconsFacEquipTermCheck = GetStateContains("HiddenHUDIndicators=", 7)
+        iconsFacWGTermCheck = GetStateContains("HiddenHUDIndicators=", 26)
+        iconsFacAirTermCheck = GetStateContains("HiddenHUDIndicators=", 4)
+        iconsFacVehTermCheck = GetStateContains("HiddenHUDIndicators=", 5)
+        iconsFacGalTermCheck = GetStateContains("HiddenHUDIndicators=", 6)
+        iconsFacFlashTermCheck = GetStateContains("HiddenHUDIndicators=", 15)
+        iconsFacLightTermCheck = GetStateContains("HiddenHUDIndicators=", 20)
+        iconsFacBusTermCheck = GetStateContains("HiddenHUDIndicators=", 115)
+        iconsFacTeleCheck = GetStateContains("HiddenHUDIndicators=", 13)
+        iconsFacPointCheck = GetStateContains("HiddenHUDIndicators=", 2)
+        iconsFacOWPointsCheck = GetStateContains("HiddenHUDIndicators=", 61)
+        iconsFacNearbyCheck = GetStateContains("HiddenHUDIndicators=", 83)
+        iconsFacSCUCheck = GetStateContains("HiddenHUDIndicators=", 17)
+        iconsFacHorzCheck = GetStateContains("HiddenHUDIndicators=", 22)
+        iconsFacVertCheck = GetStateContains("HiddenHUDIndicators=", 23)
+        iconsFacVehShieldCheck = GetStateContains("HiddenHUDIndicators=", 24)
+        iconsFacSCUShieldCheck = GetStateContains("HiddenHUDIndicators=", 25)
+        iconsFacForwardCheck = GetStateContains("HiddenHUDIndicators=", 27)
+        iconsFacBridgeTermCheck = GetStateContains("HiddenHUDIndicators=", 35)
+        iconsFacSCUAttackCheck = GetStateContains("HiddenHUDIndicators=", 75)
+        iconsFacGateAttackCheck = GetStateContains("HiddenHUDIndicators=", 76)
+        iconsFacRelicDoorCheck = GetStateContains("HiddenHUDIndicators=", 77)
+#End Region
+#End Region
     End Function
 #Region "MenuStripControls"
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
