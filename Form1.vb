@@ -104,7 +104,12 @@ Public Class Form1
             End If
         Next
         Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
-        Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
+        Dim optionGroupNextIndex As Integer = 0
+        Try
+            optionGroupNextIndex = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
+        Catch ex As ArgumentOutOfRangeException
+            optionGroupNextIndex = curini.FindLastIndex(Function(str) str.Equals(curini.Last))
+        End Try
         For ctr As Integer = optionGroupIndex To optionGroupNextIndex
             If curini(ctr).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 found = True
@@ -137,7 +142,12 @@ Public Class Form1
             End If
         Next
         Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
-        Dim optionGroupNextIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
+        Dim optionGroupNextIndex As Integer = 0
+        Try
+            optionGroupNextIndex = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
+        Catch ex As ArgumentOutOfRangeException
+            optionGroupNextIndex = curini.FindLastIndex(Function(str) str.Equals(curini.Last))
+        End Try
         For ctr As Integer = optionGroupIndex To optionGroupNextIndex
             If curini(ctr).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 Dim optionVal As Array = curini(ctr).Split("="c)
@@ -189,7 +199,11 @@ Public Class Form1
         For Each line In curini
             If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 Dim optionVal As List(Of String) = line.Split("="c, ","c).ToList
-                Return optionVal.Contains(findVal)
+                If optionVal.Contains(findVal) Then
+                    Return True
+                Else
+                    Return False
+                End If
             End If
         Next
     End Function
@@ -412,8 +426,8 @@ Public Class Form1
 #End Region
 #Region "HudIndGets"
 #Region "Infantry"
-        iconsInfantryAllyCheck = GetStateContains("HiddenHUDIndicators=", 84)
-        iconsInfantryEnemyCheck = GetStateContains("HiddenHUDIndicators=", 85)
+        iconsInfantryAllyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 84)
+        iconsInfantryEnemyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 85)
         If iconsInfantryAllyCheck.Checked And iconsInfantryEnemyCheck.Checked Then
             iconsInfantryGroupCheck.Checked = True
         Else
@@ -422,9 +436,9 @@ Public Class Form1
 
 #End Region
 #Region "Vehicle"
-        iconsVehAllyCheck = GetStateContains("HiddenHUDIndicators=", 86)
-        iconsVehEnemyCheck = GetStateContains("HiddenHUDIndicators=", 87)
-        iconsVehBastionCheck = GetStateContains("HiddenHUDIndicators=", 62)
+        iconsVehAllyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 86)
+        iconsVehEnemyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 87)
+        iconsVehBastionCheck.Checked = GetStateContains("HiddenHUDIndicators=", 62)
         If iconsVehAllyCheck.Checked And
                 iconsVehEnemyCheck.Checked And
                 iconsVehBastionCheck.Checked Then
@@ -434,57 +448,113 @@ Public Class Form1
         End If
 #End Region
 #Region "Deployables"
-        iconsDepDMGNadeCheck = GetStateContains("HiddenHUDIndicators=", 3)
-        iconsDepStatusNadeCheck = GetStateContains("HiddenHUDIndicators=", 82)
-        iconsDepMinesCheck = GetStateContains("HiddenHUDIndicators=", 34)
-        iconsDepC4Check = GetStateContains("HiddenHUDIndicators=", 10)
-        iconsDepShieldRegenCheck = GetStateContains("HiddenHUDIndicators=", 38)
-        iconsDepDildarCheck = GetStateContains("HiddenHUDIndicators=", 39)
-        iconsDepAmmoBoxCheck = GetStateContains("HiddenHUDIndicators=", 33)
-        iconsDepDroneCheck = GetStateContains("HiddenHUDIndicators=", 65)
-        iconsDepTurretsCheck = GetStateContains("HiddenHUDIndicators=", 88)
+        iconsDepDMGNadeCheck.Checked = GetStateContains("HiddenHUDIndicators=", 3)
+        iconsDepStatusNadeCheck.Checked = GetStateContains("HiddenHUDIndicators=", 82)
+        iconsDepMinesCheck.Checked = GetStateContains("HiddenHUDIndicators=", 34)
+        iconsDepC4Check.Checked = GetStateContains("HiddenHUDIndicators=", 10)
+        iconsDepShieldRegenCheck.Checked = GetStateContains("HiddenHUDIndicators=", 38)
+        iconsDepDildarCheck.Checked = GetStateContains("HiddenHUDIndicators=", 39)
+        iconsDepAmmoBoxCheck.Checked = GetStateContains("HiddenHUDIndicators=", 33)
+        iconsDepDroneCheck.Checked = GetStateContains("HiddenHUDIndicators=", 65)
+        iconsDepTurretsCheck.Checked = GetStateContains("HiddenHUDIndicators=", 88)
+        If iconsDepDMGNadeCheck.Checked And
+                iconsDepStatusNadeCheck.Checked And
+                iconsDepMinesCheck.Checked And
+                iconsDepC4Check.Checked And
+                iconsDepShieldRegenCheck.Checked And
+                iconsDepDildarCheck.Checked And
+                iconsDepAmmoBoxCheck.Checked And
+                iconsDepDroneCheck.Checked And
+                iconsDepTurretsCheck.Checked Then
+            iconsDeployGroupCheck.Checked = True
+        Else
+            iconsDeployGroupCheck.Checked = False
+        End If
 #End Region
 #Region "World"
-        iconsWorldGroupCheck = GetStateContains("HiddenHUDIndicators=",)
-        iconsWorldAnomalyCheck = GetStateContains("HiddenHUDIndicators=", 49)
-        iconsWorldDrillCheck = GetStateContains("HiddenHUDIndicators=", 53)
-        iconsWorldBuoyCheck = GetStateContains("HiddenHUDIndicators=", 58)
-        iconsWorldMissionCheck = GetStateContains("HiddenHUDIndicators=", 68)
-        iconsWorldImplantCheck = GetStateContains("HiddenHUDIndicators=", 67)
-        iconsWorldPlantCheck = GetStateContains("HiddenHUDIndicators=", 71)
-        iconsWorldNPCCheck = GetStateContains("HiddenHUDIndicators=", 79)
-        iconsWorldStationCheck = GetStateContains("HiddenHUDIndicators=", 44)
-        iconsWorldAssetCheck = GetStateContains("HiddenHUDIndicators=", 63)
-        iconsWorldCrystalCheck = GetStateContains("HiddenHUDIndicators=", 43)
-        iconsWorldConstructionCheck = GetStateContains("HiddenHUDIndicators=", 117)
-        iconsWorldCortiumCheck = GetStateContains("HiddenHUDIndicators=", 116)
+        iconsWorldAnomalyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 49)
+        iconsWorldDrillCheck.Checked = GetStateContains("HiddenHUDIndicators=", 53)
+        iconsWorldBuoyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 58)
+        iconsWorldMissionCheck.Checked = GetStateContains("HiddenHUDIndicators=", 68)
+        iconsWorldImplantCheck.Checked = GetStateContains("HiddenHUDIndicators=", 67)
+        iconsWorldPlantCheck.Checked = GetStateContains("HiddenHUDIndicators=", 71)
+        iconsWorldNPCCheck.Checked = GetStateContains("HiddenHUDIndicators=", 79)
+        iconsWorldStationCheck.Checked = GetStateContains("HiddenHUDIndicators=", 44)
+        iconsWorldAssetCheck.Checked = GetStateContains("HiddenHUDIndicators=", 63)
+        iconsWorldCrystalCheck.Checked = GetStateContains("HiddenHUDIndicators=", 43)
+        iconsWorldConstructionCheck.Checked = GetStateContains("HiddenHUDIndicators=", 117)
+        iconsWorldCortiumCheck.Checked = GetStateContains("HiddenHUDIndicators=", 116)
+        If iconsWorldAnomalyCheck.Checked And
+                iconsWorldDrillCheck.Checked And
+                iconsWorldBuoyCheck.Checked And
+                iconsWorldMissionCheck.Checked And
+                iconsWorldImplantCheck.Checked And
+                iconsWorldPlantCheck.Checked And
+                iconsWorldNPCCheck.Checked And
+                iconsWorldStationCheck.Checked And
+                iconsWorldAssetCheck.Checked And
+                iconsWorldCrystalCheck.Checked And
+                iconsWorldConstructionCheck.Checked And
+                iconsWorldCortiumCheck.Checked Then
+            iconsWorldGroupCheck.Checked = True
+        Else
+            iconsWorldGroupCheck.Checked = False
+        End If
 #End Region
 #Region "Facility"
-        iconsFacilityGroupCheck = GetStateContains("HiddenHUDIndicators=",)
-        iconsFacVehAmmoCheck = GetStateContains("HiddenHUDIndicators=", 11)
-        iconsFacAirAmmoCheck = GetStateContains("HiddenHUDIndicators=", 18)
-        iconsFacEquipTermCheck = GetStateContains("HiddenHUDIndicators=", 7)
-        iconsFacWGTermCheck = GetStateContains("HiddenHUDIndicators=", 26)
-        iconsFacAirTermCheck = GetStateContains("HiddenHUDIndicators=", 4)
-        iconsFacVehTermCheck = GetStateContains("HiddenHUDIndicators=", 5)
-        iconsFacGalTermCheck = GetStateContains("HiddenHUDIndicators=", 6)
-        iconsFacFlashTermCheck = GetStateContains("HiddenHUDIndicators=", 15)
-        iconsFacLightTermCheck = GetStateContains("HiddenHUDIndicators=", 20)
-        iconsFacBusTermCheck = GetStateContains("HiddenHUDIndicators=", 115)
-        iconsFacTeleCheck = GetStateContains("HiddenHUDIndicators=", 13)
-        iconsFacPointCheck = GetStateContains("HiddenHUDIndicators=", 2)
-        iconsFacOWPointsCheck = GetStateContains("HiddenHUDIndicators=", 61)
-        iconsFacNearbyCheck = GetStateContains("HiddenHUDIndicators=", 83)
-        iconsFacSCUCheck = GetStateContains("HiddenHUDIndicators=", 17)
-        iconsFacHorzCheck = GetStateContains("HiddenHUDIndicators=", 22)
-        iconsFacVertCheck = GetStateContains("HiddenHUDIndicators=", 23)
-        iconsFacVehShieldCheck = GetStateContains("HiddenHUDIndicators=", 24)
-        iconsFacSCUShieldCheck = GetStateContains("HiddenHUDIndicators=", 25)
-        iconsFacForwardCheck = GetStateContains("HiddenHUDIndicators=", 27)
-        iconsFacBridgeTermCheck = GetStateContains("HiddenHUDIndicators=", 35)
-        iconsFacSCUAttackCheck = GetStateContains("HiddenHUDIndicators=", 75)
-        iconsFacGateAttackCheck = GetStateContains("HiddenHUDIndicators=", 76)
-        iconsFacRelicDoorCheck = GetStateContains("HiddenHUDIndicators=", 77)
+        iconsFacVehAmmoCheck.Checked = GetStateContains("HiddenHUDIndicators=", 11)
+        iconsFacAirAmmoCheck.Checked = GetStateContains("HiddenHUDIndicators=", 18)
+        iconsFacEquipTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 7)
+        iconsFacWGTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 26)
+        iconsFacAirTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 4)
+        iconsFacVehTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 5)
+        iconsFacGalTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 6)
+        iconsFacFlashTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 15)
+        iconsFacLightTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 20)
+        iconsFacBusTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 115)
+        iconsFacTeleCheck.Checked = GetStateContains("HiddenHUDIndicators=", 13)
+        iconsFacPointCheck.Checked = GetStateContains("HiddenHUDIndicators=", 2)
+        iconsFacOWPointsCheck.Checked = GetStateContains("HiddenHUDIndicators=", 61)
+        iconsFacNearbyCheck.Checked = GetStateContains("HiddenHUDIndicators=", 83)
+        iconsFacSCUCheck.Checked = GetStateContains("HiddenHUDIndicators=", 17)
+        iconsFacHorzCheck.Checked = GetStateContains("HiddenHUDIndicators=", 22)
+        iconsFacVertCheck.Checked = GetStateContains("HiddenHUDIndicators=", 23)
+        iconsFacVehShieldCheck.Checked = GetStateContains("HiddenHUDIndicators=", 24)
+        iconsFacSCUShieldCheck.Checked = GetStateContains("HiddenHUDIndicators=", 25)
+        iconsFacForwardCheck.Checked = GetStateContains("HiddenHUDIndicators=", 27)
+        iconsFacBridgeTermCheck.Checked = GetStateContains("HiddenHUDIndicators=", 35)
+        iconsFacSCUAttackCheck.Checked = GetStateContains("HiddenHUDIndicators=", 75)
+        iconsFacGateAttackCheck.Checked = GetStateContains("HiddenHUDIndicators=", 76)
+        iconsFacRelicDoorCheck.Checked = GetStateContains("HiddenHUDIndicators=", 77)
+        If iconsFacilityGroupCheck.Checked And
+                iconsFacVehAmmoCheck.Checked And
+                iconsFacAirAmmoCheck.Checked And
+                iconsFacEquipTermCheck.Checked And
+                iconsFacWGTermCheck.Checked And
+                iconsFacAirTermCheck.Checked And
+                iconsFacVehTermCheck.Checked And
+                iconsFacGalTermCheck.Checked And
+                iconsFacFlashTermCheck.Checked And
+                iconsFacLightTermCheck.Checked And
+                iconsFacBusTermCheck.Checked And
+                iconsFacTeleCheck.Checked And
+                iconsFacPointCheck.Checked And
+                iconsFacOWPointsCheck.Checked And
+                iconsFacNearbyCheck.Checked And
+                iconsFacSCUCheck.Checked And
+                iconsFacHorzCheck.Checked And
+                iconsFacVertCheck.Checked And
+                iconsFacVehShieldCheck.Checked And
+                iconsFacSCUShieldCheck.Checked And
+                iconsFacForwardCheck.Checked And
+                iconsFacBridgeTermCheck.Checked And
+                iconsFacSCUAttackCheck.Checked And
+                iconsFacGateAttackCheck.Checked And
+                iconsFacRelicDoorCheck.Checked Then
+            iconsFacilityGroupCheck.Checked = True
+        Else
+            iconsFacilityGroupCheck.Checked = False
+        End If
 #End Region
 #End Region
     End Function
