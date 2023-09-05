@@ -686,6 +686,10 @@ Public Class Form1
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
         Process.Start("LaunchPad.exe")
         Console.WriteLine("Starting Launcher")
+        File.WriteAllLines(curiniPath, curini)
+        Console.WriteLine("Saved PS2INI to ", curiniPath)
+        File.WriteAllLines(iniPath, iniini)
+        Console.WriteLine("Saved INIINI to ", iniPath)
     End Sub
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
@@ -1186,7 +1190,7 @@ Public Class Form1
             terrColorPanelButtons.Visible = False
         ElseIf terrColorDrop.SelectedIndex = 2 Then
             terrColorPanelButtons.Visible = True
-            If getState("TintModeMap=").ToString.Length < 3 Then
+            If GetState("TintModeMap=").ToString.Length < 3 Then
                 UpdateVal("TintModeMap=", "4460130,19328,10357519")
             End If
             VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
