@@ -1,4 +1,6 @@
-﻿Imports System.IO
+﻿Imports System
+Imports System.Diagnostics.Eventing.Reader
+Imports System.IO
 Imports Microsoft.Win32.TaskScheduler
 Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography.X509Certificates
@@ -6,7 +8,9 @@ Imports System.Runtime.Remoting.Messaging
 Imports System.ComponentModel
 Imports System.Windows.Forms.VisualStyles
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
-Imports System.Data.SqlTypes
+Imports System.Linq.Expressions
+Imports System.ComponentModel.Design
+Imports System.Threading
 
 Public Class Form1
     Public Class Lists
@@ -15,7 +19,6 @@ Public Class Form1
         Public Shared Sound As New List(Of String)({"[Sound]", "Master=", "Music=", "Game=", "Dialog=", "UI=", "HitIndicator=", "LowAmmoIndicator=", "VehicleChatter=", "IdleMusic=", "MaxVoices=", "UseFloat32Output=", "ExclusiveMode=", "UseHighQualityReverb="})
         Public Shared Terrain As New List(Of String)({"[Terrain]", "RenderFlora="})
         Public Shared General As New List(Of String)({"[General]", "AutoDetectPerformanceSettings=", "MouseSensitivity=", "ScopedMouseSensitivity=", "ADSMouseSensitivity=", "VehicleMouseSensitivity=", "FlightMouseSensitivity=", "JoystickSensitivity=", "JoystickDeadzone=", "InvertVerticalLook=", "InvertVerticalFly=", "InvertTankSteering=", "MouseRawInput=", "MouseSmoothing=", "ToggleCrouch=", "ZoomToggle=", "SprintToggle=", "SprintLegacyToggleMode=", "DrawHud=", "ReduceInputLag=", "FixedMinimap=", "Profanity=", "GamepadSmoothing=", "GamepadInvertLook=", "GamepadInvertFlight=", "GamepadEasyFlight=", "DecloakOnFire=", "AbilityQueueSeconds=", "VehicleGunnerMouseSensitivity="})
-        Public Shared iniEdit As New List(Of String)({"[iniEdit]", "FontAutoReplace=", "FontFilePath="})
         Public Shared UI As New List(Of String)({"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax=", "HiddenHUDIndicators=", "HideReticule=", "HudChatOpacity=", "ConstructionFavorites="})
         Public Shared AutoRefuse As New List(Of String)({"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="})
         Public Shared ChatChannels As New List(Of String)({"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="})
@@ -42,31 +45,37 @@ Public Class Form1
         'Public Shared Graphics As New List(Of String)({"[Graphics]", "WindowWidth=", "WindowHeight="})
 
 
-        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, ChatChannels, Voice, VoiceChat, iniEdit, Display}
+        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, ChatChannels, Voice, VoiceChat, Display}
     End Class
     Public Shared curini As List(Of String) = Nothing
     Public Shared curiniPath As String = "Useroptions.ini"
+    Public Shared iniini As List(Of String) = Nothing
+    Public Shared iniPath As String = "iniEdit.ini"
+    Public Shared iniEditOptions As New List(Of String)({"[iniEdit]", "FontAutoReplace=", "FontAutoReplace2=", "FontFilePath=", "LocaleAutoReplace=", "LocaleDirPath=", "LocaleDatPath=", "CommandAutoReplace="})
+    Public Shared commandPath As String = "iniEditCommands.ini"
     Public Shared doneLoading As Boolean = False
 
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Read ini into previously initialized empty list
         curini = File.ReadAllLines("Useroptions.ini").ToList
-        'If ini doesn't already have header for options added by this program, add one at the top
-        If Not curini.Contains("[iniEdit]") Then
-            curini.Insert(0, "[iniEdit]")
+        If File.Exists(iniPath) Then
+            iniini = File.ReadAllLines(iniPath).ToList
+        Else
+            Dim inistart As String = "[iniEdit]"
+            File.WriteAllText(iniPath, inistart)
         End If
-        'Housekeeping
         readAllOptions()
         sensTypeDrop.SelectedIndex = 0
         curEditLabel.Text = String.Concat("Currently Editing: ", curiniPath)
         doneLoading = True
+        BackgroundWorker1.RunWorkerAsync()
     End Sub
 #Region "UpdatesAndGets"
-    Public Sub UpdateVal(ByVal optionName As String, ByVal newVal As String)
+    Function UpdateVal(ByVal optionName As String, ByVal newVal As String)
         'Reads the ini line by line for the specified option
         'If option isn't found, run through option arrays for option and insert a line for the correct category
         If Not doneLoading Then
-            Exit Sub
+            Exit Function
         End If
         Dim found As Boolean = False
         For index As Integer = 0 To curini.Count - 1
@@ -83,17 +92,35 @@ Public Class Form1
                         If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
                             curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
                             Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Sub
+                            Exit Function
                         End If
                     Next
                 End If
             Next
         End If
-    End Sub
-    Public Sub UpdateValSpecific(ByVal optionName As String, ByVal newVal As String, ByVal optionGroup As String)
+    End Function
+    Function UpdateValMyIni(ByVal optionName As String, ByVal newVal As String)
+        If Not doneLoading Then
+            Exit Function
+        End If
+        Dim found As Boolean = False
+        For index As Integer = 0 To iniini.Count - 1
+            If iniini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                found = True
+                iniini(index) = optionName & newVal
+                Console.WriteLine($"Updated {optionName} to {newVal}")
+            End If
+        Next
+        If Not found Then
+            iniini.Add(optionName & newVal)
+            Console.WriteLine($"Added {optionName} with val {newVal}")
+            Exit Function
+        End If
+    End Function
+    Function UpdateValSpecific(ByVal optionName As String, ByVal newVal As String, ByVal optionGroup As String)
         'Voice options are stupid
         If Not doneLoading Then
-            Exit Sub
+            Exit Function
         End If
         Dim found As Boolean = False
         Dim optionIndexes = New ArrayList()
@@ -121,10 +148,71 @@ Public Class Form1
             curini.Insert(curini(optionGroupIndex + 1), optionName & newVal)
             Console.WriteLine($"Added {optionName} with val {newVal}")
         End If
-    End Sub
+    End Function
+    Function UpdateValContains(ByVal optionName As String, ByVal newVal As String, ByVal addremove As Boolean)
+        If Not doneLoading Then
+            Exit Function
+        End If
+        Dim found As Boolean = False
+        For index As Integer = 0 To curini.Count - 1
+            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                found = True
+                Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
+                lineList.RemoveAll(Function(str) String.IsNullOrEmpty(str))
+                If lineList.Contains(newVal) And addremove = True Then
+                    Console.WriteLine("option already in list")
+                    Exit Function
+                ElseIf Not lineList.Contains(newVal) And addremove = False Then
+                    Console.WriteLine("option already not in list")
+                    Exit Function
+                ElseIf lineList.Contains(newVal) And addremove = False Then
+                    Console.WriteLine("option removed from list")
+                    lineList.Remove(newVal)
+                ElseIf Not lineList.Contains(newVal) And addremove = True Then
+                    Console.WriteLine("option added to list")
+                    lineList.Add(newVal)
+                End If
+                Dim newLine As String
+                For index2 As Integer = 0 To lineList.Count - 1
+                    If index2 = 0 Then
+                        newLine = lineList(index2) + "="
+                    ElseIf index2 = lineList.Count - 1 Then
+                        newLine = newLine + lineList(index2)
+                    Else
+                        newLine = newLine + lineList(index2) + ","
+                    End If
+                Next
+                curini(index) = newLine
+                Console.WriteLine(curini(index))
+            End If
+        Next
+        Console.WriteLine($"Updated {optionName} to {newVal}")
+        If Not found Then
+            For Each list As List(Of String) In Lists.bigOptions
+                If list.Contains(optionName) Then
+                    For Each line In curini
+                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
+                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
+                            Console.WriteLine($"Added {optionName} with val {newVal}")
+                            Exit Function
+                        End If
+                    Next
+                End If
+            Next
+        End If
+    End Function
     Function GetState(ByVal optionName As String)
         'Find the line which has the desired option, and return the value after the = sign
         For Each line In curini
+            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                Dim optionVal As Array = line.Split("="c)
+                Console.WriteLine($"Got {optionName} with {optionVal(1)}")
+                Return optionVal(1)
+            End If
+        Next
+    End Function
+    Function GetStateMyIni(ByVal optionName As String)
+        For Each line In iniini
             If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 Dim optionVal As Array = line.Split("="c)
                 Console.WriteLine($"Got {optionName} with {optionVal(1)}")
@@ -153,6 +241,14 @@ Public Class Form1
                 Dim optionVal As Array = curini(ctr).Split("="c)
                 Console.WriteLine($"Got {optionName} with {optionVal(1)} under {optionGroup}")
                 Return optionVal(1)
+            End If
+        Next
+    End Function
+    Function GetStateContains(ByVal optionName As String, ByVal findVal As String)
+        For Each line In curini
+            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                Dim optionVal As List(Of String) = line.Split("="c, ","c).ToList
+                Return optionVal.Contains(findVal)
             End If
         Next
     End Function
@@ -195,71 +291,6 @@ Public Class Form1
             End If
         Next
     End Function
-    Function GetStateContains(ByVal optionName As String, ByVal findVal As String)
-        For Each line In curini
-            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                Dim optionVal As List(Of String) = line.Split("="c, ","c).ToList
-                If optionVal.Contains(findVal) Then
-                    Return True
-                Else
-                    Return False
-                End If
-            End If
-        Next
-    End Function
-    Public Sub UpdateValContains(ByVal optionName As String, ByVal newVal As String, ByVal addremove As Boolean)
-        If Not doneLoading Then
-            Exit Sub
-        End If
-        Dim found As Boolean = False
-        For index As Integer = 0 To curini.Count - 1
-            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                Console.WriteLine(curini(index))
-                Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
-                lineList.RemoveAll(Function(str) String.IsNullOrEmpty(str))
-                If lineList.Contains(newVal) And addremove = True Then
-                    Console.WriteLine("option already in list")
-                    Exit Sub
-                ElseIf Not lineList.Contains(newVal) And addremove = False Then
-                    Console.WriteLine("option already not in list")
-                    Exit Sub
-                ElseIf lineList.Contains(newVal) And addremove = False Then
-                    Console.WriteLine("option removed from list")
-                    lineList.Remove(newVal)
-                ElseIf Not lineList.Contains(newVal) And addremove = True Then
-                    Console.WriteLine("option added to list")
-                    lineList.Add(newVal)
-                End If
-                Dim newLine As String
-                For index2 As Integer = 0 To lineList.Count - 1
-                    If index2 = 0 Then
-                        newLine = lineList(index2) + "="
-                    ElseIf index2 = lineList.Count - 1 Then
-                        newLine = newLine + lineList(index2)
-                    Else
-                        newLine = newLine + lineList(index2) + ","
-                    End If
-                Next
-                curini(index) = newLine
-                Console.WriteLine(curini(index))
-            End If
-        Next
-        Console.WriteLine($"Updated {optionName} to {newVal}")
-        If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
-                If list.Contains(optionName) Then
-                    For Each line In curini
-                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
-                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
-                            Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Sub
-                        End If
-                    Next
-                End If
-            Next
-        End If
-    End Sub
 #End Region
 #Region "MiscFuncs"
     Function colorGetter()
@@ -419,10 +450,58 @@ Public Class Form1
         outfitTextCheck.Checked = GetState("Outfit=")
         regionTextCheck.Checked = GetState("Region=")
         mentorTextCheck.Checked = GetState("Mentor=")
+        genVoiceVolBox.Value = GetState("ReceiveVolume=")
+        proxVoiceVolBox.Value = GetStateSpecific("ProximityVolume=", "[VoiceChat]")
+        squadVoiceVolBox.Value = GetStateSpecific("GroupVolume=", "[VoiceChat]")
+        raidVoiceVolBox.Value = GetStateSpecific("RaidVolume=", "[VoiceChat]")
+        outfitVoiceVolBox.Value = GetStateSpecific("GuildVolume=", "[VoiceChat]")
+        leaderVoiceVolBox.Value = GetStateSpecific("GroupLeaderVolume=", "[VoiceChat]")
+        transmitVoiceVolBox.Value = GetState("MicrophoneVolume=")
+        duckVoiceVolBox.Value = GetState("Ducking=")
+        proxVoiceCheck.Checked = GetStateSpecific("ProximityEnabled=", "[Voice]")
+        squadVoiceCheck.Checked = GetStateSpecific("GroupEnabled=", "[Voice]")
+        raidVoiceCheck.Checked = GetStateSpecific("RaidEnabled=", "[Voice]")
+        outfitVoiceCheck.Checked = GetStateSpecific("GuildEnabled=", "[Voice]")
+        leaderVoiceCheck.Checked = GetStateSpecific("GroupLeaderEnabled=", "[Voice]")
 #End Region
 #Region "iniEditGets"
-        fontAutoCheck.Checked = GetState("FontAutoReplace=")
-        selectedFontPath.Text = GetState("FontFilePath=")
+        fontAutoCheck.Checked = GetStateMyIni("FontAutoReplace=")
+        If fontAutoCheck.Checked Then
+            selectedFontPath.Visible = True
+            fontAutoCheck2.Visible = True
+            fontSelectButton.Visible = True
+        Else
+            selectedFontPath.Visible = False
+            fontAutoCheck2.Visible = False
+            fontSelectButton.Visible = False
+        End If
+        selectedFontPath.Text = GetStateMyIni("FontFilePath=")
+        fontAutoCheck2.Checked = GetStateMyIni("FontAutoReplace2=")
+        localeReplaceCheck.Checked = GetStateMyIni("LocaleAutoReplace=")
+        If localeReplaceCheck.Checked Then
+            localeDatButton.Visible = True
+            localeDirButton.Visible = True
+            selectedDatPath.Visible = True
+            selectedDirPath.Visible = True
+            Label38.Visible = True
+        Else
+            localeDatButton.Visible = False
+            localeDirButton.Visible = False
+            selectedDatPath.Visible = False
+            selectedDirPath.Visible = False
+            Label38.Visible = False
+        End If
+        selectedDirPath.Text = GetStateMyIni("LocaleDirPath=")
+        selectedDatPath.Text = GetStateMyIni("LocaleDatPath=")
+        commandAutoCheck.Checked = GetStateMyIni("CommandAutoReplace=")
+        If commandAutoCheck.Checked Then
+            commandTextBox.Visible = True
+        Else
+            commandTextBox.Visible = False
+        End If
+        If File.Exists(commandPath) Then
+            commandTextBox.Lines = File.ReadAllLines(commandPath)
+        End If
 #End Region
 #Region "HudIndGets"
 #Region "Infantry"
@@ -556,8 +635,53 @@ Public Class Form1
             iconsFacilityGroupCheck.Checked = False
         End If
 #End Region
+#Region "Title"
+        iconsTitleAllyCheck.Checked = GetStateContains("HiddenNamePlateOptions", 1)
+        iconsTitleEnemyCheck.Checked = GetStateContains("HiddenNamePlateOptions", 2)
+        If iconsTitleAllyCheck.Checked And
+                iconsTitleEnemyCheck.Checked Then
+            iconsTitlesGroupCheck.Checked = True
+        Else
+            iconsTitlesGroupCheck.Checked = False
+        End If
+#End Region
+#Region "Names"
+        iconsNameSquadCheck.Checked = GetStateContains("HiddenNamePlateOptions", 3)
+        iconsNamePlatoonCheck.Checked = GetStateContains("HiddenNamePlateOptions", 4)
+        iconsNameFireCheck.Checked = GetStateContains("HiddenNamePlateOptions", 5)
+        iconsNameOutfitCheck.Checked = GetStateContains("HiddenNamePlateOptions", 6)
+        iconsNameEnemyCheck.Checked = GetStateContains("HiddenNamePlateOptions", 7)
+        If iconsNameSquadCheck.Checked And
+                iconsNamePlatoonCheck.Checked And
+                iconsNameFireCheck.Checked And
+                iconsNameOutfitCheck.Checked And
+                iconsNameEnemyCheck.Checked Then
+            iconsNamesGroupCheck.Checked = True
+        Else
+            iconsNamesGroupCheck.Checked = False
+        End If
+#End Region
+#Region "Dorito"
+        iconsDoritoAllyCheck.Checked = GetStateContains("HiddenNamePlateOptions", 8)
+        iconsDoritoEnemyCheck.Checked = GetStateContains("HiddenNamePlateOptions", 9)
+        If iconsDoritoAllyCheck.Checked And
+                iconsDoritoEnemyCheck.Checked Then
+            iconsDoritoGroupCheck.Checked = True
+        Else
+            iconsDoritoGroupCheck.Checked = False
+        End If
+#End Region
+#Region "Misc"
+        iconsSocialCheck.Checked = GetStateContains("HiddenNamePlateOptions", 10)
+        If iconsSocialCheck.Checked Then
+            iconsMiscGroupCheck.Checked = True
+        Else
+            iconsMiscGroupCheck.Checked = False
+        End If
+#End Region
 #End Region
     End Function
+#Region "Controls"
 #Region "MenuStripControls"
     Private Sub startLauncher_Click(sender As Object, e As EventArgs) Handles startLauncher.Click
         Process.Start("LaunchPad.exe")
@@ -566,7 +690,9 @@ Public Class Form1
     Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         'Save current options to regular Useroptions.ini
         File.WriteAllLines(curiniPath, curini)
-        Console.WriteLine("Saved INI to ", curiniPath)
+        Console.WriteLine("Saved PS2INI to ", curiniPath)
+        File.WriteAllLines(iniPath, iniini)
+        Console.WriteLine("Saved INIINI to ", iniPath)
     End Sub
     Private Sub saveToButton_Click(sender As Object, e As EventArgs) Handles saveToButton.Click
         'Save current options to user-specified file
@@ -873,55 +999,6 @@ Public Class Form1
             LabelScopSens.Text() = Sens
         End If
     End Sub
-#End Region
-#Region "FontStuff"
-    Private Sub fontSelectButton_Click(sender As Object, e As EventArgs) Handles fontSelectButton.Click
-        Dim fontPath As String = Nothing
-        Dim fontDialog As New OpenFileDialog()
-
-        fontDialog.Filter = "TrueType Font files (*.ttf)|*.ttf"
-        fontDialog.RestoreDirectory = True
-
-        If fontDialog.ShowDialog() = DialogResult.OK Then
-            'Using a dialog, get the desired font file path
-            fontPath = fontDialog.FileName.ToString
-            'Show user selected font path
-            selectedFontPath.Text() = fontPath
-            UpdateVal("FontFilePath=", fontPath)
-            'Create or update batch used to actually replace font
-            File.WriteAllText(String.Concat(CurDir(), "\iniEditFont.bat"), String.Concat("@echo off", vbCrLf,
-                                                                                            "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\Geo-Md.ttf""", vbCrLf,
-                                                                                            "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\ARIALUNI.ttf""", vbCrLf,
-                                                                                            "exit"))
-        End If
-    End Sub
-    'Private Sub fontAutoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
-    '    'If user desires automatic font replacement, create or update task to run the replacement batch
-    '    Using ts As New TaskService()
-    '        If fontAutoCheck.Checked Then
-    '            UpdateVal("FontAutoReplace=", "1")
-    '            If ts.RootFolder.Tasks.Exists("iniEdit Font") Then
-    '                ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = True
-    '            Else
-    '                Dim td As TaskDefinition = ts.NewTask
-    '                'Set description for the task
-    '                td.RegistrationInfo.Description = "iniEdit Font Replacement"
-    '                'Create eventlog trigger
-    '                Dim eTrigger As New EventTrigger()
-    '                eTrigger.Subscription = "<QueryList><Query Id=""0"" Path=""System""><Select Path=""System"">*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]</Select></Query></QueryList>"
-    '                td.Triggers.Add(eTrigger)
-    '                'Create task action
-    '                Dim path As String = CurDir()
-    '                td.Actions.Add(New ExecAction(String.Concat(path, "\iniEditFont.bat")))
-    '                'Save task
-    '                ts.RootFolder.RegisterTaskDefinition("iniEdit Font", td)
-    '            End If
-    '        Else
-    '            UpdateVal("FontAutoReplace=", "0")
-    '            ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
-    '        End If
-    '    End Using
-    'End Sub
 #End Region
 #Region "InterfaceControls"
 #Region "CheckedChanged"
@@ -1290,17 +1367,17 @@ Public Class Form1
         End If
     End Sub
     Private Sub outfitVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles outfitVoiceCheck.Click
-        If squadVoiceCheck.Checked Then
+        If outfitVoiceCheck.Checked Then
             UpdateValSpecific("GuildEnabled=", 1, "[Voice]")
         Else
             UpdateValSpecific("GuildEnabled=", 0, "[Voice]")
         End If
     End Sub
     Private Sub leaderVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles leaderVoiceCheck.Click
-        If squadVoiceCheck.Checked Then
-            UpdateValSpecific("GroupEnabled=", 1, "[Voice]")
+        If leaderVoiceCheck.Checked Then
+            UpdateValSpecific("GroupLeaderEnabled=", 1, "[Voice]")
         Else
-            UpdateValSpecific("GroupEnabled=", 0, "[Voice]")
+            UpdateValSpecific("GroupLeaderEnabled=", 0, "[Voice]")
         End If
     End Sub
 #End Region
@@ -1432,8 +1509,49 @@ Public Class Form1
             iconsFacWGTermCheck.Checked = False
         End If
     End Sub
+    Private Sub iconsTitlesGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsTitlesGroupCheck.CheckedChanged
+        If iconsTitlesGroupCheck.Checked = True Then
+            iconsTitleAllyCheck.Checked = True
+            iconsTitleEnemyCheck.Checked = True
+        Else
+            iconsTitleAllyCheck.Checked = False
+            iconsTitleEnemyCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsNamesGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNamesGroupCheck.CheckedChanged
+        If iconsNamesGroupCheck.Checked = True Then
+            iconsNameSquadCheck.Checked = True
+            iconsNamePlatoonCheck.Checked = True
+            iconsNameFireCheck.Checked = True
+            iconsNameOutfitCheck.Checked = True
+            iconsNameEnemyCheck.Checked = True
+        Else
+            iconsNameSquadCheck.Checked = False
+            iconsNamePlatoonCheck.Checked = False
+            iconsNameFireCheck.Checked = False
+            iconsNameOutfitCheck.Checked = False
+            iconsNameEnemyCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsDoritoGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDoritoGroupCheck.CheckedChanged
+        If iconsDoritoGroupCheck.Checked = True Then
+            iconsDoritoAllyCheck.Checked = True
+            iconsDoritoEnemyCheck.Checked = True
+        Else
+            iconsDoritoAllyCheck.Checked = False
+            iconsDoritoEnemyCheck.Checked = False
+        End If
+    End Sub
+    Private Sub iconsMiscGroupCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsMiscGroupCheck.CheckedChanged
+        If iconsMiscGroupCheck.Checked = True Then
+            iconsSocialCheck.Checked = True
+        Else
+            iconsSocialCheck.Checked = False
+        End If
+    End Sub
 #End Region
 #Region "IndividualChecks"
+#Region "Infantry"
     Private Sub iconsInfantryAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsInfantryAllyCheck.CheckedChanged
         If iconsInfantryAllyCheck.Checked = True Then
             UpdateValContains("HiddenHUDIndicators=", 84, True)
@@ -1448,6 +1566,8 @@ Public Class Form1
             UpdateValContains("HiddenHUDIndicators=", 85, False)
         End If
     End Sub
+#End Region
+#Region "Vehicles"
     Private Sub iconsVehAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehAllyCheck.CheckedChanged
         If iconsVehAllyCheck.Checked = True Then
             UpdateValContains("HiddenHUDIndicators=", 86, True)
@@ -1469,6 +1589,8 @@ Public Class Form1
             UpdateValContains("HiddenHUDIndicators=", 62, False)
         End If
     End Sub
+#End Region
+#Region "Deployables"
     Private Sub iconsDepDMGNadeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDMGNadeCheck.CheckedChanged
         If iconsDepDMGNadeCheck.Checked = True Then
             UpdateValContains("HiddenHUDIndicators=", 3, True)
@@ -1532,6 +1654,8 @@ Public Class Form1
             UpdateValContains("HiddenHUDIndicators=", 88, False)
         End If
     End Sub
+#End Region
+#Region "World"
     Private Sub iconsWorldAnomalyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldAnomalyCheck.CheckedChanged
         If iconsWorldAnomalyCheck.Checked = True Then
             UpdateValContains("HiddenHUDIndicators=", 49, True)
@@ -1616,6 +1740,8 @@ Public Class Form1
             UpdateValContains("HiddenHUDIndicators=", 116, False)
         End If
     End Sub
+#End Region
+#Region "Facility"
     Private Sub iconsFacVehAmmoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehAmmoCheck.CheckedChanged
         If iconsFacVehAmmoCheck.Checked = True Then
             UpdateValContains("HiddenHUDIndicators=", 11, True)
@@ -1785,5 +1911,283 @@ Public Class Form1
         End If
     End Sub
 #End Region
+#Region "Title"
+    Private Sub iconsTitleAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsTitleAllyCheck.CheckedChanged
+        If iconsTitleAllyCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 1, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 1, False)
+        End If
+    End Sub
+    Private Sub iconsTitleEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsTitleEnemyCheck.CheckedChanged
+        If iconsTitleEnemyCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 2, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 2, False)
+        End If
+    End Sub
+#End Region
+#Region "Names"
+    Private Sub iconsNameSquadCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameSquadCheck.CheckedChanged
+        If iconsNameSquadCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 3, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 3, False)
+        End If
+    End Sub
+    Private Sub iconsNamePlatoonCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNamePlatoonCheck.CheckedChanged
+        If iconsNamePlatoonCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 4, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 4, False)
+        End If
+    End Sub
+    Private Sub iconsNameFireCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameFireCheck.CheckedChanged
+        If iconsNameFireCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 5, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 5, False)
+        End If
+    End Sub
+    Private Sub iconsNameOutfitCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameOutfitCheck.CheckedChanged
+        If iconsNameOutfitCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 6, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 6, False)
+        End If
+    End Sub
+    Private Sub iconsNameEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameEnemyCheck.CheckedChanged
+        If iconsNameEnemyCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 7, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 7, False)
+        End If
+    End Sub
+#End Region
+#Region "Dorito"
+    Private Sub iconsDoritoAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDoritoAllyCheck.CheckedChanged
+        If iconsDoritoAllyCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 8, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 8, False)
+        End If
+    End Sub
+    Private Sub iconsDoritoEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDoritoEnemyCheck.CheckedChanged
+        If iconsDoritoEnemyCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 9, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 9, False)
+        End If
+    End Sub
+#End Region
+#Region "Misc"
+    Private Sub iconsSocialCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsSocialCheck.CheckedChanged
+        If iconsSocialCheck.Checked = True Then
+            UpdateValContains("HiddenNamePlateOptions=", 10, True)
+        Else
+            UpdateValContains("HiddenNamePlateOptions=", 10, False)
+        End If
+    End Sub
+
+#End Region
+#End Region
+#End Region
+#End Region
+#Region "FontStuff"
+    Private Sub fontSelectButton_Click(sender As Object, e As EventArgs) Handles fontSelectButton.Click
+        Dim fontPath As String = Nothing
+        Dim fontDialog As New OpenFileDialog()
+
+        fontDialog.Filter = "TrueType Font files (*.ttf)|*.ttf"
+        fontDialog.RestoreDirectory = True
+
+        If fontDialog.ShowDialog() = DialogResult.OK Then
+            'Using a dialog, get the desired font file path
+            fontPath = fontDialog.FileName.ToString
+            'Show user selected font path
+            selectedFontPath.Text() = fontPath
+            UpdateValMyIni("FontFilePath=", fontPath)
+            ''Create or update batch used to actually replace font
+            'File.WriteAllText(String.Concat(CurDir(), "\iniEditFont.bat"), String.Concat("@echo off", vbCrLf,
+            '                                                                                "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\Geo-Md.ttf""", vbCrLf,
+            '                                                                                "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\ARIALUNI.ttf""", vbCrLf,
+            '                                                                                "exit"))
+        End If
+    End Sub
+    'Private Sub fontAutoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
+    '    'If user desires automatic font replacement, create or update task to run the replacement batch
+    '    Using ts As New TaskService()
+    '        If fontAutoCheck.Checked Then
+    '            UpdateVal("FontAutoReplace=", "1")
+    '            If ts.RootFolder.Tasks.Exists("iniEdit Font") Then
+    '                ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = True
+    '            Else
+    '                Dim td As TaskDefinition = ts.NewTask
+    '                'Set description for the task
+    '                td.RegistrationInfo.Description = "iniEdit Font Replacement"
+    '                'Create eventlog trigger
+    '                Dim eTrigger As New EventTrigger()
+    '                eTrigger.Subscription = "<QueryList><Query Id=""0"" Path=""System""><Select Path=""System"">*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]</Select></Query></QueryList>"
+    '                td.Triggers.Add(eTrigger)
+    '                'Create task action
+    '                Dim path As String = CurDir()
+    '                td.Actions.Add(New ExecAction(String.Concat(path, "\iniEditFont.bat")))
+    '                'Save task
+    '                ts.RootFolder.RegisterTaskDefinition("iniEdit Font", td)
+    '            End If
+    '        Else
+    '            UpdateVal("FontAutoReplace=", "0")
+    '            ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
+    '        End If
+    '    End Using
+    'End Sub
+    Private Sub fontAutoCheck_CheckChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
+        If fontAutoCheck.Checked Then
+            UpdateValMyIni("FontAutoReplace=", True)
+            fontAutoCheck2.Visible = True
+            selectedFontPath.Visible = True
+            fontSelectButton.Visible = True
+            If Not BackgroundWorker1.IsBusy Then
+                BackgroundWorker1.RunWorkerAsync()
+            End If
+        Else
+            UpdateValMyIni("FontAutoReplace=", False)
+            fontAutoCheck2.Visible = False
+            selectedFontPath.Visible = False
+            fontSelectButton.Visible = False
+        End If
+    End Sub
+    Private Sub fontAutoCheck2_CheckChanged(sender As Object, e As EventArgs) Handles fontAutoCheck2.Click
+        If fontAutoCheck2.Checked Then
+            UpdateValMyIni("FontAutoReplace2=", True)
+        Else
+            UpdateValMyIni("FontAutoReplace2=", False)
+        End If
+    End Sub
+    Public Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        If fontAutoCheck.Checked Then
+            Dim watcher As EventLogWatcher
+            watcher = Nothing
+            Try
+                Dim subQuery As New EventLogQuery(
+                        "System", PathType.LogName, "*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]")
+                watcher = New EventLogWatcher(subQuery)
+                AddHandler watcher.EventRecordWritten,
+                        AddressOf BackgroundHandleEvent
+                watcher.Enabled = True
+                Console.WriteLine("waiting for event detect")
+                Dim i As Integer
+                For i = 0 To 36000
+                    If i < 36001 Then
+                        If BackgroundWorker1.CancellationPending Then
+                            Exit For
+                        End If
+                        System.Threading.Thread.Sleep(500)
+                    End If
+                Next
+            Catch ex As EventLogReadingException
+                Console.WriteLine("error: {0}", ex.Message)
+            Finally
+                watcher.Enabled = False
+                If Not watcher Is Nothing Then
+                    watcher.Dispose()
+                End If
+            End Try
+        End If
+    End Sub
+    Public Sub BackgroundHandleEvent(ByVal obj As Object,
+                   ByVal arg As EventRecordWrittenEventArgs)
+        If Not arg.EventRecord Is Nothing Then
+            Console.WriteLine("received event {0} from sub",
+                arg.EventRecord.Id)
+            Console.WriteLine("desc: {0}", arg.EventRecord.FormatDescription())
+            If fontAutoCheck.Checked Then
+                Dim fontSource As String = GetStateMyIni("FontFilePath=")
+                Dim fontDest As String = CurDir() + "\UI\Resource\Fonts\Geo-Md.ttf"
+                File.Copy(fontSource, fontDest, True)
+                If fontAutoCheck2.Checked Then
+                    Dim fontDest2 As String = CurDir() + "\UI\Resource\Fonts\ARIALUNI.ttf"
+                    FileCopy(fontSource, fontDest2)
+                End If
+                Console.WriteLine("Copied fonts")
+            End If
+            If localeReplaceCheck.Checked Then
+                Dim dirSource As String = selectedDirPath.ToString
+                Dim datSource As String = selectedDatPath.ToString
+                File.Copy(dirSource, CurDir() + "\Locale\en_us_data.dir", True)
+                File.Copy(datSource, CurDir() + "\Locale\en_us_data.dat", True)
+                Console.WriteLine("Copied locale")
+            End If
+            If commandAutoCheck.Checked Then
+                Dim commandList As List(Of String) = Nothing
+                commandList = File.ReadAllLines(commandPath).ToList
+                commandList(0) = vbCrLf + commandList(0)
+                File.AppendAllLines("ClientConfig.ini", commandList)
+            End If
+        Else
+            Console.WriteLine("event instance null")
+        End If
+    End Sub
+    Private Sub localeReplaceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles localeReplaceCheck.Click
+        If localeReplaceCheck.Checked Then
+            UpdateValMyIni("LocaleAutoReplace=", True)
+            localeDatButton.Visible = True
+            localeDirButton.Visible = True
+            selectedDatPath.Visible = True
+            selectedDirPath.Visible = True
+            Label38.Visible = True
+            If Not BackgroundWorker1.IsBusy Then
+                BackgroundWorker1.RunWorkerAsync()
+            End If
+        Else
+            UpdateValMyIni("LocaleAutoReplace=", False)
+            localeDatButton.Visible = False
+            localeDirButton.Visible = False
+            selectedDatPath.Visible = False
+            selectedDirPath.Visible = False
+            Label38.Visible = False
+        End If
+    End Sub
+    Private Sub localeDirButton_Click(sender As Object, e As EventArgs) Handles localeDirButton.Click
+        Dim filePath As String = Nothing
+        Dim newDialog As New OpenFileDialog()
+
+        newDialog.Filter = "Dir files (*.dir)|*.dir"
+        newDialog.RestoreDirectory = True
+
+        If newDialog.ShowDialog() = DialogResult.OK Then
+            filePath = newDialog.FileName.ToString
+            selectedDirPath.Text() = filePath
+            UpdateValMyIni("LocaleDirPath=", filePath)
+        End If
+    End Sub
+    Private Sub localeDatButton_Click(sender As Object, e As EventArgs) Handles localeDatButton.Click
+        Dim filePath As String = Nothing
+        Dim newDialog As New OpenFileDialog()
+
+        newDialog.Filter = "Dat files (*.dat)|*.dat"
+        newDialog.RestoreDirectory = True
+
+        If newDialog.ShowDialog() = DialogResult.OK Then
+            filePath = newDialog.FileName.ToString
+            selectedDatPath.Text() = filePath
+            UpdateValMyIni("LocaleDatPath=", filePath)
+        End If
+    End Sub
+    Private Sub commandAutoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles commandAutoCheck.Click
+        If commandAutoCheck.Checked Then
+            UpdateValMyIni("CommandAutoReplace=", True)
+            commandTextBox.Visible = True
+            If Not BackgroundWorker1.IsBusy Then
+                BackgroundWorker1.RunWorkerAsync()
+            End If
+        Else
+            UpdateValMyIni("CommandAutoReplace=", False)
+            commandTextBox.Visible = False
+        End If
+    End Sub
+    Private Sub commandTextBox_TextChanged(sender As Object, e As EventArgs) Handles commandTextBox.LostFocus
+        File.WriteAllLines(commandPath, commandTextBox.Lines)
+    End Sub
 #End Region
 End Class

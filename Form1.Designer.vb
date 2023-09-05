@@ -159,7 +159,7 @@ Partial Class Form1
         Me.OSColorButton = New System.Windows.Forms.Button()
         Me.intPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.playerColorPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.playerColorPanelss1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel18 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.playerColorDrop = New System.Windows.Forms.ComboBox()
         Me.playerColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
@@ -167,7 +167,7 @@ Partial Class Form1
         Me.NCplayerColorButton = New System.Windows.Forms.Button()
         Me.TRplayerColorButton = New System.Windows.Forms.Button()
         Me.terrColorPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.terrColorPanels1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel20 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.facColorDrop = New System.Windows.Forms.ComboBox()
         Me.terrColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
@@ -175,7 +175,7 @@ Partial Class Form1
         Me.NCterrColorButton = New System.Windows.Forms.Button()
         Me.TRterrColorButton = New System.Windows.Forms.Button()
         Me.facColorPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.facColorPanels1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel21 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.terrColorDrop = New System.Windows.Forms.ComboBox()
         Me.facColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
@@ -252,6 +252,24 @@ Partial Class Form1
         Me.iconsFacSCUAttackCheck = New System.Windows.Forms.CheckBox()
         Me.iconsFacGateAttackCheck = New System.Windows.Forms.CheckBox()
         Me.iconsFacRelicDoorCheck = New System.Windows.Forms.CheckBox()
+        Me.iconPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.iconsTitlesGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsTitleAllyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsTitleEnemyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconPanel7 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.iconsNamesGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsNameSquadCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsNamePlatoonCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsNameFireCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsNameOutfitCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsNameEnemyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconPanel8 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.iconsDoritoGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDoritoAllyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsDoritoEnemyCheck = New System.Windows.Forms.CheckBox()
+        Me.iconPanel9 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.iconsMiscGroupCheck = New System.Windows.Forms.CheckBox()
+        Me.iconsSocialCheck = New System.Windows.Forms.CheckBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.soundPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.soundPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -273,28 +291,28 @@ Partial Class Form1
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.chatPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.chatPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.chatPanel1s1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
         Me.genVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.genVoiceCheck = New System.Windows.Forms.CheckBox()
-        Me.chatPanel1s2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
         Me.proxVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.proxVoiceCheck = New System.Windows.Forms.CheckBox()
-        Me.chatPanel1s3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel8 = New System.Windows.Forms.FlowLayoutPanel()
         Me.squadVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.squadVoiceCheck = New System.Windows.Forms.CheckBox()
-        Me.chatPanel1s4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel9 = New System.Windows.Forms.FlowLayoutPanel()
         Me.raidVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.raidVoiceCheck = New System.Windows.Forms.CheckBox()
-        Me.chatPanel1s5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel10 = New System.Windows.Forms.FlowLayoutPanel()
         Me.outfitVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.outfitVoiceCheck = New System.Windows.Forms.CheckBox()
-        Me.chatPanel1s6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.leaderVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.leaderVoiceCheck = New System.Windows.Forms.CheckBox()
-        Me.chatPanel1s7 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel11 = New System.Windows.Forms.FlowLayoutPanel()
         Me.transmitVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.Label68 = New System.Windows.Forms.Label()
-        Me.chatPanel1s8 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.duckVoiceVolBox = New System.Windows.Forms.NumericUpDown()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.chatPanel2 = New System.Windows.Forms.FlowLayoutPanel()
@@ -309,6 +327,13 @@ Partial Class Form1
         Me.regionTextCheck = New System.Windows.Forms.CheckBox()
         Me.mentorTextCheck = New System.Windows.Forms.CheckBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.selectedDatPath = New System.Windows.Forms.Label()
+        Me.localeDatButton = New System.Windows.Forms.Button()
+        Me.localeReplaceCheck = New System.Windows.Forms.CheckBox()
+        Me.selectedDirPath = New System.Windows.Forms.Label()
+        Me.localeDirButton = New System.Windows.Forms.Button()
+        Me.fontAutoCheck2 = New System.Windows.Forms.CheckBox()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
         Me.selectedFontPath = New System.Windows.Forms.Label()
@@ -324,6 +349,9 @@ Partial Class Form1
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.curEditLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.commandAutoCheck = New System.Windows.Forms.CheckBox()
+        Me.commandTextBox = New System.Windows.Forms.TextBox()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -370,13 +398,13 @@ Partial Class Form1
         Me.intPanel2.SuspendLayout()
         Me.intPanel3.SuspendLayout()
         Me.playerColorPanel.SuspendLayout()
-        Me.playerColorPanelss1.SuspendLayout()
+        Me.FlowLayoutPanel18.SuspendLayout()
         Me.playerColorPanelButtons.SuspendLayout()
         Me.terrColorPanel.SuspendLayout()
-        Me.terrColorPanels1.SuspendLayout()
+        Me.FlowLayoutPanel20.SuspendLayout()
         Me.terrColorPanelButtons.SuspendLayout()
         Me.facColorPanel.SuspendLayout()
-        Me.facColorPanels1.SuspendLayout()
+        Me.FlowLayoutPanel21.SuspendLayout()
         Me.facColorPanelButtons.SuspendLayout()
         Me.intPanel1.SuspendLayout()
         Me.TabPage7.SuspendLayout()
@@ -386,6 +414,10 @@ Partial Class Form1
         Me.iconPanel3.SuspendLayout()
         Me.iconPanel4.SuspendLayout()
         Me.iconPanel5.SuspendLayout()
+        Me.iconPanel6.SuspendLayout()
+        Me.iconPanel7.SuspendLayout()
+        Me.iconPanel8.SuspendLayout()
+        Me.iconPanel9.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.soundPanel0.SuspendLayout()
         Me.soundPanel1.SuspendLayout()
@@ -398,21 +430,21 @@ Partial Class Form1
         Me.TabPage6.SuspendLayout()
         Me.chatPanel0.SuspendLayout()
         Me.chatPanel1.SuspendLayout()
-        Me.chatPanel1s1.SuspendLayout()
+        Me.FlowLayoutPanel6.SuspendLayout()
         CType(Me.genVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s2.SuspendLayout()
+        Me.FlowLayoutPanel7.SuspendLayout()
         CType(Me.proxVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s3.SuspendLayout()
+        Me.FlowLayoutPanel8.SuspendLayout()
         CType(Me.squadVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s4.SuspendLayout()
+        Me.FlowLayoutPanel9.SuspendLayout()
         CType(Me.raidVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s5.SuspendLayout()
+        Me.FlowLayoutPanel10.SuspendLayout()
         CType(Me.outfitVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s6.SuspendLayout()
+        Me.FlowLayoutPanel4.SuspendLayout()
         CType(Me.leaderVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s7.SuspendLayout()
+        Me.FlowLayoutPanel11.SuspendLayout()
         CType(Me.transmitVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.chatPanel1s8.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
         CType(Me.duckVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.chatPanel2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -437,7 +469,7 @@ Partial Class Form1
         Me.fogShadCheck.AutoSize = True
         Me.fogShadCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.fogShadCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.fogShadCheck.Location = New System.Drawing.Point(268, 3)
+        Me.fogShadCheck.Location = New System.Drawing.Point(3, 72)
         Me.fogShadCheck.Name = "fogShadCheck"
         Me.fogShadCheck.Size = New System.Drawing.Size(91, 17)
         Me.fogShadCheck.TabIndex = 23
@@ -449,7 +481,7 @@ Partial Class Form1
         Me.ambOccCheck.AutoSize = True
         Me.ambOccCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.ambOccCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.ambOccCheck.Location = New System.Drawing.Point(148, 3)
+        Me.ambOccCheck.Location = New System.Drawing.Point(3, 49)
         Me.ambOccCheck.Name = "ambOccCheck"
         Me.ambOccCheck.Size = New System.Drawing.Size(114, 17)
         Me.ambOccCheck.TabIndex = 22
@@ -461,7 +493,7 @@ Partial Class Form1
         Me.bloomCheck.AutoSize = True
         Me.bloomCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.bloomCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.bloomCheck.Location = New System.Drawing.Point(450, 3)
+        Me.bloomCheck.Location = New System.Drawing.Point(3, 118)
         Me.bloomCheck.Name = "bloomCheck"
         Me.bloomCheck.Size = New System.Drawing.Size(55, 17)
         Me.bloomCheck.TabIndex = 25
@@ -473,19 +505,20 @@ Partial Class Form1
         Me.blurCheck.AutoSize = True
         Me.blurCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.blurCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.blurCheck.Location = New System.Drawing.Point(365, 3)
+        Me.blurCheck.Location = New System.Drawing.Point(3, 95)
         Me.blurCheck.Name = "blurCheck"
         Me.blurCheck.Size = New System.Drawing.Size(79, 17)
         Me.blurCheck.TabIndex = 24
         Me.blurCheck.Text = "Motion Blur"
         Me.blurCheck.UseVisualStyleBackColor = False
+        Me.blurCheck.Visible = False
         '
         'smoothCheck
         '
         Me.smoothCheck.AutoSize = True
         Me.smoothCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.smoothCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.smoothCheck.Location = New System.Drawing.Point(66, 3)
+        Me.smoothCheck.Location = New System.Drawing.Point(3, 26)
         Me.smoothCheck.Name = "smoothCheck"
         Me.smoothCheck.Size = New System.Drawing.Size(76, 17)
         Me.smoothCheck.TabIndex = 21
@@ -497,12 +530,12 @@ Partial Class Form1
         Me.wideCheck.AutoSize = True
         Me.wideCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.wideCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.wideCheck.Location = New System.Drawing.Point(511, 3)
+        Me.wideCheck.Location = New System.Drawing.Point(3, 141)
         Me.wideCheck.Name = "wideCheck"
         Me.wideCheck.Size = New System.Drawing.Size(107, 17)
         Me.wideCheck.TabIndex = 26
         Me.wideCheck.Text = "Wide View Mode"
-        Me.ToolTip1.SetToolTip(Me.wideCheck, "This option is required for FoVs above around 80 to work properly")
+        Me.ToolTip1.SetToolTip(Me.wideCheck, "This option is required for FoVs" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "above 80 to work properly")
         Me.wideCheck.UseVisualStyleBackColor = False
         '
         'Label1
@@ -608,9 +641,9 @@ Partial Class Form1
         Me.Label8.ForeColor = System.Drawing.SystemColors.Control
         Me.Label8.Location = New System.Drawing.Point(3, 172)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(57, 17)
+        Me.Label8.Size = New System.Drawing.Size(75, 17)
         Me.Label8.TabIndex = 32
-        Me.Label8.Text = "Gamma"
+        Me.Label8.Text = "Brightness"
         '
         'Label9
         '
@@ -836,11 +869,11 @@ Partial Class Form1
         Me.graphPanel4.Controls.Add(Me.blurCheck)
         Me.graphPanel4.Controls.Add(Me.bloomCheck)
         Me.graphPanel4.Controls.Add(Me.wideCheck)
-        Me.graphPanel4.Location = New System.Drawing.Point(3, 405)
-        Me.graphPanel4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
+        Me.graphPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.graphPanel4.Location = New System.Drawing.Point(611, 3)
         Me.graphPanel4.Name = "graphPanel4"
-        Me.graphPanel4.Size = New System.Drawing.Size(621, 23)
-        Me.graphPanel4.TabIndex = 3
+        Me.graphPanel4.Size = New System.Drawing.Size(120, 161)
+        Me.graphPanel4.TabIndex = 4
         '
         'graphPanel3
         '
@@ -966,7 +999,7 @@ Partial Class Form1
         Me.fovBox.Name = "fovBox"
         Me.fovBox.Size = New System.Drawing.Size(80, 20)
         Me.fovBox.TabIndex = 44
-        Me.ToolTip1.SetToolTip(Me.fovBox, "10 - 170")
+        Me.ToolTip1.SetToolTip(Me.fovBox, "10 - 170" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Values above 80 require Wide View" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mode enabled to work properly")
         Me.fovBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'maxFPSBox
@@ -1012,6 +1045,7 @@ Partial Class Form1
         Me.AADrop.Name = "AADrop"
         Me.AADrop.Size = New System.Drawing.Size(121, 21)
         Me.AADrop.TabIndex = 60
+        Me.ToolTip1.SetToolTip(Me.AADrop, "On low graphics quality, only edge AA is available")
         '
         'Label20
         '
@@ -1131,6 +1165,7 @@ Partial Class Form1
         Me.graphPanel0.Controls.Add(Me.graphPanel4)
         Me.graphPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.graphPanel0.Location = New System.Drawing.Point(0, 0)
+        Me.graphPanel0.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
         Me.graphPanel0.Name = "graphPanel0"
         Me.graphPanel0.Size = New System.Drawing.Size(739, 537)
         Me.graphPanel0.TabIndex = 51
@@ -1151,7 +1186,7 @@ Partial Class Form1
         Me.graphPanel5.Location = New System.Drawing.Point(478, 3)
         Me.graphPanel5.Name = "graphPanel5"
         Me.graphPanel5.Size = New System.Drawing.Size(127, 184)
-        Me.graphPanel5.TabIndex = 4
+        Me.graphPanel5.TabIndex = 3
         '
         'Label62
         '
@@ -1225,7 +1260,7 @@ Partial Class Form1
         '
         'DLSSSharpBox
         '
-        Me.DLSSSharpBox.DecimalPlaces = 6
+        Me.DLSSSharpBox.DecimalPlaces = 2
         Me.DLSSSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.DLSSSharpBox.Location = New System.Drawing.Point(3, 135)
         Me.DLSSSharpBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1237,7 +1272,7 @@ Partial Class Form1
         '
         'FSRSharpBox
         '
-        Me.FSRSharpBox.DecimalPlaces = 6
+        Me.FSRSharpBox.DecimalPlaces = 2
         Me.FSRSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.FSRSharpBox.Location = New System.Drawing.Point(3, 161)
         Me.FSRSharpBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1274,7 +1309,7 @@ Partial Class Form1
         Me.sensPanel0.Location = New System.Drawing.Point(8, 33)
         Me.sensPanel0.Name = "sensPanel0"
         Me.sensPanel0.Size = New System.Drawing.Size(915, 288)
-        Me.sensPanel0.TabIndex = 6
+        Me.sensPanel0.TabIndex = 3
         '
         'sensPanel1
         '
@@ -1459,7 +1494,7 @@ Partial Class Form1
         Me.sensPanel2.Panel2.Controls.Add(Me.Label1cm360)
         Me.sensPanel2.Size = New System.Drawing.Size(255, 177)
         Me.sensPanel2.SplitterDistance = 125
-        Me.sensPanel2.TabIndex = 2
+        Me.sensPanel2.TabIndex = 90
         Me.sensPanel2.Visible = False
         '
         'Label31
@@ -1821,7 +1856,7 @@ Partial Class Form1
         Me.sensPanel4.Panel2.Controls.Add(Me.LabelHipSens)
         Me.sensPanel4.Size = New System.Drawing.Size(400, 177)
         Me.sensPanel4.SplitterDistance = 171
-        Me.sensPanel4.TabIndex = 4
+        Me.sensPanel4.TabIndex = 91
         '
         'Label53
         '
@@ -1902,7 +1937,7 @@ Partial Class Form1
         Me.DPIBox.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
         Me.DPIBox.Name = "DPIBox"
         Me.DPIBox.Size = New System.Drawing.Size(100, 20)
-        Me.DPIBox.TabIndex = 2
+        Me.DPIBox.TabIndex = 1
         Me.DPIBox.Value = New Decimal(New Integer() {100, 0, 0, 0})
         '
         'sensRawCheck
@@ -1912,7 +1947,7 @@ Partial Class Form1
         Me.sensRawCheck.Location = New System.Drawing.Point(273, 10)
         Me.sensRawCheck.Name = "sensRawCheck"
         Me.sensRawCheck.Size = New System.Drawing.Size(97, 17)
-        Me.sensRawCheck.TabIndex = 3
+        Me.sensRawCheck.TabIndex = 2
         Me.sensRawCheck.Text = "Use Raw Input"
         Me.sensRawCheck.UseVisualStyleBackColor = True
         '
@@ -1936,7 +1971,7 @@ Partial Class Form1
         Me.sensTypeDrop.MaxDropDownItems = 3
         Me.sensTypeDrop.Name = "sensTypeDrop"
         Me.sensTypeDrop.Size = New System.Drawing.Size(121, 21)
-        Me.sensTypeDrop.TabIndex = 2
+        Me.sensTypeDrop.TabIndex = 0
         '
         'TabPage4
         '
@@ -2087,25 +2122,25 @@ Partial Class Form1
         '
         Me.playerColorPanel.AutoSize = True
         Me.playerColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.playerColorPanel.Controls.Add(Me.playerColorPanelss1)
+        Me.playerColorPanel.Controls.Add(Me.FlowLayoutPanel18)
         Me.playerColorPanel.Controls.Add(Me.playerColorPanelButtons)
         Me.playerColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.playerColorPanel.Location = New System.Drawing.Point(3, 3)
         Me.playerColorPanel.Name = "playerColorPanel"
         Me.playerColorPanel.Size = New System.Drawing.Size(138, 91)
-        Me.playerColorPanel.TabIndex = 54
+        Me.playerColorPanel.TabIndex = 0
         '
-        'playerColorPanelss1
+        'FlowLayoutPanel18
         '
-        Me.playerColorPanelss1.AutoSize = True
-        Me.playerColorPanelss1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.playerColorPanelss1.Controls.Add(Me.Label59)
-        Me.playerColorPanelss1.Controls.Add(Me.playerColorDrop)
-        Me.playerColorPanelss1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.playerColorPanelss1.Location = New System.Drawing.Point(3, 3)
-        Me.playerColorPanelss1.Name = "playerColorPanelss1"
-        Me.playerColorPanelss1.Size = New System.Drawing.Size(106, 44)
-        Me.playerColorPanelss1.TabIndex = 52
+        Me.FlowLayoutPanel18.AutoSize = True
+        Me.FlowLayoutPanel18.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel18.Controls.Add(Me.Label59)
+        Me.FlowLayoutPanel18.Controls.Add(Me.playerColorDrop)
+        Me.FlowLayoutPanel18.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel18.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel18.Name = "FlowLayoutPanel18"
+        Me.FlowLayoutPanel18.Size = New System.Drawing.Size(106, 44)
+        Me.FlowLayoutPanel18.TabIndex = 0
         '
         'Label59
         '
@@ -2139,7 +2174,7 @@ Partial Class Form1
         Me.playerColorPanelButtons.Location = New System.Drawing.Point(3, 53)
         Me.playerColorPanelButtons.Name = "playerColorPanelButtons"
         Me.playerColorPanelButtons.Size = New System.Drawing.Size(132, 35)
-        Me.playerColorPanelButtons.TabIndex = 51
+        Me.playerColorPanelButtons.TabIndex = 2
         Me.playerColorPanelButtons.Visible = False
         '
         'VSplayerColorButton
@@ -2148,7 +2183,7 @@ Partial Class Form1
         Me.VSplayerColorButton.Location = New System.Drawing.Point(3, 3)
         Me.VSplayerColorButton.Name = "VSplayerColorButton"
         Me.VSplayerColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.VSplayerColorButton.TabIndex = 13
+        Me.VSplayerColorButton.TabIndex = 1
         Me.VSplayerColorButton.Text = "VS"
         Me.ToolTip1.SetToolTip(Me.VSplayerColorButton, "VS Player Color")
         Me.VSplayerColorButton.UseVisualStyleBackColor = True
@@ -2159,7 +2194,7 @@ Partial Class Form1
         Me.NCplayerColorButton.Location = New System.Drawing.Point(47, 3)
         Me.NCplayerColorButton.Name = "NCplayerColorButton"
         Me.NCplayerColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.NCplayerColorButton.TabIndex = 14
+        Me.NCplayerColorButton.TabIndex = 2
         Me.NCplayerColorButton.Text = "NC"
         Me.ToolTip1.SetToolTip(Me.NCplayerColorButton, "NC Player Color")
         Me.NCplayerColorButton.UseVisualStyleBackColor = True
@@ -2170,7 +2205,7 @@ Partial Class Form1
         Me.TRplayerColorButton.Location = New System.Drawing.Point(91, 3)
         Me.TRplayerColorButton.Name = "TRplayerColorButton"
         Me.TRplayerColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.TRplayerColorButton.TabIndex = 15
+        Me.TRplayerColorButton.TabIndex = 3
         Me.TRplayerColorButton.Text = "TR"
         Me.ToolTip1.SetToolTip(Me.TRplayerColorButton, "TR Player Color")
         Me.TRplayerColorButton.UseVisualStyleBackColor = True
@@ -2179,25 +2214,25 @@ Partial Class Form1
         '
         Me.terrColorPanel.AutoSize = True
         Me.terrColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.terrColorPanel.Controls.Add(Me.terrColorPanels1)
+        Me.terrColorPanel.Controls.Add(Me.FlowLayoutPanel20)
         Me.terrColorPanel.Controls.Add(Me.terrColorPanelButtons)
         Me.terrColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.terrColorPanel.Location = New System.Drawing.Point(3, 100)
         Me.terrColorPanel.Name = "terrColorPanel"
         Me.terrColorPanel.Size = New System.Drawing.Size(138, 91)
-        Me.terrColorPanel.TabIndex = 55
+        Me.terrColorPanel.TabIndex = 1
         '
-        'terrColorPanels1
+        'FlowLayoutPanel20
         '
-        Me.terrColorPanels1.AutoSize = True
-        Me.terrColorPanels1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.terrColorPanels1.Controls.Add(Me.Label60)
-        Me.terrColorPanels1.Controls.Add(Me.facColorDrop)
-        Me.terrColorPanels1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.terrColorPanels1.Location = New System.Drawing.Point(3, 3)
-        Me.terrColorPanels1.Name = "terrColorPanels1"
-        Me.terrColorPanels1.Size = New System.Drawing.Size(106, 44)
-        Me.terrColorPanels1.TabIndex = 52
+        Me.FlowLayoutPanel20.AutoSize = True
+        Me.FlowLayoutPanel20.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel20.Controls.Add(Me.Label60)
+        Me.FlowLayoutPanel20.Controls.Add(Me.facColorDrop)
+        Me.FlowLayoutPanel20.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel20.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel20.Name = "FlowLayoutPanel20"
+        Me.FlowLayoutPanel20.Size = New System.Drawing.Size(106, 44)
+        Me.FlowLayoutPanel20.TabIndex = 0
         '
         'Label60
         '
@@ -2231,7 +2266,7 @@ Partial Class Form1
         Me.terrColorPanelButtons.Location = New System.Drawing.Point(3, 53)
         Me.terrColorPanelButtons.Name = "terrColorPanelButtons"
         Me.terrColorPanelButtons.Size = New System.Drawing.Size(132, 35)
-        Me.terrColorPanelButtons.TabIndex = 53
+        Me.terrColorPanelButtons.TabIndex = 2
         Me.terrColorPanelButtons.Visible = False
         '
         'VSterrColorButton
@@ -2240,7 +2275,7 @@ Partial Class Form1
         Me.VSterrColorButton.Location = New System.Drawing.Point(3, 3)
         Me.VSterrColorButton.Name = "VSterrColorButton"
         Me.VSterrColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.VSterrColorButton.TabIndex = 13
+        Me.VSterrColorButton.TabIndex = 1
         Me.VSterrColorButton.Text = "VS"
         Me.ToolTip1.SetToolTip(Me.VSterrColorButton, "VS Territory Color")
         Me.VSterrColorButton.UseVisualStyleBackColor = True
@@ -2251,7 +2286,7 @@ Partial Class Form1
         Me.NCterrColorButton.Location = New System.Drawing.Point(47, 3)
         Me.NCterrColorButton.Name = "NCterrColorButton"
         Me.NCterrColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.NCterrColorButton.TabIndex = 14
+        Me.NCterrColorButton.TabIndex = 2
         Me.NCterrColorButton.Text = "NC"
         Me.ToolTip1.SetToolTip(Me.NCterrColorButton, "NC Territory Color")
         Me.NCterrColorButton.UseVisualStyleBackColor = True
@@ -2262,7 +2297,7 @@ Partial Class Form1
         Me.TRterrColorButton.Location = New System.Drawing.Point(91, 3)
         Me.TRterrColorButton.Name = "TRterrColorButton"
         Me.TRterrColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.TRterrColorButton.TabIndex = 15
+        Me.TRterrColorButton.TabIndex = 3
         Me.TRterrColorButton.Text = "TR"
         Me.ToolTip1.SetToolTip(Me.TRterrColorButton, "TR Territory Color")
         Me.TRterrColorButton.UseVisualStyleBackColor = True
@@ -2271,25 +2306,25 @@ Partial Class Form1
         '
         Me.facColorPanel.AutoSize = True
         Me.facColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.facColorPanel.Controls.Add(Me.facColorPanels1)
+        Me.facColorPanel.Controls.Add(Me.FlowLayoutPanel21)
         Me.facColorPanel.Controls.Add(Me.facColorPanelButtons)
         Me.facColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.facColorPanel.Location = New System.Drawing.Point(3, 197)
         Me.facColorPanel.Name = "facColorPanel"
         Me.facColorPanel.Size = New System.Drawing.Size(138, 91)
-        Me.facColorPanel.TabIndex = 54
+        Me.facColorPanel.TabIndex = 2
         '
-        'facColorPanels1
+        'FlowLayoutPanel21
         '
-        Me.facColorPanels1.AutoSize = True
-        Me.facColorPanels1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.facColorPanels1.Controls.Add(Me.Label61)
-        Me.facColorPanels1.Controls.Add(Me.terrColorDrop)
-        Me.facColorPanels1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.facColorPanels1.Location = New System.Drawing.Point(3, 3)
-        Me.facColorPanels1.Name = "facColorPanels1"
-        Me.facColorPanels1.Size = New System.Drawing.Size(109, 44)
-        Me.facColorPanels1.TabIndex = 54
+        Me.FlowLayoutPanel21.AutoSize = True
+        Me.FlowLayoutPanel21.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel21.Controls.Add(Me.Label61)
+        Me.FlowLayoutPanel21.Controls.Add(Me.terrColorDrop)
+        Me.FlowLayoutPanel21.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel21.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel21.Name = "FlowLayoutPanel21"
+        Me.FlowLayoutPanel21.Size = New System.Drawing.Size(109, 44)
+        Me.FlowLayoutPanel21.TabIndex = 0
         '
         'Label61
         '
@@ -2324,7 +2359,7 @@ Partial Class Form1
         Me.facColorPanelButtons.Location = New System.Drawing.Point(3, 53)
         Me.facColorPanelButtons.Name = "facColorPanelButtons"
         Me.facColorPanelButtons.Size = New System.Drawing.Size(132, 35)
-        Me.facColorPanelButtons.TabIndex = 52
+        Me.facColorPanelButtons.TabIndex = 2
         Me.facColorPanelButtons.Visible = False
         '
         'VSfacColorButton
@@ -2333,7 +2368,7 @@ Partial Class Form1
         Me.VSfacColorButton.Location = New System.Drawing.Point(3, 3)
         Me.VSfacColorButton.Name = "VSfacColorButton"
         Me.VSfacColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.VSfacColorButton.TabIndex = 13
+        Me.VSfacColorButton.TabIndex = 1
         Me.VSfacColorButton.Text = "VS"
         Me.ToolTip1.SetToolTip(Me.VSfacColorButton, "VS Facility Color")
         Me.VSfacColorButton.UseVisualStyleBackColor = True
@@ -2344,7 +2379,7 @@ Partial Class Form1
         Me.NCfacColorButton.Location = New System.Drawing.Point(47, 3)
         Me.NCfacColorButton.Name = "NCfacColorButton"
         Me.NCfacColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.NCfacColorButton.TabIndex = 14
+        Me.NCfacColorButton.TabIndex = 2
         Me.NCfacColorButton.Text = "NC"
         Me.ToolTip1.SetToolTip(Me.NCfacColorButton, "NC Facility Color")
         Me.NCfacColorButton.UseVisualStyleBackColor = True
@@ -2355,7 +2390,7 @@ Partial Class Form1
         Me.TRfacColorButton.Location = New System.Drawing.Point(91, 3)
         Me.TRfacColorButton.Name = "TRfacColorButton"
         Me.TRfacColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.TRfacColorButton.TabIndex = 15
+        Me.TRfacColorButton.TabIndex = 3
         Me.TRfacColorButton.Text = "TR"
         Me.ToolTip1.SetToolTip(Me.TRfacColorButton, "TR Facility Color")
         Me.TRfacColorButton.UseVisualStyleBackColor = True
@@ -2463,7 +2498,7 @@ Partial Class Form1
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Size = New System.Drawing.Size(739, 537)
         Me.TabPage7.TabIndex = 6
-        Me.TabPage7.Text = "Disable Icons"
+        Me.TabPage7.Text = "Disabled UI"
         '
         'iconPanel0
         '
@@ -2474,6 +2509,10 @@ Partial Class Form1
         Me.iconPanel0.Controls.Add(Me.iconPanel3)
         Me.iconPanel0.Controls.Add(Me.iconPanel4)
         Me.iconPanel0.Controls.Add(Me.iconPanel5)
+        Me.iconPanel0.Controls.Add(Me.iconPanel6)
+        Me.iconPanel0.Controls.Add(Me.iconPanel7)
+        Me.iconPanel0.Controls.Add(Me.iconPanel8)
+        Me.iconPanel0.Controls.Add(Me.iconPanel9)
         Me.iconPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.iconPanel0.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.iconPanel0.Location = New System.Drawing.Point(0, 0)
@@ -2491,7 +2530,7 @@ Partial Class Form1
         Me.iconPanel1.Location = New System.Drawing.Point(3, 3)
         Me.iconPanel1.Name = "iconPanel1"
         Me.iconPanel1.Size = New System.Drawing.Size(279, 26)
-        Me.iconPanel1.TabIndex = 26
+        Me.iconPanel1.TabIndex = 0
         '
         'iconsInfantryGroupCheck
         '
@@ -2504,7 +2543,6 @@ Partial Class Form1
         Me.iconsInfantryGroupCheck.Size = New System.Drawing.Size(76, 17)
         Me.iconsInfantryGroupCheck.TabIndex = 25
         Me.iconsInfantryGroupCheck.Text = "Infantry   ::"
-        Me.ToolTip1.SetToolTip(Me.iconsInfantryGroupCheck, "Enables/Disables all infantry icon options")
         Me.iconsInfantryGroupCheck.UseVisualStyleBackColor = False
         '
         'iconsInfantryAllyCheck
@@ -2544,7 +2582,7 @@ Partial Class Form1
         Me.iconPanel2.Location = New System.Drawing.Point(3, 35)
         Me.iconPanel2.Name = "iconPanel2"
         Me.iconPanel2.Size = New System.Drawing.Size(418, 26)
-        Me.iconPanel2.TabIndex = 27
+        Me.iconPanel2.TabIndex = 1
         '
         'iconsVehicleGroupCheck
         '
@@ -2557,7 +2595,6 @@ Partial Class Form1
         Me.iconsVehicleGroupCheck.Size = New System.Drawing.Size(76, 17)
         Me.iconsVehicleGroupCheck.TabIndex = 25
         Me.iconsVehicleGroupCheck.Text = "Vehicle   ::"
-        Me.ToolTip1.SetToolTip(Me.iconsVehicleGroupCheck, "Enables/Disables all vehicle icon options")
         Me.iconsVehicleGroupCheck.UseVisualStyleBackColor = False
         '
         'iconsVehAllyCheck
@@ -2615,8 +2652,8 @@ Partial Class Form1
         Me.iconPanel3.Controls.Add(Me.iconsDepTurretsCheck)
         Me.iconPanel3.Location = New System.Drawing.Point(3, 67)
         Me.iconPanel3.Name = "iconPanel3"
-        Me.iconPanel3.Size = New System.Drawing.Size(703, 52)
-        Me.iconPanel3.TabIndex = 28
+        Me.iconPanel3.Size = New System.Drawing.Size(686, 52)
+        Me.iconPanel3.TabIndex = 2
         '
         'iconsDeployGroupCheck
         '
@@ -2629,7 +2666,6 @@ Partial Class Form1
         Me.iconsDeployGroupCheck.Size = New System.Drawing.Size(94, 17)
         Me.iconsDeployGroupCheck.TabIndex = 25
         Me.iconsDeployGroupCheck.Text = "Deployable   ::"
-        Me.ToolTip1.SetToolTip(Me.iconsDeployGroupCheck, "Enables/Disables all deployable icon options")
         Me.iconsDeployGroupCheck.UseVisualStyleBackColor = False
         '
         'iconsDepDMGNadeCheck
@@ -2643,7 +2679,8 @@ Partial Class Form1
         Me.iconsDepDMGNadeCheck.Size = New System.Drawing.Size(72, 17)
         Me.iconsDepDMGNadeCheck.TabIndex = 26
         Me.iconsDepDMGNadeCheck.Text = "Grenades"
-        Me.ToolTip1.SetToolTip(Me.iconsDepDMGNadeCheck, "Damage type grenades including frag, plasma, AV, etc.")
+        Me.ToolTip1.SetToolTip(Me.iconsDepDMGNadeCheck, "Refers to damaging grenades which use a red indicator." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Includes frags, plasma, A" &
+        "V, etc.")
         Me.iconsDepDMGNadeCheck.UseVisualStyleBackColor = False
         '
         'iconsDepStatusNadeCheck
@@ -2657,7 +2694,8 @@ Partial Class Form1
         Me.iconsDepStatusNadeCheck.Size = New System.Drawing.Size(107, 17)
         Me.iconsDepStatusNadeCheck.TabIndex = 27
         Me.iconsDepStatusNadeCheck.Text = "Debuff Grenades"
-        Me.ToolTip1.SetToolTip(Me.iconsDepStatusNadeCheck, "Debuff type grenades including flashes, EMPs, smokes, etc")
+        Me.ToolTip1.SetToolTip(Me.iconsDepStatusNadeCheck, "Refers to debuff grenades which use a yellow indicator." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Includes smokes, concuss" &
+        "ions, flashes, etc.")
         Me.iconsDepStatusNadeCheck.UseVisualStyleBackColor = False
         '
         'iconsDepMinesCheck
@@ -2671,7 +2709,6 @@ Partial Class Form1
         Me.iconsDepMinesCheck.Size = New System.Drawing.Size(54, 17)
         Me.iconsDepMinesCheck.TabIndex = 28
         Me.iconsDepMinesCheck.Text = "Mines"
-        Me.ToolTip1.SetToolTip(Me.iconsDepMinesCheck, "Includes both anti-infantry and tank mines")
         Me.iconsDepMinesCheck.UseVisualStyleBackColor = False
         '
         'iconsDepC4Check
@@ -2698,7 +2735,7 @@ Partial Class Form1
         Me.iconsDepShieldRegenCheck.Size = New System.Drawing.Size(90, 17)
         Me.iconsDepShieldRegenCheck.TabIndex = 30
         Me.iconsDepShieldRegenCheck.Text = "Regen Shield"
-        Me.ToolTip1.SetToolTip(Me.iconsDepShieldRegenCheck, "Medic ability deployable that regenerates shields")
+        Me.ToolTip1.SetToolTip(Me.iconsDepShieldRegenCheck, "Refers to the medic ability deployable which recharges shields")
         Me.iconsDepShieldRegenCheck.UseVisualStyleBackColor = False
         '
         'iconsDepDildarCheck
@@ -2722,10 +2759,10 @@ Partial Class Form1
         Me.iconsDepAmmoBoxCheck.Location = New System.Drawing.Point(595, 5)
         Me.iconsDepAmmoBoxCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsDepAmmoBoxCheck.Name = "iconsDepAmmoBoxCheck"
-        Me.iconsDepAmmoBoxCheck.Size = New System.Drawing.Size(105, 17)
+        Me.iconsDepAmmoBoxCheck.Size = New System.Drawing.Size(88, 17)
         Me.iconsDepAmmoBoxCheck.TabIndex = 32
-        Me.iconsDepAmmoBoxCheck.Text = "Ammo Placeable"
-        Me.ToolTip1.SetToolTip(Me.iconsDepAmmoBoxCheck, "Engineer ammo box")
+        Me.iconsDepAmmoBoxCheck.Text = "Ammo Packs"
+        Me.ToolTip1.SetToolTip(Me.iconsDepAmmoBoxCheck, "Refers to ammo packs thrown by engineers")
         Me.iconsDepAmmoBoxCheck.UseVisualStyleBackColor = False
         '
         'iconsDepDroneCheck
@@ -2739,8 +2776,8 @@ Partial Class Form1
         Me.iconsDepDroneCheck.Size = New System.Drawing.Size(90, 17)
         Me.iconsDepDroneCheck.TabIndex = 33
         Me.iconsDepDroneCheck.Text = "Recon Drone"
-        Me.ToolTip1.SetToolTip(Me.iconsDepDroneCheck, "Currently does not apply to any ingame objects")
         Me.iconsDepDroneCheck.UseVisualStyleBackColor = False
+        Me.iconsDepDroneCheck.Visible = False
         '
         'iconsDepTurretsCheck
         '
@@ -2775,7 +2812,7 @@ Partial Class Form1
         Me.iconPanel4.Location = New System.Drawing.Point(3, 125)
         Me.iconPanel4.Name = "iconPanel4"
         Me.iconPanel4.Size = New System.Drawing.Size(732, 52)
-        Me.iconPanel4.TabIndex = 29
+        Me.iconPanel4.TabIndex = 3
         '
         'iconsWorldGroupCheck
         '
@@ -2788,7 +2825,6 @@ Partial Class Form1
         Me.iconsWorldGroupCheck.Size = New System.Drawing.Size(69, 17)
         Me.iconsWorldGroupCheck.TabIndex = 25
         Me.iconsWorldGroupCheck.Text = "World   ::"
-        Me.ToolTip1.SetToolTip(Me.iconsWorldGroupCheck, "Enables/Disables all world icon options")
         Me.iconsWorldGroupCheck.UseVisualStyleBackColor = False
         '
         'iconsWorldAnomalyCheck
@@ -2839,7 +2875,7 @@ Partial Class Form1
         Me.iconsWorldMissionCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldMissionCheck.Name = "iconsWorldMissionCheck"
         Me.iconsWorldMissionCheck.Size = New System.Drawing.Size(61, 17)
-        Me.iconsWorldMissionCheck.TabIndex = 37
+        Me.iconsWorldMissionCheck.TabIndex = 29
         Me.iconsWorldMissionCheck.Text = "Mission"
         Me.iconsWorldMissionCheck.UseVisualStyleBackColor = False
         '
@@ -2852,7 +2888,7 @@ Partial Class Form1
         Me.iconsWorldImplantCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldImplantCheck.Name = "iconsWorldImplantCheck"
         Me.iconsWorldImplantCheck.Size = New System.Drawing.Size(128, 17)
-        Me.iconsWorldImplantCheck.TabIndex = 29
+        Me.iconsWorldImplantCheck.TabIndex = 30
         Me.iconsWorldImplantCheck.Text = "Analysis HUD Implant"
         Me.iconsWorldImplantCheck.UseVisualStyleBackColor = False
         '
@@ -2865,7 +2901,7 @@ Partial Class Form1
         Me.iconsWorldPlantCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldPlantCheck.Name = "iconsWorldPlantCheck"
         Me.iconsWorldPlantCheck.Size = New System.Drawing.Size(158, 17)
-        Me.iconsWorldPlantCheck.TabIndex = 30
+        Me.iconsWorldPlantCheck.TabIndex = 31
         Me.iconsWorldPlantCheck.Text = "Analysis HUD Strange Plant"
         Me.iconsWorldPlantCheck.UseVisualStyleBackColor = False
         '
@@ -2878,7 +2914,7 @@ Partial Class Form1
         Me.iconsWorldNPCCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldNPCCheck.Name = "iconsWorldNPCCheck"
         Me.iconsWorldNPCCheck.Size = New System.Drawing.Size(90, 17)
-        Me.iconsWorldNPCCheck.TabIndex = 31
+        Me.iconsWorldNPCCheck.TabIndex = 32
         Me.iconsWorldNPCCheck.Text = "Named NPCs"
         Me.iconsWorldNPCCheck.UseVisualStyleBackColor = False
         '
@@ -2891,7 +2927,7 @@ Partial Class Form1
         Me.iconsWorldStationCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldStationCheck.Name = "iconsWorldStationCheck"
         Me.iconsWorldStationCheck.Size = New System.Drawing.Size(100, 17)
-        Me.iconsWorldStationCheck.TabIndex = 32
+        Me.iconsWorldStationCheck.TabIndex = 33
         Me.iconsWorldStationCheck.Text = "Forward Station"
         Me.iconsWorldStationCheck.UseVisualStyleBackColor = False
         '
@@ -2904,7 +2940,7 @@ Partial Class Form1
         Me.iconsWorldAssetCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldAssetCheck.Name = "iconsWorldAssetCheck"
         Me.iconsWorldAssetCheck.Size = New System.Drawing.Size(159, 17)
-        Me.iconsWorldAssetCheck.TabIndex = 33
+        Me.iconsWorldAssetCheck.TabIndex = 34
         Me.iconsWorldAssetCheck.Text = "War Asset Waypoint Marker"
         Me.iconsWorldAssetCheck.UseVisualStyleBackColor = False
         '
@@ -2917,7 +2953,7 @@ Partial Class Form1
         Me.iconsWorldCrystalCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldCrystalCheck.Name = "iconsWorldCrystalCheck"
         Me.iconsWorldCrystalCheck.Size = New System.Drawing.Size(151, 17)
-        Me.iconsWorldCrystalCheck.TabIndex = 34
+        Me.iconsWorldCrystalCheck.TabIndex = 35
         Me.iconsWorldCrystalCheck.Text = "Construction Crystal Radar"
         Me.iconsWorldCrystalCheck.UseVisualStyleBackColor = False
         '
@@ -2930,7 +2966,7 @@ Partial Class Form1
         Me.iconsWorldConstructionCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldConstructionCheck.Name = "iconsWorldConstructionCheck"
         Me.iconsWorldConstructionCheck.Size = New System.Drawing.Size(135, 17)
-        Me.iconsWorldConstructionCheck.TabIndex = 35
+        Me.iconsWorldConstructionCheck.TabIndex = 36
         Me.iconsWorldConstructionCheck.Text = "Construction Placeable"
         Me.iconsWorldConstructionCheck.UseVisualStyleBackColor = False
         '
@@ -2943,7 +2979,7 @@ Partial Class Form1
         Me.iconsWorldCortiumCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldCortiumCheck.Name = "iconsWorldCortiumCheck"
         Me.iconsWorldCortiumCheck.Size = New System.Drawing.Size(61, 17)
-        Me.iconsWorldCortiumCheck.TabIndex = 36
+        Me.iconsWorldCortiumCheck.TabIndex = 37
         Me.iconsWorldCortiumCheck.Text = "Cortium"
         Me.iconsWorldCortiumCheck.UseVisualStyleBackColor = False
         '
@@ -2977,10 +3013,9 @@ Partial Class Form1
         Me.iconPanel5.Controls.Add(Me.iconsFacGateAttackCheck)
         Me.iconPanel5.Controls.Add(Me.iconsFacRelicDoorCheck)
         Me.iconPanel5.Location = New System.Drawing.Point(3, 183)
-        Me.iconPanel5.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
         Me.iconPanel5.Name = "iconPanel5"
         Me.iconPanel5.Size = New System.Drawing.Size(723, 104)
-        Me.iconPanel5.TabIndex = 30
+        Me.iconPanel5.TabIndex = 4
         '
         'iconsFacilityGroupCheck
         '
@@ -2993,7 +3028,6 @@ Partial Class Form1
         Me.iconsFacilityGroupCheck.Size = New System.Drawing.Size(73, 17)
         Me.iconsFacilityGroupCheck.TabIndex = 25
         Me.iconsFacilityGroupCheck.Text = "Facility   ::"
-        Me.ToolTip1.SetToolTip(Me.iconsFacilityGroupCheck, "Enables/Disables all facility icon options")
         Me.iconsFacilityGroupCheck.UseVisualStyleBackColor = False
         '
         'iconsFacVehAmmoCheck
@@ -3069,9 +3103,9 @@ Partial Class Form1
         Me.iconsFacVehTermCheck.Location = New System.Drawing.Point(601, 5)
         Me.iconsFacVehTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacVehTermCheck.Name = "iconsFacVehTermCheck"
-        Me.iconsFacVehTermCheck.Size = New System.Drawing.Size(104, 17)
+        Me.iconsFacVehTermCheck.Size = New System.Drawing.Size(99, 17)
         Me.iconsFacVehTermCheck.TabIndex = 31
-        Me.iconsFacVehTermCheck.Text = "Ground Terminal"
+        Me.iconsFacVehTermCheck.Text = "Ground Vehicle"
         Me.iconsFacVehTermCheck.UseVisualStyleBackColor = False
         '
         'iconsFacGalTermCheck
@@ -3176,7 +3210,7 @@ Partial Class Form1
         Me.iconsFacNearbyCheck.Size = New System.Drawing.Size(112, 17)
         Me.iconsFacNearbyCheck.TabIndex = 39
         Me.iconsFacNearbyCheck.Text = "Neighbor Facilities"
-        Me.ToolTip1.SetToolTip(Me.iconsFacNearbyCheck, "Refers to the icons seen in first person, hovering over nearby bases")
+        Me.ToolTip1.SetToolTip(Me.iconsFacNearbyCheck, "Refers to the icons seen hovering over nearby bases")
         Me.iconsFacNearbyCheck.UseVisualStyleBackColor = False
         '
         'iconsFacSCUCheck
@@ -3268,6 +3302,7 @@ Partial Class Form1
         Me.iconsFacBridgeTermCheck.Size = New System.Drawing.Size(99, 17)
         Me.iconsFacBridgeTermCheck.TabIndex = 46
         Me.iconsFacBridgeTermCheck.Text = "Bridge Terminal"
+        Me.ToolTip1.SetToolTip(Me.iconsFacBridgeTermCheck, "Refers to the terminals seen at Heyoka Chem")
         Me.iconsFacBridgeTermCheck.UseVisualStyleBackColor = False
         '
         'iconsFacSCUAttackCheck
@@ -3281,7 +3316,7 @@ Partial Class Form1
         Me.iconsFacSCUAttackCheck.Size = New System.Drawing.Size(102, 17)
         Me.iconsFacSCUAttackCheck.TabIndex = 47
         Me.iconsFacSCUAttackCheck.Text = "Attackable SCU"
-        Me.ToolTip1.SetToolTip(Me.iconsFacSCUAttackCheck, "Refers to the attackable SCU type found at containment sites")
+        Me.ToolTip1.SetToolTip(Me.iconsFacSCUAttackCheck, "Refers to the attackable SCU found in containment sites")
         Me.iconsFacSCUAttackCheck.UseVisualStyleBackColor = False
         '
         'iconsFacGateAttackCheck
@@ -3295,8 +3330,8 @@ Partial Class Form1
         Me.iconsFacGateAttackCheck.Size = New System.Drawing.Size(135, 17)
         Me.iconsFacGateAttackCheck.TabIndex = 48
         Me.iconsFacGateAttackCheck.Text = "Attackable Gate Shield"
-        Me.ToolTip1.SetToolTip(Me.iconsFacGateAttackCheck, "Refers to the attackable gate shield generators found on the exterior of containm" &
-        "ent sites")
+        Me.ToolTip1.SetToolTip(Me.iconsFacGateAttackCheck, "Refers to the attackable shield generators" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "found on the exterior of containment " &
+        "sites")
         Me.iconsFacGateAttackCheck.UseVisualStyleBackColor = False
         '
         'iconsFacRelicDoorCheck
@@ -3310,9 +3345,245 @@ Partial Class Form1
         Me.iconsFacRelicDoorCheck.Size = New System.Drawing.Size(96, 17)
         Me.iconsFacRelicDoorCheck.TabIndex = 49
         Me.iconsFacRelicDoorCheck.Text = "Reliquary Door"
-        Me.ToolTip1.SetToolTip(Me.iconsFacRelicDoorCheck, "Refers to the attackable shield generators found inside the reliquary wing of con" &
-        "tainment sites")
+        Me.ToolTip1.SetToolTip(Me.iconsFacRelicDoorCheck, "Refers to the shield generators found around" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "one of the points inside containmen" &
+        "t sites")
         Me.iconsFacRelicDoorCheck.UseVisualStyleBackColor = False
+        '
+        'iconPanel6
+        '
+        Me.iconPanel6.AutoSize = True
+        Me.iconPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.iconPanel6.Controls.Add(Me.iconsTitlesGroupCheck)
+        Me.iconPanel6.Controls.Add(Me.iconsTitleAllyCheck)
+        Me.iconPanel6.Controls.Add(Me.iconsTitleEnemyCheck)
+        Me.iconPanel6.Location = New System.Drawing.Point(3, 293)
+        Me.iconPanel6.Name = "iconPanel6"
+        Me.iconPanel6.Size = New System.Drawing.Size(260, 26)
+        Me.iconPanel6.TabIndex = 5
+        '
+        'iconsTitlesGroupCheck
+        '
+        Me.iconsTitlesGroupCheck.AutoSize = True
+        Me.iconsTitlesGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsTitlesGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsTitlesGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsTitlesGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsTitlesGroupCheck.Name = "iconsTitlesGroupCheck"
+        Me.iconsTitlesGroupCheck.Size = New System.Drawing.Size(66, 17)
+        Me.iconsTitlesGroupCheck.TabIndex = 25
+        Me.iconsTitlesGroupCheck.Text = "Titles   ::"
+        Me.iconsTitlesGroupCheck.UseVisualStyleBackColor = False
+        '
+        'iconsTitleAllyCheck
+        '
+        Me.iconsTitleAllyCheck.AutoSize = True
+        Me.iconsTitleAllyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsTitleAllyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsTitleAllyCheck.Location = New System.Drawing.Point(75, 5)
+        Me.iconsTitleAllyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsTitleAllyCheck.Name = "iconsTitleAllyCheck"
+        Me.iconsTitleAllyCheck.Size = New System.Drawing.Size(80, 17)
+        Me.iconsTitleAllyCheck.TabIndex = 26
+        Me.iconsTitleAllyCheck.Text = "Allies' Titles"
+        Me.iconsTitleAllyCheck.UseVisualStyleBackColor = False
+        '
+        'iconsTitleEnemyCheck
+        '
+        Me.iconsTitleEnemyCheck.AutoSize = True
+        Me.iconsTitleEnemyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsTitleEnemyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsTitleEnemyCheck.Location = New System.Drawing.Point(161, 5)
+        Me.iconsTitleEnemyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsTitleEnemyCheck.Name = "iconsTitleEnemyCheck"
+        Me.iconsTitleEnemyCheck.Size = New System.Drawing.Size(96, 17)
+        Me.iconsTitleEnemyCheck.TabIndex = 27
+        Me.iconsTitleEnemyCheck.Text = "Enemies' Titles"
+        Me.iconsTitleEnemyCheck.UseVisualStyleBackColor = False
+        '
+        'iconPanel7
+        '
+        Me.iconPanel7.AutoSize = True
+        Me.iconPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.iconPanel7.Controls.Add(Me.iconsNamesGroupCheck)
+        Me.iconPanel7.Controls.Add(Me.iconsNameSquadCheck)
+        Me.iconPanel7.Controls.Add(Me.iconsNamePlatoonCheck)
+        Me.iconPanel7.Controls.Add(Me.iconsNameFireCheck)
+        Me.iconPanel7.Controls.Add(Me.iconsNameOutfitCheck)
+        Me.iconPanel7.Controls.Add(Me.iconsNameEnemyCheck)
+        Me.iconPanel7.Location = New System.Drawing.Point(3, 325)
+        Me.iconPanel7.Name = "iconPanel7"
+        Me.iconPanel7.Size = New System.Drawing.Size(584, 26)
+        Me.iconPanel7.TabIndex = 6
+        '
+        'iconsNamesGroupCheck
+        '
+        Me.iconsNamesGroupCheck.AutoSize = True
+        Me.iconsNamesGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsNamesGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsNamesGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsNamesGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsNamesGroupCheck.Name = "iconsNamesGroupCheck"
+        Me.iconsNamesGroupCheck.Size = New System.Drawing.Size(74, 17)
+        Me.iconsNamesGroupCheck.TabIndex = 25
+        Me.iconsNamesGroupCheck.Text = "Names   ::"
+        Me.ToolTip1.SetToolTip(Me.iconsNamesGroupCheck, "These options do not disable names entirely, but make it" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "so that you must look d" &
+        "irectly at a person or be very close")
+        Me.iconsNamesGroupCheck.UseVisualStyleBackColor = False
+        '
+        'iconsNameSquadCheck
+        '
+        Me.iconsNameSquadCheck.AutoSize = True
+        Me.iconsNameSquadCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsNameSquadCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsNameSquadCheck.Location = New System.Drawing.Point(83, 5)
+        Me.iconsNameSquadCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsNameSquadCheck.Name = "iconsNameSquadCheck"
+        Me.iconsNameSquadCheck.Size = New System.Drawing.Size(93, 17)
+        Me.iconsNameSquadCheck.TabIndex = 26
+        Me.iconsNameSquadCheck.Text = "Squad Names"
+        Me.iconsNameSquadCheck.UseVisualStyleBackColor = False
+        '
+        'iconsNamePlatoonCheck
+        '
+        Me.iconsNamePlatoonCheck.AutoSize = True
+        Me.iconsNamePlatoonCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsNamePlatoonCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsNamePlatoonCheck.Location = New System.Drawing.Point(182, 5)
+        Me.iconsNamePlatoonCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsNamePlatoonCheck.Name = "iconsNamePlatoonCheck"
+        Me.iconsNamePlatoonCheck.Size = New System.Drawing.Size(98, 17)
+        Me.iconsNamePlatoonCheck.TabIndex = 27
+        Me.iconsNamePlatoonCheck.Text = "Platoon Names"
+        Me.iconsNamePlatoonCheck.UseVisualStyleBackColor = False
+        '
+        'iconsNameFireCheck
+        '
+        Me.iconsNameFireCheck.AutoSize = True
+        Me.iconsNameFireCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsNameFireCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsNameFireCheck.Location = New System.Drawing.Point(286, 5)
+        Me.iconsNameFireCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsNameFireCheck.Name = "iconsNameFireCheck"
+        Me.iconsNameFireCheck.Size = New System.Drawing.Size(102, 17)
+        Me.iconsNameFireCheck.TabIndex = 28
+        Me.iconsNameFireCheck.Text = "Fireteam Names"
+        Me.iconsNameFireCheck.UseVisualStyleBackColor = False
+        '
+        'iconsNameOutfitCheck
+        '
+        Me.iconsNameOutfitCheck.AutoSize = True
+        Me.iconsNameOutfitCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsNameOutfitCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsNameOutfitCheck.Location = New System.Drawing.Point(394, 5)
+        Me.iconsNameOutfitCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsNameOutfitCheck.Name = "iconsNameOutfitCheck"
+        Me.iconsNameOutfitCheck.Size = New System.Drawing.Size(87, 17)
+        Me.iconsNameOutfitCheck.TabIndex = 29
+        Me.iconsNameOutfitCheck.Text = "Outfit Names"
+        Me.iconsNameOutfitCheck.UseVisualStyleBackColor = False
+        '
+        'iconsNameEnemyCheck
+        '
+        Me.iconsNameEnemyCheck.AutoSize = True
+        Me.iconsNameEnemyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsNameEnemyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsNameEnemyCheck.Location = New System.Drawing.Point(487, 5)
+        Me.iconsNameEnemyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsNameEnemyCheck.Name = "iconsNameEnemyCheck"
+        Me.iconsNameEnemyCheck.Size = New System.Drawing.Size(94, 17)
+        Me.iconsNameEnemyCheck.TabIndex = 30
+        Me.iconsNameEnemyCheck.Text = "Enemy Names"
+        Me.iconsNameEnemyCheck.UseVisualStyleBackColor = False
+        '
+        'iconPanel8
+        '
+        Me.iconPanel8.AutoSize = True
+        Me.iconPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.iconPanel8.Controls.Add(Me.iconsDoritoGroupCheck)
+        Me.iconPanel8.Controls.Add(Me.iconsDoritoAllyCheck)
+        Me.iconPanel8.Controls.Add(Me.iconsDoritoEnemyCheck)
+        Me.iconPanel8.Location = New System.Drawing.Point(3, 357)
+        Me.iconPanel8.Name = "iconPanel8"
+        Me.iconPanel8.Size = New System.Drawing.Size(300, 26)
+        Me.iconPanel8.TabIndex = 7
+        '
+        'iconsDoritoGroupCheck
+        '
+        Me.iconsDoritoGroupCheck.AutoSize = True
+        Me.iconsDoritoGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDoritoGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDoritoGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsDoritoGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDoritoGroupCheck.Name = "iconsDoritoGroupCheck"
+        Me.iconsDoritoGroupCheck.Size = New System.Drawing.Size(86, 17)
+        Me.iconsDoritoGroupCheck.TabIndex = 25
+        Me.iconsDoritoGroupCheck.Text = "Chevrons   ::"
+        Me.ToolTip1.SetToolTip(Me.iconsDoritoGroupCheck, "aka Doritos")
+        Me.iconsDoritoGroupCheck.UseVisualStyleBackColor = False
+        '
+        'iconsDoritoAllyCheck
+        '
+        Me.iconsDoritoAllyCheck.AutoSize = True
+        Me.iconsDoritoAllyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDoritoAllyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDoritoAllyCheck.Location = New System.Drawing.Point(95, 5)
+        Me.iconsDoritoAllyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDoritoAllyCheck.Name = "iconsDoritoAllyCheck"
+        Me.iconsDoritoAllyCheck.Size = New System.Drawing.Size(90, 17)
+        Me.iconsDoritoAllyCheck.TabIndex = 26
+        Me.iconsDoritoAllyCheck.Text = "Ally Chevrons"
+        Me.iconsDoritoAllyCheck.UseVisualStyleBackColor = False
+        '
+        'iconsDoritoEnemyCheck
+        '
+        Me.iconsDoritoEnemyCheck.AutoSize = True
+        Me.iconsDoritoEnemyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsDoritoEnemyCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsDoritoEnemyCheck.Location = New System.Drawing.Point(191, 5)
+        Me.iconsDoritoEnemyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsDoritoEnemyCheck.Name = "iconsDoritoEnemyCheck"
+        Me.iconsDoritoEnemyCheck.Size = New System.Drawing.Size(106, 17)
+        Me.iconsDoritoEnemyCheck.TabIndex = 27
+        Me.iconsDoritoEnemyCheck.Text = "Enemy Chevrons"
+        Me.iconsDoritoEnemyCheck.UseVisualStyleBackColor = False
+        '
+        'iconPanel9
+        '
+        Me.iconPanel9.AutoSize = True
+        Me.iconPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.iconPanel9.Controls.Add(Me.iconsMiscGroupCheck)
+        Me.iconPanel9.Controls.Add(Me.iconsSocialCheck)
+        Me.iconPanel9.Location = New System.Drawing.Point(3, 389)
+        Me.iconPanel9.Name = "iconPanel9"
+        Me.iconPanel9.Size = New System.Drawing.Size(159, 26)
+        Me.iconPanel9.TabIndex = 8
+        '
+        'iconsMiscGroupCheck
+        '
+        Me.iconsMiscGroupCheck.AutoSize = True
+        Me.iconsMiscGroupCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsMiscGroupCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsMiscGroupCheck.Location = New System.Drawing.Point(3, 5)
+        Me.iconsMiscGroupCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsMiscGroupCheck.Name = "iconsMiscGroupCheck"
+        Me.iconsMiscGroupCheck.Size = New System.Drawing.Size(63, 17)
+        Me.iconsMiscGroupCheck.TabIndex = 25
+        Me.iconsMiscGroupCheck.Text = "Misc   ::"
+        Me.iconsMiscGroupCheck.UseVisualStyleBackColor = False
+        '
+        'iconsSocialCheck
+        '
+        Me.iconsSocialCheck.AutoSize = True
+        Me.iconsSocialCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.iconsSocialCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.iconsSocialCheck.Location = New System.Drawing.Point(72, 5)
+        Me.iconsSocialCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
+        Me.iconsSocialCheck.Name = "iconsSocialCheck"
+        Me.iconsSocialCheck.Size = New System.Drawing.Size(84, 17)
+        Me.iconsSocialCheck.TabIndex = 26
+        Me.iconsSocialCheck.Text = "Social Icons"
+        Me.ToolTip1.SetToolTip(Me.iconsSocialCheck, "Known to disable squad number icons above players' heads")
+        Me.iconsSocialCheck.UseVisualStyleBackColor = False
         '
         'TabPage5
         '
@@ -3567,41 +3838,39 @@ Partial Class Form1
         '
         Me.chatPanel1.AutoSize = True
         Me.chatPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s1)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s2)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s3)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s4)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s5)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s6)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s7)
-        Me.chatPanel1.Controls.Add(Me.chatPanel1s8)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel6)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel7)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel8)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel9)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel10)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel4)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel11)
+        Me.chatPanel1.Controls.Add(Me.FlowLayoutPanel2)
         Me.chatPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.chatPanel1.Location = New System.Drawing.Point(3, 3)
         Me.chatPanel1.Name = "chatPanel1"
         Me.chatPanel1.Size = New System.Drawing.Size(195, 256)
         Me.chatPanel1.TabIndex = 52
         '
-        'chatPanel1s1
+        'FlowLayoutPanel6
         '
-        Me.chatPanel1s1.AutoSize = True
-        Me.chatPanel1s1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s1.Controls.Add(Me.genVoiceVolBox)
-        Me.chatPanel1s1.Controls.Add(Me.genVoiceCheck)
-        Me.chatPanel1s1.Location = New System.Drawing.Point(3, 3)
-        Me.chatPanel1s1.Name = "chatPanel1s1"
-        Me.chatPanel1s1.Size = New System.Drawing.Size(170, 26)
-        Me.chatPanel1s1.TabIndex = 53
+        Me.FlowLayoutPanel6.AutoSize = True
+        Me.FlowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel6.Controls.Add(Me.genVoiceVolBox)
+        Me.FlowLayoutPanel6.Controls.Add(Me.genVoiceCheck)
+        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
+        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(170, 26)
+        Me.FlowLayoutPanel6.TabIndex = 0
         '
         'genVoiceVolBox
         '
-        Me.genVoiceVolBox.DecimalPlaces = 2
-        Me.genVoiceVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.genVoiceVolBox.Location = New System.Drawing.Point(3, 3)
-        Me.genVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.genVoiceVolBox.Maximum = New Decimal(New Integer() {70, 0, 0, 0})
         Me.genVoiceVolBox.Name = "genVoiceVolBox"
         Me.genVoiceVolBox.Size = New System.Drawing.Size(80, 20)
-        Me.genVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.genVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.genVoiceVolBox.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.genVoiceVolBox, "Affects volume of all voice chat channels" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 50")
         Me.genVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'genVoiceCheck
@@ -3617,16 +3886,16 @@ Partial Class Form1
         Me.genVoiceCheck.Text = "Voice Chat"
         Me.genVoiceCheck.UseVisualStyleBackColor = False
         '
-        'chatPanel1s2
+        'FlowLayoutPanel7
         '
-        Me.chatPanel1s2.AutoSize = True
-        Me.chatPanel1s2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s2.Controls.Add(Me.proxVoiceVolBox)
-        Me.chatPanel1s2.Controls.Add(Me.proxVoiceCheck)
-        Me.chatPanel1s2.Location = New System.Drawing.Point(3, 35)
-        Me.chatPanel1s2.Name = "chatPanel1s2"
-        Me.chatPanel1s2.Size = New System.Drawing.Size(189, 26)
-        Me.chatPanel1s2.TabIndex = 54
+        Me.FlowLayoutPanel7.AutoSize = True
+        Me.FlowLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel7.Controls.Add(Me.proxVoiceVolBox)
+        Me.FlowLayoutPanel7.Controls.Add(Me.proxVoiceCheck)
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(3, 35)
+        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
+        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(189, 26)
+        Me.FlowLayoutPanel7.TabIndex = 2
         '
         'proxVoiceVolBox
         '
@@ -3636,8 +3905,8 @@ Partial Class Form1
         Me.proxVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.proxVoiceVolBox.Name = "proxVoiceVolBox"
         Me.proxVoiceVolBox.Size = New System.Drawing.Size(80, 20)
-        Me.proxVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.proxVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.proxVoiceVolBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.proxVoiceVolBox, "Default = .50")
         Me.proxVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'proxVoiceCheck
@@ -3653,16 +3922,16 @@ Partial Class Form1
         Me.proxVoiceCheck.Text = "Proximity Voice"
         Me.proxVoiceCheck.UseVisualStyleBackColor = False
         '
-        'chatPanel1s3
+        'FlowLayoutPanel8
         '
-        Me.chatPanel1s3.AutoSize = True
-        Me.chatPanel1s3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s3.Controls.Add(Me.squadVoiceVolBox)
-        Me.chatPanel1s3.Controls.Add(Me.squadVoiceCheck)
-        Me.chatPanel1s3.Location = New System.Drawing.Point(3, 67)
-        Me.chatPanel1s3.Name = "chatPanel1s3"
-        Me.chatPanel1s3.Size = New System.Drawing.Size(179, 26)
-        Me.chatPanel1s3.TabIndex = 55
+        Me.FlowLayoutPanel8.AutoSize = True
+        Me.FlowLayoutPanel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel8.Controls.Add(Me.squadVoiceVolBox)
+        Me.FlowLayoutPanel8.Controls.Add(Me.squadVoiceCheck)
+        Me.FlowLayoutPanel8.Location = New System.Drawing.Point(3, 67)
+        Me.FlowLayoutPanel8.Name = "FlowLayoutPanel8"
+        Me.FlowLayoutPanel8.Size = New System.Drawing.Size(179, 26)
+        Me.FlowLayoutPanel8.TabIndex = 3
         '
         'squadVoiceVolBox
         '
@@ -3672,8 +3941,8 @@ Partial Class Form1
         Me.squadVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.squadVoiceVolBox.Name = "squadVoiceVolBox"
         Me.squadVoiceVolBox.Size = New System.Drawing.Size(80, 20)
-        Me.squadVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.squadVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.squadVoiceVolBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.squadVoiceVolBox, "Default = .50")
         Me.squadVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'squadVoiceCheck
@@ -3689,16 +3958,16 @@ Partial Class Form1
         Me.squadVoiceCheck.Text = "Squad Voice"
         Me.squadVoiceCheck.UseVisualStyleBackColor = False
         '
-        'chatPanel1s4
+        'FlowLayoutPanel9
         '
-        Me.chatPanel1s4.AutoSize = True
-        Me.chatPanel1s4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s4.Controls.Add(Me.raidVoiceVolBox)
-        Me.chatPanel1s4.Controls.Add(Me.raidVoiceCheck)
-        Me.chatPanel1s4.Location = New System.Drawing.Point(3, 99)
-        Me.chatPanel1s4.Name = "chatPanel1s4"
-        Me.chatPanel1s4.Size = New System.Drawing.Size(184, 26)
-        Me.chatPanel1s4.TabIndex = 56
+        Me.FlowLayoutPanel9.AutoSize = True
+        Me.FlowLayoutPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel9.Controls.Add(Me.raidVoiceVolBox)
+        Me.FlowLayoutPanel9.Controls.Add(Me.raidVoiceCheck)
+        Me.FlowLayoutPanel9.Location = New System.Drawing.Point(3, 99)
+        Me.FlowLayoutPanel9.Name = "FlowLayoutPanel9"
+        Me.FlowLayoutPanel9.Size = New System.Drawing.Size(184, 26)
+        Me.FlowLayoutPanel9.TabIndex = 4
         '
         'raidVoiceVolBox
         '
@@ -3708,8 +3977,8 @@ Partial Class Form1
         Me.raidVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.raidVoiceVolBox.Name = "raidVoiceVolBox"
         Me.raidVoiceVolBox.Size = New System.Drawing.Size(80, 20)
-        Me.raidVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.raidVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.raidVoiceVolBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.raidVoiceVolBox, "Default = .50")
         Me.raidVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'raidVoiceCheck
@@ -3725,16 +3994,16 @@ Partial Class Form1
         Me.raidVoiceCheck.Text = "Platoon Voice"
         Me.raidVoiceCheck.UseVisualStyleBackColor = False
         '
-        'chatPanel1s5
+        'FlowLayoutPanel10
         '
-        Me.chatPanel1s5.AutoSize = True
-        Me.chatPanel1s5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s5.Controls.Add(Me.outfitVoiceVolBox)
-        Me.chatPanel1s5.Controls.Add(Me.outfitVoiceCheck)
-        Me.chatPanel1s5.Location = New System.Drawing.Point(3, 131)
-        Me.chatPanel1s5.Name = "chatPanel1s5"
-        Me.chatPanel1s5.Size = New System.Drawing.Size(173, 26)
-        Me.chatPanel1s5.TabIndex = 57
+        Me.FlowLayoutPanel10.AutoSize = True
+        Me.FlowLayoutPanel10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel10.Controls.Add(Me.outfitVoiceVolBox)
+        Me.FlowLayoutPanel10.Controls.Add(Me.outfitVoiceCheck)
+        Me.FlowLayoutPanel10.Location = New System.Drawing.Point(3, 131)
+        Me.FlowLayoutPanel10.Name = "FlowLayoutPanel10"
+        Me.FlowLayoutPanel10.Size = New System.Drawing.Size(173, 26)
+        Me.FlowLayoutPanel10.TabIndex = 5
         '
         'outfitVoiceVolBox
         '
@@ -3744,8 +4013,8 @@ Partial Class Form1
         Me.outfitVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.outfitVoiceVolBox.Name = "outfitVoiceVolBox"
         Me.outfitVoiceVolBox.Size = New System.Drawing.Size(80, 20)
-        Me.outfitVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.outfitVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.outfitVoiceVolBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.outfitVoiceVolBox, "Default = .50")
         Me.outfitVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'outfitVoiceCheck
@@ -3761,16 +4030,16 @@ Partial Class Form1
         Me.outfitVoiceCheck.Text = "Outfit Voice"
         Me.outfitVoiceCheck.UseVisualStyleBackColor = False
         '
-        'chatPanel1s6
+        'FlowLayoutPanel4
         '
-        Me.chatPanel1s6.AutoSize = True
-        Me.chatPanel1s6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s6.Controls.Add(Me.leaderVoiceVolBox)
-        Me.chatPanel1s6.Controls.Add(Me.leaderVoiceCheck)
-        Me.chatPanel1s6.Location = New System.Drawing.Point(3, 163)
-        Me.chatPanel1s6.Name = "chatPanel1s6"
-        Me.chatPanel1s6.Size = New System.Drawing.Size(181, 26)
-        Me.chatPanel1s6.TabIndex = 60
+        Me.FlowLayoutPanel4.AutoSize = True
+        Me.FlowLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel4.Controls.Add(Me.leaderVoiceVolBox)
+        Me.FlowLayoutPanel4.Controls.Add(Me.leaderVoiceCheck)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(3, 163)
+        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
+        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(181, 26)
+        Me.FlowLayoutPanel4.TabIndex = 6
         '
         'leaderVoiceVolBox
         '
@@ -3780,8 +4049,8 @@ Partial Class Form1
         Me.leaderVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.leaderVoiceVolBox.Name = "leaderVoiceVolBox"
         Me.leaderVoiceVolBox.Size = New System.Drawing.Size(80, 20)
-        Me.leaderVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.leaderVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.leaderVoiceVolBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.leaderVoiceVolBox, "Default = .50")
         Me.leaderVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'leaderVoiceCheck
@@ -3797,27 +4066,24 @@ Partial Class Form1
         Me.leaderVoiceCheck.Text = "Leader Voice"
         Me.leaderVoiceCheck.UseVisualStyleBackColor = False
         '
-        'chatPanel1s7
+        'FlowLayoutPanel11
         '
-        Me.chatPanel1s7.AutoSize = True
-        Me.chatPanel1s7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s7.Controls.Add(Me.transmitVoiceVolBox)
-        Me.chatPanel1s7.Controls.Add(Me.Label68)
-        Me.chatPanel1s7.Location = New System.Drawing.Point(3, 195)
-        Me.chatPanel1s7.Name = "chatPanel1s7"
-        Me.chatPanel1s7.Size = New System.Drawing.Size(161, 26)
-        Me.chatPanel1s7.TabIndex = 58
+        Me.FlowLayoutPanel11.AutoSize = True
+        Me.FlowLayoutPanel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel11.Controls.Add(Me.transmitVoiceVolBox)
+        Me.FlowLayoutPanel11.Controls.Add(Me.Label68)
+        Me.FlowLayoutPanel11.Location = New System.Drawing.Point(3, 195)
+        Me.FlowLayoutPanel11.Name = "FlowLayoutPanel11"
+        Me.FlowLayoutPanel11.Size = New System.Drawing.Size(177, 26)
+        Me.FlowLayoutPanel11.TabIndex = 7
         '
         'transmitVoiceVolBox
         '
-        Me.transmitVoiceVolBox.DecimalPlaces = 2
-        Me.transmitVoiceVolBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.transmitVoiceVolBox.Location = New System.Drawing.Point(3, 3)
-        Me.transmitVoiceVolBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.transmitVoiceVolBox.Name = "transmitVoiceVolBox"
         Me.transmitVoiceVolBox.Size = New System.Drawing.Size(80, 20)
         Me.transmitVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.transmitVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.ToolTip1.SetToolTip(Me.transmitVoiceVolBox, "Default = 62")
         Me.transmitVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label68
@@ -3829,21 +4095,21 @@ Partial Class Form1
         Me.Label68.Location = New System.Drawing.Point(89, 6)
         Me.Label68.Margin = New System.Windows.Forms.Padding(3, 6, 3, 0)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(69, 13)
+        Me.Label68.Size = New System.Drawing.Size(85, 13)
         Me.Label68.TabIndex = 60
-        Me.Label68.Text = "Input Volume"
+        Me.Label68.Text = "Transmit Volume"
         Me.Label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'chatPanel1s8
+        'FlowLayoutPanel2
         '
-        Me.chatPanel1s8.AutoSize = True
-        Me.chatPanel1s8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.chatPanel1s8.Controls.Add(Me.duckVoiceVolBox)
-        Me.chatPanel1s8.Controls.Add(Me.Label69)
-        Me.chatPanel1s8.Location = New System.Drawing.Point(3, 227)
-        Me.chatPanel1s8.Name = "chatPanel1s8"
-        Me.chatPanel1s8.Size = New System.Drawing.Size(178, 26)
-        Me.chatPanel1s8.TabIndex = 59
+        Me.FlowLayoutPanel2.AutoSize = True
+        Me.FlowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel2.Controls.Add(Me.duckVoiceVolBox)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Label69)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 227)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(139, 26)
+        Me.FlowLayoutPanel2.TabIndex = 8
         '
         'duckVoiceVolBox
         '
@@ -3854,7 +4120,8 @@ Partial Class Form1
         Me.duckVoiceVolBox.Name = "duckVoiceVolBox"
         Me.duckVoiceVolBox.Size = New System.Drawing.Size(80, 20)
         Me.duckVoiceVolBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.duckVoiceVolBox, "Affects volume of all sounds from the game" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default = 1.00")
+        Me.ToolTip1.SetToolTip(Me.duckVoiceVolBox, "Reduces other game sounds by this" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "percentage when voice chat is active" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default " &
+        "= .50")
         Me.duckVoiceVolBox.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label69
@@ -3866,9 +4133,9 @@ Partial Class Form1
         Me.Label69.Location = New System.Drawing.Point(89, 6)
         Me.Label69.Margin = New System.Windows.Forms.Padding(3, 6, 3, 0)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(86, 13)
+        Me.Label69.Size = New System.Drawing.Size(47, 13)
         Me.Label69.TabIndex = 61
-        Me.Label69.Text = "Ducking Amount"
+        Me.Label69.Text = "Ducking"
         Me.Label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'chatPanel2
@@ -3912,7 +4179,7 @@ Partial Class Form1
         Me.yellTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.yellTextCheck.Name = "yellTextCheck"
         Me.yellTextCheck.Size = New System.Drawing.Size(43, 17)
-        Me.yellTextCheck.TabIndex = 22
+        Me.yellTextCheck.TabIndex = 1
         Me.yellTextCheck.Text = "Yell"
         Me.yellTextCheck.UseVisualStyleBackColor = False
         '
@@ -3925,7 +4192,7 @@ Partial Class Form1
         Me.fireteamTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.fireteamTextCheck.Name = "fireteamTextCheck"
         Me.fireteamTextCheck.Size = New System.Drawing.Size(66, 17)
-        Me.fireteamTextCheck.TabIndex = 29
+        Me.fireteamTextCheck.TabIndex = 2
         Me.fireteamTextCheck.Text = "Fireteam"
         Me.fireteamTextCheck.UseVisualStyleBackColor = False
         '
@@ -3938,7 +4205,7 @@ Partial Class Form1
         Me.squadTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.squadTextCheck.Name = "squadTextCheck"
         Me.squadTextCheck.Size = New System.Drawing.Size(57, 17)
-        Me.squadTextCheck.TabIndex = 23
+        Me.squadTextCheck.TabIndex = 3
         Me.squadTextCheck.Text = "Squad"
         Me.squadTextCheck.UseVisualStyleBackColor = False
         '
@@ -3951,7 +4218,7 @@ Partial Class Form1
         Me.raidTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.raidTextCheck.Name = "raidTextCheck"
         Me.raidTextCheck.Size = New System.Drawing.Size(62, 17)
-        Me.raidTextCheck.TabIndex = 24
+        Me.raidTextCheck.TabIndex = 4
         Me.raidTextCheck.Text = "Platoon"
         Me.raidTextCheck.UseVisualStyleBackColor = False
         '
@@ -3964,7 +4231,7 @@ Partial Class Form1
         Me.outfitTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.outfitTextCheck.Name = "outfitTextCheck"
         Me.outfitTextCheck.Size = New System.Drawing.Size(51, 17)
-        Me.outfitTextCheck.TabIndex = 25
+        Me.outfitTextCheck.TabIndex = 5
         Me.outfitTextCheck.Text = "Outfit"
         Me.outfitTextCheck.UseVisualStyleBackColor = False
         '
@@ -3977,7 +4244,7 @@ Partial Class Form1
         Me.leaderTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.leaderTextCheck.Name = "leaderTextCheck"
         Me.leaderTextCheck.Size = New System.Drawing.Size(59, 17)
-        Me.leaderTextCheck.TabIndex = 32
+        Me.leaderTextCheck.TabIndex = 6
         Me.leaderTextCheck.Text = "Leader"
         Me.leaderTextCheck.UseVisualStyleBackColor = False
         '
@@ -3990,7 +4257,7 @@ Partial Class Form1
         Me.proxTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.proxTextCheck.Name = "proxTextCheck"
         Me.proxTextCheck.Size = New System.Drawing.Size(67, 17)
-        Me.proxTextCheck.TabIndex = 26
+        Me.proxTextCheck.TabIndex = 7
         Me.proxTextCheck.Text = "Proximity"
         Me.proxTextCheck.UseVisualStyleBackColor = False
         '
@@ -4003,7 +4270,7 @@ Partial Class Form1
         Me.regionTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.regionTextCheck.Name = "regionTextCheck"
         Me.regionTextCheck.Size = New System.Drawing.Size(60, 17)
-        Me.regionTextCheck.TabIndex = 27
+        Me.regionTextCheck.TabIndex = 8
         Me.regionTextCheck.Text = "Region"
         Me.regionTextCheck.UseVisualStyleBackColor = False
         '
@@ -4016,7 +4283,7 @@ Partial Class Form1
         Me.mentorTextCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.mentorTextCheck.Name = "mentorTextCheck"
         Me.mentorTextCheck.Size = New System.Drawing.Size(59, 17)
-        Me.mentorTextCheck.TabIndex = 28
+        Me.mentorTextCheck.TabIndex = 9
         Me.mentorTextCheck.Text = "Mentor"
         Me.mentorTextCheck.UseVisualStyleBackColor = False
         '
@@ -4024,6 +4291,15 @@ Partial Class Form1
         '
         Me.TabPage3.AutoScroll = True
         Me.TabPage3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage3.Controls.Add(Me.commandTextBox)
+        Me.TabPage3.Controls.Add(Me.commandAutoCheck)
+        Me.TabPage3.Controls.Add(Me.Label38)
+        Me.TabPage3.Controls.Add(Me.selectedDatPath)
+        Me.TabPage3.Controls.Add(Me.localeDatButton)
+        Me.TabPage3.Controls.Add(Me.localeReplaceCheck)
+        Me.TabPage3.Controls.Add(Me.selectedDirPath)
+        Me.TabPage3.Controls.Add(Me.localeDirButton)
+        Me.TabPage3.Controls.Add(Me.fontAutoCheck2)
         Me.TabPage3.Controls.Add(Me.Label57)
         Me.TabPage3.Controls.Add(Me.fontAutoCheck)
         Me.TabPage3.Controls.Add(Me.selectedFontPath)
@@ -4032,18 +4308,98 @@ Partial Class Form1
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(739, 537)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Font"
+        Me.TabPage3.Text = "Advanced"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.White
+        Me.Label38.Location = New System.Drawing.Point(8, 117)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(323, 16)
+        Me.Label38.TabIndex = 71
+        Me.Label38.Text = "Please ensure English language selected in launcher"
+        Me.Label38.Visible = False
+        '
+        'selectedDatPath
+        '
+        Me.selectedDatPath.AutoSize = True
+        Me.selectedDatPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.selectedDatPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.selectedDatPath.ForeColor = System.Drawing.SystemColors.Control
+        Me.selectedDatPath.Location = New System.Drawing.Point(8, 217)
+        Me.selectedDatPath.Name = "selectedDatPath"
+        Me.selectedDatPath.Size = New System.Drawing.Size(0, 17)
+        Me.selectedDatPath.TabIndex = 70
+        Me.selectedDatPath.Visible = False
+        '
+        'localeDatButton
+        '
+        Me.localeDatButton.Location = New System.Drawing.Point(8, 191)
+        Me.localeDatButton.Name = "localeDatButton"
+        Me.localeDatButton.Size = New System.Drawing.Size(75, 23)
+        Me.localeDatButton.TabIndex = 7
+        Me.localeDatButton.Text = "Select Dat"
+        Me.localeDatButton.UseVisualStyleBackColor = True
+        Me.localeDatButton.Visible = False
+        '
+        'localeReplaceCheck
+        '
+        Me.localeReplaceCheck.AutoSize = True
+        Me.localeReplaceCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.localeReplaceCheck.Location = New System.Drawing.Point(8, 97)
+        Me.localeReplaceCheck.Name = "localeReplaceCheck"
+        Me.localeReplaceCheck.Size = New System.Drawing.Size(166, 17)
+        Me.localeReplaceCheck.TabIndex = 5
+        Me.localeReplaceCheck.Text = "Automatically Replace Locale"
+        Me.localeReplaceCheck.UseVisualStyleBackColor = True
+        '
+        'selectedDirPath
+        '
+        Me.selectedDirPath.AutoSize = True
+        Me.selectedDirPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.selectedDirPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.selectedDirPath.ForeColor = System.Drawing.SystemColors.Control
+        Me.selectedDirPath.Location = New System.Drawing.Point(8, 171)
+        Me.selectedDirPath.Name = "selectedDirPath"
+        Me.selectedDirPath.Size = New System.Drawing.Size(0, 17)
+        Me.selectedDirPath.TabIndex = 68
+        Me.selectedDirPath.Visible = False
+        '
+        'localeDirButton
+        '
+        Me.localeDirButton.Location = New System.Drawing.Point(8, 145)
+        Me.localeDirButton.Name = "localeDirButton"
+        Me.localeDirButton.Size = New System.Drawing.Size(75, 23)
+        Me.localeDirButton.TabIndex = 6
+        Me.localeDirButton.Text = "Select Dir"
+        Me.localeDirButton.UseVisualStyleBackColor = True
+        Me.localeDirButton.Visible = False
+        '
+        'fontAutoCheck2
+        '
+        Me.fontAutoCheck2.AutoSize = True
+        Me.fontAutoCheck2.ForeColor = System.Drawing.SystemColors.Control
+        Me.fontAutoCheck2.Location = New System.Drawing.Point(169, 17)
+        Me.fontAutoCheck2.Name = "fontAutoCheck2"
+        Me.fontAutoCheck2.Size = New System.Drawing.Size(138, 17)
+        Me.fontAutoCheck2.TabIndex = 3
+        Me.fontAutoCheck2.Text = "Also Replace Chat Font"
+        Me.fontAutoCheck2.UseVisualStyleBackColor = True
+        Me.fontAutoCheck2.Visible = False
         '
         'Label57
         '
         Me.Label57.AutoSize = True
         Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label57.ForeColor = System.Drawing.Color.White
-        Me.Label57.Location = New System.Drawing.Point(5, 112)
+        Me.Label57.Location = New System.Drawing.Point(313, 342)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(418, 160)
         Me.Label57.TabIndex = 64
         Me.Label57.Text = resources.GetString("Label57.Text")
+        Me.Label57.Visible = False
         '
         'fontAutoCheck
         '
@@ -4066,15 +4422,17 @@ Partial Class Form1
         Me.selectedFontPath.Name = "selectedFontPath"
         Me.selectedFontPath.Size = New System.Drawing.Size(0, 17)
         Me.selectedFontPath.TabIndex = 63
+        Me.selectedFontPath.Visible = False
         '
         'fontSelectButton
         '
         Me.fontSelectButton.Location = New System.Drawing.Point(8, 40)
         Me.fontSelectButton.Name = "fontSelectButton"
         Me.fontSelectButton.Size = New System.Drawing.Size(75, 23)
-        Me.fontSelectButton.TabIndex = 3
+        Me.fontSelectButton.TabIndex = 4
         Me.fontSelectButton.Text = "Select Font"
         Me.fontSelectButton.UseVisualStyleBackColor = True
+        Me.fontSelectButton.Visible = False
         '
         'MenuStrip1
         '
@@ -4146,6 +4504,34 @@ Partial Class Form1
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(189, 17)
         Me.ToolStripStatusLabel2.Text = "github/PSBlockx/iniEdit (B) Blockx"
+        '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerReportsProgress = True
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
+        '
+        'commandAutoCheck
+        '
+        Me.commandAutoCheck.AutoSize = True
+        Me.commandAutoCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.commandAutoCheck.Location = New System.Drawing.Point(8, 237)
+        Me.commandAutoCheck.Name = "commandAutoCheck"
+        Me.commandAutoCheck.Size = New System.Drawing.Size(216, 17)
+        Me.commandAutoCheck.TabIndex = 8
+        Me.commandAutoCheck.Text = "Automatically Replace Command Queue"
+        Me.commandAutoCheck.UseVisualStyleBackColor = True
+        '
+        'commandTextBox
+        '
+        Me.commandTextBox.AcceptsReturn = True
+        Me.commandTextBox.Location = New System.Drawing.Point(11, 261)
+        Me.commandTextBox.MaxLength = 250
+        Me.commandTextBox.Multiline = True
+        Me.commandTextBox.Name = "commandTextBox"
+        Me.commandTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.commandTextBox.Size = New System.Drawing.Size(296, 110)
+        Me.commandTextBox.TabIndex = 9
+        Me.commandTextBox.Visible = False
         '
         'Form1
         '
@@ -4228,18 +4614,18 @@ Partial Class Form1
         Me.intPanel3.PerformLayout()
         Me.playerColorPanel.ResumeLayout(False)
         Me.playerColorPanel.PerformLayout()
-        Me.playerColorPanelss1.ResumeLayout(False)
-        Me.playerColorPanelss1.PerformLayout()
+        Me.FlowLayoutPanel18.ResumeLayout(False)
+        Me.FlowLayoutPanel18.PerformLayout()
         Me.playerColorPanelButtons.ResumeLayout(False)
         Me.terrColorPanel.ResumeLayout(False)
         Me.terrColorPanel.PerformLayout()
-        Me.terrColorPanels1.ResumeLayout(False)
-        Me.terrColorPanels1.PerformLayout()
+        Me.FlowLayoutPanel20.ResumeLayout(False)
+        Me.FlowLayoutPanel20.PerformLayout()
         Me.terrColorPanelButtons.ResumeLayout(False)
         Me.facColorPanel.ResumeLayout(False)
         Me.facColorPanel.PerformLayout()
-        Me.facColorPanels1.ResumeLayout(False)
-        Me.facColorPanels1.PerformLayout()
+        Me.FlowLayoutPanel21.ResumeLayout(False)
+        Me.FlowLayoutPanel21.PerformLayout()
         Me.facColorPanelButtons.ResumeLayout(False)
         Me.intPanel1.ResumeLayout(False)
         Me.intPanel1.PerformLayout()
@@ -4257,6 +4643,14 @@ Partial Class Form1
         Me.iconPanel4.PerformLayout()
         Me.iconPanel5.ResumeLayout(False)
         Me.iconPanel5.PerformLayout()
+        Me.iconPanel6.ResumeLayout(False)
+        Me.iconPanel6.PerformLayout()
+        Me.iconPanel7.ResumeLayout(False)
+        Me.iconPanel7.PerformLayout()
+        Me.iconPanel8.ResumeLayout(False)
+        Me.iconPanel8.PerformLayout()
+        Me.iconPanel9.ResumeLayout(False)
+        Me.iconPanel9.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
         Me.soundPanel0.ResumeLayout(False)
@@ -4276,29 +4670,29 @@ Partial Class Form1
         Me.chatPanel0.PerformLayout()
         Me.chatPanel1.ResumeLayout(False)
         Me.chatPanel1.PerformLayout()
-        Me.chatPanel1s1.ResumeLayout(False)
-        Me.chatPanel1s1.PerformLayout()
+        Me.FlowLayoutPanel6.ResumeLayout(False)
+        Me.FlowLayoutPanel6.PerformLayout()
         CType(Me.genVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s2.ResumeLayout(False)
-        Me.chatPanel1s2.PerformLayout()
+        Me.FlowLayoutPanel7.ResumeLayout(False)
+        Me.FlowLayoutPanel7.PerformLayout()
         CType(Me.proxVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s3.ResumeLayout(False)
-        Me.chatPanel1s3.PerformLayout()
+        Me.FlowLayoutPanel8.ResumeLayout(False)
+        Me.FlowLayoutPanel8.PerformLayout()
         CType(Me.squadVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s4.ResumeLayout(False)
-        Me.chatPanel1s4.PerformLayout()
+        Me.FlowLayoutPanel9.ResumeLayout(False)
+        Me.FlowLayoutPanel9.PerformLayout()
         CType(Me.raidVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s5.ResumeLayout(False)
-        Me.chatPanel1s5.PerformLayout()
+        Me.FlowLayoutPanel10.ResumeLayout(False)
+        Me.FlowLayoutPanel10.PerformLayout()
         CType(Me.outfitVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s6.ResumeLayout(False)
-        Me.chatPanel1s6.PerformLayout()
+        Me.FlowLayoutPanel4.ResumeLayout(False)
+        Me.FlowLayoutPanel4.PerformLayout()
         CType(Me.leaderVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s7.ResumeLayout(False)
-        Me.chatPanel1s7.PerformLayout()
+        Me.FlowLayoutPanel11.ResumeLayout(False)
+        Me.FlowLayoutPanel11.PerformLayout()
         CType(Me.transmitVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.chatPanel1s8.ResumeLayout(False)
-        Me.chatPanel1s8.PerformLayout()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
         CType(Me.duckVoiceVolBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.chatPanel2.ResumeLayout(False)
         Me.chatPanel2.PerformLayout()
@@ -4419,7 +4813,6 @@ Partial Class Form1
     Friend WithEvents LabelScopSens As Label
     Friend WithEvents LabelAdsSens As Label
     Friend WithEvents LabelHipSens As Label
-    Friend WithEvents fontAutoCheck As CheckBox
     Friend WithEvents Label57 As Label
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents intPanel2 As FlowLayoutPanel
@@ -4460,23 +4853,40 @@ Partial Class Form1
     Friend WithEvents NCterrColorButton As Button
     Friend WithEvents TRterrColorButton As Button
     Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents soundPanel1 As FlowLayoutPanel
+    Friend WithEvents Label63 As Label
+    Friend WithEvents masVolBox As NumericUpDown
+    Friend WithEvents Label64 As Label
+    Friend WithEvents gamVolBox As NumericUpDown
+    Friend WithEvents Label65 As Label
+    Friend WithEvents musVolBox As NumericUpDown
+    Friend WithEvents Label67 As Label
+    Friend WithEvents diaVolBox As NumericUpDown
+    Friend WithEvents Label75 As Label
+    Friend WithEvents maxVoiceBox As NumericUpDown
+    Friend WithEvents soundPanel2 As FlowLayoutPanel
+    Friend WithEvents hitIndCheck As CheckBox
+    Friend WithEvents lowAmmCheck As CheckBox
+    Friend WithEvents vehChatterCheck As CheckBox
+    Friend WithEvents idleMusicCheck As CheckBox
     Friend WithEvents TabPage6 As TabPage
     Friend WithEvents chatPanel1 As FlowLayoutPanel
-    Friend WithEvents chatPanel1s1 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
     Friend WithEvents genVoiceVolBox As NumericUpDown
     Friend WithEvents genVoiceCheck As CheckBox
-    Friend WithEvents chatPanel1s2 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel7 As FlowLayoutPanel
     Friend WithEvents proxVoiceVolBox As NumericUpDown
     Friend WithEvents proxVoiceCheck As CheckBox
-    Friend WithEvents chatPanel1s3 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel8 As FlowLayoutPanel
     Friend WithEvents squadVoiceVolBox As NumericUpDown
     Friend WithEvents squadVoiceCheck As CheckBox
+    Friend WithEvents FlowLayoutPanel9 As FlowLayoutPanel
     Friend WithEvents raidVoiceVolBox As NumericUpDown
     Friend WithEvents raidVoiceCheck As CheckBox
-    Friend WithEvents chatPanel1s5 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel10 As FlowLayoutPanel
     Friend WithEvents outfitVoiceVolBox As NumericUpDown
     Friend WithEvents outfitVoiceCheck As CheckBox
-    Friend WithEvents chatPanel1s7 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel11 As FlowLayoutPanel
     Friend WithEvents transmitVoiceVolBox As NumericUpDown
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
@@ -4484,10 +4894,10 @@ Partial Class Form1
     Friend WithEvents saveButton As ToolStripMenuItem
     Friend WithEvents saveToButton As ToolStripMenuItem
     Friend WithEvents Label68 As Label
-    Friend WithEvents chatPanel1s8 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents duckVoiceVolBox As NumericUpDown
     Friend WithEvents Label69 As Label
-    Friend WithEvents chatPanel1s6 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
     Friend WithEvents leaderVoiceVolBox As NumericUpDown
     Friend WithEvents leaderVoiceCheck As CheckBox
     Friend WithEvents chatPanel2 As FlowLayoutPanel
@@ -4504,11 +4914,12 @@ Partial Class Form1
     Friend WithEvents leaderTextCheck As CheckBox
     Friend WithEvents intPanel0 As FlowLayoutPanel
     Friend WithEvents playerColorPanel As FlowLayoutPanel
-    Friend WithEvents playerColorPanelss1 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel18 As FlowLayoutPanel
     Friend WithEvents terrColorPanel As FlowLayoutPanel
-    Friend WithEvents terrColorPanels1 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel20 As FlowLayoutPanel
     Friend WithEvents facColorPanel As FlowLayoutPanel
-    Friend WithEvents facColorPanels1 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel21 As FlowLayoutPanel
+    Friend WithEvents soundPanel0 As FlowLayoutPanel
     Friend WithEvents chatPanel0 As FlowLayoutPanel
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents StatusStrip1 As StatusStrip
@@ -4594,22 +5005,33 @@ Partial Class Form1
     Friend WithEvents Label76 As Label
     Friend WithEvents FSRSharpBox As NumericUpDown
     Friend WithEvents iconsWorldGroupCheck As CheckBox
-    Friend WithEvents soundPanel0 As FlowLayoutPanel
-    Friend WithEvents soundPanel1 As FlowLayoutPanel
-    Friend WithEvents Label63 As Label
-    Friend WithEvents masVolBox As NumericUpDown
-    Friend WithEvents Label64 As Label
-    Friend WithEvents gamVolBox As NumericUpDown
-    Friend WithEvents Label65 As Label
-    Friend WithEvents musVolBox As NumericUpDown
-    Friend WithEvents Label67 As Label
-    Friend WithEvents diaVolBox As NumericUpDown
-    Friend WithEvents Label75 As Label
-    Friend WithEvents maxVoiceBox As NumericUpDown
-    Friend WithEvents soundPanel2 As FlowLayoutPanel
-    Friend WithEvents hitIndCheck As CheckBox
-    Friend WithEvents lowAmmCheck As CheckBox
-    Friend WithEvents vehChatterCheck As CheckBox
-    Friend WithEvents idleMusicCheck As CheckBox
-    Friend WithEvents chatPanel1s4 As FlowLayoutPanel
+    Friend WithEvents iconPanel6 As FlowLayoutPanel
+    Friend WithEvents iconsTitlesGroupCheck As CheckBox
+    Friend WithEvents iconsTitleAllyCheck As CheckBox
+    Friend WithEvents iconsTitleEnemyCheck As CheckBox
+    Friend WithEvents iconPanel7 As FlowLayoutPanel
+    Friend WithEvents iconsNamesGroupCheck As CheckBox
+    Friend WithEvents iconsNameSquadCheck As CheckBox
+    Friend WithEvents iconsNamePlatoonCheck As CheckBox
+    Friend WithEvents iconsNameFireCheck As CheckBox
+    Friend WithEvents iconPanel8 As FlowLayoutPanel
+    Friend WithEvents iconsDoritoGroupCheck As CheckBox
+    Friend WithEvents iconsDoritoAllyCheck As CheckBox
+    Friend WithEvents iconsDoritoEnemyCheck As CheckBox
+    Friend WithEvents iconPanel9 As FlowLayoutPanel
+    Friend WithEvents iconsMiscGroupCheck As CheckBox
+    Friend WithEvents iconsSocialCheck As CheckBox
+    Friend WithEvents iconsNameOutfitCheck As CheckBox
+    Friend WithEvents iconsNameEnemyCheck As CheckBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents fontAutoCheck As CheckBox
+    Friend WithEvents fontAutoCheck2 As CheckBox
+    Friend WithEvents localeReplaceCheck As CheckBox
+    Friend WithEvents selectedDirPath As Label
+    Friend WithEvents localeDirButton As Button
+    Friend WithEvents Label38 As Label
+    Friend WithEvents selectedDatPath As Label
+    Friend WithEvents localeDatButton As Button
+    Friend WithEvents commandAutoCheck As CheckBox
+    Friend WithEvents commandTextBox As TextBox
 End Class
