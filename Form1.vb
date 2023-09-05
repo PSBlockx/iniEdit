@@ -63,6 +63,7 @@ Public Class Form1
         Else
             Dim inistart As String = "[iniEdit]"
             File.WriteAllText(iniPath, inistart)
+            iniini = File.ReadAllLines(iniPath).ToList
         End If
         readAllOptions()
         sensTypeDrop.SelectedIndex = 0
@@ -703,8 +704,11 @@ Public Class Form1
         Dim saveDialog As New SaveFileDialog()
         saveDialog.DefaultExt = "ini"
         saveDialog.AddExtension = True
-        saveDialog.InitialDirectory = String.Concat(CurDir, "\Presets")
-        Console.WriteLine(String.Concat(CurDir, "\Presets"))
+        If Not Directory.Exists(String.Concat(CurDir, "\iniConfigs")) Then
+            Directory.CreateDirectory(String.Concat(CurDir, "\iniConfigs"))
+        End If
+        saveDialog.InitialDirectory = String.Concat(CurDir, "\iniConfigs")
+        Console.WriteLine(String.Concat(CurDir, "\iniConfigs"))
         saveDialog.Filter = "All files (*.*)|*.*"
         If saveDialog.ShowDialog() = DialogResult.OK Then
             File.WriteAllLines(saveDialog.FileName, curini)
