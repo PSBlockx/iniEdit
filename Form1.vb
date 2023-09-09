@@ -1,16 +1,6 @@
-﻿Imports System
-Imports System.Diagnostics.Eventing.Reader
+﻿Imports System.Diagnostics.Eventing.Reader
 Imports System.IO
-Imports Microsoft.Win32.TaskScheduler
-Imports System.Text.RegularExpressions
-Imports System.Security.Cryptography.X509Certificates
-Imports System.Runtime.Remoting.Messaging
 Imports System.ComponentModel
-Imports System.Windows.Forms.VisualStyles
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
-Imports System.Linq.Expressions
-Imports System.ComponentModel.Design
-Imports System.Threading
 
 Public Class Form1
     Public Class Lists
