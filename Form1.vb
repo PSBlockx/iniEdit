@@ -9,7 +9,7 @@ Public Class Form1
         Public Shared Sound As New List(Of String)({"[Sound]", "Master=", "Music=", "Game=", "Dialog=", "UI=", "HitIndicator=", "LowAmmoIndicator=", "VehicleChatter=", "IdleMusic=", "MaxVoices=", "UseFloat32Output=", "ExclusiveMode=", "UseHighQualityReverb="})
         Public Shared Terrain As New List(Of String)({"[Terrain]", "RenderFlora="})
         Public Shared General As New List(Of String)({"[General]", "AutoDetectPerformanceSettings=", "MouseSensitivity=", "ScopedMouseSensitivity=", "ADSMouseSensitivity=", "VehicleMouseSensitivity=", "FlightMouseSensitivity=", "JoystickSensitivity=", "JoystickDeadzone=", "InvertVerticalLook=", "InvertVerticalFly=", "InvertTankSteering=", "MouseRawInput=", "MouseSmoothing=", "ToggleCrouch=", "ZoomToggle=", "SprintToggle=", "SprintLegacyToggleMode=", "DrawHud=", "ReduceInputLag=", "FixedMinimap=", "Profanity=", "GamepadSmoothing=", "GamepadInvertLook=", "GamepadInvertFlight=", "GamepadEasyFlight=", "DecloakOnFire=", "AbilityQueueSeconds=", "VehicleGunnerMouseSensitivity="})
-        Public Shared UI As New List(Of String)({"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 1234, "PlatoonSquadColor1=", 1234, "PlatoonSquadColor2=", 1234, "PlatoonSquadColor3=", 1234, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax=", "HiddenHUDIndicators=", "HideReticule=", "HudChatOpacity=", "ConstructionFavorites="})
+        Public Shared UI As New List(Of String)({"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 3781962, "PlatoonSquadColor1=", 10707465, "PlatoonSquadColor2=", 9578383, "PlatoonSquadColor3=", 65793, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax=", "HiddenHUDIndicators=", "HideReticule=", "HudChatOpacity=", "ConstructionFavorites="})
         Public Shared AutoRefuse As New List(Of String)({"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="})
         Public Shared ChatChannels As New List(Of String)({"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="})
         Public Shared Voice As New List(Of String)({"[Voice]", "Enable=", "ReceiveVolume=", "OutfitVolume=", "SquadVolume=", "RaidVolume=", "ProximityVolume=", "MicrophoneVolume=", "Ducking=", "EchoEnabled=", "ProximityEnabled=", "FactionEnabled=", "GroupEnabled=", "GroupLeaderEnabled=", "RaidEnabled=", "GuildEnabled=", "RadioEnabled=", "CBEnabled=", "CustomEnabled=", "SubGroupEnabled=", "MuteInactiveChannels=", "PushToTalk="})
@@ -62,11 +62,11 @@ Public Class Form1
         BackgroundWorker1.RunWorkerAsync()
     End Sub
 #Region "UpdatesAndGets"
-    Function UpdateVal(ByVal optionName As String, ByVal newVal As String)
+    Overloads Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object)
         'Reads the ini line by line for the specified option
         'If option isn't found, run through option arrays for option and insert a line for the correct category
         If Not doneLoading Then
-            Exit Function
+            Exit Sub
         End If
         Dim found As Boolean = False
         For index As Integer = 0 To curini.Count - 1
@@ -83,35 +83,17 @@ Public Class Form1
                         If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
                             curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
                             Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Function
+                            Exit Sub
                         End If
                     Next
                 End If
             Next
         End If
-    End Function
-    Function UpdateValMyIni(ByVal optionName As String, ByVal newVal As String)
-        If Not doneLoading Then
-            Exit Function
-        End If
-        Dim found As Boolean = False
-        For index As Integer = 0 To iniini.Count - 1
-            If iniini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                iniini(index) = optionName & newVal
-                Console.WriteLine($"Updated {optionName} to {newVal}")
-            End If
-        Next
-        If Not found Then
-            iniini.Add(optionName & newVal)
-            Console.WriteLine($"Added {optionName} with val {newVal}")
-            Exit Function
-        End If
-    End Function
-    Function UpdateValSpecific(ByVal optionName As String, ByVal newVal As String, ByVal optionGroup As String)
+    End Sub
+    Overloads Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object, ByVal optionGroup As String)
         'Voice options are stupid
         If Not doneLoading Then
-            Exit Function
+            Exit Sub
         End If
         Dim found As Boolean = False
         Dim optionIndexes = New ArrayList()
@@ -139,10 +121,10 @@ Public Class Form1
             curini.Insert(curini(optionGroupIndex + 1), optionName & newVal)
             Console.WriteLine($"Added {optionName} with val {newVal}")
         End If
-    End Function
-    Function UpdateValContains(ByVal optionName As String, ByVal newVal As String, ByVal addremove As Boolean)
+    End Sub
+    Overloads Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object, ByVal addremove As Boolean)
         If Not doneLoading Then
-            Exit Function
+            Exit Sub
         End If
         Dim found As Boolean = False
         For index As Integer = 0 To curini.Count - 1
@@ -152,10 +134,10 @@ Public Class Form1
                 lineList.RemoveAll(Function(str) String.IsNullOrEmpty(str))
                 If lineList.Contains(newVal) And addremove = True Then
                     Console.WriteLine("option already in list")
-                    Exit Function
+                    Exit Sub
                 ElseIf Not lineList.Contains(newVal) And addremove = False Then
                     Console.WriteLine("option already not in list")
-                    Exit Function
+                    Exit Sub
                 ElseIf lineList.Contains(newVal) And addremove = False Then
                     Console.WriteLine("option removed from list")
                     lineList.Remove(newVal)
@@ -185,11 +167,29 @@ Public Class Form1
                         If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
                             curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
                             Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Function
+                            Exit Sub
                         End If
                     Next
                 End If
             Next
+        End If
+    End Sub
+    Function UpdateValMyIni(ByVal optionName As String, ByVal newVal As Object)
+        If Not doneLoading Then
+            Exit Function
+        End If
+        Dim found As Boolean = False
+        For index As Integer = 0 To iniini.Count - 1
+            If iniini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                found = True
+                iniini(index) = optionName & newVal
+                Console.WriteLine($"Updated {optionName} to {newVal}")
+            End If
+        Next
+        If Not found Then
+            iniini.Add(optionName & newVal)
+            Console.WriteLine($"Added {optionName} with val {newVal}")
+            Exit Function
         End If
     End Function
     Function GetState(ByVal optionName As String)
@@ -1250,19 +1250,19 @@ Public Class Form1
         UpdateVal("ReceiveVolume=", genVoiceVolBox.Value)
     End Sub
     Private Sub proxVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles proxVoiceVolBox.TextChanged
-        UpdateValSpecific("ProximityVolume=", proxVoiceVolBox.Value, "[VoiceChat]")
+        UpdateVal("ProximityVolume=", proxVoiceVolBox.Value, "[VoiceChat]")
     End Sub
     Private Sub squadVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles squadVoiceVolBox.TextChanged
-        UpdateValSpecific("GroupVolume=", squadVoiceVolBox.Value, "[VoiceChat]")
+        UpdateVal("GroupVolume=", squadVoiceVolBox.Value, "[VoiceChat]")
     End Sub
     Private Sub raidVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles raidVoiceVolBox.TextChanged
-        UpdateValSpecific("RaidVolume=", raidVoiceVolBox.Value, "[VoiceChat]")
+        UpdateVal("RaidVolume=", raidVoiceVolBox.Value, "[VoiceChat]")
     End Sub
     Private Sub outfitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles outfitVoiceVolBox.TextChanged
-        UpdateValSpecific("GuildVolume=", outfitVoiceVolBox.Value, "[VoiceChat]")
+        UpdateVal("GuildVolume=", outfitVoiceVolBox.Value, "[VoiceChat]")
     End Sub
     Private Sub leaderVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles leaderVoiceVolBox.TextChanged
-        UpdateValSpecific("GroupLeaderVolume=", leaderVoiceVolBox.Value, "[VoiceChat]")
+        UpdateVal("GroupLeaderVolume=", leaderVoiceVolBox.Value, "[VoiceChat]")
     End Sub
     Private Sub transmitVoiceVolBox_ValueChanged(sender As Object, e As EventArgs) Handles transmitVoiceVolBox.TextChanged
         UpdateVal("MicrophoneVolume=", transmitVoiceVolBox.Value)
@@ -1338,44 +1338,44 @@ Public Class Form1
     End Sub
     Private Sub genVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles genVoiceCheck.Click
         If genVoiceCheck.Checked Then
-            UpdateValSpecific("Enable=", 1, "[Voice]")
+            UpdateVal("Enable=", 1, "[Voice]")
         Else
-            UpdateValSpecific("Enable=", 0, "[Voice]")
+            UpdateVal("Enable=", 0, "[Voice]")
         End If
     End Sub
     Private Sub proxVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles proxVoiceCheck.Click
         If proxVoiceCheck.Checked Then
-            UpdateValSpecific("ProximityEnabled=", 1, "[Voice]")
+            UpdateVal("ProximityEnabled=", 1, "[Voice]")
         Else
-            UpdateValSpecific("ProximityEnabled=", 0, "[Voice]")
+            UpdateVal("ProximityEnabled=", 0, "[Voice]")
         End If
     End Sub
     Private Sub squadVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles squadVoiceCheck.Click
         If squadVoiceCheck.Checked Then
-            UpdateValSpecific("GroupEnabled=", 1, "[Voice]")
+            UpdateVal("GroupEnabled=", 1, "[Voice]")
         Else
-            UpdateValSpecific("GroupEnabled=", 0, "[Voice]")
+            UpdateVal("GroupEnabled=", 0, "[Voice]")
         End If
     End Sub
     Private Sub raidVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles raidVoiceCheck.Click
         If raidVoiceCheck.Checked Then
-            UpdateValSpecific("RaidEnabled=", 1, "[Voice]")
+            UpdateVal("RaidEnabled=", 1, "[Voice]")
         Else
-            UpdateValSpecific("RaidEnabled=", 0, "[Voice]")
+            UpdateVal("RaidEnabled=", 0, "[Voice]")
         End If
     End Sub
     Private Sub outfitVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles outfitVoiceCheck.Click
         If outfitVoiceCheck.Checked Then
-            UpdateValSpecific("GuildEnabled=", 1, "[Voice]")
+            UpdateVal("GuildEnabled=", 1, "[Voice]")
         Else
-            UpdateValSpecific("GuildEnabled=", 0, "[Voice]")
+            UpdateVal("GuildEnabled=", 0, "[Voice]")
         End If
     End Sub
     Private Sub leaderVoiceCheck_CheckedChanged(sender As Object, e As EventArgs) Handles leaderVoiceCheck.Click
         If leaderVoiceCheck.Checked Then
-            UpdateValSpecific("GroupLeaderEnabled=", 1, "[Voice]")
+            UpdateVal("GroupLeaderEnabled=", 1, "[Voice]")
         Else
-            UpdateValSpecific("GroupLeaderEnabled=", 0, "[Voice]")
+            UpdateVal("GroupLeaderEnabled=", 0, "[Voice]")
         End If
     End Sub
 #End Region
@@ -1552,438 +1552,438 @@ Public Class Form1
 #Region "Infantry"
     Private Sub iconsInfantryAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsInfantryAllyCheck.CheckedChanged
         If iconsInfantryAllyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 84, True)
+            UpdateVal("HiddenHUDIndicators=", 84, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 84, False)
+            UpdateVal("HiddenHUDIndicators=", 84, False)
         End If
     End Sub
     Private Sub iconsInfantryEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsInfantryEnemyCheck.CheckedChanged
         If iconsInfantryEnemyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 85, True)
+            UpdateVal("HiddenHUDIndicators=", 85, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 85, False)
+            UpdateVal("HiddenHUDIndicators=", 85, False)
         End If
     End Sub
 #End Region
 #Region "Vehicles"
     Private Sub iconsVehAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehAllyCheck.CheckedChanged
         If iconsVehAllyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 86, True)
+            UpdateVal("HiddenHUDIndicators=", 86, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 86, False)
+            UpdateVal("HiddenHUDIndicators=", 86, False)
         End If
     End Sub
     Private Sub iconsVehEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehEnemyCheck.CheckedChanged
         If iconsVehEnemyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 87, True)
+            UpdateVal("HiddenHUDIndicators=", 87, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 87, False)
+            UpdateVal("HiddenHUDIndicators=", 87, False)
         End If
     End Sub
     Private Sub iconsVehBastionCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsVehBastionCheck.CheckedChanged
         If iconsVehBastionCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 62, True)
+            UpdateVal("HiddenHUDIndicators=", 62, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 62, False)
+            UpdateVal("HiddenHUDIndicators=", 62, False)
         End If
     End Sub
 #End Region
 #Region "Deployables"
     Private Sub iconsDepDMGNadeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDMGNadeCheck.CheckedChanged
         If iconsDepDMGNadeCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 3, True)
+            UpdateVal("HiddenHUDIndicators=", 3, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 3, False)
+            UpdateVal("HiddenHUDIndicators=", 3, False)
         End If
     End Sub
     Private Sub iconsDepStatusNadeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepStatusNadeCheck.CheckedChanged
         If iconsDepStatusNadeCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 82, True)
+            UpdateVal("HiddenHUDIndicators=", 82, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 82, False)
+            UpdateVal("HiddenHUDIndicators=", 82, False)
         End If
     End Sub
     Private Sub iconsDepMinesCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepMinesCheck.CheckedChanged
         If iconsDepMinesCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 34, True)
+            UpdateVal("HiddenHUDIndicators=", 34, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 34, False)
+            UpdateVal("HiddenHUDIndicators=", 34, False)
         End If
     End Sub
     Private Sub iconsDepC4Check_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepC4Check.CheckedChanged
         If iconsDepC4Check.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 10, True)
+            UpdateVal("HiddenHUDIndicators=", 10, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 10, False)
+            UpdateVal("HiddenHUDIndicators=", 10, False)
         End If
     End Sub
     Private Sub iconsDepShieldRegenCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepShieldRegenCheck.CheckedChanged
         If iconsDepShieldRegenCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 38, True)
+            UpdateVal("HiddenHUDIndicators=", 38, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 38, False)
+            UpdateVal("HiddenHUDIndicators=", 38, False)
         End If
     End Sub
     Private Sub iconsDepDildarCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDildarCheck.CheckedChanged
         If iconsDepDildarCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 39, True)
+            UpdateVal("HiddenHUDIndicators=", 39, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 39, False)
+            UpdateVal("HiddenHUDIndicators=", 39, False)
         End If
     End Sub
     Private Sub iconsDepAmmoBoxCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepAmmoBoxCheck.CheckedChanged
         If iconsDepAmmoBoxCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 33, True)
+            UpdateVal("HiddenHUDIndicators=", 33, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 33, False)
+            UpdateVal("HiddenHUDIndicators=", 33, False)
         End If
     End Sub
     Private Sub iconsDepDroneCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepDroneCheck.CheckedChanged
         If iconsDepDroneCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 65, True)
+            UpdateVal("HiddenHUDIndicators=", 65, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 65, False)
+            UpdateVal("HiddenHUDIndicators=", 65, False)
         End If
     End Sub
     Private Sub iconsDepTurretsCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDepTurretsCheck.CheckedChanged
         If iconsDepTurretsCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 88, True)
+            UpdateVal("HiddenHUDIndicators=", 88, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 88, False)
+            UpdateVal("HiddenHUDIndicators=", 88, False)
         End If
     End Sub
 #End Region
 #Region "World"
     Private Sub iconsWorldAnomalyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldAnomalyCheck.CheckedChanged
         If iconsWorldAnomalyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 49, True)
+            UpdateVal("HiddenHUDIndicators=", 49, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 49, False)
+            UpdateVal("HiddenHUDIndicators=", 49, False)
         End If
     End Sub
     Private Sub iconsWorldDrillCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldDrillCheck.CheckedChanged
         If iconsWorldDrillCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 53, True)
+            UpdateVal("HiddenHUDIndicators=", 53, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 53, False)
+            UpdateVal("HiddenHUDIndicators=", 53, False)
         End If
     End Sub
     Private Sub iconsWorldBuoyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldBuoyCheck.CheckedChanged
         If iconsWorldBuoyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 58, True)
+            UpdateVal("HiddenHUDIndicators=", 58, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 58, False)
+            UpdateVal("HiddenHUDIndicators=", 58, False)
         End If
     End Sub
     Private Sub iconsWorldMissionCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldMissionCheck.CheckedChanged
         If iconsWorldMissionCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 68, True)
+            UpdateVal("HiddenHUDIndicators=", 68, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 68, False)
+            UpdateVal("HiddenHUDIndicators=", 68, False)
         End If
     End Sub
     Private Sub iconsWorldImplantCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldImplantCheck.CheckedChanged
         If iconsWorldImplantCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 67, True)
+            UpdateVal("HiddenHUDIndicators=", 67, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 67, False)
+            UpdateVal("HiddenHUDIndicators=", 67, False)
         End If
     End Sub
     Private Sub iconsWorldPlantCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldPlantCheck.CheckedChanged
         If iconsWorldPlantCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 71, True)
+            UpdateVal("HiddenHUDIndicators=", 71, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 71, False)
+            UpdateVal("HiddenHUDIndicators=", 71, False)
         End If
     End Sub
     Private Sub iconsWorldNPCCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldNPCCheck.CheckedChanged
         If iconsWorldNPCCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 79, True)
+            UpdateVal("HiddenHUDIndicators=", 79, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 79, False)
+            UpdateVal("HiddenHUDIndicators=", 79, False)
         End If
     End Sub
     Private Sub iconsWorldStationCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldStationCheck.CheckedChanged
         If iconsWorldStationCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 44, True)
+            UpdateVal("HiddenHUDIndicators=", 44, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 44, False)
+            UpdateVal("HiddenHUDIndicators=", 44, False)
         End If
     End Sub
     Private Sub iconsWorldAssetCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldAssetCheck.CheckedChanged
         If iconsWorldAssetCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 63, True)
+            UpdateVal("HiddenHUDIndicators=", 63, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 63, False)
+            UpdateVal("HiddenHUDIndicators=", 63, False)
         End If
     End Sub
     Private Sub iconsWorldCrystalCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldCrystalCheck.CheckedChanged
         If iconsWorldCrystalCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 43, True)
+            UpdateVal("HiddenHUDIndicators=", 43, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 43, False)
+            UpdateVal("HiddenHUDIndicators=", 43, False)
         End If
     End Sub
     Private Sub iconsWorldConstructionCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldConstructionCheck.CheckedChanged
         If iconsWorldConstructionCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 117, True)
+            UpdateVal("HiddenHUDIndicators=", 117, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 117, False)
+            UpdateVal("HiddenHUDIndicators=", 117, False)
         End If
     End Sub
     Private Sub iconsWorldCortiumCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsWorldCortiumCheck.CheckedChanged
         If iconsWorldCortiumCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 116, True)
+            UpdateVal("HiddenHUDIndicators=", 116, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 116, False)
+            UpdateVal("HiddenHUDIndicators=", 116, False)
         End If
     End Sub
 #End Region
 #Region "Facility"
     Private Sub iconsFacVehAmmoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehAmmoCheck.CheckedChanged
         If iconsFacVehAmmoCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 11, True)
+            UpdateVal("HiddenHUDIndicators=", 11, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 11, False)
+            UpdateVal("HiddenHUDIndicators=", 11, False)
         End If
     End Sub
     Private Sub iconsFacAirAmmoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacAirAmmoCheck.CheckedChanged
         If iconsFacAirAmmoCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 18, True)
+            UpdateVal("HiddenHUDIndicators=", 18, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 18, False)
+            UpdateVal("HiddenHUDIndicators=", 18, False)
         End If
     End Sub
     Private Sub iconsFacEquipTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacEquipTermCheck.CheckedChanged
         If iconsFacEquipTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 7, True)
+            UpdateVal("HiddenHUDIndicators=", 7, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 7, False)
+            UpdateVal("HiddenHUDIndicators=", 7, False)
         End If
     End Sub
     Private Sub iconsFacWGTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacWGTermCheck.CheckedChanged
         If iconsFacWGTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 26, True)
+            UpdateVal("HiddenHUDIndicators=", 26, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 26, False)
+            UpdateVal("HiddenHUDIndicators=", 26, False)
         End If
     End Sub
     Private Sub iconsFacAirTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacAirTermCheck.CheckedChanged
         If iconsFacAirTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 4, True)
+            UpdateVal("HiddenHUDIndicators=", 4, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 4, False)
+            UpdateVal("HiddenHUDIndicators=", 4, False)
         End If
     End Sub
     Private Sub iconsFacVehTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehTermCheck.CheckedChanged
         If iconsFacVehTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 5, True)
+            UpdateVal("HiddenHUDIndicators=", 5, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 5, False)
+            UpdateVal("HiddenHUDIndicators=", 5, False)
         End If
     End Sub
     Private Sub iconsFacGalTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacGalTermCheck.CheckedChanged
         If iconsFacGalTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 6, True)
+            UpdateVal("HiddenHUDIndicators=", 6, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 6, False)
+            UpdateVal("HiddenHUDIndicators=", 6, False)
         End If
     End Sub
     Private Sub iconsFacFlashTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacFlashTermCheck.CheckedChanged
         If iconsFacFlashTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 15, True)
+            UpdateVal("HiddenHUDIndicators=", 15, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 15, False)
+            UpdateVal("HiddenHUDIndicators=", 15, False)
         End If
     End Sub
     Private Sub iconsFacLightTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacLightTermCheck.CheckedChanged
         If iconsFacLightTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 20, True)
+            UpdateVal("HiddenHUDIndicators=", 20, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 20, False)
+            UpdateVal("HiddenHUDIndicators=", 20, False)
         End If
     End Sub
     Private Sub iconsFacBusTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacBusTermCheck.CheckedChanged
         If iconsFacBusTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 115, True)
+            UpdateVal("HiddenHUDIndicators=", 115, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 115, False)
+            UpdateVal("HiddenHUDIndicators=", 115, False)
         End If
     End Sub
     Private Sub iconsFacTeleCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacTeleCheck.CheckedChanged
         If iconsFacTeleCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 13, True)
+            UpdateVal("HiddenHUDIndicators=", 13, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 13, False)
+            UpdateVal("HiddenHUDIndicators=", 13, False)
         End If
     End Sub
     Private Sub iconsFacPointCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacPointCheck.CheckedChanged
         If iconsFacPointCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 2, True)
+            UpdateVal("HiddenHUDIndicators=", 2, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 2, False)
+            UpdateVal("HiddenHUDIndicators=", 2, False)
         End If
     End Sub
     Private Sub iconsFacOWPointsCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacOWPointsCheck.CheckedChanged
         If iconsFacOWPointsCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 61, True)
+            UpdateVal("HiddenHUDIndicators=", 61, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 61, False)
+            UpdateVal("HiddenHUDIndicators=", 61, False)
         End If
     End Sub
     Private Sub iconsFacNearbyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacNearbyCheck.CheckedChanged
         If iconsFacNearbyCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 83, True)
+            UpdateVal("HiddenHUDIndicators=", 83, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 83, False)
+            UpdateVal("HiddenHUDIndicators=", 83, False)
         End If
     End Sub
     Private Sub iconsFacSCUCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacSCUCheck.CheckedChanged
         If iconsFacSCUCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 17, True)
+            UpdateVal("HiddenHUDIndicators=", 17, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 17, False)
+            UpdateVal("HiddenHUDIndicators=", 17, False)
         End If
     End Sub
     Private Sub iconsFacHorzCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacHorzCheck.CheckedChanged
         If iconsFacHorzCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 22, True)
+            UpdateVal("HiddenHUDIndicators=", 22, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 22, False)
+            UpdateVal("HiddenHUDIndicators=", 22, False)
         End If
     End Sub
     Private Sub iconsFacVertCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVertCheck.CheckedChanged
         If iconsFacVertCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 23, True)
+            UpdateVal("HiddenHUDIndicators=", 23, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 23, False)
+            UpdateVal("HiddenHUDIndicators=", 23, False)
         End If
     End Sub
     Private Sub iconsFacVehShieldCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacVehShieldCheck.CheckedChanged
         If iconsFacVehShieldCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 24, True)
+            UpdateVal("HiddenHUDIndicators=", 24, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 24, False)
+            UpdateVal("HiddenHUDIndicators=", 24, False)
         End If
     End Sub
     Private Sub iconsFacSCUShieldCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacSCUShieldCheck.CheckedChanged
         If iconsFacSCUShieldCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 25, True)
+            UpdateVal("HiddenHUDIndicators=", 25, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 25, False)
+            UpdateVal("HiddenHUDIndicators=", 25, False)
         End If
     End Sub
     Private Sub iconsFacForwardCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacForwardCheck.CheckedChanged
         If iconsFacForwardCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 27, True)
+            UpdateVal("HiddenHUDIndicators=", 27, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 27, False)
+            UpdateVal("HiddenHUDIndicators=", 27, False)
         End If
     End Sub
     Private Sub iconsFacBridgeTermCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacBridgeTermCheck.CheckedChanged
         If iconsFacBridgeTermCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 35, True)
+            UpdateVal("HiddenHUDIndicators=", 35, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 35, False)
+            UpdateVal("HiddenHUDIndicators=", 35, False)
         End If
     End Sub
     Private Sub iconsFacSCUAttackCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacSCUAttackCheck.CheckedChanged
         If iconsFacSCUAttackCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 75, True)
+            UpdateVal("HiddenHUDIndicators=", 75, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 75, False)
+            UpdateVal("HiddenHUDIndicators=", 75, False)
         End If
     End Sub
     Private Sub iconsFacGateAttackCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacGateAttackCheck.CheckedChanged
         If iconsFacGateAttackCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 76, True)
+            UpdateVal("HiddenHUDIndicators=", 76, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 76, False)
+            UpdateVal("HiddenHUDIndicators=", 76, False)
         End If
     End Sub
     Private Sub iconsFacRelicDoorCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsFacRelicDoorCheck.CheckedChanged
         If iconsFacRelicDoorCheck.Checked = True Then
-            UpdateValContains("HiddenHUDIndicators=", 77, True)
+            UpdateVal("HiddenHUDIndicators=", 77, True)
         Else
-            UpdateValContains("HiddenHUDIndicators=", 77, False)
+            UpdateVal("HiddenHUDIndicators=", 77, False)
         End If
     End Sub
 #End Region
 #Region "Title"
     Private Sub iconsTitleAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsTitleAllyCheck.CheckedChanged
         If iconsTitleAllyCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 1, True)
+            UpdateVal("HiddenNamePlateOptions=", 1, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 1, False)
+            UpdateVal("HiddenNamePlateOptions=", 1, False)
         End If
     End Sub
     Private Sub iconsTitleEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsTitleEnemyCheck.CheckedChanged
         If iconsTitleEnemyCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 2, True)
+            UpdateVal("HiddenNamePlateOptions=", 2, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 2, False)
+            UpdateVal("HiddenNamePlateOptions=", 2, False)
         End If
     End Sub
 #End Region
 #Region "Names"
     Private Sub iconsNameSquadCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameSquadCheck.CheckedChanged
         If iconsNameSquadCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 3, True)
+            UpdateVal("HiddenNamePlateOptions=", 3, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 3, False)
+            UpdateVal("HiddenNamePlateOptions=", 3, False)
         End If
     End Sub
     Private Sub iconsNamePlatoonCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNamePlatoonCheck.CheckedChanged
         If iconsNamePlatoonCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 4, True)
+            UpdateVal("HiddenNamePlateOptions=", 4, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 4, False)
+            UpdateVal("HiddenNamePlateOptions=", 4, False)
         End If
     End Sub
     Private Sub iconsNameFireCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameFireCheck.CheckedChanged
         If iconsNameFireCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 5, True)
+            UpdateVal("HiddenNamePlateOptions=", 5, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 5, False)
+            UpdateVal("HiddenNamePlateOptions=", 5, False)
         End If
     End Sub
     Private Sub iconsNameOutfitCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameOutfitCheck.CheckedChanged
         If iconsNameOutfitCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 6, True)
+            UpdateVal("HiddenNamePlateOptions=", 6, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 6, False)
+            UpdateVal("HiddenNamePlateOptions=", 6, False)
         End If
     End Sub
     Private Sub iconsNameEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsNameEnemyCheck.CheckedChanged
         If iconsNameEnemyCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 7, True)
+            UpdateVal("HiddenNamePlateOptions=", 7, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 7, False)
+            UpdateVal("HiddenNamePlateOptions=", 7, False)
         End If
     End Sub
 #End Region
 #Region "Dorito"
     Private Sub iconsDoritoAllyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDoritoAllyCheck.CheckedChanged
         If iconsDoritoAllyCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 8, True)
+            UpdateVal("HiddenNamePlateOptions=", 8, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 8, False)
+            UpdateVal("HiddenNamePlateOptions=", 8, False)
         End If
     End Sub
     Private Sub iconsDoritoEnemyCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsDoritoEnemyCheck.CheckedChanged
         If iconsDoritoEnemyCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 9, True)
+            UpdateVal("HiddenNamePlateOptions=", 9, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 9, False)
+            UpdateVal("HiddenNamePlateOptions=", 9, False)
         End If
     End Sub
 #End Region
 #Region "Misc"
     Private Sub iconsSocialCheck_CheckedChanged(sender As Object, e As EventArgs) Handles iconsSocialCheck.CheckedChanged
         If iconsSocialCheck.Checked = True Then
-            UpdateValContains("HiddenNamePlateOptions=", 10, True)
+            UpdateVal("HiddenNamePlateOptions=", 10, True)
         Else
-            UpdateValContains("HiddenNamePlateOptions=", 10, False)
+            UpdateVal("HiddenNamePlateOptions=", 10, False)
         End If
     End Sub
 
