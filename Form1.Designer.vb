@@ -157,6 +157,8 @@ Partial Class Form1
         Me.deltaColorButton = New System.Windows.Forms.Button()
         Me.NDZColorButton = New System.Windows.Forms.Button()
         Me.OSColorButton = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.OSAlphaBox = New System.Windows.Forms.NumericUpDown()
         Me.intPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.playerColorPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel18 = New System.Windows.Forms.FlowLayoutPanel()
@@ -327,6 +329,8 @@ Partial Class Form1
         Me.regionTextCheck = New System.Windows.Forms.CheckBox()
         Me.mentorTextCheck = New System.Windows.Forms.CheckBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.commandTextBox = New System.Windows.Forms.TextBox()
+        Me.commandAutoCheck = New System.Windows.Forms.CheckBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.selectedDatPath = New System.Windows.Forms.Label()
         Me.localeDatButton = New System.Windows.Forms.Button()
@@ -334,7 +338,6 @@ Partial Class Form1
         Me.selectedDirPath = New System.Windows.Forms.Label()
         Me.localeDirButton = New System.Windows.Forms.Button()
         Me.fontAutoCheck2 = New System.Windows.Forms.CheckBox()
-        Me.Label57 = New System.Windows.Forms.Label()
         Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
         Me.selectedFontPath = New System.Windows.Forms.Label()
         Me.fontSelectButton = New System.Windows.Forms.Button()
@@ -350,8 +353,6 @@ Partial Class Form1
         Me.curEditLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.commandAutoCheck = New System.Windows.Forms.CheckBox()
-        Me.commandTextBox = New System.Windows.Forms.TextBox()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         CType(Me.globRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -396,6 +397,7 @@ Partial Class Form1
         Me.TabPage4.SuspendLayout()
         Me.intPanel0.SuspendLayout()
         Me.intPanel2.SuspendLayout()
+        CType(Me.OSAlphaBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.intPanel3.SuspendLayout()
         Me.playerColorPanel.SuspendLayout()
         Me.FlowLayoutPanel18.SuspendLayout()
@@ -1039,7 +1041,7 @@ Partial Class Form1
         'AADrop
         '
         Me.AADrop.FormattingEnabled = True
-        Me.AADrop.Items.AddRange(New Object() {"0. Edge AA", "1. FXAA", "2. TAA", "3. TAA+FXAA"})
+        Me.AADrop.Items.AddRange(New Object() {"-1. Off", "0. Edge AA", "1. FXAA", "2. TAA", "3. TAA+FXAA"})
         Me.AADrop.Location = New System.Drawing.Point(3, 235)
         Me.AADrop.MaxDropDownItems = 4
         Me.AADrop.Name = "AADrop"
@@ -2010,10 +2012,12 @@ Partial Class Form1
         Me.intPanel2.Controls.Add(Me.deltaColorButton)
         Me.intPanel2.Controls.Add(Me.NDZColorButton)
         Me.intPanel2.Controls.Add(Me.OSColorButton)
+        Me.intPanel2.Controls.Add(Me.Label37)
+        Me.intPanel2.Controls.Add(Me.OSAlphaBox)
         Me.intPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.intPanel2.Location = New System.Drawing.Point(3, 3)
         Me.intPanel2.Name = "intPanel2"
-        Me.intPanel2.Size = New System.Drawing.Size(152, 268)
+        Me.intPanel2.Size = New System.Drawing.Size(152, 311)
         Me.intPanel2.TabIndex = 1
         '
         'custRetCheck
@@ -2041,6 +2045,7 @@ Partial Class Form1
         '
         'alphaColorButton
         '
+        Me.alphaColorButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(57, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.alphaColorButton.ForeColor = System.Drawing.Color.White
         Me.alphaColorButton.Location = New System.Drawing.Point(3, 61)
         Me.alphaColorButton.Name = "alphaColorButton"
@@ -2048,10 +2053,11 @@ Partial Class Form1
         Me.alphaColorButton.TabIndex = 13
         Me.alphaColorButton.Text = "Alpha Squad Color"
         Me.ToolTip1.SetToolTip(Me.alphaColorButton, "Alpha Squad Color")
-        Me.alphaColorButton.UseVisualStyleBackColor = True
+        Me.alphaColorButton.UseVisualStyleBackColor = False
         '
         'bravoColorButton
         '
+        Me.bravoColorButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(163, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(9, Byte), Integer))
         Me.bravoColorButton.ForeColor = System.Drawing.Color.White
         Me.bravoColorButton.Location = New System.Drawing.Point(3, 96)
         Me.bravoColorButton.Name = "bravoColorButton"
@@ -2059,10 +2065,11 @@ Partial Class Form1
         Me.bravoColorButton.TabIndex = 14
         Me.bravoColorButton.Text = "Bravo Squad Color"
         Me.ToolTip1.SetToolTip(Me.bravoColorButton, "Bravo Squad Color")
-        Me.bravoColorButton.UseVisualStyleBackColor = True
+        Me.bravoColorButton.UseVisualStyleBackColor = False
         '
         'charlieColorButton
         '
+        Me.charlieColorButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.charlieColorButton.ForeColor = System.Drawing.Color.White
         Me.charlieColorButton.Location = New System.Drawing.Point(3, 131)
         Me.charlieColorButton.Name = "charlieColorButton"
@@ -2070,10 +2077,11 @@ Partial Class Form1
         Me.charlieColorButton.TabIndex = 15
         Me.charlieColorButton.Text = "Charile Squad Color"
         Me.ToolTip1.SetToolTip(Me.charlieColorButton, "Charlie Squad Color")
-        Me.charlieColorButton.UseVisualStyleBackColor = True
+        Me.charlieColorButton.UseVisualStyleBackColor = False
         '
         'deltaColorButton
         '
+        Me.deltaColorButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(1, Byte), Integer), CType(CType(1, Byte), Integer))
         Me.deltaColorButton.ForeColor = System.Drawing.Color.White
         Me.deltaColorButton.Location = New System.Drawing.Point(3, 166)
         Me.deltaColorButton.Name = "deltaColorButton"
@@ -2081,10 +2089,11 @@ Partial Class Form1
         Me.deltaColorButton.TabIndex = 16
         Me.deltaColorButton.Text = "Delta Squad Color"
         Me.ToolTip1.SetToolTip(Me.deltaColorButton, "Delta Squad Color")
-        Me.deltaColorButton.UseVisualStyleBackColor = True
+        Me.deltaColorButton.UseVisualStyleBackColor = False
         '
         'NDZColorButton
         '
+        Me.NDZColorButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.NDZColorButton.ForeColor = System.Drawing.Color.White
         Me.NDZColorButton.Location = New System.Drawing.Point(3, 201)
         Me.NDZColorButton.Name = "NDZColorButton"
@@ -2092,10 +2101,11 @@ Partial Class Form1
         Me.NDZColorButton.TabIndex = 17
         Me.NDZColorButton.Text = "No Deploy Zone Color"
         Me.ToolTip1.SetToolTip(Me.NDZColorButton, "No Deploy Zone Color")
-        Me.NDZColorButton.UseVisualStyleBackColor = True
+        Me.NDZColorButton.UseVisualStyleBackColor = False
         '
         'OSColorButton
         '
+        Me.OSColorButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.OSColorButton.ForeColor = System.Drawing.Color.White
         Me.OSColorButton.Location = New System.Drawing.Point(3, 236)
         Me.OSColorButton.Name = "OSColorButton"
@@ -2103,7 +2113,32 @@ Partial Class Form1
         Me.OSColorButton.TabIndex = 18
         Me.OSColorButton.Text = "Orbital Strike Color"
         Me.ToolTip1.SetToolTip(Me.OSColorButton, "Orbital Strike Color")
-        Me.OSColorButton.UseVisualStyleBackColor = True
+        Me.OSColorButton.UseVisualStyleBackColor = False
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label37.Location = New System.Drawing.Point(3, 268)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(105, 17)
+        Me.Label37.TabIndex = 44
+        Me.Label37.Text = "OS Color Alpha"
+        '
+        'OSAlphaBox
+        '
+        Me.OSAlphaBox.DecimalPlaces = 2
+        Me.OSAlphaBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.OSAlphaBox.Location = New System.Drawing.Point(3, 288)
+        Me.OSAlphaBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.OSAlphaBox.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.OSAlphaBox.Name = "OSAlphaBox"
+        Me.OSAlphaBox.Size = New System.Drawing.Size(80, 20)
+        Me.OSAlphaBox.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.OSAlphaBox, "1.41 = 2x Sampling" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2.00 = 4x Sampling")
+        Me.OSAlphaBox.Value = New Decimal(New Integer() {100000, 0, 0, 393216})
         '
         'intPanel3
         '
@@ -4300,7 +4335,6 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.selectedDirPath)
         Me.TabPage3.Controls.Add(Me.localeDirButton)
         Me.TabPage3.Controls.Add(Me.fontAutoCheck2)
-        Me.TabPage3.Controls.Add(Me.Label57)
         Me.TabPage3.Controls.Add(Me.fontAutoCheck)
         Me.TabPage3.Controls.Add(Me.selectedFontPath)
         Me.TabPage3.Controls.Add(Me.fontSelectButton)
@@ -4309,6 +4343,29 @@ Partial Class Form1
         Me.TabPage3.Size = New System.Drawing.Size(739, 537)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Advanced"
+        '
+        'commandTextBox
+        '
+        Me.commandTextBox.AcceptsReturn = True
+        Me.commandTextBox.Location = New System.Drawing.Point(11, 261)
+        Me.commandTextBox.MaxLength = 250
+        Me.commandTextBox.Multiline = True
+        Me.commandTextBox.Name = "commandTextBox"
+        Me.commandTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.commandTextBox.Size = New System.Drawing.Size(296, 110)
+        Me.commandTextBox.TabIndex = 9
+        Me.commandTextBox.Visible = False
+        '
+        'commandAutoCheck
+        '
+        Me.commandAutoCheck.AutoSize = True
+        Me.commandAutoCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.commandAutoCheck.Location = New System.Drawing.Point(8, 237)
+        Me.commandAutoCheck.Name = "commandAutoCheck"
+        Me.commandAutoCheck.Size = New System.Drawing.Size(216, 17)
+        Me.commandAutoCheck.TabIndex = 8
+        Me.commandAutoCheck.Text = "Automatically Replace Command Queue"
+        Me.commandAutoCheck.UseVisualStyleBackColor = True
         '
         'Label38
         '
@@ -4388,18 +4445,6 @@ Partial Class Form1
         Me.fontAutoCheck2.Text = "Also Replace Chat Font"
         Me.fontAutoCheck2.UseVisualStyleBackColor = True
         Me.fontAutoCheck2.Visible = False
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.ForeColor = System.Drawing.Color.White
-        Me.Label57.Location = New System.Drawing.Point(313, 342)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(418, 160)
-        Me.Label57.TabIndex = 64
-        Me.Label57.Text = resources.GetString("Label57.Text")
-        Me.Label57.Visible = False
         '
         'fontAutoCheck
         '
@@ -4510,29 +4555,6 @@ Partial Class Form1
         Me.BackgroundWorker1.WorkerReportsProgress = True
         Me.BackgroundWorker1.WorkerSupportsCancellation = True
         '
-        'commandAutoCheck
-        '
-        Me.commandAutoCheck.AutoSize = True
-        Me.commandAutoCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.commandAutoCheck.Location = New System.Drawing.Point(8, 237)
-        Me.commandAutoCheck.Name = "commandAutoCheck"
-        Me.commandAutoCheck.Size = New System.Drawing.Size(216, 17)
-        Me.commandAutoCheck.TabIndex = 8
-        Me.commandAutoCheck.Text = "Automatically Replace Command Queue"
-        Me.commandAutoCheck.UseVisualStyleBackColor = True
-        '
-        'commandTextBox
-        '
-        Me.commandTextBox.AcceptsReturn = True
-        Me.commandTextBox.Location = New System.Drawing.Point(11, 261)
-        Me.commandTextBox.MaxLength = 250
-        Me.commandTextBox.Multiline = True
-        Me.commandTextBox.Name = "commandTextBox"
-        Me.commandTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.commandTextBox.Size = New System.Drawing.Size(296, 110)
-        Me.commandTextBox.TabIndex = 9
-        Me.commandTextBox.Visible = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4610,6 +4632,7 @@ Partial Class Form1
         Me.intPanel0.PerformLayout()
         Me.intPanel2.ResumeLayout(False)
         Me.intPanel2.PerformLayout()
+        CType(Me.OSAlphaBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.intPanel3.ResumeLayout(False)
         Me.intPanel3.PerformLayout()
         Me.playerColorPanel.ResumeLayout(False)
@@ -4813,7 +4836,6 @@ Partial Class Form1
     Friend WithEvents LabelScopSens As Label
     Friend WithEvents LabelAdsSens As Label
     Friend WithEvents LabelHipSens As Label
-    Friend WithEvents Label57 As Label
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents intPanel2 As FlowLayoutPanel
     Friend WithEvents custRetCheck As CheckBox
@@ -5034,4 +5056,6 @@ Partial Class Form1
     Friend WithEvents localeDatButton As Button
     Friend WithEvents commandAutoCheck As CheckBox
     Friend WithEvents commandTextBox As TextBox
+    Friend WithEvents Label37 As Label
+    Friend WithEvents OSAlphaBox As NumericUpDown
 End Class

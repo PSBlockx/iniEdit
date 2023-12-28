@@ -120,21 +120,6 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="Label57.Text" xml:space="preserve">
-    <value>Using these options to automatically replace the game's font does not
-require the use of this program to operate. This functionality uses
-Windows' event logs, task scheduler, and a small batch script in order
-to detect when the game begins loading. It may also require this
-program to be run as administrator when enabling or disabling this
-option. This can be turned off by simply unchecking the box above.
-
-If your PC is slow or your game and font files are on a slow disk, be
-aware that this automation may sometimes fail. If the files fail to be
-rewritten before the game loads you will not get your font ingame.</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>

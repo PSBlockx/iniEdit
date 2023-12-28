@@ -41,13 +41,18 @@ Public Class Form1
     Public Shared curiniPath As String = "Useroptions.ini"
     Public Shared iniini As List(Of String) = Nothing
     Public Shared iniPath As String = "iniEdit.ini"
-    Public Shared iniEditOptions As New List(Of String)({"[iniEdit]", "FontAutoReplace=", "FontAutoReplace2=", "FontFilePath=", "LocaleAutoReplace=", "LocaleDirPath=", "LocaleDatPath=", "CommandAutoReplace="})
+    Public Shared iniEditOptions As New List(Of String)({"[iniEdit]", "FontAutoReplace=", "FontAutoReplace2=", "FontFilePath=", "LocaleAutoReplace=", "LocaleDirPath=", "LocaleDatPath=", "CommandAutoReplace=", "DPI="})
     Public Shared commandPath As String = "iniEditCommands.ini"
     Public Shared doneLoading As Boolean = False
 
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Read ini into previously initialized empty list
-        curini = File.ReadAllLines("Useroptions.ini").ToList
+        Try
+            curini = File.ReadAllLines("Useroptions.ini").ToList
+        Catch ex As Exception
+            MessageBox.Show("Could not locate base useroptions.ini. Please ensure exe is placed in PS2 game folder.")
+            End
+        End Try
         If File.Exists(iniPath) Then
             iniini = File.ReadAllLines(iniPath).ToList
         Else
@@ -349,7 +354,11 @@ Public Class Form1
         partDistScaleBox.Text = GetState("ParticleDistanceScale=")
         graphQualDrop.SelectedIndex = Integer.Parse(GetState("GraphicsQuality=")) - 1
         texQualDrop.SelectedIndex = Integer.Parse(GetState("TextureQuality="))
-        shadQualDrop.SelectedIndex = Integer.Parse(GetState("ShadowQuality="))
+        If GetState("ShadowQuality=") > 5 Then
+            shadQualDrop.SelectedIndex = 0
+        Else
+            shadQualDrop.SelectedIndex = Integer.Parse(GetState("ShadowQuality="))
+        End If
         lightQualDrop.SelectedIndex = Integer.Parse(GetState("LightingQuality=")) - 1
         effQualDrop.SelectedIndex = Integer.Parse(GetState("EffectsQuality=")) - 1
         terrQualDrop.SelectedIndex = Integer.Parse(GetState("TerrainQuality=")) - 1
@@ -369,6 +378,9 @@ Public Class Form1
         Else
             upscaleDrop.SelectedIndex = 0
         End If
+        AADrop.SelectedIndex = Integer.Parse(GetState("AAQuality=")) + 1
+        waterReflectDrop.SelectedIndex = Integer.Parse(GetState("WaterQuality="))
+        objReflectDrop.SelectedIndex = Integer.Parse(GetState("SSLRQuality="))
 #End Region
 #Region "SensGets"
         hipSensBox.Value = GetState("MouseSensitivity=")
@@ -378,6 +390,11 @@ Public Class Form1
         gunSensBox.Value = GetState("VehicleGunnerMouseSensitivity=")
         airSensBox.Value = GetState("FlightMouseSensitivity=")
         sensRawCheck.Checked = GetState("MouseRawInput=")
+        If GetStateMyIni("DPI=") = 0 Then
+            DPIBox.Value = 100
+        Else
+            DPIBox.Value = GetStateMyIni("DPI=")
+        End If
 #End Region
 #Region "InterfaceGets"
         hudHPCheck.Checked = GetState("HudShowHealth=")
@@ -389,12 +406,21 @@ Public Class Form1
         hudDotCheck.Checked = GetState("HudShow3PVehicleReticle=")
         custRetCheck.Checked = GetState("TintModeReticuleStyle=")
         retColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("TintModeReticuleColor=")))
-        alphaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor0=")))
-        bravoColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor1=")))
-        charlieColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor2=")))
-        deltaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor3=")))
+        If Not GetState("PlatoonSquadColor0=") = Nothing Then
+            alphaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor0=")))
+        End If
+        If Not GetState("PlatoonSquadColor0=") = Nothing Then
+            bravoColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor1=")))
+        End If
+        If Not GetState("PlatoonSquadColor0=") = Nothing Then
+            charlieColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor2=")))
+        End If
+        If Not GetState("PlatoonSquadColor0=") = Nothing Then
+            deltaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor3=")))
+        End If
         NDZColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("NoDeployZoneColor=")))
         OSColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("OrbitalStrikeColor=")))
+        OSAlphaBox.Value = GetState("OrbitalStrikeAlpha=")
         If GetState("TintModePlayer=") = "0" Then
             playerColorDrop.SelectedIndex = 0
         ElseIf GetState("TintModePlayer=") = "1" Then
@@ -860,7 +886,11 @@ Public Class Form1
         UpdateVal("ParticleLOD=", partQualDrop.SelectedItem.ToString.First)
     End Sub
     Private Sub AADrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AADrop.SelectedValueChanged
-        UpdateVal("AAQuality=", AADrop.SelectedItem.ToString.First)
+        If AADrop.SelectedIndex = 0 Then
+            UpdateVal("AAQuality=", -1)
+        Else
+            UpdateVal("AAQuality=", AADrop.SelectedIndex - 1)
+        End If
     End Sub
     Private Sub waterReflectDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles waterReflectDrop.SelectedValueChanged
         UpdateVal("WaterQuality=", waterReflectDrop.SelectedItem.ToString.First)
@@ -949,7 +979,9 @@ Public Class Form1
         End If
     End Sub
     Private Sub hip360Box_ValueChanged(sender As Object, e As EventArgs) Handles hip360Box.ValueChanged
-        LabelHipSens.Text() = hipSensCalc(DPIBox.Value, hip360Box.Value)
+        Dim Sens As String = hipSensCalc(DPIBox.Value, hip360Box.Value)
+        UpdateVal("MouseSensitivity=", Sens)
+        LabelHipSens.Text() = Sens
     End Sub
     Private Sub ads360Box_ValueChanged(sender As Object, e As EventArgs) Handles ads360Box.ValueChanged, adsZoomBox.SelectedValueChanged
         If IsNothing(adsZoomBox.SelectedItem) Then
@@ -996,6 +1028,7 @@ Public Class Form1
             Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
             LabelScopSens.Text() = Sens
         End If
+        UpdateValMyIni("DPI=", DPIBox.Value)
     End Sub
 #End Region
 #Region "InterfaceControls"
@@ -1193,6 +1226,9 @@ Public Class Form1
         End If
     End Sub
 #End Region
+    Private Sub OSAlphaBox_ValueChanged(sender As Object, e As EventArgs) Handles OSAlphaBox.TextChanged
+        UpdateVal("OrbitalStrikeAlpha=", OSAlphaBox.Value)
+    End Sub
 #End Region
 #Region "SoundControls"
 #Region "TextChanged"
@@ -2187,5 +2223,7 @@ Public Class Form1
     Private Sub commandTextBox_TextChanged(sender As Object, e As EventArgs) Handles commandTextBox.LostFocus
         File.WriteAllLines(commandPath, commandTextBox.Lines)
     End Sub
+
+
 #End Region
 End Class
