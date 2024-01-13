@@ -168,22 +168,22 @@ Partial Class Form1
         Me.VSplayerColorButton = New System.Windows.Forms.Button()
         Me.NCplayerColorButton = New System.Windows.Forms.Button()
         Me.TRplayerColorButton = New System.Windows.Forms.Button()
-        Me.terrColorPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.facColorPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel20 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.facColorDrop = New System.Windows.Forms.ComboBox()
-        Me.terrColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
-        Me.VSterrColorButton = New System.Windows.Forms.Button()
-        Me.NCterrColorButton = New System.Windows.Forms.Button()
-        Me.TRterrColorButton = New System.Windows.Forms.Button()
-        Me.facColorPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.FlowLayoutPanel21 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.terrColorDrop = New System.Windows.Forms.ComboBox()
         Me.facColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.VSfacColorButton = New System.Windows.Forms.Button()
         Me.NCfacColorButton = New System.Windows.Forms.Button()
         Me.TRfacColorButton = New System.Windows.Forms.Button()
+        Me.terrColorPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel21 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.terrColorDrop = New System.Windows.Forms.ComboBox()
+        Me.terrColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.VSterrColorButton = New System.Windows.Forms.Button()
+        Me.NCterrColorButton = New System.Windows.Forms.Button()
+        Me.TRterrColorButton = New System.Windows.Forms.Button()
         Me.intPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.hudHPCheck = New System.Windows.Forms.CheckBox()
         Me.hudIndCheck = New System.Windows.Forms.CheckBox()
@@ -402,12 +402,12 @@ Partial Class Form1
         Me.playerColorPanel.SuspendLayout()
         Me.FlowLayoutPanel18.SuspendLayout()
         Me.playerColorPanelButtons.SuspendLayout()
-        Me.terrColorPanel.SuspendLayout()
-        Me.FlowLayoutPanel20.SuspendLayout()
-        Me.terrColorPanelButtons.SuspendLayout()
         Me.facColorPanel.SuspendLayout()
-        Me.FlowLayoutPanel21.SuspendLayout()
+        Me.FlowLayoutPanel20.SuspendLayout()
         Me.facColorPanelButtons.SuspendLayout()
+        Me.terrColorPanel.SuspendLayout()
+        Me.FlowLayoutPanel21.SuspendLayout()
+        Me.terrColorPanelButtons.SuspendLayout()
         Me.intPanel1.SuspendLayout()
         Me.TabPage7.SuspendLayout()
         Me.iconPanel0.SuspendLayout()
@@ -2145,8 +2145,8 @@ Partial Class Form1
         Me.intPanel3.AutoSize = True
         Me.intPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.intPanel3.Controls.Add(Me.playerColorPanel)
-        Me.intPanel3.Controls.Add(Me.terrColorPanel)
         Me.intPanel3.Controls.Add(Me.facColorPanel)
+        Me.intPanel3.Controls.Add(Me.terrColorPanel)
         Me.intPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.intPanel3.Location = New System.Drawing.Point(161, 3)
         Me.intPanel3.Name = "intPanel3"
@@ -2245,17 +2245,17 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.TRplayerColorButton, "TR Player Color")
         Me.TRplayerColorButton.UseVisualStyleBackColor = True
         '
-        'terrColorPanel
+        'facColorPanel
         '
-        Me.terrColorPanel.AutoSize = True
-        Me.terrColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.terrColorPanel.Controls.Add(Me.FlowLayoutPanel20)
-        Me.terrColorPanel.Controls.Add(Me.terrColorPanelButtons)
-        Me.terrColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.terrColorPanel.Location = New System.Drawing.Point(3, 100)
-        Me.terrColorPanel.Name = "terrColorPanel"
-        Me.terrColorPanel.Size = New System.Drawing.Size(138, 91)
-        Me.terrColorPanel.TabIndex = 1
+        Me.facColorPanel.AutoSize = True
+        Me.facColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.facColorPanel.Controls.Add(Me.FlowLayoutPanel20)
+        Me.facColorPanel.Controls.Add(Me.facColorPanelButtons)
+        Me.facColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.facColorPanel.Location = New System.Drawing.Point(3, 100)
+        Me.facColorPanel.Name = "facColorPanel"
+        Me.facColorPanel.Size = New System.Drawing.Size(138, 91)
+        Me.facColorPanel.TabIndex = 1
         '
         'FlowLayoutPanel20
         '
@@ -2291,63 +2291,63 @@ Partial Class Form1
         Me.facColorDrop.Size = New System.Drawing.Size(100, 21)
         Me.facColorDrop.TabIndex = 51
         '
-        'terrColorPanelButtons
+        'facColorPanelButtons
         '
-        Me.terrColorPanelButtons.AutoSize = True
-        Me.terrColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.terrColorPanelButtons.Controls.Add(Me.VSterrColorButton)
-        Me.terrColorPanelButtons.Controls.Add(Me.NCterrColorButton)
-        Me.terrColorPanelButtons.Controls.Add(Me.TRterrColorButton)
-        Me.terrColorPanelButtons.Location = New System.Drawing.Point(3, 53)
-        Me.terrColorPanelButtons.Name = "terrColorPanelButtons"
-        Me.terrColorPanelButtons.Size = New System.Drawing.Size(132, 35)
-        Me.terrColorPanelButtons.TabIndex = 2
-        Me.terrColorPanelButtons.Visible = False
+        Me.facColorPanelButtons.AutoSize = True
+        Me.facColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.facColorPanelButtons.Controls.Add(Me.VSfacColorButton)
+        Me.facColorPanelButtons.Controls.Add(Me.NCfacColorButton)
+        Me.facColorPanelButtons.Controls.Add(Me.TRfacColorButton)
+        Me.facColorPanelButtons.Location = New System.Drawing.Point(3, 53)
+        Me.facColorPanelButtons.Name = "facColorPanelButtons"
+        Me.facColorPanelButtons.Size = New System.Drawing.Size(132, 35)
+        Me.facColorPanelButtons.TabIndex = 2
+        Me.facColorPanelButtons.Visible = False
         '
-        'VSterrColorButton
+        'VSfacColorButton
         '
-        Me.VSterrColorButton.ForeColor = System.Drawing.Color.White
-        Me.VSterrColorButton.Location = New System.Drawing.Point(3, 3)
-        Me.VSterrColorButton.Name = "VSterrColorButton"
-        Me.VSterrColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.VSterrColorButton.TabIndex = 1
-        Me.VSterrColorButton.Text = "VS"
-        Me.ToolTip1.SetToolTip(Me.VSterrColorButton, "VS Territory Color")
-        Me.VSterrColorButton.UseVisualStyleBackColor = True
+        Me.VSfacColorButton.ForeColor = System.Drawing.Color.White
+        Me.VSfacColorButton.Location = New System.Drawing.Point(3, 3)
+        Me.VSfacColorButton.Name = "VSfacColorButton"
+        Me.VSfacColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.VSfacColorButton.TabIndex = 1
+        Me.VSfacColorButton.Text = "VS"
+        Me.ToolTip1.SetToolTip(Me.VSfacColorButton, "VS Territory Color")
+        Me.VSfacColorButton.UseVisualStyleBackColor = True
         '
-        'NCterrColorButton
+        'NCfacColorButton
         '
-        Me.NCterrColorButton.ForeColor = System.Drawing.Color.White
-        Me.NCterrColorButton.Location = New System.Drawing.Point(47, 3)
-        Me.NCterrColorButton.Name = "NCterrColorButton"
-        Me.NCterrColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.NCterrColorButton.TabIndex = 2
-        Me.NCterrColorButton.Text = "NC"
-        Me.ToolTip1.SetToolTip(Me.NCterrColorButton, "NC Territory Color")
-        Me.NCterrColorButton.UseVisualStyleBackColor = True
+        Me.NCfacColorButton.ForeColor = System.Drawing.Color.White
+        Me.NCfacColorButton.Location = New System.Drawing.Point(47, 3)
+        Me.NCfacColorButton.Name = "NCfacColorButton"
+        Me.NCfacColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.NCfacColorButton.TabIndex = 2
+        Me.NCfacColorButton.Text = "NC"
+        Me.ToolTip1.SetToolTip(Me.NCfacColorButton, "NC Territory Color")
+        Me.NCfacColorButton.UseVisualStyleBackColor = True
         '
-        'TRterrColorButton
+        'TRfacColorButton
         '
-        Me.TRterrColorButton.ForeColor = System.Drawing.Color.White
-        Me.TRterrColorButton.Location = New System.Drawing.Point(91, 3)
-        Me.TRterrColorButton.Name = "TRterrColorButton"
-        Me.TRterrColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.TRterrColorButton.TabIndex = 3
-        Me.TRterrColorButton.Text = "TR"
-        Me.ToolTip1.SetToolTip(Me.TRterrColorButton, "TR Territory Color")
-        Me.TRterrColorButton.UseVisualStyleBackColor = True
+        Me.TRfacColorButton.ForeColor = System.Drawing.Color.White
+        Me.TRfacColorButton.Location = New System.Drawing.Point(91, 3)
+        Me.TRfacColorButton.Name = "TRfacColorButton"
+        Me.TRfacColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.TRfacColorButton.TabIndex = 3
+        Me.TRfacColorButton.Text = "TR"
+        Me.ToolTip1.SetToolTip(Me.TRfacColorButton, "TR Territory Color")
+        Me.TRfacColorButton.UseVisualStyleBackColor = True
         '
-        'facColorPanel
+        'terrColorPanel
         '
-        Me.facColorPanel.AutoSize = True
-        Me.facColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.facColorPanel.Controls.Add(Me.FlowLayoutPanel21)
-        Me.facColorPanel.Controls.Add(Me.facColorPanelButtons)
-        Me.facColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.facColorPanel.Location = New System.Drawing.Point(3, 197)
-        Me.facColorPanel.Name = "facColorPanel"
-        Me.facColorPanel.Size = New System.Drawing.Size(138, 91)
-        Me.facColorPanel.TabIndex = 2
+        Me.terrColorPanel.AutoSize = True
+        Me.terrColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.terrColorPanel.Controls.Add(Me.FlowLayoutPanel21)
+        Me.terrColorPanel.Controls.Add(Me.terrColorPanelButtons)
+        Me.terrColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.terrColorPanel.Location = New System.Drawing.Point(3, 197)
+        Me.terrColorPanel.Name = "terrColorPanel"
+        Me.terrColorPanel.Size = New System.Drawing.Size(138, 91)
+        Me.terrColorPanel.TabIndex = 2
         '
         'FlowLayoutPanel21
         '
@@ -2384,51 +2384,51 @@ Partial Class Form1
         Me.terrColorDrop.Size = New System.Drawing.Size(100, 21)
         Me.terrColorDrop.TabIndex = 52
         '
-        'facColorPanelButtons
+        'terrColorPanelButtons
         '
-        Me.facColorPanelButtons.AutoSize = True
-        Me.facColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.facColorPanelButtons.Controls.Add(Me.VSfacColorButton)
-        Me.facColorPanelButtons.Controls.Add(Me.NCfacColorButton)
-        Me.facColorPanelButtons.Controls.Add(Me.TRfacColorButton)
-        Me.facColorPanelButtons.Location = New System.Drawing.Point(3, 53)
-        Me.facColorPanelButtons.Name = "facColorPanelButtons"
-        Me.facColorPanelButtons.Size = New System.Drawing.Size(132, 35)
-        Me.facColorPanelButtons.TabIndex = 2
-        Me.facColorPanelButtons.Visible = False
+        Me.terrColorPanelButtons.AutoSize = True
+        Me.terrColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.terrColorPanelButtons.Controls.Add(Me.VSterrColorButton)
+        Me.terrColorPanelButtons.Controls.Add(Me.NCterrColorButton)
+        Me.terrColorPanelButtons.Controls.Add(Me.TRterrColorButton)
+        Me.terrColorPanelButtons.Location = New System.Drawing.Point(3, 53)
+        Me.terrColorPanelButtons.Name = "terrColorPanelButtons"
+        Me.terrColorPanelButtons.Size = New System.Drawing.Size(132, 35)
+        Me.terrColorPanelButtons.TabIndex = 2
+        Me.terrColorPanelButtons.Visible = False
         '
-        'VSfacColorButton
+        'VSterrColorButton
         '
-        Me.VSfacColorButton.ForeColor = System.Drawing.Color.White
-        Me.VSfacColorButton.Location = New System.Drawing.Point(3, 3)
-        Me.VSfacColorButton.Name = "VSfacColorButton"
-        Me.VSfacColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.VSfacColorButton.TabIndex = 1
-        Me.VSfacColorButton.Text = "VS"
-        Me.ToolTip1.SetToolTip(Me.VSfacColorButton, "VS Facility Color")
-        Me.VSfacColorButton.UseVisualStyleBackColor = True
+        Me.VSterrColorButton.ForeColor = System.Drawing.Color.White
+        Me.VSterrColorButton.Location = New System.Drawing.Point(3, 3)
+        Me.VSterrColorButton.Name = "VSterrColorButton"
+        Me.VSterrColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.VSterrColorButton.TabIndex = 1
+        Me.VSterrColorButton.Text = "VS"
+        Me.ToolTip1.SetToolTip(Me.VSterrColorButton, "VS Facility Color")
+        Me.VSterrColorButton.UseVisualStyleBackColor = True
         '
-        'NCfacColorButton
+        'NCterrColorButton
         '
-        Me.NCfacColorButton.ForeColor = System.Drawing.Color.White
-        Me.NCfacColorButton.Location = New System.Drawing.Point(47, 3)
-        Me.NCfacColorButton.Name = "NCfacColorButton"
-        Me.NCfacColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.NCfacColorButton.TabIndex = 2
-        Me.NCfacColorButton.Text = "NC"
-        Me.ToolTip1.SetToolTip(Me.NCfacColorButton, "NC Facility Color")
-        Me.NCfacColorButton.UseVisualStyleBackColor = True
+        Me.NCterrColorButton.ForeColor = System.Drawing.Color.White
+        Me.NCterrColorButton.Location = New System.Drawing.Point(47, 3)
+        Me.NCterrColorButton.Name = "NCterrColorButton"
+        Me.NCterrColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.NCterrColorButton.TabIndex = 2
+        Me.NCterrColorButton.Text = "NC"
+        Me.ToolTip1.SetToolTip(Me.NCterrColorButton, "NC Facility Color")
+        Me.NCterrColorButton.UseVisualStyleBackColor = True
         '
-        'TRfacColorButton
+        'TRterrColorButton
         '
-        Me.TRfacColorButton.ForeColor = System.Drawing.Color.White
-        Me.TRfacColorButton.Location = New System.Drawing.Point(91, 3)
-        Me.TRfacColorButton.Name = "TRfacColorButton"
-        Me.TRfacColorButton.Size = New System.Drawing.Size(38, 29)
-        Me.TRfacColorButton.TabIndex = 3
-        Me.TRfacColorButton.Text = "TR"
-        Me.ToolTip1.SetToolTip(Me.TRfacColorButton, "TR Facility Color")
-        Me.TRfacColorButton.UseVisualStyleBackColor = True
+        Me.TRterrColorButton.ForeColor = System.Drawing.Color.White
+        Me.TRterrColorButton.Location = New System.Drawing.Point(91, 3)
+        Me.TRterrColorButton.Name = "TRterrColorButton"
+        Me.TRterrColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.TRterrColorButton.TabIndex = 3
+        Me.TRterrColorButton.Text = "TR"
+        Me.ToolTip1.SetToolTip(Me.TRterrColorButton, "TR Facility Color")
+        Me.TRterrColorButton.UseVisualStyleBackColor = True
         '
         'intPanel1
         '
@@ -4640,16 +4640,16 @@ Partial Class Form1
         Me.FlowLayoutPanel18.ResumeLayout(False)
         Me.FlowLayoutPanel18.PerformLayout()
         Me.playerColorPanelButtons.ResumeLayout(False)
-        Me.terrColorPanel.ResumeLayout(False)
-        Me.terrColorPanel.PerformLayout()
-        Me.FlowLayoutPanel20.ResumeLayout(False)
-        Me.FlowLayoutPanel20.PerformLayout()
-        Me.terrColorPanelButtons.ResumeLayout(False)
         Me.facColorPanel.ResumeLayout(False)
         Me.facColorPanel.PerformLayout()
+        Me.FlowLayoutPanel20.ResumeLayout(False)
+        Me.FlowLayoutPanel20.PerformLayout()
+        Me.facColorPanelButtons.ResumeLayout(False)
+        Me.terrColorPanel.ResumeLayout(False)
+        Me.terrColorPanel.PerformLayout()
         Me.FlowLayoutPanel21.ResumeLayout(False)
         Me.FlowLayoutPanel21.PerformLayout()
-        Me.facColorPanelButtons.ResumeLayout(False)
+        Me.terrColorPanelButtons.ResumeLayout(False)
         Me.intPanel1.ResumeLayout(False)
         Me.intPanel1.PerformLayout()
         Me.TabPage7.ResumeLayout(False)
@@ -4866,14 +4866,14 @@ Partial Class Form1
     Friend WithEvents VSplayerColorButton As Button
     Friend WithEvents NCplayerColorButton As Button
     Friend WithEvents TRplayerColorButton As Button
-    Friend WithEvents facColorPanelButtons As FlowLayoutPanel
-    Friend WithEvents VSfacColorButton As Button
-    Friend WithEvents NCfacColorButton As Button
-    Friend WithEvents TRfacColorButton As Button
     Friend WithEvents terrColorPanelButtons As FlowLayoutPanel
     Friend WithEvents VSterrColorButton As Button
     Friend WithEvents NCterrColorButton As Button
     Friend WithEvents TRterrColorButton As Button
+    Friend WithEvents facColorPanelButtons As FlowLayoutPanel
+    Friend WithEvents VSfacColorButton As Button
+    Friend WithEvents NCfacColorButton As Button
+    Friend WithEvents TRfacColorButton As Button
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents soundPanel1 As FlowLayoutPanel
     Friend WithEvents Label63 As Label
@@ -4937,9 +4937,9 @@ Partial Class Form1
     Friend WithEvents intPanel0 As FlowLayoutPanel
     Friend WithEvents playerColorPanel As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel18 As FlowLayoutPanel
-    Friend WithEvents terrColorPanel As FlowLayoutPanel
-    Friend WithEvents FlowLayoutPanel20 As FlowLayoutPanel
     Friend WithEvents facColorPanel As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel20 As FlowLayoutPanel
+    Friend WithEvents terrColorPanel As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel21 As FlowLayoutPanel
     Friend WithEvents soundPanel0 As FlowLayoutPanel
     Friend WithEvents chatPanel0 As FlowLayoutPanel

@@ -259,7 +259,7 @@ Public Class Form1
                 found = True
                 Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
                 lineList(faction) = newVal
-                curini(index) = optionName & lineList(1) & lineList(2) & lineList(3)
+                curini(index) = optionName & lineList(1) & "," & lineList(2) & "," & lineList(3)
             End If
         Next
         Console.WriteLine($"Updated {optionName} to {newVal}")
@@ -435,7 +435,7 @@ Public Class Form1
             facColorDrop.SelectedIndex = 1
         Else
             facColorDrop.SelectedIndex = 2
-            facColorPanelButtons.Visible = True
+            terrColorPanelButtons.Visible = True
         End If
         If GetState("TintModeMap=") = "0" Then
             terrColorDrop.SelectedIndex = 0
@@ -443,7 +443,7 @@ Public Class Form1
             terrColorDrop.SelectedIndex = 1
         Else
             terrColorDrop.SelectedIndex = 2
-            terrColorPanelButtons.Visible = True
+            facColorPanelButtons.Visible = True
         End If
 #End Region
 #Region "SoundGets"
@@ -2099,7 +2099,7 @@ Public Class Form1
         End If
     End Sub
     Public Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        If fontAutoCheck.Checked Then
+        If fontAutoCheck.Checked Or localeReplaceCheck.Checked Then
             Dim watcher As EventLogWatcher
             watcher = Nothing
             Try
@@ -2146,10 +2146,12 @@ Public Class Form1
                 Console.WriteLine("Copied fonts")
             End If
             If localeReplaceCheck.Checked Then
-                Dim dirSource As String = selectedDirPath.ToString
-                Dim datSource As String = selectedDatPath.ToString
-                File.Copy(dirSource, CurDir() + "\Locale\en_us_data.dir", True)
-                File.Copy(datSource, CurDir() + "\Locale\en_us_data.dat", True)
+                Dim dirSource As String = GetStateMyIni("LocaleDirPath=")
+                Dim datSource As String = GetStateMyIni("LocaleDatPath=")
+                Dim dirDest As String = CurDir() + "\Locale\en_us_data.dir"
+                Dim datDest As String = CurDir() + "\Locale\en_us_data.dat"
+                File.Copy(dirSource, dirDest, True)
+                File.Copy(datSource, datDest, True)
                 Console.WriteLine("Copied locale")
             End If
             If commandAutoCheck.Checked Then
