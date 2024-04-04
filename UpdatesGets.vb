@@ -4,7 +4,6 @@ Module UpdatesGets
 #Region "UpdatesAndGets"
     Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object)
         'Reads the ini line by line for the specified option
-        'If option isn't found, run through option arrays for option and insert a line for the correct category
         If Not doneLoading Then
             Exit Sub
         End If
@@ -16,8 +15,9 @@ Module UpdatesGets
                 Console.WriteLine($"Updated {optionName} to {newVal}")
             End If
         Next
+        'If option isn't found, run through option arrays for option and insert a line for the correct category
         If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
+            For Each list As List(Of String) In bigOptions
                 If list.Contains(optionName) Then
                     For Each line In curini
                         If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
@@ -63,6 +63,7 @@ Module UpdatesGets
         End If
     End Sub
     Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object, ByVal addremove As Boolean)
+        'This form of UpdateVal is for options that have multiple values, such as custom faction coloring or disabling UI elements.
         If Not doneLoading Then
             Exit Sub
         End If
@@ -70,8 +71,11 @@ Module UpdatesGets
         For index As Integer = 0 To curini.Count - 1
             If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
                 found = True
+                'Split the option line into pieces that can each be manipulated
                 Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
+                'Was getting null errors, so remove any possible nulls
                 lineList.RemoveAll(Function(str) String.IsNullOrEmpty(str))
+                'addremove boolean treated as true = attempt to add value, false = attempt to remove
                 If lineList.Contains(newVal) And addremove = True Then
                     Console.WriteLine("option already in list")
                     Exit Sub
@@ -101,7 +105,7 @@ Module UpdatesGets
         Next
         Console.WriteLine($"Updated {optionName} to {newVal}")
         If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
+            For Each list As List(Of String) In bigOptions
                 If list.Contains(optionName) Then
                     For Each line In curini
                         If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
@@ -199,7 +203,7 @@ Module UpdatesGets
         Next
         Console.WriteLine($"Updated {optionName} to {newVal}")
         If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
+            For Each list As List(Of String) In bigOptions
                 If list.Contains(optionName) Then
                     For Each line In curini
                         If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then

@@ -97,21 +97,21 @@ Public Class Form1
         hudCompCheck.Checked = GetState("HudShowTopCompass=")
         hudDotCheck.Checked = GetState("HudShow3PVehicleReticle=")
         custRetCheck.Checked = GetState("TintModeReticuleStyle=")
-        retColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("TintModeReticuleColor=")))
+        retColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("TintModeReticuleColor=")))
         If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            alphaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor0=")))
+            alphaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor0=")))
         End If
         If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            bravoColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor1=")))
+            bravoColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor1=")))
         End If
         If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            charlieColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor2=")))
+            charlieColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor2=")))
         End If
         If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            deltaColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("PlatoonSquadColor3=")))
+            deltaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor3=")))
         End If
-        NDZColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("NoDeployZoneColor=")))
-        OSColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(GetState("OrbitalStrikeColor=")))
+        NDZColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("NoDeployZoneColor=")))
+        OSColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("OrbitalStrikeColor=")))
         OSAlphaBox.Value = GetState("OrbitalStrikeAlpha=")
         If GetState("TintModePlayer=") = "0" Then
             playerColorDrop.SelectedIndex = 0
@@ -631,21 +631,21 @@ Public Class Form1
 #Region "SensStuff"
     Private Sub hipSensBox_TextChanged(sender As Object, e As EventArgs) Handles hipSensBox.TextChanged
         UpdateVal("MouseSensitivity=", hipSensBox.Value)
-        LabelHipcm360.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
+        LabelHipcm360.Text() = String.Concat(HipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
     End Sub
     Private Sub adsSensBox_TextChanged(sender As Object, e As EventArgs) Handles adsSensBox.TextChanged
         UpdateVal("ADSMouseSensitivity=", adsSensBox.Value)
-        Label1cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
-        Label2cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
+        Label1cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
+        Label2cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
     End Sub
     Private Sub scopSensBox_TextChanged(sender As Object, e As EventArgs) Handles scopSensBox.TextChanged
         UpdateVal("ScopedMouseSensitivity=", scopSensBox.Value)
-        Label3cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
-        Label4cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
-        Label6cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
-        Label8cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
-        Label10cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
-        Label12cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
+        Label3cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
+        Label4cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
+        Label6cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
+        Label8cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
+        Label10cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
+        Label12cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
     End Sub
     Private Sub vehSensBox_TextChanged(sender As Object, e As EventArgs) Handles vehSensBox.TextChanged
         UpdateVal("VehicleMouseSensitivity=", vehSensBox.Value)
@@ -671,7 +671,7 @@ Public Class Form1
         End If
     End Sub
     Private Sub hip360Box_ValueChanged(sender As Object, e As EventArgs) Handles hip360Box.ValueChanged
-        Dim Sens As String = hipSensCalc(DPIBox.Value, hip360Box.Value)
+        Dim Sens As String = HipSensCalc(DPIBox.Value, hip360Box.Value)
         UpdateVal("MouseSensitivity=", Sens)
         LabelHipSens.Text() = Sens
     End Sub
@@ -679,11 +679,11 @@ Public Class Form1
         If IsNothing(adsZoomBox.SelectedItem) Then
             Exit Sub
         ElseIf adsZoomBox.SelectedIndex = 0 Then
-            Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
+            Dim Sens As String = AimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
             UpdateVal("ADSMouseSensitivity=", Sens)
             LabelAdsSens.Text() = Sens
         Else
-            Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
+            Dim Sens As String = AimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
             UpdateVal("ADSMouseSensitivity=", Sens)
             LabelAdsSens.Text() = Sens
         End If
@@ -692,32 +692,32 @@ Public Class Form1
         If IsNothing(scopZoomBox.SelectedItem) Then
             Exit Sub
         Else
-            Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
+            Dim Sens As String = AimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
             UpdateVal("ScopedMouseSensitivity=", Sens)
             LabelScopSens.Text() = Sens
         End If
     End Sub
     Private Sub DPIBox_ValueChanged(sender As Object, e As EventArgs) Handles DPIBox.ValueChanged
-        LabelHipcm360.Text() = String.Concat(hipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
-        Label1cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
-        Label2cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
-        Label3cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
-        Label4cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
-        Label6cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
-        Label8cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
-        Label10cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
-        Label12cm360.Text() = String.Concat(aimTurncalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
-        LabelHipSens.Text() = hipSensCalc(DPIBox.Value, hip360Box.Value)
+        LabelHipcm360.Text() = String.Concat(HipTurnCalc(DPIBox.Value, hipSensBox.Value), "cm")
+        Label1cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, adsSensBox.Value, 1.35), "cm")
+        Label2cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, adsSensBox.Value, 2), "cm")
+        Label3cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 3.4), "cm")
+        Label4cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 4), "cm")
+        Label6cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 6), "cm")
+        Label8cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 8), "cm")
+        Label10cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 10), "cm")
+        Label12cm360.Text() = String.Concat(AimTurnCalc(DPIBox.Value, scopSensBox.Value, 12), "cm")
+        LabelHipSens.Text() = HipSensCalc(DPIBox.Value, hip360Box.Value)
         If IsNothing(adsZoomBox.SelectedItem) Then
         ElseIf adsZoomBox.SelectedIndex = 0 Then
-            Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
+            Dim Sens As String = AimSensCalc(DPIBox.Value, ads360Box.Value, 1.35)
             LabelAdsSens.Text() = Sens
         Else
-            Dim Sens As String = aimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
+            Dim Sens As String = AimSensCalc(DPIBox.Value, ads360Box.Value, adsZoomBox.SelectedItem.ToString.Trim("x"c))
             LabelAdsSens.Text() = Sens
         End If
         If Not IsNothing(scopZoomBox.SelectedItem) Then
-            Dim Sens As String = aimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
+            Dim Sens As String = AimSensCalc(DPIBox.Value, scop360Box.Value, scopZoomBox.SelectedItem.ToString.Trim("x"c))
             LabelScopSens.Text() = Sens
         End If
         UpdateValMyIni("DPI=", DPIBox.Value)
@@ -784,85 +784,85 @@ Public Class Form1
 #End Region
 #Region "Buttons"
     Private Sub retColorButton_Click(sender As Object, e As EventArgs) Handles retColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         retColorButton.BackColor = chosenColor
-        UpdateVal("TintModeReticuleColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("TintModeReticuleColor=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub alphaColorButton_Click(sender As Object, e As EventArgs) Handles alphaColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         alphaColorButton.BackColor = chosenColor
-        UpdateVal("PlatoonSquadColor0=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor0=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub bravoColorButton_Click(sender As Object, e As EventArgs) Handles bravoColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         bravoColorButton.BackColor = chosenColor
-        UpdateVal("PlatoonSquadColor1=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor1=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub charlieColorButton_Click(sender As Object, e As EventArgs) Handles charlieColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         charlieColorButton.BackColor = chosenColor
-        UpdateVal("PlatoonSquadColor2=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor2=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub deltaColorButton_Click(sender As Object, e As EventArgs) Handles deltaColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         deltaColorButton.BackColor = chosenColor
-        UpdateVal("PlatoonSquadColor3=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("PlatoonSquadColor3=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub NDZColorButton_Click(sender As Object, e As EventArgs) Handles NDZColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         NDZColorButton.BackColor = chosenColor
-        UpdateVal("NoDeployZoneColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
-        UpdateVal("TintModeNoDeploy=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("NoDeployZoneColor=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("TintModeNoDeploy=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub OSColorButton_Click(sender As Object, e As EventArgs) Handles OSColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         OSColorButton.BackColor = chosenColor
-        UpdateVal("OrbitalStrikeColor=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
+        UpdateVal("OrbitalStrikeColor=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)))
     End Sub
     Private Sub VSplayerColorButton_Click(sender As Object, e As EventArgs) Handles VSplayerColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         VSplayerColorButton.BackColor = chosenColor
-        ColorUpdate("TintModePlayer=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 1)
+        ColorUpdate("TintModePlayer=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 1)
     End Sub
     Private Sub NCplayerColorButton_Click(sender As Object, e As EventArgs) Handles NCplayerColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         NCplayerColorButton.BackColor = chosenColor
-        ColorUpdate("TintModePlayer=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
+        ColorUpdate("TintModePlayer=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
     End Sub
     Private Sub TRplayerColorButton_Click(sender As Object, e As EventArgs) Handles TRplayerColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         TRplayerColorButton.BackColor = chosenColor
-        ColorUpdate("TintModePlayer=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
+        ColorUpdate("TintModePlayer=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
     End Sub
     Private Sub VSfacColorButton_Click(sender As Object, e As EventArgs) Handles VSfacColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         VSfacColorButton.BackColor = chosenColor
-        ColorUpdate("TintModeFacility=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 1)
+        ColorUpdate("TintModeFacility=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 1)
     End Sub
     Private Sub NCfacColorButton_Click(sender As Object, e As EventArgs) Handles NCfacColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         NCfacColorButton.BackColor = chosenColor
-        ColorUpdate("TintModeFacility=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
+        ColorUpdate("TintModeFacility=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
     End Sub
     Private Sub TRfacColorButton_Click(sender As Object, e As EventArgs) Handles TRfacColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         TRfacColorButton.BackColor = chosenColor
-        ColorUpdate("TintModeFacility=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
+        ColorUpdate("TintModeFacility=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
     End Sub
     Private Sub VSterrColorButton_Click(sender As Object, e As EventArgs) Handles VSterrColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         VSterrColorButton.BackColor = chosenColor
-        ColorUpdate("TintModeMap=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 1)
+        ColorUpdate("TintModeMap=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 1)
     End Sub
     Private Sub NCterrColorButton_Click(sender As Object, e As EventArgs) Handles NCterrColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         NCterrColorButton.BackColor = chosenColor
-        ColorUpdate("TintModeMap=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
+        ColorUpdate("TintModeMap=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
     End Sub
     Private Sub TRterrColorButton_Click(sender As Object, e As EventArgs) Handles TRterrColorButton.Click
-        Dim chosenColor As Color = colorGetter()
+        Dim chosenColor As Color = ColorGetter()
         TRterrColorButton.BackColor = chosenColor
-        ColorUpdate("TintModeMap=", colorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
+        ColorUpdate("TintModeMap=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
     End Sub
 #End Region
 #Region "IndexChanged"
@@ -878,9 +878,9 @@ Public Class Form1
             If GetState("TintModePlayer=").ToString.Length < 3 Then
                 UpdateVal("TintModePlayer=", "4460130,19328,10357519")
             End If
-            VSplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
-            NCplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 2)))
-            TRplayerColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModePlayer=", 3)))
+            VSplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
+            NCplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModePlayer=", 2)))
+            TRplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModePlayer=", 3)))
         End If
     End Sub
     Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
@@ -895,9 +895,9 @@ Public Class Form1
             If GetState("TintModeFacility=").ToString.Length < 3 Then
                 UpdateVal("TintModeFacility=", "4460130,19328,10357519")
             End If
-            VSfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
-            NCfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
-            TRfacColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
+            VSfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
+            NCfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
+            TRfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
         End If
     End Sub
     Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
@@ -912,9 +912,9 @@ Public Class Form1
             If GetState("TintModeMap=").ToString.Length < 3 Then
                 UpdateVal("TintModeMap=", "4460130,19328,10357519")
             End If
-            VSterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 1)))
-            NCterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 2)))
-            TRterrColorButton.BackColor = ColorTranslator.FromOle(colorDecimalSwap(ColorGetState("TintModeMap=", 3)))
+            VSterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeMap=", 1)))
+            NCterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeMap=", 2)))
+            TRterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeMap=", 3)))
         End If
     End Sub
 #End Region
