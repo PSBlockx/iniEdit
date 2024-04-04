@@ -341,6 +341,7 @@ Partial Class Form1
         Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
         Me.selectedFontPath = New System.Windows.Forms.Label()
         Me.fontSelectButton = New System.Windows.Forms.Button()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -1131,6 +1132,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage8)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 24)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(0)
@@ -1139,7 +1141,7 @@ Partial Class Form1
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(747, 563)
+        Me.TabControl1.Size = New System.Drawing.Size(924, 662)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.TabControl1.TabIndex = 70
         Me.TabControl1.TabStop = False
@@ -1151,7 +1153,7 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.graphPanel0)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage1.Size = New System.Drawing.Size(926, 611)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Graphics"
         '
@@ -1169,7 +1171,7 @@ Partial Class Form1
         Me.graphPanel0.Location = New System.Drawing.Point(0, 0)
         Me.graphPanel0.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
         Me.graphPanel0.Name = "graphPanel0"
-        Me.graphPanel0.Size = New System.Drawing.Size(739, 537)
+        Me.graphPanel0.Size = New System.Drawing.Size(926, 611)
         Me.graphPanel0.TabIndex = 51
         '
         'graphPanel5
@@ -1295,7 +1297,7 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.sensTypeDrop)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage2.Size = New System.Drawing.Size(926, 591)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sensitivity"
         '
@@ -1982,7 +1984,7 @@ Partial Class Form1
         Me.TabPage4.Controls.Add(Me.intPanel0)
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage4.Size = New System.Drawing.Size(926, 591)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Interface"
         '
@@ -1997,7 +1999,7 @@ Partial Class Form1
         Me.intPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.intPanel0.Location = New System.Drawing.Point(0, 0)
         Me.intPanel0.Name = "intPanel0"
-        Me.intPanel0.Size = New System.Drawing.Size(739, 537)
+        Me.intPanel0.Size = New System.Drawing.Size(926, 591)
         Me.intPanel0.TabIndex = 54
         '
         'intPanel2
@@ -2531,7 +2533,7 @@ Partial Class Form1
         Me.TabPage7.Controls.Add(Me.iconPanel0)
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage7.Size = New System.Drawing.Size(926, 591)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Disabled UI"
         '
@@ -2552,7 +2554,7 @@ Partial Class Form1
         Me.iconPanel0.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.iconPanel0.Location = New System.Drawing.Point(0, 0)
         Me.iconPanel0.Name = "iconPanel0"
-        Me.iconPanel0.Size = New System.Drawing.Size(739, 537)
+        Me.iconPanel0.Size = New System.Drawing.Size(926, 591)
         Me.iconPanel0.TabIndex = 0
         '
         'iconPanel1
@@ -2687,7 +2689,7 @@ Partial Class Form1
         Me.iconPanel3.Controls.Add(Me.iconsDepTurretsCheck)
         Me.iconPanel3.Location = New System.Drawing.Point(3, 67)
         Me.iconPanel3.Name = "iconPanel3"
-        Me.iconPanel3.Size = New System.Drawing.Size(686, 52)
+        Me.iconPanel3.Size = New System.Drawing.Size(871, 26)
         Me.iconPanel3.TabIndex = 2
         '
         'iconsDeployGroupCheck
@@ -2805,7 +2807,7 @@ Partial Class Form1
         Me.iconsDepDroneCheck.AutoSize = True
         Me.iconsDepDroneCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsDepDroneCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsDepDroneCheck.Location = New System.Drawing.Point(3, 31)
+        Me.iconsDepDroneCheck.Location = New System.Drawing.Point(689, 5)
         Me.iconsDepDroneCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsDepDroneCheck.Name = "iconsDepDroneCheck"
         Me.iconsDepDroneCheck.Size = New System.Drawing.Size(90, 17)
@@ -2819,7 +2821,7 @@ Partial Class Form1
         Me.iconsDepTurretsCheck.AutoSize = True
         Me.iconsDepTurretsCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsDepTurretsCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsDepTurretsCheck.Location = New System.Drawing.Point(99, 31)
+        Me.iconsDepTurretsCheck.Location = New System.Drawing.Point(785, 5)
         Me.iconsDepTurretsCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsDepTurretsCheck.Name = "iconsDepTurretsCheck"
         Me.iconsDepTurretsCheck.Size = New System.Drawing.Size(83, 17)
@@ -2844,9 +2846,9 @@ Partial Class Form1
         Me.iconPanel4.Controls.Add(Me.iconsWorldCrystalCheck)
         Me.iconPanel4.Controls.Add(Me.iconsWorldConstructionCheck)
         Me.iconPanel4.Controls.Add(Me.iconsWorldCortiumCheck)
-        Me.iconPanel4.Location = New System.Drawing.Point(3, 125)
+        Me.iconPanel4.Location = New System.Drawing.Point(3, 99)
         Me.iconPanel4.Name = "iconPanel4"
-        Me.iconPanel4.Size = New System.Drawing.Size(732, 52)
+        Me.iconPanel4.Size = New System.Drawing.Size(883, 52)
         Me.iconPanel4.TabIndex = 3
         '
         'iconsWorldGroupCheck
@@ -2945,7 +2947,7 @@ Partial Class Form1
         Me.iconsWorldNPCCheck.AutoSize = True
         Me.iconsWorldNPCCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsWorldNPCCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsWorldNPCCheck.Location = New System.Drawing.Point(3, 31)
+        Me.iconsWorldNPCCheck.Location = New System.Drawing.Point(684, 5)
         Me.iconsWorldNPCCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldNPCCheck.Name = "iconsWorldNPCCheck"
         Me.iconsWorldNPCCheck.Size = New System.Drawing.Size(90, 17)
@@ -2958,7 +2960,7 @@ Partial Class Form1
         Me.iconsWorldStationCheck.AutoSize = True
         Me.iconsWorldStationCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsWorldStationCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsWorldStationCheck.Location = New System.Drawing.Point(99, 31)
+        Me.iconsWorldStationCheck.Location = New System.Drawing.Point(780, 5)
         Me.iconsWorldStationCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldStationCheck.Name = "iconsWorldStationCheck"
         Me.iconsWorldStationCheck.Size = New System.Drawing.Size(100, 17)
@@ -2971,7 +2973,7 @@ Partial Class Form1
         Me.iconsWorldAssetCheck.AutoSize = True
         Me.iconsWorldAssetCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsWorldAssetCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsWorldAssetCheck.Location = New System.Drawing.Point(205, 31)
+        Me.iconsWorldAssetCheck.Location = New System.Drawing.Point(3, 31)
         Me.iconsWorldAssetCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldAssetCheck.Name = "iconsWorldAssetCheck"
         Me.iconsWorldAssetCheck.Size = New System.Drawing.Size(159, 17)
@@ -2984,7 +2986,7 @@ Partial Class Form1
         Me.iconsWorldCrystalCheck.AutoSize = True
         Me.iconsWorldCrystalCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsWorldCrystalCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsWorldCrystalCheck.Location = New System.Drawing.Point(370, 31)
+        Me.iconsWorldCrystalCheck.Location = New System.Drawing.Point(168, 31)
         Me.iconsWorldCrystalCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldCrystalCheck.Name = "iconsWorldCrystalCheck"
         Me.iconsWorldCrystalCheck.Size = New System.Drawing.Size(151, 17)
@@ -2997,7 +2999,7 @@ Partial Class Form1
         Me.iconsWorldConstructionCheck.AutoSize = True
         Me.iconsWorldConstructionCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsWorldConstructionCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsWorldConstructionCheck.Location = New System.Drawing.Point(527, 31)
+        Me.iconsWorldConstructionCheck.Location = New System.Drawing.Point(325, 31)
         Me.iconsWorldConstructionCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldConstructionCheck.Name = "iconsWorldConstructionCheck"
         Me.iconsWorldConstructionCheck.Size = New System.Drawing.Size(135, 17)
@@ -3010,7 +3012,7 @@ Partial Class Form1
         Me.iconsWorldCortiumCheck.AutoSize = True
         Me.iconsWorldCortiumCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsWorldCortiumCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsWorldCortiumCheck.Location = New System.Drawing.Point(668, 31)
+        Me.iconsWorldCortiumCheck.Location = New System.Drawing.Point(466, 31)
         Me.iconsWorldCortiumCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsWorldCortiumCheck.Name = "iconsWorldCortiumCheck"
         Me.iconsWorldCortiumCheck.Size = New System.Drawing.Size(61, 17)
@@ -3047,9 +3049,9 @@ Partial Class Form1
         Me.iconPanel5.Controls.Add(Me.iconsFacSCUAttackCheck)
         Me.iconPanel5.Controls.Add(Me.iconsFacGateAttackCheck)
         Me.iconPanel5.Controls.Add(Me.iconsFacRelicDoorCheck)
-        Me.iconPanel5.Location = New System.Drawing.Point(3, 183)
+        Me.iconPanel5.Location = New System.Drawing.Point(3, 157)
         Me.iconPanel5.Name = "iconPanel5"
-        Me.iconPanel5.Size = New System.Drawing.Size(723, 104)
+        Me.iconPanel5.Size = New System.Drawing.Size(910, 78)
         Me.iconPanel5.TabIndex = 4
         '
         'iconsFacilityGroupCheck
@@ -3148,7 +3150,7 @@ Partial Class Form1
         Me.iconsFacGalTermCheck.AutoSize = True
         Me.iconsFacGalTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacGalTermCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacGalTermCheck.Location = New System.Drawing.Point(3, 31)
+        Me.iconsFacGalTermCheck.Location = New System.Drawing.Point(706, 5)
         Me.iconsFacGalTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacGalTermCheck.Name = "iconsFacGalTermCheck"
         Me.iconsFacGalTermCheck.Size = New System.Drawing.Size(101, 17)
@@ -3161,7 +3163,7 @@ Partial Class Form1
         Me.iconsFacFlashTermCheck.AutoSize = True
         Me.iconsFacFlashTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacFlashTermCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacFlashTermCheck.Location = New System.Drawing.Point(110, 31)
+        Me.iconsFacFlashTermCheck.Location = New System.Drawing.Point(813, 5)
         Me.iconsFacFlashTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacFlashTermCheck.Name = "iconsFacFlashTermCheck"
         Me.iconsFacFlashTermCheck.Size = New System.Drawing.Size(94, 17)
@@ -3174,7 +3176,7 @@ Partial Class Form1
         Me.iconsFacLightTermCheck.AutoSize = True
         Me.iconsFacLightTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacLightTermCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacLightTermCheck.Location = New System.Drawing.Point(210, 31)
+        Me.iconsFacLightTermCheck.Location = New System.Drawing.Point(3, 31)
         Me.iconsFacLightTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacLightTermCheck.Name = "iconsFacLightTermCheck"
         Me.iconsFacLightTermCheck.Size = New System.Drawing.Size(87, 17)
@@ -3187,7 +3189,7 @@ Partial Class Form1
         Me.iconsFacBusTermCheck.AutoSize = True
         Me.iconsFacBusTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacBusTermCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacBusTermCheck.Location = New System.Drawing.Point(303, 31)
+        Me.iconsFacBusTermCheck.Location = New System.Drawing.Point(96, 31)
         Me.iconsFacBusTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacBusTermCheck.Name = "iconsFacBusTermCheck"
         Me.iconsFacBusTermCheck.Size = New System.Drawing.Size(112, 17)
@@ -3200,7 +3202,7 @@ Partial Class Form1
         Me.iconsFacTeleCheck.AutoSize = True
         Me.iconsFacTeleCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacTeleCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacTeleCheck.Location = New System.Drawing.Point(421, 31)
+        Me.iconsFacTeleCheck.Location = New System.Drawing.Point(214, 31)
         Me.iconsFacTeleCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacTeleCheck.Name = "iconsFacTeleCheck"
         Me.iconsFacTeleCheck.Size = New System.Drawing.Size(79, 17)
@@ -3213,7 +3215,7 @@ Partial Class Form1
         Me.iconsFacPointCheck.AutoSize = True
         Me.iconsFacPointCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacPointCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacPointCheck.Location = New System.Drawing.Point(506, 31)
+        Me.iconsFacPointCheck.Location = New System.Drawing.Point(299, 31)
         Me.iconsFacPointCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacPointCheck.Name = "iconsFacPointCheck"
         Me.iconsFacPointCheck.Size = New System.Drawing.Size(91, 17)
@@ -3226,7 +3228,7 @@ Partial Class Form1
         Me.iconsFacOWPointsCheck.AutoSize = True
         Me.iconsFacOWPointsCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacOWPointsCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacOWPointsCheck.Location = New System.Drawing.Point(603, 31)
+        Me.iconsFacOWPointsCheck.Location = New System.Drawing.Point(396, 31)
         Me.iconsFacOWPointsCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacOWPointsCheck.Name = "iconsFacOWPointsCheck"
         Me.iconsFacOWPointsCheck.Size = New System.Drawing.Size(104, 17)
@@ -3239,7 +3241,7 @@ Partial Class Form1
         Me.iconsFacNearbyCheck.AutoSize = True
         Me.iconsFacNearbyCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacNearbyCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacNearbyCheck.Location = New System.Drawing.Point(3, 57)
+        Me.iconsFacNearbyCheck.Location = New System.Drawing.Point(506, 31)
         Me.iconsFacNearbyCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacNearbyCheck.Name = "iconsFacNearbyCheck"
         Me.iconsFacNearbyCheck.Size = New System.Drawing.Size(112, 17)
@@ -3253,7 +3255,7 @@ Partial Class Form1
         Me.iconsFacSCUCheck.AutoSize = True
         Me.iconsFacSCUCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacSCUCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacSCUCheck.Location = New System.Drawing.Point(121, 57)
+        Me.iconsFacSCUCheck.Location = New System.Drawing.Point(624, 31)
         Me.iconsFacSCUCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacSCUCheck.Name = "iconsFacSCUCheck"
         Me.iconsFacSCUCheck.Size = New System.Drawing.Size(48, 17)
@@ -3266,7 +3268,7 @@ Partial Class Form1
         Me.iconsFacHorzCheck.AutoSize = True
         Me.iconsFacHorzCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacHorzCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacHorzCheck.Location = New System.Drawing.Point(175, 57)
+        Me.iconsFacHorzCheck.Location = New System.Drawing.Point(678, 31)
         Me.iconsFacHorzCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacHorzCheck.Name = "iconsFacHorzCheck"
         Me.iconsFacHorzCheck.Size = New System.Drawing.Size(96, 17)
@@ -3279,7 +3281,7 @@ Partial Class Form1
         Me.iconsFacVertCheck.AutoSize = True
         Me.iconsFacVertCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacVertCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacVertCheck.Location = New System.Drawing.Point(277, 57)
+        Me.iconsFacVertCheck.Location = New System.Drawing.Point(780, 31)
         Me.iconsFacVertCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacVertCheck.Name = "iconsFacVertCheck"
         Me.iconsFacVertCheck.Size = New System.Drawing.Size(84, 17)
@@ -3292,7 +3294,7 @@ Partial Class Form1
         Me.iconsFacVehShieldCheck.AutoSize = True
         Me.iconsFacVehShieldCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacVehShieldCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacVehShieldCheck.Location = New System.Drawing.Point(367, 57)
+        Me.iconsFacVehShieldCheck.Location = New System.Drawing.Point(3, 57)
         Me.iconsFacVehShieldCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacVehShieldCheck.Name = "iconsFacVehShieldCheck"
         Me.iconsFacVehShieldCheck.Size = New System.Drawing.Size(116, 17)
@@ -3305,7 +3307,7 @@ Partial Class Form1
         Me.iconsFacSCUShieldCheck.AutoSize = True
         Me.iconsFacSCUShieldCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacSCUShieldCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacSCUShieldCheck.Location = New System.Drawing.Point(489, 57)
+        Me.iconsFacSCUShieldCheck.Location = New System.Drawing.Point(125, 57)
         Me.iconsFacSCUShieldCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacSCUShieldCheck.Name = "iconsFacSCUShieldCheck"
         Me.iconsFacSCUShieldCheck.Size = New System.Drawing.Size(103, 17)
@@ -3318,7 +3320,7 @@ Partial Class Form1
         Me.iconsFacForwardCheck.AutoSize = True
         Me.iconsFacForwardCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacForwardCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacForwardCheck.Location = New System.Drawing.Point(598, 57)
+        Me.iconsFacForwardCheck.Location = New System.Drawing.Point(234, 57)
         Me.iconsFacForwardCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacForwardCheck.Name = "iconsFacForwardCheck"
         Me.iconsFacForwardCheck.Size = New System.Drawing.Size(122, 17)
@@ -3331,7 +3333,7 @@ Partial Class Form1
         Me.iconsFacBridgeTermCheck.AutoSize = True
         Me.iconsFacBridgeTermCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacBridgeTermCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacBridgeTermCheck.Location = New System.Drawing.Point(3, 83)
+        Me.iconsFacBridgeTermCheck.Location = New System.Drawing.Point(362, 57)
         Me.iconsFacBridgeTermCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacBridgeTermCheck.Name = "iconsFacBridgeTermCheck"
         Me.iconsFacBridgeTermCheck.Size = New System.Drawing.Size(99, 17)
@@ -3345,7 +3347,7 @@ Partial Class Form1
         Me.iconsFacSCUAttackCheck.AutoSize = True
         Me.iconsFacSCUAttackCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacSCUAttackCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacSCUAttackCheck.Location = New System.Drawing.Point(108, 83)
+        Me.iconsFacSCUAttackCheck.Location = New System.Drawing.Point(467, 57)
         Me.iconsFacSCUAttackCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacSCUAttackCheck.Name = "iconsFacSCUAttackCheck"
         Me.iconsFacSCUAttackCheck.Size = New System.Drawing.Size(102, 17)
@@ -3359,7 +3361,7 @@ Partial Class Form1
         Me.iconsFacGateAttackCheck.AutoSize = True
         Me.iconsFacGateAttackCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacGateAttackCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacGateAttackCheck.Location = New System.Drawing.Point(216, 83)
+        Me.iconsFacGateAttackCheck.Location = New System.Drawing.Point(575, 57)
         Me.iconsFacGateAttackCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacGateAttackCheck.Name = "iconsFacGateAttackCheck"
         Me.iconsFacGateAttackCheck.Size = New System.Drawing.Size(135, 17)
@@ -3374,7 +3376,7 @@ Partial Class Form1
         Me.iconsFacRelicDoorCheck.AutoSize = True
         Me.iconsFacRelicDoorCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.iconsFacRelicDoorCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.iconsFacRelicDoorCheck.Location = New System.Drawing.Point(357, 83)
+        Me.iconsFacRelicDoorCheck.Location = New System.Drawing.Point(716, 57)
         Me.iconsFacRelicDoorCheck.Margin = New System.Windows.Forms.Padding(3, 5, 3, 4)
         Me.iconsFacRelicDoorCheck.Name = "iconsFacRelicDoorCheck"
         Me.iconsFacRelicDoorCheck.Size = New System.Drawing.Size(96, 17)
@@ -3391,7 +3393,7 @@ Partial Class Form1
         Me.iconPanel6.Controls.Add(Me.iconsTitlesGroupCheck)
         Me.iconPanel6.Controls.Add(Me.iconsTitleAllyCheck)
         Me.iconPanel6.Controls.Add(Me.iconsTitleEnemyCheck)
-        Me.iconPanel6.Location = New System.Drawing.Point(3, 293)
+        Me.iconPanel6.Location = New System.Drawing.Point(3, 241)
         Me.iconPanel6.Name = "iconPanel6"
         Me.iconPanel6.Size = New System.Drawing.Size(260, 26)
         Me.iconPanel6.TabIndex = 5
@@ -3445,7 +3447,7 @@ Partial Class Form1
         Me.iconPanel7.Controls.Add(Me.iconsNameFireCheck)
         Me.iconPanel7.Controls.Add(Me.iconsNameOutfitCheck)
         Me.iconPanel7.Controls.Add(Me.iconsNameEnemyCheck)
-        Me.iconPanel7.Location = New System.Drawing.Point(3, 325)
+        Me.iconPanel7.Location = New System.Drawing.Point(3, 273)
         Me.iconPanel7.Name = "iconPanel7"
         Me.iconPanel7.Size = New System.Drawing.Size(584, 26)
         Me.iconPanel7.TabIndex = 6
@@ -3537,7 +3539,7 @@ Partial Class Form1
         Me.iconPanel8.Controls.Add(Me.iconsDoritoGroupCheck)
         Me.iconPanel8.Controls.Add(Me.iconsDoritoAllyCheck)
         Me.iconPanel8.Controls.Add(Me.iconsDoritoEnemyCheck)
-        Me.iconPanel8.Location = New System.Drawing.Point(3, 357)
+        Me.iconPanel8.Location = New System.Drawing.Point(3, 305)
         Me.iconPanel8.Name = "iconPanel8"
         Me.iconPanel8.Size = New System.Drawing.Size(300, 26)
         Me.iconPanel8.TabIndex = 7
@@ -3588,7 +3590,7 @@ Partial Class Form1
         Me.iconPanel9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.iconPanel9.Controls.Add(Me.iconsMiscGroupCheck)
         Me.iconPanel9.Controls.Add(Me.iconsSocialCheck)
-        Me.iconPanel9.Location = New System.Drawing.Point(3, 389)
+        Me.iconPanel9.Location = New System.Drawing.Point(3, 337)
         Me.iconPanel9.Name = "iconPanel9"
         Me.iconPanel9.Size = New System.Drawing.Size(159, 26)
         Me.iconPanel9.TabIndex = 8
@@ -3627,7 +3629,7 @@ Partial Class Form1
         Me.TabPage5.Controls.Add(Me.soundPanel0)
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage5.Size = New System.Drawing.Size(926, 591)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Sound"
         '
@@ -3640,7 +3642,7 @@ Partial Class Form1
         Me.soundPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.soundPanel0.Location = New System.Drawing.Point(0, 0)
         Me.soundPanel0.Name = "soundPanel0"
-        Me.soundPanel0.Size = New System.Drawing.Size(739, 537)
+        Me.soundPanel0.Size = New System.Drawing.Size(926, 591)
         Me.soundPanel0.TabIndex = 78
         '
         'soundPanel1
@@ -3853,7 +3855,7 @@ Partial Class Form1
         Me.TabPage6.Controls.Add(Me.chatPanel0)
         Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage6.Size = New System.Drawing.Size(926, 591)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Chat"
         '
@@ -3866,7 +3868,7 @@ Partial Class Form1
         Me.chatPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.chatPanel0.Location = New System.Drawing.Point(0, 0)
         Me.chatPanel0.Name = "chatPanel0"
-        Me.chatPanel0.Size = New System.Drawing.Size(739, 537)
+        Me.chatPanel0.Size = New System.Drawing.Size(926, 591)
         Me.chatPanel0.TabIndex = 79
         '
         'chatPanel1
@@ -4340,7 +4342,7 @@ Partial Class Form1
         Me.TabPage3.Controls.Add(Me.fontSelectButton)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(739, 537)
+        Me.TabPage3.Size = New System.Drawing.Size(926, 611)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Advanced"
         '
@@ -4479,12 +4481,21 @@ Partial Class Form1
         Me.fontSelectButton.UseVisualStyleBackColor = True
         Me.fontSelectButton.Visible = False
         '
+        'TabPage8
+        '
+        Me.TabPage8.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Size = New System.Drawing.Size(916, 636)
+        Me.TabPage8.TabIndex = 7
+        Me.TabPage8.Text = "TabPage8"
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.startLauncher})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(747, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(924, 24)
         Me.MenuStrip1.TabIndex = 76
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -4530,16 +4541,16 @@ Partial Class Form1
         '
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.curEditLabel, Me.ToolStripStatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 565)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 664)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(747, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(924, 22)
         Me.StatusStrip1.TabIndex = 80
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'curEditLabel
         '
         Me.curEditLabel.Name = "curEditLabel"
-        Me.curEditLabel.Size = New System.Drawing.Size(543, 17)
+        Me.curEditLabel.Size = New System.Drawing.Size(720, 17)
         Me.curEditLabel.Spring = True
         Me.curEditLabel.Text = "Currently Editing:"
         Me.curEditLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -4563,13 +4574,14 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(747, 587)
+        Me.ClientSize = New System.Drawing.Size(924, 686)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "iniEdit"
         Me.graphPanel4.ResumeLayout(False)
         Me.graphPanel4.PerformLayout()
@@ -5058,4 +5070,5 @@ Partial Class Form1
     Friend WithEvents commandTextBox As TextBox
     Friend WithEvents Label37 As Label
     Friend WithEvents OSAlphaBox As NumericUpDown
+    Friend WithEvents TabPage8 As TabPage
 End Class

@@ -1,50 +1,8 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
 Imports System.IO
 Imports System.ComponentModel
-
 Public Class Form1
-    Public Class Lists
-        Public Shared Rendering As New List(Of String)({"[Rendering]", "GraphicsQuality=", "TextureQuality=", "ShadowQuality=", "LightingQuality=", "EffectsQuality=", "TerrainQuality=", "FloraQuality=", "ModelQuality=", "RenderDistance=", "Gamma=", "VerticalFOV=", "ParticleLOD=", "FogShadowsEnable", "MotionBlur=", "VSync=", "AO=", "MaximumFPS", "UseLod0a=", "BloomEnabed=", "InfantryRenderDistance=", "GroundVehicleRenderDistance=", "AirVehicleRenderDistance=", "UseGlobalRenderDistance=", "ParticleDistanceScale=", "Smoothing=", "UseAspectFOV=", "GpuPhysics=", "ShadowManagerQuality=", "ShadowMapCount=", "ShadowMapQuality=", "ShadowNearDistance=", "ShadowFarDistance=", "ShadowRSM=", "ColorBlindFilterType=", "ColorBlindFilterAmount=", "ColorBlindFilterStrength", "OverallQuality=", "FSRQuality=", "FSRSharpness=", "DLSSQuality=", "DLSSSharpness=", "UseFences=", "AAQuality=", "SmoothingMaxFramerate=", "SmoothingMinFramerate=", "UnderwaterGodRaysQuality=", "SSLRQuality=", "Tessellation=", "WaterQuality="})
-        Public Shared Display As New List(Of String)({"[Display]", "Mode=", "FullscreenMode=", "FullscreenRefresh=", "FullscreenWidth=", "FullscreenHeight=", "WindowedWidth=", "WindowedHeight=", "Maximized=", "RenderQuality=", "AllowToggleUI="})
-        Public Shared Sound As New List(Of String)({"[Sound]", "Master=", "Music=", "Game=", "Dialog=", "UI=", "HitIndicator=", "LowAmmoIndicator=", "VehicleChatter=", "IdleMusic=", "MaxVoices=", "UseFloat32Output=", "ExclusiveMode=", "UseHighQualityReverb="})
-        Public Shared Terrain As New List(Of String)({"[Terrain]", "RenderFlora="})
-        Public Shared General As New List(Of String)({"[General]", "AutoDetectPerformanceSettings=", "MouseSensitivity=", "ScopedMouseSensitivity=", "ADSMouseSensitivity=", "VehicleMouseSensitivity=", "FlightMouseSensitivity=", "JoystickSensitivity=", "JoystickDeadzone=", "InvertVerticalLook=", "InvertVerticalFly=", "InvertTankSteering=", "MouseRawInput=", "MouseSmoothing=", "ToggleCrouch=", "ZoomToggle=", "SprintToggle=", "SprintLegacyToggleMode=", "DrawHud=", "ReduceInputLag=", "FixedMinimap=", "Profanity=", "GamepadSmoothing=", "GamepadInvertLook=", "GamepadInvertFlight=", "GamepadEasyFlight=", "DecloakOnFire=", "AbilityQueueSeconds=", "VehicleGunnerMouseSensitivity="})
-        Public Shared UI As New List(Of String)({"[UI]", "CentralizedHudMode=", "HudChatInactiveOpacity=", "HudShowIndicatorNames=", "HudShowAlertTimer=", "ShowReticleIFF=", "HudShowHealth=", "HudShowTopCompass=", "HudShow3PVehicleReticle=", "DrawMission=", "DrawKillSpam=", "DrawLootDrop=", "TintModeReticuleStyle=", "TintModeReticuleColor=", "PlatoonSquadColor0=", 3781962, "PlatoonSquadColor1=", 10707465, "PlatoonSquadColor2=", 9578383, "PlatoonSquadColor3=", 65793, "TintModeFacility=", "TintModePlayer=", "TintModeMap=", "NoDeployZoneColor=", 13369344, "OrbitalStrikeColor=", 13421568, "OrbitalStrikeAlpha=", "ShowGroupNotifications=", "ShowOutfitNotifications=", "HideWarpZoneConfirmation=", "SelectedChatChannel=", "ChatFontSize=", "MapShowFactionColoredHotspots=", "MapActiveToggleView=", "MapFilterHeatMapMode=", "MapFilterShowInfluenceCloud=", "MapFilterShowGrid=", "MapFilterShowFacilities=", "MapFilterShowTerrain=", "MapFilterShowFacilityLinks=", "MapFilterShowTerritoryControl=", "MapFilterShowResource1=", "MapStatisticsView=", "MapFilterShowHotspots=", "MapCommandsSettingsShow2=", "MapCommandsSettingsShow3=", "MapCommandsSettingsAlpha3=", "TrackedDirectives=", "OutfitShowOfflineMembers=", "ShowVRTrainingTutorial=", "ShowDirectivesTutorial=", "ShowMapTutorial=", "ShowImplantTutorial=", "ShowTutorialIslandLandingPage=", "ShowOutfitsTutorial=", "LoadoutInfoInfiltrator=", "LoadoutInfoLightAssault=", "LoadoutInfoMedic=", "LoadoutInfoEngineer=", "LoadoutInfoHeavyAssault=", "LoadoutInfoMax=", "HiddenHUDIndicators=", "HideReticule=", "HudChatOpacity=", "ConstructionFavorites="})
-        Public Shared AutoRefuse As New List(Of String)({"[AutoRefuse]", "FriendInvitation=", "DuelInvitation=", "GuildInvitation=", "HideUi=", "TradeRequest=", "HousingInvitation=", "GroupInvitation=", "SwapSeatRequest=", "Whispers="})
-        Public Shared ChatChannels As New List(Of String)({"[DisableChatChannelOptions]", "Squad=", "Platoon=", "Fireteam=", "Leader=", "Proximity=", "Outfit=", "Yell=", "Region=", "Mentor=", "Social="})
-        Public Shared Voice As New List(Of String)({"[Voice]", "Enable=", "ReceiveVolume=", "OutfitVolume=", "SquadVolume=", "RaidVolume=", "ProximityVolume=", "MicrophoneVolume=", "Ducking=", "EchoEnabled=", "ProximityEnabled=", "FactionEnabled=", "GroupEnabled=", "GroupLeaderEnabled=", "RaidEnabled=", "GuildEnabled=", "RadioEnabled=", "CBEnabled=", "CustomEnabled=", "SubGroupEnabled=", "MuteInactiveChannels=", "PushToTalk="})
-        Public Shared Controls As New List(Of String)({"[Controls]", "CameraAutoAdjustment=", "ClickToMove=", "ClickToMoveRightButton=", "InfantryActionSetName=", "GroundVehicleSetName=", "AirVehicleActionSetName=", "Rumble=", "RailCamera="})
-        Public Shared Group As New List(Of String)({"[Group]", "AutoGroupOnLoginNew=", "AutoGroupAsLeaderNew=", "AutoGroupWithFriendsNew=", "AutoGroupWithGuildNew=", "AutoGroupOnLogin=", "AutoGroupAsLeader=", "AutoGroupwithFriends=", "AutoGroupWithGuild="})
-        Public Shared Guild As New List(Of String)({"[Guild]", "NotifyOnGuildPetitionRecieved="})
-        Public Shared Chat As New List(Of String)({"[Chat]", "HudChatInactiveOpacity=", "CanShowHudChat="})
-        Public Shared VoiceChat As New List(Of String)({"[VoiceChat]", "EchoEnabled=", "EchoVolume=", "ProximityEnabled=", "ProximityVolume=", "FactionEnabled=", "FactionVolume=", "GroupEnabled=", "GroupVolume=", "GroupLeaderEnabled=", "GroupLeaderVolume=", "RaidEnabled=", "RaidVolume=", "CBEnabled=", "CBVolume=", "CustomEnabled=", "CustomVolume=", "SubGroupEnabled=", "SubGroupVolume=", "InputDevice=", "OutputDevice="})
-        'Options below this comment are not currently, or may have never been used, but are listed here anyway
-        'Public Shared Social As New List(Of String)({"[Social]", "FriendNotifications="})
-        'Public Shared MinimapOptions As New List(Of String)({"[MinimapOptions]", "PathEnabled="})
-        'Public Shared Emote As New List(Of String)({"[Emote]", "Favorites="})
-        'Public Shared Logging As New List(Of String)({"[Logging]", "Directory=", "EnableDebugOutputString=", "LocalLogLevel=", "FileLogLevel=", "ServerLogLevel=", "OutputWindowLevel=", "LocalDirectory=", "FailureDirectory="})
-        'Public Shared UiDebug As New List(Of String)({"[UiDebug]", "WatchedColumns="})
-        'Public Shared CrashReporter As New List(Of String)({"[CrashReporter]", "MaxParameters=", "MaxUploaderPerDay=", "MaxUploadSec=", "MaxCrashAge=", "NoUploadFromInit=", "LocalFullDump=", "IncludeIndirectMemory=", "WaitForAttach=", "PipeCrashUploaderConsole="})
-        'Public Shared CrashUploader As New List(Of String)({"[CrashUploader]", "MaxPerDay=", "WaitForAttach=", "WriteResultsOnFailure="})
-        'Public Shared Promotion As New List(Of String)({"[Promotion]", "HasntOptedIn="})
-        'Public Shared Video As New List(Of String)({"[Video]", "VideoCapturePrefix="})
-        'Public Shared ImageCapture As New List(Of String)({"[ImageCapture]", "OutputFolder=", "OutputFilePrefix="})
-        'Public Shared VideoCapture As New List(Of String)({"[VideoCapture]", "Resolution=", "Quality=", "OutputFile=", "WorkingDir="})
-        'Public Shared VideoStreamer As New List(Of String)({"[VideoStreamer]", "Resolution=", "Fps=", "Kbps=", "MicRecordVolume=", "SpeakerRecordVolume=", "Username="})
-        'Public Shared Umbra As New List(Of String)({"[Umbra]", "Cull=", "TomeCollection="})
-        'Public Shared Graphics As New List(Of String)({"[Graphics]", "WindowWidth=", "WindowHeight="})
-
-
-        Public Shared bigOptions As Array = {Rendering, General, Terrain, UI, Sound, ChatChannels, Voice, VoiceChat, Display}
-    End Class
-    Public Shared curini As List(Of String) = Nothing
-    Public Shared curiniPath As String = "Useroptions.ini"
-    Public Shared iniini As List(Of String) = Nothing
-    Public Shared iniPath As String = "iniEdit.ini"
-    Public Shared iniEditOptions As New List(Of String)({"[iniEdit]", "FontAutoReplace=", "FontAutoReplace2=", "FontFilePath=", "LocaleAutoReplace=", "LocaleDirPath=", "LocaleDatPath=", "CommandAutoReplace=", "DPI="})
-    Public Shared commandPath As String = "iniEditCommands.ini"
     Public Shared doneLoading As Boolean = False
-
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Read ini into previously initialized empty list
         Try
@@ -66,272 +24,6 @@ Public Class Form1
         doneLoading = True
         BackgroundWorker1.RunWorkerAsync()
     End Sub
-#Region "UpdatesAndGets"
-    Overloads Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object)
-        'Reads the ini line by line for the specified option
-        'If option isn't found, run through option arrays for option and insert a line for the correct category
-        If Not doneLoading Then
-            Exit Sub
-        End If
-        Dim found As Boolean = False
-        For index As Integer = 0 To curini.Count - 1
-            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                curini(index) = optionName & newVal
-                Console.WriteLine($"Updated {optionName} to {newVal}")
-            End If
-        Next
-        If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
-                If list.Contains(optionName) Then
-                    For Each line In curini
-                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
-                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
-                            Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Sub
-                        End If
-                    Next
-                End If
-            Next
-        End If
-    End Sub
-    Overloads Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object, ByVal optionGroup As String)
-        'Voice options are stupid
-        If Not doneLoading Then
-            Exit Sub
-        End If
-        Dim found As Boolean = False
-        Dim optionIndexes = New ArrayList()
-        For Each line In curini
-            If line.StartsWith("[") Then
-                optionIndexes.Add(line)
-                optionIndexes.Add(curini.IndexOf(line))
-            End If
-        Next
-        Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
-        Dim optionGroupNextIndex As Integer = 0
-        Try
-            optionGroupNextIndex = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
-        Catch ex As ArgumentOutOfRangeException
-            optionGroupNextIndex = curini.FindLastIndex(Function(str) str.Equals(curini.Last))
-        End Try
-        For ctr As Integer = optionGroupIndex To optionGroupNextIndex
-            If curini(ctr).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                curini(ctr) = optionName & newVal
-                Console.WriteLine($"Updated {optionName} to {newVal}")
-            End If
-        Next
-        If Not found Then
-            curini.Insert(curini(optionGroupIndex + 1), optionName & newVal)
-            Console.WriteLine($"Added {optionName} with val {newVal}")
-        End If
-    End Sub
-    Overloads Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object, ByVal addremove As Boolean)
-        If Not doneLoading Then
-            Exit Sub
-        End If
-        Dim found As Boolean = False
-        For index As Integer = 0 To curini.Count - 1
-            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
-                lineList.RemoveAll(Function(str) String.IsNullOrEmpty(str))
-                If lineList.Contains(newVal) And addremove = True Then
-                    Console.WriteLine("option already in list")
-                    Exit Sub
-                ElseIf Not lineList.Contains(newVal) And addremove = False Then
-                    Console.WriteLine("option already not in list")
-                    Exit Sub
-                ElseIf lineList.Contains(newVal) And addremove = False Then
-                    Console.WriteLine("option removed from list")
-                    lineList.Remove(newVal)
-                ElseIf Not lineList.Contains(newVal) And addremove = True Then
-                    Console.WriteLine("option added to list")
-                    lineList.Add(newVal)
-                End If
-                Dim newLine As String
-                For index2 As Integer = 0 To lineList.Count - 1
-                    If index2 = 0 Then
-                        newLine = lineList(index2) + "="
-                    ElseIf index2 = lineList.Count - 1 Then
-                        newLine = newLine + lineList(index2)
-                    Else
-                        newLine = newLine + lineList(index2) + ","
-                    End If
-                Next
-                curini(index) = newLine
-                Console.WriteLine(curini(index))
-            End If
-        Next
-        Console.WriteLine($"Updated {optionName} to {newVal}")
-        If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
-                If list.Contains(optionName) Then
-                    For Each line In curini
-                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
-                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
-                            Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Sub
-                        End If
-                    Next
-                End If
-            Next
-        End If
-    End Sub
-    Function UpdateValMyIni(ByVal optionName As String, ByVal newVal As Object)
-        If Not doneLoading Then
-            Exit Function
-        End If
-        Dim found As Boolean = False
-        For index As Integer = 0 To iniini.Count - 1
-            If iniini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                iniini(index) = optionName & newVal
-                Console.WriteLine($"Updated {optionName} to {newVal}")
-            End If
-        Next
-        If Not found Then
-            iniini.Add(optionName & newVal)
-            Console.WriteLine($"Added {optionName} with val {newVal}")
-            Exit Function
-        End If
-    End Function
-    Function GetState(ByVal optionName As String)
-        'Find the line which has the desired option, and return the value after the = sign
-        For Each line In curini
-            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                Dim optionVal As Array = line.Split("="c)
-                Console.WriteLine($"Got {optionName} with {optionVal(1)}")
-                Return optionVal(1)
-            End If
-        Next
-    End Function
-    Function GetStateMyIni(ByVal optionName As String)
-        For Each line In iniini
-            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                Dim optionVal As Array = line.Split("="c)
-                Console.WriteLine($"Got {optionName} with {optionVal(1)}")
-                Return optionVal(1)
-            End If
-        Next
-    End Function
-    Function GetStateSpecific(ByVal optionName As String, ByVal optionGroup As String)
-        'Voice options are stupid
-        Dim optionIndexes = New ArrayList()
-        For Each line In curini
-            If line.StartsWith("[") Then
-                optionIndexes.Add(line)
-                optionIndexes.Add(curini.IndexOf(line))
-            End If
-        Next
-        Dim optionGroupIndex As Integer = optionIndexes(optionIndexes.IndexOf(optionGroup) + 1)
-        Dim optionGroupNextIndex As Integer = 0
-        Try
-            optionGroupNextIndex = optionIndexes(optionIndexes.IndexOf(optionGroup) + 3)
-        Catch ex As ArgumentOutOfRangeException
-            optionGroupNextIndex = curini.FindLastIndex(Function(str) str.Equals(curini.Last))
-        End Try
-        For ctr As Integer = optionGroupIndex To optionGroupNextIndex
-            If curini(ctr).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                Dim optionVal As Array = curini(ctr).Split("="c)
-                Console.WriteLine($"Got {optionName} with {optionVal(1)} under {optionGroup}")
-                Return optionVal(1)
-            End If
-        Next
-    End Function
-    Function GetStateContains(ByVal optionName As String, ByVal findVal As String)
-        For Each line In curini
-            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                Dim optionVal As List(Of String) = line.Split("="c, ","c).ToList
-                Return optionVal.Contains(findVal)
-            End If
-        Next
-    End Function
-    Public Sub ColorUpdate(ByVal optionName As String, ByVal newVal As String, ByVal faction As Integer)
-        'Specialized update function for color options with multiple values separated by commas, could be used for other options with multiple values
-        If Not doneLoading Then
-            Exit Sub
-        End If
-        Dim found As Boolean = False
-        For index As Integer = 0 To curini.Count - 1
-            If curini(index).StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                found = True
-                Dim lineList As List(Of String) = curini(index).Split("="c, ","c).ToList
-                lineList(faction) = newVal
-                curini(index) = optionName & lineList(1) & "," & lineList(2) & "," & lineList(3)
-            End If
-        Next
-        Console.WriteLine($"Updated {optionName} to {newVal}")
-        If Not found Then
-            For Each list As List(Of String) In Lists.bigOptions
-                If list.Contains(optionName) Then
-                    For Each line In curini
-                        If line.StartsWith(list(0), StringComparison.OrdinalIgnoreCase) Then
-                            curini.Insert(curini.IndexOf(line) + 1, optionName & newVal)
-                            Console.WriteLine($"Added {optionName} with val {newVal}")
-                            Exit Sub
-                        End If
-                    Next
-                End If
-            Next
-        End If
-    End Sub
-    Function ColorGetState(ByVal optionName As String, ByVal faction As Integer)
-        'Specialized getState for options with multiple values separated by commas
-        For Each line In curini
-            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
-                Dim optionVal As Array = line.Split("="c, ","c)
-                Console.WriteLine($"Got {optionName} with {optionVal(faction)}")
-                Return optionVal(faction)
-            End If
-        Next
-    End Function
-#End Region
-#Region "MiscFuncs"
-    Function colorGetter()
-        'Opens Windows color picker and returns user-chosen color
-        'Value needs to be in BGR format, and is converted before use in update function
-        Dim chosenColor = Nothing
-        Dim colorDialog As New ColorDialog()
-        If colorDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            chosenColor = colorDialog.Color
-        End If
-        Return chosenColor
-    End Function
-    Function colorDecimalSwap(ByVal color As Integer)
-        'Math-y way of bit swapping RGB<>BGR and vice versa from decimal color values
-        Dim Channel1 As Integer = color \ 65536
-        Dim Channel2 As Integer = (color - Channel1 * 65536) \ 256
-        Dim Channel3 As Integer = color - (Channel1 * 65536 + Channel2 * 256)
-        Dim Result As Integer = Channel1 + Channel2 * 256 + Channel3 * 65536
-        Return Result
-    End Function
-#Region "AimCalcs"
-    Function hipTurnCalc(DPI, Sens)
-        Dim distance As Double = Math.Round((1 / DPI) * (11.7581 / (Sens + 0.3)) ^ 3, 2, MidpointRounding.AwayFromZero)
-        Return distance.ToString()
-    End Function
-    Function aimTurncalc(DPI, Sens, Zoom)
-        Dim distance As Double = Math.Round((1 / DPI) * (11.7581 / (Sens + 0.3)) ^ 3 * 1.6 * Zoom, 2, MidpointRounding.AwayFromZero)
-        Return distance.ToString()
-    End Function
-    Function hipSensCalc(DPI, Distance)
-        Dim sens As Double = Math.Round((DPI * Distance) ^ (-1 / 3) * 11.7581 - 0.3, 3, MidpointRounding.AwayFromZero)
-        If sens > 1 Then
-            sens = 1
-        End If
-        Return sens.ToString()
-    End Function
-    Function aimSensCalc(DPI, Distance, Zoom)
-        Dim sens As Double = Math.Round(((DPI * Distance) / (Zoom * 1.6)) ^ (-1 / 3) * 11.7581 - 0.3, 3, MidpointRounding.AwayFromZero)
-        If sens > 1 Then
-            sens = 1
-        End If
-        Return sens.ToString()
-    End Function
-#End Region
-#End Region
     Function readAllOptions()
         'Big list of checking where the options are at cus i dont code good
 #Region "GraphicsGets"
@@ -2041,49 +1733,14 @@ Public Class Form1
             'Show user selected font path
             selectedFontPath.Text() = fontPath
             UpdateValMyIni("FontFilePath=", fontPath)
-            ''Create or update batch used to actually replace font
-            'File.WriteAllText(String.Concat(CurDir(), "\iniEditFont.bat"), String.Concat("@echo off", vbCrLf,
-            '                                                                                "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\Geo-Md.ttf""", vbCrLf,
-            '                                                                                "copy """, fontPath, """ """, CurDir(), "\UI\Resource\Fonts\ARIALUNI.ttf""", vbCrLf,
-            '                                                                                "exit"))
         End If
     End Sub
-    'Private Sub fontAutoCheck_CheckedChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
-    '    'If user desires automatic font replacement, create or update task to run the replacement batch
-    '    Using ts As New TaskService()
-    '        If fontAutoCheck.Checked Then
-    '            UpdateVal("FontAutoReplace=", "1")
-    '            If ts.RootFolder.Tasks.Exists("iniEdit Font") Then
-    '                ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = True
-    '            Else
-    '                Dim td As TaskDefinition = ts.NewTask
-    '                'Set description for the task
-    '                td.RegistrationInfo.Description = "iniEdit Font Replacement"
-    '                'Create eventlog trigger
-    '                Dim eTrigger As New EventTrigger()
-    '                eTrigger.Subscription = "<QueryList><Query Id=""0"" Path=""System""><Select Path=""System"">*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]</Select></Query></QueryList>"
-    '                td.Triggers.Add(eTrigger)
-    '                'Create task action
-    '                Dim path As String = CurDir()
-    '                td.Actions.Add(New ExecAction(String.Concat(path, "\iniEditFont.bat")))
-    '                'Save task
-    '                ts.RootFolder.RegisterTaskDefinition("iniEdit Font", td)
-    '            End If
-    '        Else
-    '            UpdateVal("FontAutoReplace=", "0")
-    '            ts.GetTask(String.Concat(ts.RootFolder, "iniEdit Font")).Enabled = False
-    '        End If
-    '    End Using
-    'End Sub
     Private Sub fontAutoCheck_CheckChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
         If fontAutoCheck.Checked Then
             UpdateValMyIni("FontAutoReplace=", True)
             fontAutoCheck2.Visible = True
             selectedFontPath.Visible = True
             fontSelectButton.Visible = True
-            If Not BackgroundWorker1.IsBusy Then
-                BackgroundWorker1.RunWorkerAsync()
-            End If
         Else
             UpdateValMyIni("FontAutoReplace=", False)
             fontAutoCheck2.Visible = False
@@ -2099,41 +1756,32 @@ Public Class Form1
         End If
     End Sub
     Public Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        If fontAutoCheck.Checked Or localeReplaceCheck.Checked Then
-            Dim watcher As EventLogWatcher
-            watcher = Nothing
-            Try
-                Dim subQuery As New EventLogQuery(
-                        "System", PathType.LogName, "*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]")
-                watcher = New EventLogWatcher(subQuery)
-                AddHandler watcher.EventRecordWritten,
-                        AddressOf BackgroundHandleEvent
-                watcher.Enabled = True
-                Console.WriteLine("waiting for event detect")
-                Dim i As Integer
-                For i = 0 To 36000
-                    If i < 36001 Then
-                        If BackgroundWorker1.CancellationPending Then
-                            Exit For
-                        End If
-                        System.Threading.Thread.Sleep(500)
-                    End If
-                Next
-            Catch ex As EventLogReadingException
-                Console.WriteLine("error: {0}", ex.Message)
-            Finally
-                watcher.Enabled = False
-                If Not watcher Is Nothing Then
-                    watcher.Dispose()
+        Dim watcher As EventLogWatcher
+        watcher = Nothing
+        Try
+            Dim subQuery As New EventLogQuery("System", PathType.LogName, "*[System[Provider[@Name='Service Control Manager'] and (Level=4 or Level=0) and (band(Keywords,36028797018963968)) and (EventID=7045)]] and *[EventData[Data[@Name='ServiceName'] and (Data='BEDaisy')]]")
+            watcher = New EventLogWatcher(subQuery)
+            AddHandler watcher.EventRecordWritten, AddressOf BackgroundHandleEvent
+            watcher.Enabled = True
+            Console.WriteLine("waiting for event detect")
+            While Not BackgroundWorker1.CancellationPending
+                System.Threading.Thread.Sleep(500)
+                If BackgroundWorker1.CancellationPending Then
+                    Exit While
                 End If
-            End Try
-        End If
+            End While
+        Catch ex As EventLogReadingException
+            Console.WriteLine("error: {0}", ex.Message)
+        Finally
+            watcher.Enabled = False
+            If Not watcher Is Nothing Then
+                watcher.Dispose()
+            End If
+        End Try
     End Sub
-    Public Sub BackgroundHandleEvent(ByVal obj As Object,
-                   ByVal arg As EventRecordWrittenEventArgs)
+    Public Sub BackgroundHandleEvent(ByVal obj As Object, ByVal arg As EventRecordWrittenEventArgs)
         If Not arg.EventRecord Is Nothing Then
-            Console.WriteLine("received event {0} from sub",
-                arg.EventRecord.Id)
+            Console.WriteLine("received event {0} from sub", arg.EventRecord.Id)
             Console.WriteLine("desc: {0}", arg.EventRecord.FormatDescription())
             If fontAutoCheck.Checked Then
                 Dim fontSource As String = GetStateMyIni("FontFilePath=")
@@ -2160,6 +1808,7 @@ Public Class Form1
                 commandList(0) = vbCrLf + commandList(0)
                 File.AppendAllLines("ClientConfig.ini", commandList)
             End If
+            End
         Else
             Console.WriteLine("event instance null")
         End If
@@ -2172,9 +1821,6 @@ Public Class Form1
             selectedDatPath.Visible = True
             selectedDirPath.Visible = True
             Label38.Visible = True
-            If Not BackgroundWorker1.IsBusy Then
-                BackgroundWorker1.RunWorkerAsync()
-            End If
         Else
             UpdateValMyIni("LocaleAutoReplace=", False)
             localeDatButton.Visible = False
@@ -2214,9 +1860,6 @@ Public Class Form1
         If commandAutoCheck.Checked Then
             UpdateValMyIni("CommandAutoReplace=", True)
             commandTextBox.Visible = True
-            If Not BackgroundWorker1.IsBusy Then
-                BackgroundWorker1.RunWorkerAsync()
-            End If
         Else
             UpdateValMyIni("CommandAutoReplace=", False)
             commandTextBox.Visible = False
@@ -2225,7 +1868,5 @@ Public Class Form1
     Private Sub commandTextBox_TextChanged(sender As Object, e As EventArgs) Handles commandTextBox.LostFocus
         File.WriteAllLines(commandPath, commandTextBox.Lines)
     End Sub
-
-
 #End Region
 End Class
