@@ -1,7 +1,6 @@
 ﻿Imports iniEdit.Form1
 
 Module UpdatesGets
-#Region "UpdatesAndGets"
     Sub UpdateVal(ByVal optionName As String, ByVal newVal As Object)
         'Reads the ini line by line for the specified option
         If Not doneLoading Then
@@ -146,6 +145,27 @@ Module UpdatesGets
             End If
         Next
     End Function
+    Function GetState(ByVal optionName As String, ByVal defaultReturn As String)
+        'Find the line which has the desired option, and return the value after the = sign
+        For Each line In curini
+            'Assuming the line is found, get the value, or for option found but with no val, return default value
+            If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
+                Dim optionVal As Array = line.Split("="c)
+                Console.WriteLine($"Got {optionName} with {optionVal(1)}")
+                If IsNothing(optionVal(1)) Then
+                    Console.WriteLine($"{optionName} found with null, returning {defaultReturn}")
+                    Return defaultReturn
+                Else
+                    Return optionVal(1)
+                End If
+                'If line is not found, add with default value
+            Else
+                Console.WriteLine($"{optionName} not found, adding with {defaultReturn}")
+                UpdateVal(optionName, defaultReturn)
+                Return defaultReturn
+            End If
+        Next
+    End Function
     Function GetStateMyIni(ByVal optionName As String)
         For Each line In iniini
             If line.StartsWith(optionName, StringComparison.OrdinalIgnoreCase) Then
@@ -226,5 +246,4 @@ Module UpdatesGets
             End If
         Next
     End Function
-#End Region
 End Module
