@@ -27,23 +27,23 @@ Public Class Form1
     Function readAllOptions()
         'Big list of checking where the options are at cus i dont code good
 #Region "GraphicsGets"
-        vsyncCheck.Checked = GetState("VSync=", 0)
-        fogShadCheck.Checked = GetState("FogShadowsEnable=", 0)
-        ambOccCheck.Checked = GetState("AO=", 0)
-        bloomCheck.Checked = GetState("BloomEnabled=", 0)
-        blurCheck.Checked = GetState("MotionBlur=", 0)
-        smoothCheck.Checked = GetState("Smoothing=", 0)
-        wideCheck.Checked = GetState("UseAspectFOV=", 0)
-        useGlobRenCheck.Checked = GetState("UseGlobalRenderDistance=", 0)
-        globRenDistBox.Text = GetState("RenderDistance=", 2000)
-        infRenDistBox.Text = GetState("InfantryRenderDistance=", 500)
-        vehRenDistbox.Text = GetState("GroundVehicleRenderDistance=", 1000)
-        airRenDistBox.Text = GetState("AirVehicleRenderDistance=", 2000)
-        fovBox.Text = GetState("VerticalFOV=", 70)
-        renQualBox.Text = GetState("RenderQuality=", 1)
-        maxFPSBox.Text = GetState("MaximumFPS=", 200)
-        gammaBox.Text = GetState("Gamma=", 0.5)
-        partDistScaleBox.Text = GetState("ParticleDistanceScale=", 0.65)
+        vsyncCheck.Checked = GetState("VSync=")
+        fogShadCheck.Checked = GetState("FogShadowsEnable=")
+        ambOccCheck.Checked = GetState("AO=")
+        bloomCheck.Checked = GetState("BloomEnabled=")
+        blurCheck.Checked = GetState("MotionBlur=")
+        smoothCheck.Checked = GetState("Smoothing=")
+        wideCheck.Checked = GetState("UseAspectFOV=")
+        useGlobRenCheck.Checked = GetState("UseGlobalRenderDistance=")
+        globRenDistBox.Text = GetState("RenderDistance=")
+        infRenDistBox.Text = GetState("InfantryRenderDistance=")
+        vehRenDistbox.Text = GetState("GroundVehicleRenderDistance=")
+        airRenDistBox.Text = GetState("AirVehicleRenderDistance=")
+        fovBox.Text = GetState("VerticalFOV=")
+        renQualBox.Text = GetState("RenderQuality=")
+        maxFPSBox.Text = GetState("MaximumFPS=")
+        gammaBox.Text = GetState("Gamma=")
+        partDistScaleBox.Text = GetState("ParticleDistanceScale=")
         graphQualDrop.SelectedIndex = Integer.Parse(GetState("GraphicsQuality=")) - 1
         texQualDrop.SelectedIndex = Integer.Parse(GetState("TextureQuality="))
         If GetState("ShadowQuality=") > 5 Then
@@ -98,18 +98,10 @@ Public Class Form1
         hudDotCheck.Checked = GetState("HudShow3PVehicleReticle=")
         custRetCheck.Checked = GetState("TintModeReticuleStyle=")
         retColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("TintModeReticuleColor=")))
-        If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            alphaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor0=")))
-        End If
-        If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            bravoColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor1=")))
-        End If
-        If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            charlieColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor2=")))
-        End If
-        If Not GetState("PlatoonSquadColor0=") = Nothing Then
-            deltaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor3=")))
-        End If
+        alphaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor0=")))
+        bravoColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor1=")))
+        charlieColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor2=")))
+        deltaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor3=")))
         NDZColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("NoDeployZoneColor=")))
         OSColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("OrbitalStrikeColor=")))
         OSAlphaBox.Value = GetState("OrbitalStrikeAlpha=")
@@ -160,18 +152,19 @@ Public Class Form1
         regionTextCheck.Checked = GetState("Region=")
         mentorTextCheck.Checked = GetState("Mentor=")
         genVoiceVolBox.Value = GetState("ReceiveVolume=")
-        proxVoiceVolBox.Value = GetStateSpecific("ProximityVolume=", "[VoiceChat]")
-        squadVoiceVolBox.Value = GetStateSpecific("GroupVolume=", "[VoiceChat]")
-        raidVoiceVolBox.Value = GetStateSpecific("RaidVolume=", "[VoiceChat]")
-        outfitVoiceVolBox.Value = GetStateSpecific("GuildVolume=", "[VoiceChat]")
-        leaderVoiceVolBox.Value = GetStateSpecific("GroupLeaderVolume=", "[VoiceChat]")
+        genVoiceCheck.Checked = GetState("Enable=")
+        proxVoiceVolBox.Value = GetStateSpecificGroup("ProximityVolume=", "[VoiceChat]")
+        squadVoiceVolBox.Value = GetStateSpecificGroup("GroupVolume=", "[VoiceChat]")
+        raidVoiceVolBox.Value = GetStateSpecificGroup("RaidVolume=", "[VoiceChat]")
+        outfitVoiceVolBox.Value = GetStateSpecificGroup("GuildVolume=", "[VoiceChat]")
+        leaderVoiceVolBox.Value = GetStateSpecificGroup("GroupLeaderVolume=", "[VoiceChat]")
         transmitVoiceVolBox.Value = GetState("MicrophoneVolume=")
         duckVoiceVolBox.Value = GetState("Ducking=")
-        proxVoiceCheck.Checked = GetStateSpecific("ProximityEnabled=", "[Voice]")
-        squadVoiceCheck.Checked = GetStateSpecific("GroupEnabled=", "[Voice]")
-        raidVoiceCheck.Checked = GetStateSpecific("RaidEnabled=", "[Voice]")
-        outfitVoiceCheck.Checked = GetStateSpecific("GuildEnabled=", "[Voice]")
-        leaderVoiceCheck.Checked = GetStateSpecific("GroupLeaderEnabled=", "[Voice]")
+        proxVoiceCheck.Checked = GetStateSpecificGroup("ProximityEnabled=", "[Voice]")
+        squadVoiceCheck.Checked = GetStateSpecificGroup("GroupEnabled=", "[Voice]")
+        raidVoiceCheck.Checked = GetStateSpecificGroup("RaidEnabled=", "[Voice]")
+        outfitVoiceCheck.Checked = GetStateSpecificGroup("GuildEnabled=", "[Voice]")
+        leaderVoiceCheck.Checked = GetStateSpecificGroup("GroupLeaderEnabled=", "[Voice]")
 #End Region
 #Region "iniEditGets"
         fontAutoCheck.Checked = GetStateMyIni("FontAutoReplace=")
@@ -566,9 +559,9 @@ Public Class Form1
         'Flora apparently has 2 lines in separate sections
         UpdateVal("FloraQuality=", floraQualDrop.SelectedItem.ToString.First)
         If floraQualDrop.SelectedIndex() = 3 Then
-            UpdateVal("RenderFlora=", "off")
+            UpdateVal("RenderFlora=", "Off")
         Else
-            UpdateVal("RenderFlora=", "on")
+            UpdateVal("RenderFlora=", "On")
         End If
     End Sub
     Private Sub modQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles modQualDrop.SelectedValueChanged
@@ -781,6 +774,13 @@ Public Class Form1
             UpdateVal("TintModeReticuleStyle=", 0)
         End If
     End Sub
+    Private Sub hideRetCheck_CheckedChanged(sender As Object, e As EventArgs) Handles hideRetCheck.Click
+        If hideRetCheck.Checked Then
+            UpdateVal("HideReticule=", 1)
+        Else
+            UpdateVal("HideReticule=", 0)
+        End If
+    End Sub
 #End Region
 #Region "Buttons"
     Private Sub retColorButton_Click(sender As Object, e As EventArgs) Handles retColorButton.Click
@@ -878,9 +878,9 @@ Public Class Form1
             If GetState("TintModePlayer=").ToString.Length < 3 Then
                 UpdateVal("TintModePlayer=", "4460130,19328,10357519")
             End If
-            VSplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModePlayer=", 1)))
-            NCplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModePlayer=", 2)))
-            TRplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModePlayer=", 3)))
+            VSplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModePlayer=", 1)))
+            NCplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModePlayer=", 2)))
+            TRplayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModePlayer=", 3)))
         End If
     End Sub
     Private Sub facColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles facColorDrop.SelectedIndexChanged
@@ -895,9 +895,9 @@ Public Class Form1
             If GetState("TintModeFacility=").ToString.Length < 3 Then
                 UpdateVal("TintModeFacility=", "4460130,19328,10357519")
             End If
-            VSfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeFacility=", 1)))
-            NCfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeFacility=", 2)))
-            TRfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeFacility=", 3)))
+            VSfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeFacility=", 1)))
+            NCfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeFacility=", 2)))
+            TRfacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeFacility=", 3)))
         End If
     End Sub
     Private Sub terrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles terrColorDrop.SelectedIndexChanged
@@ -912,9 +912,9 @@ Public Class Form1
             If GetState("TintModeMap=").ToString.Length < 3 Then
                 UpdateVal("TintModeMap=", "4460130,19328,10357519")
             End If
-            VSterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeMap=", 1)))
-            NCterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeMap=", 2)))
-            TRterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(ColorGetState("TintModeMap=", 3)))
+            VSterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMap=", 1)))
+            NCterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMap=", 2)))
+            TRterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMap=", 3)))
         End If
     End Sub
 #End Region
@@ -1867,6 +1867,20 @@ Public Class Form1
     End Sub
     Private Sub commandTextBox_TextChanged(sender As Object, e As EventArgs) Handles commandTextBox.LostFocus
         File.WriteAllLines(commandPath, commandTextBox.Lines)
+    End Sub
+    Private Sub lockOptionButton_Click(sender As Object, e As EventArgs) Handles lockOptionButton.Click
+        Dim myItem As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
+        Dim cms As ContextMenuStrip = CType(myItem.Owner, ContextMenuStrip)
+        Console.WriteLine($"locking {cms.SourceControl.Name}")
+        cms.SourceControl.Tag = "locked"
+        cms.SourceControl.ContextMenuStrip = ContextMenuStrip2
+    End Sub
+    Private Sub unlockOptionButton_Click(sender As Object, e As EventArgs) Handles unlockOptionButton.Click
+        Dim myItem As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
+        Dim cms As ContextMenuStrip = CType(myItem.Owner, ContextMenuStrip)
+        Console.WriteLine($"unlocking {cms.SourceControl.Name}")
+        cms.SourceControl.Tag = "unlocked"
+        cms.SourceControl.ContextMenuStrip = ContextMenuStrip1
     End Sub
 #End Region
 End Class
