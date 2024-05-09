@@ -88,6 +88,8 @@ Partial Class Form1
         Me.shadQualDrop = New System.Windows.Forms.ComboBox()
         Me.graphQualDrop = New System.Windows.Forms.ComboBox()
         Me.hideRetCheck = New System.Windows.Forms.CheckBox()
+        Me.smoothMaxBox = New System.Windows.Forms.NumericUpDown()
+        Me.smoothMinBox = New System.Windows.Forms.NumericUpDown()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.openButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -355,6 +357,9 @@ Partial Class Form1
         Me.fogShadCheck = New System.Windows.Forms.CheckBox()
         Me.blurCheck = New System.Windows.Forms.CheckBox()
         Me.bloomCheck = New System.Windows.Forms.CheckBox()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.unlockOptionButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -384,6 +389,8 @@ Partial Class Form1
         CType(Me.fovBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.partDistScaleBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.renQualBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.smoothMaxBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.smoothMinBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -457,6 +464,7 @@ Partial Class Form1
         Me.graphPanel3.SuspendLayout()
         Me.graphPanel5.SuspendLayout()
         Me.graphPanel4.SuspendLayout()
+        Me.FlowLayoutPanel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
@@ -1226,6 +1234,30 @@ Partial Class Form1
         Me.hideRetCheck.Text = "Hide Reticles"
         Me.ToolTip1.SetToolTip(Me.hideRetCheck, "Replace all sight colors with custom color")
         Me.hideRetCheck.UseVisualStyleBackColor = True
+        '
+        'smoothMaxBox
+        '
+        Me.smoothMaxBox.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.smoothMaxBox.Location = New System.Drawing.Point(3, 20)
+        Me.smoothMaxBox.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.smoothMaxBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.smoothMaxBox.Name = "smoothMaxBox"
+        Me.smoothMaxBox.Size = New System.Drawing.Size(80, 20)
+        Me.smoothMaxBox.TabIndex = 46
+        Me.ToolTip1.SetToolTip(Me.smoothMaxBox, "10 - 500")
+        Me.smoothMaxBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'smoothMinBox
+        '
+        Me.smoothMinBox.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.smoothMinBox.Location = New System.Drawing.Point(3, 63)
+        Me.smoothMinBox.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.smoothMinBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.smoothMinBox.Name = "smoothMinBox"
+        Me.smoothMinBox.Size = New System.Drawing.Size(80, 20)
+        Me.smoothMinBox.TabIndex = 47
+        Me.ToolTip1.SetToolTip(Me.smoothMinBox, "10 - 500")
+        Me.smoothMinBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'MenuStrip1
         '
@@ -3965,6 +3997,7 @@ Partial Class Form1
         Me.graphPanel0.Controls.Add(Me.graphPanel3)
         Me.graphPanel0.Controls.Add(Me.graphPanel5)
         Me.graphPanel0.Controls.Add(Me.graphPanel4)
+        Me.graphPanel0.Controls.Add(Me.FlowLayoutPanel1)
         Me.graphPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.graphPanel0.Location = New System.Drawing.Point(0, 0)
         Me.graphPanel0.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
@@ -4599,6 +4632,45 @@ Partial Class Form1
         Me.bloomCheck.Text = "Bloom"
         Me.bloomCheck.UseVisualStyleBackColor = False
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.AutoSize = True
+        Me.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label39)
+        Me.FlowLayoutPanel1.Controls.Add(Me.smoothMaxBox)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Label40)
+        Me.FlowLayoutPanel1.Controls.Add(Me.smoothMinBox)
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(737, 3)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(110, 86)
+        Me.FlowLayoutPanel1.TabIndex = 5
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label39.Location = New System.Drawing.Point(3, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(104, 17)
+        Me.Label39.TabIndex = 62
+        Me.Label39.Text = "Smoothing Max"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label40.Location = New System.Drawing.Point(3, 43)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(101, 17)
+        Me.Label40.TabIndex = 63
+        Me.Label40.Text = "Smoothing Min"
+        '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
@@ -4625,12 +4697,12 @@ Partial Class Form1
         '
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.unlockOptionButton})
         Me.ContextMenuStrip2.Name = "unlockOptionButton"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(181, 48)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(152, 26)
         '
         'unlockOptionButton
         '
         Me.unlockOptionButton.Name = "unlockOptionButton"
-        Me.unlockOptionButton.Size = New System.Drawing.Size(180, 22)
+        Me.unlockOptionButton.Size = New System.Drawing.Size(151, 22)
         Me.unlockOptionButton.Text = "Unlock Option"
         '
         'Form1
@@ -4677,6 +4749,8 @@ Partial Class Form1
         CType(Me.fovBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.partDistScaleBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.renQualBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.smoothMaxBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.smoothMinBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -4805,6 +4879,8 @@ Partial Class Form1
         Me.graphPanel5.PerformLayout()
         Me.graphPanel4.ResumeLayout(False)
         Me.graphPanel4.PerformLayout()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FlowLayoutPanel1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -5145,4 +5221,9 @@ Partial Class Form1
     Friend WithEvents lockOptionButton As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents unlockOptionButton As ToolStripMenuItem
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Label39 As Label
+    Friend WithEvents smoothMaxBox As NumericUpDown
+    Friend WithEvents Label40 As Label
+    Friend WithEvents smoothMinBox As NumericUpDown
 End Class

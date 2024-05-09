@@ -73,6 +73,8 @@ Public Class Form1
         AADrop.SelectedIndex = Integer.Parse(GetState("AAQuality=")) + 1
         waterReflectDrop.SelectedIndex = Integer.Parse(GetState("WaterQuality="))
         objReflectDrop.SelectedIndex = Integer.Parse(GetState("SSLRQuality="))
+        smoothMaxBox.Value = GetState("SmoothingMaxFramerate=")
+        smoothMinBox.Value = GetState("SmoothingMinFramerate=")
 #End Region
 #Region "SensGets"
         hipSensBox.Value = GetState("MouseSensitivity=")
@@ -534,6 +536,12 @@ Public Class Form1
     End Sub
     Private Sub FSRSharpBox_ValueChanged(sender As Object, e As EventArgs) Handles FSRSharpBox.TextChanged
         UpdateVal("FSRSharpness=", FSRSharpBox.Value)
+    End Sub
+    Private Sub smoothMaxBox_ValueChanged(sender As Object, e As EventArgs) Handles smoothMaxBox.ValueChanged
+        UpdateVal("SmoothingMaxFramerate=", smoothMaxBox.Value)
+    End Sub
+    Private Sub smoothMinBox_ValueChanged(sender As Object, e As EventArgs) Handles smoothMinBox.ValueChanged
+        UpdateVal("SmoothingMinFramerate=", smoothMinBox.Value)
     End Sub
 #End Region
 #Region "IndexChanged"
