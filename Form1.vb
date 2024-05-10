@@ -32,7 +32,13 @@ Public Class Form1
         ambOccCheck.Checked = GetState("AO=")
         bloomCheck.Checked = GetState("BloomEnabled=")
         blurCheck.Checked = GetState("MotionBlur=")
-        smoothCheck.Checked = GetState("Smoothing=")
+        If GetState("Smoothing=") = 1 Then
+            smoothCheck.Checked = True
+            graphPanel6.Visible = True
+        Else
+            smoothCheck.Checked = False
+            graphPanel6.Visible = False
+        End If
         wideCheck.Checked = GetState("UseAspectFOV=")
         useGlobRenCheck.Checked = GetState("UseGlobalRenderDistance=")
         globRenDistBox.Text = GetState("RenderDistance=")
@@ -75,6 +81,9 @@ Public Class Form1
         objReflectDrop.SelectedIndex = Integer.Parse(GetState("SSLRQuality="))
         smoothMaxBox.Value = GetState("SmoothingMaxFramerate=")
         smoothMinBox.Value = GetState("SmoothingMinFramerate=")
+        colorblindDrop.SelectedIndex = GetState("ColorBlindFilterType=")
+        colorblindAmountBox.Value = GetState("ColorBlindFilterAmount=")
+        colorblindStrengthBox.Value = GetState("ColorBlindFilterStrength=")
 #End Region
 #Region "SensGets"
         hipSensBox.Value = GetState("MouseSensitivity=")
@@ -93,12 +102,13 @@ Public Class Form1
 #Region "InterfaceGets"
         hudHPCheck.Checked = GetState("HudShowHealth=")
         hudIndCheck.Checked = GetState("HudShowIndicatorNames=")
-        hudAlertCheck.Checked = GetState("HudShowAlertTimer")
+        hudAlertCheck.Checked = GetState("HudShowAlertTimer=")
         hudLootCheck.Checked = GetState("DrawLootDrop=")
         hudSpamCheck.Checked = GetState("DrawKillSpam=")
         hudCompCheck.Checked = GetState("HudShowTopCompass=")
         hudDotCheck.Checked = GetState("HudShow3PVehicleReticle=")
         custRetCheck.Checked = GetState("TintModeReticuleStyle=")
+        reticleIFFCheck.Checked = GetState("ShowReticleIFF=")
         retColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("TintModeReticuleColor=")))
         alphaColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor0=")))
         bravoColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetState("PlatoonSquadColor1=")))
@@ -121,7 +131,7 @@ Public Class Form1
             facColorDrop.SelectedIndex = 1
         Else
             facColorDrop.SelectedIndex = 2
-            terrColorPanelButtons.Visible = True
+            facColorPanelButtons.Visible = True
         End If
         If GetState("TintModeMap=") = "0" Then
             terrColorDrop.SelectedIndex = 0
@@ -129,8 +139,33 @@ Public Class Form1
             terrColorDrop.SelectedIndex = 1
         Else
             terrColorDrop.SelectedIndex = 2
-            facColorPanelButtons.Visible = True
+            terrColorPanelButtons.Visible = True
         End If
+        If GetState("TintModePlayerOutfitWar=") = "0" Then
+            OWPlayerColorDrop.SelectedIndex = 0
+        ElseIf GetState("TintModePlayerOutfitWar=") = "1" Then
+            OWPlayerColorDrop.SelectedIndex = 1
+        Else
+            OWPlayerColorDrop.SelectedIndex = 2
+            OWPlayerColorPanelButtons.Visible = True
+        End If
+        If GetState("TintModeFacilityOutfitWar=") = "0" Then
+            OWFacColorDrop.SelectedIndex = 0
+        ElseIf GetState("TintModeFacilityOutfitWar=") = "1" Then
+            OWFacColorDrop.SelectedIndex = 1
+        Else
+            OWFacColorDrop.SelectedIndex = 2
+            OWFacColorPanelButtons.Visible = True
+        End If
+        If GetState("TintModeMapOutfitWar=") = "0" Then
+            OWTerrColorDrop.SelectedIndex = 0
+        ElseIf GetState("TintModeMapOutfitWar=") = "1" Then
+            OWTerrColorDrop.SelectedIndex = 1
+        Else
+            OWTerrColorDrop.SelectedIndex = 2
+            OWTerrColorPanelButtons.Visible = True
+        End If
+        HUDModeDrop.SelectedIndex = GetState("CentralizedHudMode=") - 1
 #End Region
 #Region "SoundGets"
         masVolBox.Value = GetState("Master=")
@@ -477,8 +512,10 @@ Public Class Form1
     Private Sub smoothCheck_CheckedChanged(sender As Object, e As EventArgs) Handles smoothCheck.Click
         If smoothCheck.Checked Then
             UpdateVal("Smoothing=", 1)
+            graphPanel6.Visible = True
         Else
             UpdateVal("Smoothing=", 0)
+            graphPanel6.Visible = False
         End If
     End Sub
     Private Sub wideCheck_CheckedChanged(sender As Object, e As EventArgs) Handles wideCheck.Click
@@ -543,6 +580,12 @@ Public Class Form1
     Private Sub smoothMinBox_ValueChanged(sender As Object, e As EventArgs) Handles smoothMinBox.ValueChanged
         UpdateVal("SmoothingMinFramerate=", smoothMinBox.Value)
     End Sub
+    Private Sub colorblindAmountBox_ValueChanged(sender As Object, e As EventArgs) Handles colorblindAmountBox.ValueChanged
+        UpdateVal("ColorBlindFilterAmount=", colorblindAmountBox.Value)
+    End Sub
+    Private Sub colorblindStrengthBox_ValueChanged(sender As Object, e As EventArgs) Handles colorblindStrengthBox.ValueChanged
+        UpdateVal("ColorBlindFilterStrength=", colorblindStrengthBox.Value)
+    End Sub
 #End Region
 #Region "IndexChanged"
     Private Sub graphQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles graphQualDrop.SelectedValueChanged
@@ -595,30 +638,18 @@ Public Class Form1
         If upscaleDrop.SelectedIndex = 0 Then
             UpdateVal("DLSSQuality=", -1)
             UpdateVal("FSRQuality=", -1)
-            Label66.Visible = False
-            Label76.Visible = False
-            DLSSQualDrop.Visible = False
-            FSRQualDrop.Visible = False
-            DLSSSharpBox.Visible = False
-            FSRSharpBox.Visible = False
+            DLSSPanel.Visible = False
+            FSRPanel.Visible = False
         ElseIf upscaleDrop.SelectedIndex = 1 Then
             UpdateVal("DLSSQuality=", 0)
             UpdateVal("FSRQuality=", -1)
-            Label66.Visible = True
-            Label76.Visible = True
-            DLSSQualDrop.Visible = True
-            FSRQualDrop.Visible = False
-            DLSSSharpBox.Visible = True
-            FSRSharpBox.Visible = False
+            DLSSPanel.Visible = True
+            FSRPanel.Visible = False
         ElseIf upscaleDrop.SelectedIndex = 2 Then
             UpdateVal("DLSSQuality=", -1)
             UpdateVal("FSRQuality=", 0)
-            Label66.Visible = True
-            Label76.Visible = True
-            DLSSQualDrop.Visible = False
-            FSRQualDrop.Visible = True
-            DLSSSharpBox.Visible = False
-            FSRSharpBox.Visible = True
+            DLSSPanel.Visible = False
+            FSRPanel.Visible = True
         End If
     End Sub
     Private Sub DLSSQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DLSSQualDrop.SelectedValueChanged
@@ -626,6 +657,15 @@ Public Class Form1
     End Sub
     Private Sub FSRQualDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FSRQualDrop.SelectedValueChanged
         UpdateVal("FSRQuality=", FSRQualDrop.SelectedItem.ToString.First)
+    End Sub
+    Private Sub colorblindDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles colorblindDrop.SelectedIndexChanged
+        If colorblindDrop.SelectedIndex = 0 Then
+            UpdateVal("ColorBlindFilterType=", 0)
+            colorblindPanel.Visible = False
+        Else
+            UpdateVal("ColorBlindFilterType=", colorblindDrop.SelectedIndex)
+            colorblindPanel.Visible = True
+        End If
     End Sub
 #End Region
 #End Region
@@ -789,6 +829,13 @@ Public Class Form1
             UpdateVal("HideReticule=", 0)
         End If
     End Sub
+    Private Sub reticleIFFCheck_CheckedChanged(sender As Object, e As EventArgs) Handles reticleIFFCheck.Click
+        If reticleIFFCheck.Checked Then
+            UpdateVal("ShowReticleIFF=", 1)
+        Else
+            UpdateVal("ShowReticleIFF=", 0)
+        End If
+    End Sub
 #End Region
 #Region "Buttons"
     Private Sub retColorButton_Click(sender As Object, e As EventArgs) Handles retColorButton.Click
@@ -872,6 +919,36 @@ Public Class Form1
         TRterrColorButton.BackColor = chosenColor
         ColorUpdate("TintModeMap=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
     End Sub
+    Private Sub omegaPlayerColorButton_Click(sender As Object, e As EventArgs) Handles omegaPlayerColorButton.Click
+        Dim chosenColor As Color = ColorGetter()
+        omegaPlayerColorButton.BackColor = chosenColor
+        ColorUpdate("TintModePlayerOutfitWar=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
+    End Sub
+    Private Sub alphaPlayerColorButton_Click(sender As Object, e As EventArgs) Handles alphaPlayerColorButton.Click
+        Dim chosenColor As Color = ColorGetter()
+        alphaPlayerColorButton.BackColor = chosenColor
+        ColorUpdate("TintModePlayerOutfitWar=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
+    End Sub
+    Private Sub omegaFacColorButton_Click(sender As Object, e As EventArgs) Handles omegaFacColorButton.Click
+        Dim chosenColor As Color = ColorGetter()
+        omegaFacColorButton.BackColor = chosenColor
+        ColorUpdate("TintModeFacilityOutfitWar=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
+    End Sub
+    Private Sub alphaFacColorButton_Click(sender As Object, e As EventArgs) Handles alphaFacColorButton.Click
+        Dim chosenColor As Color = ColorGetter()
+        alphaFacColorButton.BackColor = chosenColor
+        ColorUpdate("TintModeFacilityOutfitWar=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
+    End Sub
+    Private Sub omegaTerrColorButton_Click(sender As Object, e As EventArgs) Handles omegaTerrColorButton.Click
+        Dim chosenColor As Color = ColorGetter()
+        omegaTerrColorButton.BackColor = chosenColor
+        ColorUpdate("TintModeMapOutfitWar=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 2)
+    End Sub
+    Private Sub alphaTerrColorButton_Click(sender As Object, e As EventArgs) Handles alphaTerrColorButton.Click
+        Dim chosenColor As Color = ColorGetter()
+        alphaTerrColorButton.BackColor = chosenColor
+        ColorUpdate("TintModeMapOutfitWar=", ColorDecimalSwap(ColorTranslator.ToOle(chosenColor)), 3)
+    End Sub
 #End Region
 #Region "IndexChanged"
     Private Sub playerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles playerColorDrop.SelectedIndexChanged
@@ -923,6 +1000,63 @@ Public Class Form1
             VSterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMap=", 1)))
             NCterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMap=", 2)))
             TRterrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMap=", 3)))
+        End If
+    End Sub
+    Private Sub OWPlayerColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OWPlayerColorDrop.SelectedIndexChanged
+        If OWPlayerColorDrop.SelectedIndex = 0 Then
+            UpdateVal("TintModePlayerOutfitWar=", 0)
+            OWPlayerColorPanelButtons.Visible = False
+        ElseIf OWPlayerColorDrop.SelectedIndex = 1 Then
+            UpdateVal("TintModePlayerOutfitWar=", 1)
+            OWPlayerColorPanelButtons.Visible = False
+        ElseIf OWPlayerColorDrop.SelectedIndex = 2 Then
+            OWPlayerColorPanelButtons.Visible = True
+            If GetState("TintModePlayerOutfitWar=").ToString.Length < 3 Then
+                UpdateVal("TintModePlayerOutfitWar=", "1,19328,10357519")
+            End If
+            omegaPlayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModePlayerOutfitWar=", 2)))
+            alphaPlayerColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModePlayerOutfitWar=", 3)))
+        End If
+    End Sub
+    Private Sub OWFacColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OWFacColorDrop.SelectedIndexChanged
+        If OWFacColorDrop.SelectedIndex = 0 Then
+            UpdateVal("TintModeFacilityOutfitWar=", 0)
+            OWFacColorPanelButtons.Visible = False
+        ElseIf OWFacColorDrop.SelectedIndex = 1 Then
+            UpdateVal("TintModeFacilityOutfitWar=", 1)
+            OWFacColorPanelButtons.Visible = False
+        ElseIf OWFacColorDrop.SelectedIndex = 2 Then
+            OWFacColorPanelButtons.Visible = True
+            If GetState("TintModeFacilityOutfitWar=").ToString.Length < 3 Then
+                UpdateVal("TintModeFacilityOutfitWar=", "1,19328,10357519")
+            End If
+            omegaFacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeFacilityOutfitWar=", 2)))
+            alphaFacColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeFacilityOutfitWar=", 3)))
+        End If
+    End Sub
+    Private Sub OWTerrColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OWTerrColorDrop.SelectedIndexChanged
+        If OWTerrColorDrop.SelectedIndex = 0 Then
+            UpdateVal("TintModeMapOutfitWar=", 0)
+            OWTerrColorPanelButtons.Visible = False
+        ElseIf OWTerrColorDrop.SelectedIndex = 1 Then
+            UpdateVal("TintModeMapOutfitWar=", 1)
+            OWTerrColorPanelButtons.Visible = False
+        ElseIf OWTerrColorDrop.SelectedIndex = 2 Then
+            OWTerrColorPanelButtons.Visible = True
+            If GetState("TintModeMapOutfitWar=").ToString.Length < 3 Then
+                UpdateVal("TintModeMapOutfitWar=", "1,19328,10357519")
+            End If
+            omegaTerrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMapOutfitWar=", 2)))
+            alphaTerrColorButton.BackColor = ColorTranslator.FromOle(ColorDecimalSwap(GetStateSpecificIndex("TintModeMapOutfitWar=", 3)))
+        End If
+    End Sub
+    Private Sub HUDModeDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles HUDModeDrop.SelectedIndexChanged
+        If HUDModeDrop.SelectedIndex = 0 Then
+            UpdateVal("CentralizedHudMode=", 1)
+        ElseIf HUDModeDrop.SelectedIndex = 1 Then
+            UpdateVal("CentralizedHudMode=", 2)
+        ElseIf HUDModeDrop.SelectedIndex = 2 Then
+            UpdateVal("CentralizedHudMode=", 3)
         End If
     End Sub
 #End Region

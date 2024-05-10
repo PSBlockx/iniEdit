@@ -90,6 +90,20 @@ Partial Class Form1
         Me.hideRetCheck = New System.Windows.Forms.CheckBox()
         Me.smoothMaxBox = New System.Windows.Forms.NumericUpDown()
         Me.smoothMinBox = New System.Windows.Forms.NumericUpDown()
+        Me.hudHPCheck = New System.Windows.Forms.CheckBox()
+        Me.hudSpamCheck = New System.Windows.Forms.CheckBox()
+        Me.hudLootCheck = New System.Windows.Forms.CheckBox()
+        Me.hudCompCheck = New System.Windows.Forms.CheckBox()
+        Me.hudDotCheck = New System.Windows.Forms.CheckBox()
+        Me.reticleIFFCheck = New System.Windows.Forms.CheckBox()
+        Me.omegaPlayerColorButton = New System.Windows.Forms.Button()
+        Me.alphaPlayerColorButton = New System.Windows.Forms.Button()
+        Me.omegaFacColorButton = New System.Windows.Forms.Button()
+        Me.alphaFacColorButton = New System.Windows.Forms.Button()
+        Me.omegaTerrColorButton = New System.Windows.Forms.Button()
+        Me.alphaTerrColorButton = New System.Windows.Forms.Button()
+        Me.colorblindAmountBox = New System.Windows.Forms.NumericUpDown()
+        Me.colorblindStrengthBox = New System.Windows.Forms.NumericUpDown()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.openButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -245,12 +259,26 @@ Partial Class Form1
         Me.terrColorDrop = New System.Windows.Forms.ComboBox()
         Me.terrColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.intPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.hudHPCheck = New System.Windows.Forms.CheckBox()
         Me.hudAlertCheck = New System.Windows.Forms.CheckBox()
-        Me.hudSpamCheck = New System.Windows.Forms.CheckBox()
-        Me.hudLootCheck = New System.Windows.Forms.CheckBox()
-        Me.hudCompCheck = New System.Windows.Forms.CheckBox()
-        Me.hudDotCheck = New System.Windows.Forms.CheckBox()
+        Me.intPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.HUDModeDrop = New System.Windows.Forms.ComboBox()
+        Me.intPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.OWPlayerColorPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.OWPlayerColorDrop = New System.Windows.Forms.ComboBox()
+        Me.OWPlayerColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.OWFacColorPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel14 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.OWFacColorDrop = New System.Windows.Forms.ComboBox()
+        Me.OWFacColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.OWTerrColorPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel17 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.OWTerrColorDrop = New System.Windows.Forms.ComboBox()
+        Me.OWTerrColorPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.sensPanel0 = New System.Windows.Forms.FlowLayoutPanel()
         Me.sensPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -346,10 +374,19 @@ Partial Class Form1
         Me.graphPanel5 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.upscaleDrop = New System.Windows.Forms.ComboBox()
-        Me.Label66 = New System.Windows.Forms.Label()
+        Me.DLSSPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label72 = New System.Windows.Forms.Label()
         Me.DLSSQualDrop = New System.Windows.Forms.ComboBox()
-        Me.FSRQualDrop = New System.Windows.Forms.ComboBox()
+        Me.Label71 = New System.Windows.Forms.Label()
+        Me.FSRPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label66 = New System.Windows.Forms.Label()
         Me.Label76 = New System.Windows.Forms.Label()
+        Me.FSRQualDrop = New System.Windows.Forms.ComboBox()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.colorblindDrop = New System.Windows.Forms.ComboBox()
+        Me.colorblindPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
         Me.graphPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.vsyncCheck = New System.Windows.Forms.CheckBox()
         Me.smoothCheck = New System.Windows.Forms.CheckBox()
@@ -391,6 +428,8 @@ Partial Class Form1
         CType(Me.renQualBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.smoothMaxBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.smoothMinBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.colorblindAmountBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.colorblindStrengthBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -435,6 +474,17 @@ Partial Class Form1
         Me.FlowLayoutPanel21.SuspendLayout()
         Me.terrColorPanelButtons.SuspendLayout()
         Me.intPanel1.SuspendLayout()
+        Me.intPanel4.SuspendLayout()
+        Me.intPanel5.SuspendLayout()
+        Me.OWPlayerColorPanel.SuspendLayout()
+        Me.FlowLayoutPanel5.SuspendLayout()
+        Me.OWPlayerColorPanelButtons.SuspendLayout()
+        Me.OWFacColorPanel.SuspendLayout()
+        Me.FlowLayoutPanel14.SuspendLayout()
+        Me.OWFacColorPanelButtons.SuspendLayout()
+        Me.OWTerrColorPanel.SuspendLayout()
+        Me.FlowLayoutPanel17.SuspendLayout()
+        Me.OWTerrColorPanelButtons.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.sensPanel0.SuspendLayout()
         Me.sensPanel1.SuspendLayout()
@@ -463,6 +513,9 @@ Partial Class Form1
         Me.graphPanel2.SuspendLayout()
         Me.graphPanel3.SuspendLayout()
         Me.graphPanel5.SuspendLayout()
+        Me.DLSSPanel.SuspendLayout()
+        Me.FSRPanel.SuspendLayout()
+        Me.colorblindPanel.SuspendLayout()
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel6.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -825,7 +878,7 @@ Partial Class Form1
         Me.TRterrColorButton.Size = New System.Drawing.Size(38, 29)
         Me.TRterrColorButton.TabIndex = 3
         Me.TRterrColorButton.Text = "TR"
-        Me.ToolTip1.SetToolTip(Me.TRterrColorButton, "TR Facility Color")
+        Me.ToolTip1.SetToolTip(Me.TRterrColorButton, "TR Territory Color")
         Me.TRterrColorButton.UseVisualStyleBackColor = True
         '
         'NCterrColorButton
@@ -836,7 +889,7 @@ Partial Class Form1
         Me.NCterrColorButton.Size = New System.Drawing.Size(38, 29)
         Me.NCterrColorButton.TabIndex = 2
         Me.NCterrColorButton.Text = "NC"
-        Me.ToolTip1.SetToolTip(Me.NCterrColorButton, "NC Facility Color")
+        Me.ToolTip1.SetToolTip(Me.NCterrColorButton, "NC Territory Color")
         Me.NCterrColorButton.UseVisualStyleBackColor = True
         '
         'VSterrColorButton
@@ -847,7 +900,7 @@ Partial Class Form1
         Me.VSterrColorButton.Size = New System.Drawing.Size(38, 29)
         Me.VSterrColorButton.TabIndex = 1
         Me.VSterrColorButton.Text = "VS"
-        Me.ToolTip1.SetToolTip(Me.VSterrColorButton, "VS Facility Color")
+        Me.ToolTip1.SetToolTip(Me.VSterrColorButton, "VS Territory Color")
         Me.VSterrColorButton.UseVisualStyleBackColor = True
         '
         'TRfacColorButton
@@ -858,7 +911,7 @@ Partial Class Form1
         Me.TRfacColorButton.Size = New System.Drawing.Size(38, 29)
         Me.TRfacColorButton.TabIndex = 3
         Me.TRfacColorButton.Text = "TR"
-        Me.ToolTip1.SetToolTip(Me.TRfacColorButton, "TR Territory Color")
+        Me.ToolTip1.SetToolTip(Me.TRfacColorButton, "TR Facility Color")
         Me.TRfacColorButton.UseVisualStyleBackColor = True
         '
         'NCfacColorButton
@@ -869,7 +922,7 @@ Partial Class Form1
         Me.NCfacColorButton.Size = New System.Drawing.Size(38, 29)
         Me.NCfacColorButton.TabIndex = 2
         Me.NCfacColorButton.Text = "NC"
-        Me.ToolTip1.SetToolTip(Me.NCfacColorButton, "NC Territory Color")
+        Me.ToolTip1.SetToolTip(Me.NCfacColorButton, "NC Facility Color")
         Me.NCfacColorButton.UseVisualStyleBackColor = True
         '
         'VSfacColorButton
@@ -880,7 +933,7 @@ Partial Class Form1
         Me.VSfacColorButton.Size = New System.Drawing.Size(38, 29)
         Me.VSfacColorButton.TabIndex = 1
         Me.VSfacColorButton.Text = "VS"
-        Me.ToolTip1.SetToolTip(Me.VSfacColorButton, "VS Territory Color")
+        Me.ToolTip1.SetToolTip(Me.VSfacColorButton, "VS Facility Color")
         Me.VSfacColorButton.UseVisualStyleBackColor = True
         '
         'TRplayerColorButton
@@ -926,6 +979,7 @@ Partial Class Form1
         Me.OSAlphaBox.Name = "OSAlphaBox"
         Me.OSAlphaBox.Size = New System.Drawing.Size(80, 20)
         Me.OSAlphaBox.TabIndex = 43
+        Me.ToolTip1.SetToolTip(Me.OSAlphaBox, "How transparent to draw the OS range circle." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0 = Clear" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1 = Opaque")
         Me.OSAlphaBox.Value = New Decimal(New Integer() {100000, 0, 0, 393216})
         '
         'OSColorButton
@@ -1054,26 +1108,24 @@ Partial Class Form1
         Me.FSRSharpBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.FSRSharpBox.DecimalPlaces = 2
         Me.FSRSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.FSRSharpBox.Location = New System.Drawing.Point(3, 161)
+        Me.FSRSharpBox.Location = New System.Drawing.Point(3, 64)
         Me.FSRSharpBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.FSRSharpBox.Name = "FSRSharpBox"
         Me.FSRSharpBox.Size = New System.Drawing.Size(80, 20)
         Me.FSRSharpBox.TabIndex = 73
         Me.ToolTip1.SetToolTip(Me.FSRSharpBox, "0 - 1")
-        Me.FSRSharpBox.Visible = False
         '
         'DLSSSharpBox
         '
         Me.DLSSSharpBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.DLSSSharpBox.DecimalPlaces = 2
         Me.DLSSSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.DLSSSharpBox.Location = New System.Drawing.Point(3, 135)
+        Me.DLSSSharpBox.Location = New System.Drawing.Point(3, 64)
         Me.DLSSSharpBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.DLSSSharpBox.Name = "DLSSSharpBox"
         Me.DLSSSharpBox.Size = New System.Drawing.Size(80, 20)
         Me.DLSSSharpBox.TabIndex = 71
         Me.ToolTip1.SetToolTip(Me.DLSSSharpBox, "0 - 1")
-        Me.DLSSSharpBox.Visible = False
         '
         'airRenDistBox
         '
@@ -1231,7 +1283,7 @@ Partial Class Form1
         Me.hideRetCheck.Size = New System.Drawing.Size(89, 17)
         Me.hideRetCheck.TabIndex = 45
         Me.hideRetCheck.Text = "Hide Reticles"
-        Me.ToolTip1.SetToolTip(Me.hideRetCheck, "Replace all sight colors with custom color")
+        Me.ToolTip1.SetToolTip(Me.hideRetCheck, "Hide all reticles for use with external reticles")
         Me.hideRetCheck.UseVisualStyleBackColor = True
         '
         'smoothMaxBox
@@ -1243,7 +1295,7 @@ Partial Class Form1
         Me.smoothMaxBox.Name = "smoothMaxBox"
         Me.smoothMaxBox.Size = New System.Drawing.Size(80, 20)
         Me.smoothMaxBox.TabIndex = 46
-        Me.ToolTip1.SetToolTip(Me.smoothMaxBox, "10 - 500" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default: 60" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Caps FPS to this value")
+        Me.ToolTip1.SetToolTip(Me.smoothMaxBox, "10 - 500")
         Me.smoothMaxBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'smoothMinBox
@@ -1255,8 +1307,172 @@ Partial Class Form1
         Me.smoothMinBox.Name = "smoothMinBox"
         Me.smoothMinBox.Size = New System.Drawing.Size(80, 20)
         Me.smoothMinBox.TabIndex = 47
-        Me.ToolTip1.SetToolTip(Me.smoothMinBox, "10 - 500" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default: 20" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Avoids smoothing below this value")
+        Me.ToolTip1.SetToolTip(Me.smoothMinBox, "10 - 500")
         Me.smoothMinBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'hudHPCheck
+        '
+        Me.hudHPCheck.AutoSize = True
+        Me.hudHPCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hudHPCheck.Location = New System.Drawing.Point(3, 3)
+        Me.hudHPCheck.Name = "hudHPCheck"
+        Me.hudHPCheck.Size = New System.Drawing.Size(102, 17)
+        Me.hudHPCheck.TabIndex = 4
+        Me.hudHPCheck.Text = "Health Numbers"
+        Me.ToolTip1.SetToolTip(Me.hudHPCheck, "Show actual health values with your health/shield")
+        Me.hudHPCheck.UseVisualStyleBackColor = True
+        '
+        'hudSpamCheck
+        '
+        Me.hudSpamCheck.AutoSize = True
+        Me.hudSpamCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hudSpamCheck.Location = New System.Drawing.Point(3, 72)
+        Me.hudSpamCheck.Name = "hudSpamCheck"
+        Me.hudSpamCheck.Size = New System.Drawing.Size(69, 17)
+        Me.hudSpamCheck.TabIndex = 7
+        Me.hudSpamCheck.Text = "Kill Spam"
+        Me.ToolTip1.SetToolTip(Me.hudSpamCheck, "Show the killfeed in the top-right corner")
+        Me.hudSpamCheck.UseVisualStyleBackColor = True
+        '
+        'hudLootCheck
+        '
+        Me.hudLootCheck.AutoSize = True
+        Me.hudLootCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hudLootCheck.Location = New System.Drawing.Point(3, 95)
+        Me.hudLootCheck.Name = "hudLootCheck"
+        Me.hudLootCheck.Size = New System.Drawing.Size(78, 17)
+        Me.hudLootCheck.TabIndex = 8
+        Me.hudLootCheck.Text = "Loot Drops"
+        Me.ToolTip1.SetToolTip(Me.hudLootCheck, "Show the item reward popup that appears in the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "upper-center of your screen for c" &
+        "ertain rewards.")
+        Me.hudLootCheck.UseVisualStyleBackColor = True
+        '
+        'hudCompCheck
+        '
+        Me.hudCompCheck.AutoSize = True
+        Me.hudCompCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hudCompCheck.Location = New System.Drawing.Point(3, 118)
+        Me.hudCompCheck.Name = "hudCompCheck"
+        Me.hudCompCheck.Size = New System.Drawing.Size(91, 17)
+        Me.hudCompCheck.TabIndex = 9
+        Me.hudCompCheck.Text = "Top Compass"
+        Me.ToolTip1.SetToolTip(Me.hudCompCheck, "Show a compass wheel at the top of your HUD")
+        Me.hudCompCheck.UseVisualStyleBackColor = True
+        '
+        'hudDotCheck
+        '
+        Me.hudDotCheck.AutoSize = True
+        Me.hudDotCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.hudDotCheck.Location = New System.Drawing.Point(3, 141)
+        Me.hudDotCheck.Name = "hudDotCheck"
+        Me.hudDotCheck.Size = New System.Drawing.Size(135, 17)
+        Me.hudDotCheck.TabIndex = 10
+        Me.hudDotCheck.Text = "3rd Person Vehicle Dot"
+        Me.ToolTip1.SetToolTip(Me.hudDotCheck, "Show a small dot reticle in the center of your screen" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "when in 3rd person view in" &
+        " a vehicle.")
+        Me.hudDotCheck.UseVisualStyleBackColor = True
+        '
+        'reticleIFFCheck
+        '
+        Me.reticleIFFCheck.AutoSize = True
+        Me.reticleIFFCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.reticleIFFCheck.Location = New System.Drawing.Point(3, 164)
+        Me.reticleIFFCheck.Name = "reticleIFFCheck"
+        Me.reticleIFFCheck.Size = New System.Drawing.Size(107, 17)
+        Me.reticleIFFCheck.TabIndex = 11
+        Me.reticleIFFCheck.Text = "Show Reticle IFF"
+        Me.ToolTip1.SetToolTip(Me.reticleIFFCheck, "Show a green hipfire reticle when aiming at allies," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "red when at enemies.")
+        Me.reticleIFFCheck.UseVisualStyleBackColor = True
+        '
+        'omegaPlayerColorButton
+        '
+        Me.omegaPlayerColorButton.ForeColor = System.Drawing.Color.White
+        Me.omegaPlayerColorButton.Location = New System.Drawing.Point(3, 3)
+        Me.omegaPlayerColorButton.Name = "omegaPlayerColorButton"
+        Me.omegaPlayerColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.omegaPlayerColorButton.TabIndex = 1
+        Me.omegaPlayerColorButton.Text = "Ω"
+        Me.ToolTip1.SetToolTip(Me.omegaPlayerColorButton, "Omega Player Color")
+        Me.omegaPlayerColorButton.UseVisualStyleBackColor = True
+        '
+        'alphaPlayerColorButton
+        '
+        Me.alphaPlayerColorButton.ForeColor = System.Drawing.Color.White
+        Me.alphaPlayerColorButton.Location = New System.Drawing.Point(47, 3)
+        Me.alphaPlayerColorButton.Name = "alphaPlayerColorButton"
+        Me.alphaPlayerColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.alphaPlayerColorButton.TabIndex = 2
+        Me.alphaPlayerColorButton.Text = "α"
+        Me.ToolTip1.SetToolTip(Me.alphaPlayerColorButton, "Alpha Player Color")
+        Me.alphaPlayerColorButton.UseVisualStyleBackColor = True
+        '
+        'omegaFacColorButton
+        '
+        Me.omegaFacColorButton.ForeColor = System.Drawing.Color.White
+        Me.omegaFacColorButton.Location = New System.Drawing.Point(3, 3)
+        Me.omegaFacColorButton.Name = "omegaFacColorButton"
+        Me.omegaFacColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.omegaFacColorButton.TabIndex = 1
+        Me.omegaFacColorButton.Text = "Ω"
+        Me.ToolTip1.SetToolTip(Me.omegaFacColorButton, "Omega Facility Color")
+        Me.omegaFacColorButton.UseVisualStyleBackColor = True
+        '
+        'alphaFacColorButton
+        '
+        Me.alphaFacColorButton.ForeColor = System.Drawing.Color.White
+        Me.alphaFacColorButton.Location = New System.Drawing.Point(47, 3)
+        Me.alphaFacColorButton.Name = "alphaFacColorButton"
+        Me.alphaFacColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.alphaFacColorButton.TabIndex = 2
+        Me.alphaFacColorButton.Text = "α"
+        Me.ToolTip1.SetToolTip(Me.alphaFacColorButton, "Alpha Facility Color")
+        Me.alphaFacColorButton.UseVisualStyleBackColor = True
+        '
+        'omegaTerrColorButton
+        '
+        Me.omegaTerrColorButton.ForeColor = System.Drawing.Color.White
+        Me.omegaTerrColorButton.Location = New System.Drawing.Point(3, 3)
+        Me.omegaTerrColorButton.Name = "omegaTerrColorButton"
+        Me.omegaTerrColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.omegaTerrColorButton.TabIndex = 1
+        Me.omegaTerrColorButton.Text = "Ω"
+        Me.ToolTip1.SetToolTip(Me.omegaTerrColorButton, "Omega Territory Color")
+        Me.omegaTerrColorButton.UseVisualStyleBackColor = True
+        '
+        'alphaTerrColorButton
+        '
+        Me.alphaTerrColorButton.ForeColor = System.Drawing.Color.White
+        Me.alphaTerrColorButton.Location = New System.Drawing.Point(47, 3)
+        Me.alphaTerrColorButton.Name = "alphaTerrColorButton"
+        Me.alphaTerrColorButton.Size = New System.Drawing.Size(38, 29)
+        Me.alphaTerrColorButton.TabIndex = 2
+        Me.alphaTerrColorButton.Text = "α"
+        Me.ToolTip1.SetToolTip(Me.alphaTerrColorButton, "Alpha Territory Color")
+        Me.alphaTerrColorButton.UseVisualStyleBackColor = True
+        '
+        'colorblindAmountBox
+        '
+        Me.colorblindAmountBox.DecimalPlaces = 2
+        Me.colorblindAmountBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.colorblindAmountBox.Location = New System.Drawing.Point(3, 20)
+        Me.colorblindAmountBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.colorblindAmountBox.Name = "colorblindAmountBox"
+        Me.colorblindAmountBox.Size = New System.Drawing.Size(80, 20)
+        Me.colorblindAmountBox.TabIndex = 80
+        Me.ToolTip1.SetToolTip(Me.colorblindAmountBox, "How transparent to draw the OS range circle." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0 = Clear" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1 = Opaque")
+        Me.colorblindAmountBox.Value = New Decimal(New Integer() {100000, 0, 0, 393216})
+        '
+        'colorblindStrengthBox
+        '
+        Me.colorblindStrengthBox.DecimalPlaces = 2
+        Me.colorblindStrengthBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
+        Me.colorblindStrengthBox.Location = New System.Drawing.Point(3, 63)
+        Me.colorblindStrengthBox.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.colorblindStrengthBox.Name = "colorblindStrengthBox"
+        Me.colorblindStrengthBox.Size = New System.Drawing.Size(80, 20)
+        Me.colorblindStrengthBox.TabIndex = 82
+        Me.ToolTip1.SetToolTip(Me.colorblindStrengthBox, "How transparent to draw the OS range circle." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0 = Clear" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1 = Opaque")
+        Me.colorblindStrengthBox.Value = New Decimal(New Integer() {100000, 0, 0, 393216})
         '
         'MenuStrip1
         '
@@ -2971,6 +3187,8 @@ Partial Class Form1
         Me.intPanel0.Controls.Add(Me.intPanel2)
         Me.intPanel0.Controls.Add(Me.intPanel3)
         Me.intPanel0.Controls.Add(Me.intPanel1)
+        Me.intPanel0.Controls.Add(Me.intPanel4)
+        Me.intPanel0.Controls.Add(Me.intPanel5)
         Me.intPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.intPanel0.Location = New System.Drawing.Point(0, 0)
         Me.intPanel0.Name = "intPanel0"
@@ -3212,22 +3430,12 @@ Partial Class Form1
         Me.intPanel1.Controls.Add(Me.hudLootCheck)
         Me.intPanel1.Controls.Add(Me.hudCompCheck)
         Me.intPanel1.Controls.Add(Me.hudDotCheck)
+        Me.intPanel1.Controls.Add(Me.reticleIFFCheck)
         Me.intPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.intPanel1.Location = New System.Drawing.Point(311, 3)
         Me.intPanel1.Name = "intPanel1"
-        Me.intPanel1.Size = New System.Drawing.Size(141, 161)
+        Me.intPanel1.Size = New System.Drawing.Size(141, 184)
         Me.intPanel1.TabIndex = 3
-        '
-        'hudHPCheck
-        '
-        Me.hudHPCheck.AutoSize = True
-        Me.hudHPCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.hudHPCheck.Location = New System.Drawing.Point(3, 3)
-        Me.hudHPCheck.Name = "hudHPCheck"
-        Me.hudHPCheck.Size = New System.Drawing.Size(102, 17)
-        Me.hudHPCheck.TabIndex = 4
-        Me.hudHPCheck.Text = "Health Numbers"
-        Me.hudHPCheck.UseVisualStyleBackColor = True
         '
         'hudAlertCheck
         '
@@ -3240,49 +3448,228 @@ Partial Class Form1
         Me.hudAlertCheck.Text = "Alert Timer"
         Me.hudAlertCheck.UseVisualStyleBackColor = True
         '
-        'hudSpamCheck
+        'intPanel4
         '
-        Me.hudSpamCheck.AutoSize = True
-        Me.hudSpamCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.hudSpamCheck.Location = New System.Drawing.Point(3, 72)
-        Me.hudSpamCheck.Name = "hudSpamCheck"
-        Me.hudSpamCheck.Size = New System.Drawing.Size(69, 17)
-        Me.hudSpamCheck.TabIndex = 7
-        Me.hudSpamCheck.Text = "Kill Spam"
-        Me.hudSpamCheck.UseVisualStyleBackColor = True
+        Me.intPanel4.AutoSize = True
+        Me.intPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.intPanel4.Controls.Add(Me.Label41)
+        Me.intPanel4.Controls.Add(Me.HUDModeDrop)
+        Me.intPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.intPanel4.Location = New System.Drawing.Point(458, 3)
+        Me.intPanel4.Name = "intPanel4"
+        Me.intPanel4.Size = New System.Drawing.Size(127, 44)
+        Me.intPanel4.TabIndex = 4
         '
-        'hudLootCheck
+        'Label41
         '
-        Me.hudLootCheck.AutoSize = True
-        Me.hudLootCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.hudLootCheck.Location = New System.Drawing.Point(3, 95)
-        Me.hudLootCheck.Name = "hudLootCheck"
-        Me.hudLootCheck.Size = New System.Drawing.Size(78, 17)
-        Me.hudLootCheck.TabIndex = 8
-        Me.hudLootCheck.Text = "Loot Drops"
-        Me.hudLootCheck.UseVisualStyleBackColor = True
+        Me.Label41.AutoSize = True
+        Me.Label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label41.Location = New System.Drawing.Point(3, 0)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(77, 17)
+        Me.Label41.TabIndex = 51
+        Me.Label41.Text = "HUD Mode"
         '
-        'hudCompCheck
+        'HUDModeDrop
         '
-        Me.hudCompCheck.AutoSize = True
-        Me.hudCompCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.hudCompCheck.Location = New System.Drawing.Point(3, 118)
-        Me.hudCompCheck.Name = "hudCompCheck"
-        Me.hudCompCheck.Size = New System.Drawing.Size(91, 17)
-        Me.hudCompCheck.TabIndex = 9
-        Me.hudCompCheck.Text = "Top Compass"
-        Me.hudCompCheck.UseVisualStyleBackColor = True
+        Me.HUDModeDrop.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.HUDModeDrop.FormattingEnabled = True
+        Me.HUDModeDrop.Items.AddRange(New Object() {"1. New Centralized", "2. Old Centralized", "3. Corner HUD"})
+        Me.HUDModeDrop.Location = New System.Drawing.Point(3, 20)
+        Me.HUDModeDrop.MaxDropDownItems = 3
+        Me.HUDModeDrop.Name = "HUDModeDrop"
+        Me.HUDModeDrop.Size = New System.Drawing.Size(121, 21)
+        Me.HUDModeDrop.TabIndex = 6
         '
-        'hudDotCheck
+        'intPanel5
         '
-        Me.hudDotCheck.AutoSize = True
-        Me.hudDotCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.hudDotCheck.Location = New System.Drawing.Point(3, 141)
-        Me.hudDotCheck.Name = "hudDotCheck"
-        Me.hudDotCheck.Size = New System.Drawing.Size(135, 17)
-        Me.hudDotCheck.TabIndex = 10
-        Me.hudDotCheck.Text = "3rd Person Vehicle Dot"
-        Me.hudDotCheck.UseVisualStyleBackColor = True
+        Me.intPanel5.AutoSize = True
+        Me.intPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.intPanel5.Controls.Add(Me.OWPlayerColorPanel)
+        Me.intPanel5.Controls.Add(Me.OWFacColorPanel)
+        Me.intPanel5.Controls.Add(Me.OWTerrColorPanel)
+        Me.intPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.intPanel5.Location = New System.Drawing.Point(591, 3)
+        Me.intPanel5.Name = "intPanel5"
+        Me.intPanel5.Size = New System.Drawing.Size(118, 291)
+        Me.intPanel5.TabIndex = 5
+        '
+        'OWPlayerColorPanel
+        '
+        Me.OWPlayerColorPanel.AutoSize = True
+        Me.OWPlayerColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.OWPlayerColorPanel.Controls.Add(Me.FlowLayoutPanel5)
+        Me.OWPlayerColorPanel.Controls.Add(Me.OWPlayerColorPanelButtons)
+        Me.OWPlayerColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.OWPlayerColorPanel.Location = New System.Drawing.Point(3, 3)
+        Me.OWPlayerColorPanel.Name = "OWPlayerColorPanel"
+        Me.OWPlayerColorPanel.Size = New System.Drawing.Size(112, 91)
+        Me.OWPlayerColorPanel.TabIndex = 0
+        '
+        'FlowLayoutPanel5
+        '
+        Me.FlowLayoutPanel5.AutoSize = True
+        Me.FlowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel5.Controls.Add(Me.Label42)
+        Me.FlowLayoutPanel5.Controls.Add(Me.OWPlayerColorDrop)
+        Me.FlowLayoutPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
+        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(106, 44)
+        Me.FlowLayoutPanel5.TabIndex = 0
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label42.Location = New System.Drawing.Point(3, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(76, 17)
+        Me.Label42.TabIndex = 49
+        Me.Label42.Text = "OW Player"
+        '
+        'OWPlayerColorDrop
+        '
+        Me.OWPlayerColorDrop.FormattingEnabled = True
+        Me.OWPlayerColorDrop.Items.AddRange(New Object() {"0. Enemy/Ally", "1. Faction", "2. Custom"})
+        Me.OWPlayerColorDrop.Location = New System.Drawing.Point(3, 20)
+        Me.OWPlayerColorDrop.MaxDropDownItems = 3
+        Me.OWPlayerColorDrop.Name = "OWPlayerColorDrop"
+        Me.OWPlayerColorDrop.Size = New System.Drawing.Size(100, 21)
+        Me.OWPlayerColorDrop.TabIndex = 7
+        '
+        'OWPlayerColorPanelButtons
+        '
+        Me.OWPlayerColorPanelButtons.AutoSize = True
+        Me.OWPlayerColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.OWPlayerColorPanelButtons.Controls.Add(Me.omegaPlayerColorButton)
+        Me.OWPlayerColorPanelButtons.Controls.Add(Me.alphaPlayerColorButton)
+        Me.OWPlayerColorPanelButtons.Location = New System.Drawing.Point(3, 53)
+        Me.OWPlayerColorPanelButtons.Name = "OWPlayerColorPanelButtons"
+        Me.OWPlayerColorPanelButtons.Size = New System.Drawing.Size(88, 35)
+        Me.OWPlayerColorPanelButtons.TabIndex = 2
+        Me.OWPlayerColorPanelButtons.Visible = False
+        '
+        'OWFacColorPanel
+        '
+        Me.OWFacColorPanel.AutoSize = True
+        Me.OWFacColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.OWFacColorPanel.Controls.Add(Me.FlowLayoutPanel14)
+        Me.OWFacColorPanel.Controls.Add(Me.OWFacColorPanelButtons)
+        Me.OWFacColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.OWFacColorPanel.Location = New System.Drawing.Point(3, 100)
+        Me.OWFacColorPanel.Name = "OWFacColorPanel"
+        Me.OWFacColorPanel.Size = New System.Drawing.Size(112, 91)
+        Me.OWFacColorPanel.TabIndex = 1
+        '
+        'FlowLayoutPanel14
+        '
+        Me.FlowLayoutPanel14.AutoSize = True
+        Me.FlowLayoutPanel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel14.Controls.Add(Me.Label43)
+        Me.FlowLayoutPanel14.Controls.Add(Me.OWFacColorDrop)
+        Me.FlowLayoutPanel14.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel14.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel14.Name = "FlowLayoutPanel14"
+        Me.FlowLayoutPanel14.Size = New System.Drawing.Size(106, 44)
+        Me.FlowLayoutPanel14.TabIndex = 0
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label43.Location = New System.Drawing.Point(3, 0)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(79, 17)
+        Me.Label43.TabIndex = 50
+        Me.Label43.Text = "OW Facility"
+        '
+        'OWFacColorDrop
+        '
+        Me.OWFacColorDrop.FormattingEnabled = True
+        Me.OWFacColorDrop.Items.AddRange(New Object() {"0. Enemy/Ally", "1. Faction", "2. Custom"})
+        Me.OWFacColorDrop.Location = New System.Drawing.Point(3, 20)
+        Me.OWFacColorDrop.MaxDropDownItems = 3
+        Me.OWFacColorDrop.Name = "OWFacColorDrop"
+        Me.OWFacColorDrop.Size = New System.Drawing.Size(100, 21)
+        Me.OWFacColorDrop.TabIndex = 51
+        '
+        'OWFacColorPanelButtons
+        '
+        Me.OWFacColorPanelButtons.AutoSize = True
+        Me.OWFacColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.OWFacColorPanelButtons.Controls.Add(Me.omegaFacColorButton)
+        Me.OWFacColorPanelButtons.Controls.Add(Me.alphaFacColorButton)
+        Me.OWFacColorPanelButtons.Location = New System.Drawing.Point(3, 53)
+        Me.OWFacColorPanelButtons.Name = "OWFacColorPanelButtons"
+        Me.OWFacColorPanelButtons.Size = New System.Drawing.Size(88, 35)
+        Me.OWFacColorPanelButtons.TabIndex = 2
+        Me.OWFacColorPanelButtons.Visible = False
+        '
+        'OWTerrColorPanel
+        '
+        Me.OWTerrColorPanel.AutoSize = True
+        Me.OWTerrColorPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.OWTerrColorPanel.Controls.Add(Me.FlowLayoutPanel17)
+        Me.OWTerrColorPanel.Controls.Add(Me.OWTerrColorPanelButtons)
+        Me.OWTerrColorPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.OWTerrColorPanel.Location = New System.Drawing.Point(3, 197)
+        Me.OWTerrColorPanel.Name = "OWTerrColorPanel"
+        Me.OWTerrColorPanel.Size = New System.Drawing.Size(112, 91)
+        Me.OWTerrColorPanel.TabIndex = 2
+        '
+        'FlowLayoutPanel17
+        '
+        Me.FlowLayoutPanel17.AutoSize = True
+        Me.FlowLayoutPanel17.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel17.Controls.Add(Me.Label44)
+        Me.FlowLayoutPanel17.Controls.Add(Me.OWTerrColorDrop)
+        Me.FlowLayoutPanel17.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel17.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel17.Name = "FlowLayoutPanel17"
+        Me.FlowLayoutPanel17.Size = New System.Drawing.Size(106, 44)
+        Me.FlowLayoutPanel17.TabIndex = 0
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label44.Location = New System.Drawing.Point(3, 0)
+        Me.Label44.Margin = New System.Windows.Forms.Padding(3, 0, 0, 0)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(90, 17)
+        Me.Label44.TabIndex = 53
+        Me.Label44.Text = "OW Territory"
+        '
+        'OWTerrColorDrop
+        '
+        Me.OWTerrColorDrop.FormattingEnabled = True
+        Me.OWTerrColorDrop.Items.AddRange(New Object() {"0. Enemy/Ally", "1. Faction", "2. Custom"})
+        Me.OWTerrColorDrop.Location = New System.Drawing.Point(3, 20)
+        Me.OWTerrColorDrop.MaxDropDownItems = 3
+        Me.OWTerrColorDrop.Name = "OWTerrColorDrop"
+        Me.OWTerrColorDrop.Size = New System.Drawing.Size(100, 21)
+        Me.OWTerrColorDrop.TabIndex = 52
+        '
+        'OWTerrColorPanelButtons
+        '
+        Me.OWTerrColorPanelButtons.AutoSize = True
+        Me.OWTerrColorPanelButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.OWTerrColorPanelButtons.Controls.Add(Me.omegaTerrColorButton)
+        Me.OWTerrColorPanelButtons.Controls.Add(Me.alphaTerrColorButton)
+        Me.OWTerrColorPanelButtons.Location = New System.Drawing.Point(3, 53)
+        Me.OWTerrColorPanelButtons.Name = "OWTerrColorPanelButtons"
+        Me.OWTerrColorPanelButtons.Size = New System.Drawing.Size(88, 35)
+        Me.OWTerrColorPanelButtons.TabIndex = 2
+        Me.OWTerrColorPanelButtons.Visible = False
         '
         'TabPage2
         '
@@ -4449,16 +4836,15 @@ Partial Class Form1
         Me.graphPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.graphPanel5.Controls.Add(Me.Label62)
         Me.graphPanel5.Controls.Add(Me.upscaleDrop)
-        Me.graphPanel5.Controls.Add(Me.Label66)
-        Me.graphPanel5.Controls.Add(Me.DLSSQualDrop)
-        Me.graphPanel5.Controls.Add(Me.FSRQualDrop)
-        Me.graphPanel5.Controls.Add(Me.Label76)
-        Me.graphPanel5.Controls.Add(Me.DLSSSharpBox)
-        Me.graphPanel5.Controls.Add(Me.FSRSharpBox)
+        Me.graphPanel5.Controls.Add(Me.DLSSPanel)
+        Me.graphPanel5.Controls.Add(Me.FSRPanel)
+        Me.graphPanel5.Controls.Add(Me.Label45)
+        Me.graphPanel5.Controls.Add(Me.colorblindDrop)
+        Me.graphPanel5.Controls.Add(Me.colorblindPanel)
         Me.graphPanel5.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.graphPanel5.Location = New System.Drawing.Point(478, 3)
         Me.graphPanel5.Name = "graphPanel5"
-        Me.graphPanel5.Size = New System.Drawing.Size(127, 184)
+        Me.graphPanel5.Size = New System.Drawing.Size(133, 366)
         Me.graphPanel5.TabIndex = 3
         '
         'Label62
@@ -4484,42 +4870,84 @@ Partial Class Form1
         Me.upscaleDrop.Size = New System.Drawing.Size(121, 21)
         Me.upscaleDrop.TabIndex = 60
         '
-        'Label66
+        'DLSSPanel
         '
-        Me.Label66.AutoSize = True
-        Me.Label66.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label66.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label66.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label66.Location = New System.Drawing.Point(3, 44)
-        Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(52, 17)
-        Me.Label66.TabIndex = 63
-        Me.Label66.Text = "Quality"
-        Me.Label66.Visible = False
+        Me.DLSSPanel.AutoScroll = True
+        Me.DLSSPanel.AutoSize = True
+        Me.DLSSPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.DLSSPanel.Controls.Add(Me.Label71)
+        Me.DLSSPanel.Controls.Add(Me.DLSSQualDrop)
+        Me.DLSSPanel.Controls.Add(Me.Label72)
+        Me.DLSSPanel.Controls.Add(Me.DLSSSharpBox)
+        Me.DLSSPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.DLSSPanel.Location = New System.Drawing.Point(3, 47)
+        Me.DLSSPanel.Name = "DLSSPanel"
+        Me.DLSSPanel.Size = New System.Drawing.Size(127, 87)
+        Me.DLSSPanel.TabIndex = 81
+        Me.DLSSPanel.Visible = False
+        '
+        'Label72
+        '
+        Me.Label72.AutoSize = True
+        Me.Label72.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label72.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label72.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label72.Location = New System.Drawing.Point(3, 44)
+        Me.Label72.Name = "Label72"
+        Me.Label72.Size = New System.Drawing.Size(76, 17)
+        Me.Label72.TabIndex = 83
+        Me.Label72.Text = "Sharpness"
         '
         'DLSSQualDrop
         '
         Me.DLSSQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.DLSSQualDrop.FormattingEnabled = True
         Me.DLSSQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
-        Me.DLSSQualDrop.Location = New System.Drawing.Point(3, 64)
+        Me.DLSSQualDrop.Location = New System.Drawing.Point(3, 20)
         Me.DLSSQualDrop.MaxDropDownItems = 4
         Me.DLSSQualDrop.Name = "DLSSQualDrop"
         Me.DLSSQualDrop.Size = New System.Drawing.Size(121, 21)
         Me.DLSSQualDrop.TabIndex = 62
-        Me.DLSSQualDrop.Visible = False
         '
-        'FSRQualDrop
+        'Label71
         '
-        Me.FSRQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.FSRQualDrop.FormattingEnabled = True
-        Me.FSRQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
-        Me.FSRQualDrop.Location = New System.Drawing.Point(3, 91)
-        Me.FSRQualDrop.MaxDropDownItems = 4
-        Me.FSRQualDrop.Name = "FSRQualDrop"
-        Me.FSRQualDrop.Size = New System.Drawing.Size(121, 21)
-        Me.FSRQualDrop.TabIndex = 64
-        Me.FSRQualDrop.Visible = False
+        Me.Label71.AutoSize = True
+        Me.Label71.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label71.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label71.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label71.Location = New System.Drawing.Point(3, 0)
+        Me.Label71.Name = "Label71"
+        Me.Label71.Size = New System.Drawing.Size(52, 17)
+        Me.Label71.TabIndex = 82
+        Me.Label71.Text = "Quality"
+        '
+        'FSRPanel
+        '
+        Me.FSRPanel.AutoScroll = True
+        Me.FSRPanel.AutoSize = True
+        Me.FSRPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FSRPanel.Controls.Add(Me.Label66)
+        Me.FSRPanel.Controls.Add(Me.FSRQualDrop)
+        Me.FSRPanel.Controls.Add(Me.Label76)
+        Me.FSRPanel.Controls.Add(Me.FSRSharpBox)
+        Me.FSRPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FSRPanel.Location = New System.Drawing.Point(3, 140)
+        Me.FSRPanel.Name = "FSRPanel"
+        Me.FSRPanel.Size = New System.Drawing.Size(127, 87)
+        Me.FSRPanel.TabIndex = 82
+        Me.FSRPanel.Visible = False
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label66.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label66.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label66.Location = New System.Drawing.Point(3, 0)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(52, 17)
+        Me.Label66.TabIndex = 63
+        Me.Label66.Text = "Quality"
         '
         'Label76
         '
@@ -4527,12 +4955,84 @@ Partial Class Form1
         Me.Label76.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label76.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label76.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label76.Location = New System.Drawing.Point(3, 115)
+        Me.Label76.Location = New System.Drawing.Point(3, 44)
         Me.Label76.Name = "Label76"
         Me.Label76.Size = New System.Drawing.Size(76, 17)
         Me.Label76.TabIndex = 72
         Me.Label76.Text = "Sharpness"
-        Me.Label76.Visible = False
+        '
+        'FSRQualDrop
+        '
+        Me.FSRQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.FSRQualDrop.FormattingEnabled = True
+        Me.FSRQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
+        Me.FSRQualDrop.Location = New System.Drawing.Point(3, 20)
+        Me.FSRQualDrop.MaxDropDownItems = 4
+        Me.FSRQualDrop.Name = "FSRQualDrop"
+        Me.FSRQualDrop.Size = New System.Drawing.Size(121, 21)
+        Me.FSRQualDrop.TabIndex = 64
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label45.Location = New System.Drawing.Point(3, 230)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(106, 17)
+        Me.Label45.TabIndex = 75
+        Me.Label45.Text = "Colorblind Filter"
+        '
+        'colorblindDrop
+        '
+        Me.colorblindDrop.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.colorblindDrop.FormattingEnabled = True
+        Me.colorblindDrop.Items.AddRange(New Object() {"0. Disabled", "1. Protanopia", "2. Deuteranopia", "3. Tritanopia", "4. Achromatopsia"})
+        Me.colorblindDrop.Location = New System.Drawing.Point(3, 250)
+        Me.colorblindDrop.MaxDropDownItems = 3
+        Me.colorblindDrop.Name = "colorblindDrop"
+        Me.colorblindDrop.Size = New System.Drawing.Size(121, 21)
+        Me.colorblindDrop.TabIndex = 74
+        '
+        'colorblindPanel
+        '
+        Me.colorblindPanel.AutoScroll = True
+        Me.colorblindPanel.AutoSize = True
+        Me.colorblindPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.colorblindPanel.Controls.Add(Me.Label54)
+        Me.colorblindPanel.Controls.Add(Me.colorblindAmountBox)
+        Me.colorblindPanel.Controls.Add(Me.Label55)
+        Me.colorblindPanel.Controls.Add(Me.colorblindStrengthBox)
+        Me.colorblindPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.colorblindPanel.Location = New System.Drawing.Point(3, 277)
+        Me.colorblindPanel.Name = "colorblindPanel"
+        Me.colorblindPanel.Size = New System.Drawing.Size(103, 86)
+        Me.colorblindPanel.TabIndex = 80
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label54.Location = New System.Drawing.Point(3, 0)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(91, 17)
+        Me.Label54.TabIndex = 81
+        Me.Label54.Text = "Filter Amount"
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label55.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label55.Location = New System.Drawing.Point(3, 43)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(97, 17)
+        Me.Label55.TabIndex = 83
+        Me.Label55.Text = "Filter Strength"
         '
         'graphPanel4
         '
@@ -4547,7 +5047,7 @@ Partial Class Form1
         Me.graphPanel4.Controls.Add(Me.bloomCheck)
         Me.graphPanel4.Controls.Add(Me.wideCheck)
         Me.graphPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.graphPanel4.Location = New System.Drawing.Point(611, 3)
+        Me.graphPanel4.Location = New System.Drawing.Point(617, 3)
         Me.graphPanel4.Name = "graphPanel4"
         Me.graphPanel4.Size = New System.Drawing.Size(120, 161)
         Me.graphPanel4.TabIndex = 4
@@ -4641,7 +5141,7 @@ Partial Class Form1
         Me.graphPanel6.Controls.Add(Me.Label40)
         Me.graphPanel6.Controls.Add(Me.smoothMinBox)
         Me.graphPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.graphPanel6.Location = New System.Drawing.Point(737, 3)
+        Me.graphPanel6.Location = New System.Drawing.Point(743, 3)
         Me.graphPanel6.Name = "graphPanel6"
         Me.graphPanel6.Size = New System.Drawing.Size(110, 86)
         Me.graphPanel6.TabIndex = 5
@@ -4750,6 +5250,8 @@ Partial Class Form1
         CType(Me.renQualBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.smoothMaxBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.smoothMinBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.colorblindAmountBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.colorblindStrengthBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -4835,6 +5337,25 @@ Partial Class Form1
         Me.terrColorPanelButtons.ResumeLayout(False)
         Me.intPanel1.ResumeLayout(False)
         Me.intPanel1.PerformLayout()
+        Me.intPanel4.ResumeLayout(False)
+        Me.intPanel4.PerformLayout()
+        Me.intPanel5.ResumeLayout(False)
+        Me.intPanel5.PerformLayout()
+        Me.OWPlayerColorPanel.ResumeLayout(False)
+        Me.OWPlayerColorPanel.PerformLayout()
+        Me.FlowLayoutPanel5.ResumeLayout(False)
+        Me.FlowLayoutPanel5.PerformLayout()
+        Me.OWPlayerColorPanelButtons.ResumeLayout(False)
+        Me.OWFacColorPanel.ResumeLayout(False)
+        Me.OWFacColorPanel.PerformLayout()
+        Me.FlowLayoutPanel14.ResumeLayout(False)
+        Me.FlowLayoutPanel14.PerformLayout()
+        Me.OWFacColorPanelButtons.ResumeLayout(False)
+        Me.OWTerrColorPanel.ResumeLayout(False)
+        Me.OWTerrColorPanel.PerformLayout()
+        Me.FlowLayoutPanel17.ResumeLayout(False)
+        Me.FlowLayoutPanel17.PerformLayout()
+        Me.OWTerrColorPanelButtons.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.sensPanel0.ResumeLayout(False)
@@ -4876,6 +5397,12 @@ Partial Class Form1
         Me.graphPanel3.PerformLayout()
         Me.graphPanel5.ResumeLayout(False)
         Me.graphPanel5.PerformLayout()
+        Me.DLSSPanel.ResumeLayout(False)
+        Me.DLSSPanel.PerformLayout()
+        Me.FSRPanel.ResumeLayout(False)
+        Me.FSRPanel.PerformLayout()
+        Me.colorblindPanel.ResumeLayout(False)
+        Me.colorblindPanel.PerformLayout()
         Me.graphPanel4.ResumeLayout(False)
         Me.graphPanel4.PerformLayout()
         Me.graphPanel6.ResumeLayout(False)
@@ -5225,4 +5752,41 @@ Partial Class Form1
     Friend WithEvents smoothMaxBox As NumericUpDown
     Friend WithEvents Label40 As Label
     Friend WithEvents smoothMinBox As NumericUpDown
+    Friend WithEvents reticleIFFCheck As CheckBox
+    Friend WithEvents intPanel4 As FlowLayoutPanel
+    Friend WithEvents Label41 As Label
+    Friend WithEvents HUDModeDrop As ComboBox
+    Friend WithEvents intPanel5 As FlowLayoutPanel
+    Friend WithEvents OWPlayerColorPanel As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
+    Friend WithEvents Label42 As Label
+    Friend WithEvents OWPlayerColorDrop As ComboBox
+    Friend WithEvents OWPlayerColorPanelButtons As FlowLayoutPanel
+    Friend WithEvents omegaPlayerColorButton As Button
+    Friend WithEvents alphaPlayerColorButton As Button
+    Friend WithEvents OWFacColorPanel As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel14 As FlowLayoutPanel
+    Friend WithEvents Label43 As Label
+    Friend WithEvents OWFacColorDrop As ComboBox
+    Friend WithEvents OWFacColorPanelButtons As FlowLayoutPanel
+    Friend WithEvents omegaFacColorButton As Button
+    Friend WithEvents alphaFacColorButton As Button
+    Friend WithEvents OWTerrColorPanel As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel17 As FlowLayoutPanel
+    Friend WithEvents Label44 As Label
+    Friend WithEvents OWTerrColorDrop As ComboBox
+    Friend WithEvents OWTerrColorPanelButtons As FlowLayoutPanel
+    Friend WithEvents omegaTerrColorButton As Button
+    Friend WithEvents alphaTerrColorButton As Button
+    Friend WithEvents Label45 As Label
+    Friend WithEvents colorblindDrop As ComboBox
+    Friend WithEvents colorblindPanel As FlowLayoutPanel
+    Friend WithEvents Label54 As Label
+    Friend WithEvents colorblindAmountBox As NumericUpDown
+    Friend WithEvents Label55 As Label
+    Friend WithEvents colorblindStrengthBox As NumericUpDown
+    Friend WithEvents DLSSPanel As FlowLayoutPanel
+    Friend WithEvents Label72 As Label
+    Friend WithEvents Label71 As Label
+    Friend WithEvents FSRPanel As FlowLayoutPanel
 End Class
