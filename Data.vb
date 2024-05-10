@@ -44,7 +44,7 @@
                                             "UseFences=",
                                             "AAQuality=", -1,
                                             "SmoothingMaxFramerate=", 60,
-                                            "SmoothingMinFramerate=",
+                                            "SmoothingMinFramerate=", 20,
                                             "UnderwaterGodRaysQuality=", 0,
                                             "SSLRQuality=", 0,
                                             "Tessellation=",

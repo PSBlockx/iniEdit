@@ -357,7 +357,7 @@ Partial Class Form1
         Me.fogShadCheck = New System.Windows.Forms.CheckBox()
         Me.blurCheck = New System.Windows.Forms.CheckBox()
         Me.bloomCheck = New System.Windows.Forms.CheckBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.graphPanel6 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -464,7 +464,7 @@ Partial Class Form1
         Me.graphPanel3.SuspendLayout()
         Me.graphPanel5.SuspendLayout()
         Me.graphPanel4.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.graphPanel6.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
@@ -926,7 +926,6 @@ Partial Class Form1
         Me.OSAlphaBox.Name = "OSAlphaBox"
         Me.OSAlphaBox.Size = New System.Drawing.Size(80, 20)
         Me.OSAlphaBox.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.OSAlphaBox, "1.41 = 2x Sampling" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2.00 = 4x Sampling")
         Me.OSAlphaBox.Value = New Decimal(New Integer() {100000, 0, 0, 393216})
         '
         'OSColorButton
@@ -1244,7 +1243,7 @@ Partial Class Form1
         Me.smoothMaxBox.Name = "smoothMaxBox"
         Me.smoothMaxBox.Size = New System.Drawing.Size(80, 20)
         Me.smoothMaxBox.TabIndex = 46
-        Me.ToolTip1.SetToolTip(Me.smoothMaxBox, "10 - 500")
+        Me.ToolTip1.SetToolTip(Me.smoothMaxBox, "10 - 500" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default: 60" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Caps FPS to this value")
         Me.smoothMaxBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'smoothMinBox
@@ -1256,7 +1255,7 @@ Partial Class Form1
         Me.smoothMinBox.Name = "smoothMinBox"
         Me.smoothMinBox.Size = New System.Drawing.Size(80, 20)
         Me.smoothMinBox.TabIndex = 47
-        Me.ToolTip1.SetToolTip(Me.smoothMinBox, "10 - 500")
+        Me.ToolTip1.SetToolTip(Me.smoothMinBox, "10 - 500" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Default: 20" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Avoids smoothing below this value")
         Me.smoothMinBox.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'MenuStrip1
@@ -3997,7 +3996,7 @@ Partial Class Form1
         Me.graphPanel0.Controls.Add(Me.graphPanel3)
         Me.graphPanel0.Controls.Add(Me.graphPanel5)
         Me.graphPanel0.Controls.Add(Me.graphPanel4)
-        Me.graphPanel0.Controls.Add(Me.FlowLayoutPanel1)
+        Me.graphPanel0.Controls.Add(Me.graphPanel6)
         Me.graphPanel0.Dock = System.Windows.Forms.DockStyle.Fill
         Me.graphPanel0.Location = New System.Drawing.Point(0, 0)
         Me.graphPanel0.Margin = New System.Windows.Forms.Padding(3, 3, 3, 20)
@@ -4632,20 +4631,20 @@ Partial Class Form1
         Me.bloomCheck.Text = "Bloom"
         Me.bloomCheck.UseVisualStyleBackColor = False
         '
-        'FlowLayoutPanel1
+        'graphPanel6
         '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.AutoSize = True
-        Me.FlowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label39)
-        Me.FlowLayoutPanel1.Controls.Add(Me.smoothMaxBox)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label40)
-        Me.FlowLayoutPanel1.Controls.Add(Me.smoothMinBox)
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(737, 3)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(110, 86)
-        Me.FlowLayoutPanel1.TabIndex = 5
+        Me.graphPanel6.AutoScroll = True
+        Me.graphPanel6.AutoSize = True
+        Me.graphPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.graphPanel6.Controls.Add(Me.Label39)
+        Me.graphPanel6.Controls.Add(Me.smoothMaxBox)
+        Me.graphPanel6.Controls.Add(Me.Label40)
+        Me.graphPanel6.Controls.Add(Me.smoothMinBox)
+        Me.graphPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.graphPanel6.Location = New System.Drawing.Point(737, 3)
+        Me.graphPanel6.Name = "graphPanel6"
+        Me.graphPanel6.Size = New System.Drawing.Size(110, 86)
+        Me.graphPanel6.TabIndex = 5
         '
         'Label39
         '
@@ -4879,8 +4878,8 @@ Partial Class Form1
         Me.graphPanel5.PerformLayout()
         Me.graphPanel4.ResumeLayout(False)
         Me.graphPanel4.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
+        Me.graphPanel6.ResumeLayout(False)
+        Me.graphPanel6.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -5221,7 +5220,7 @@ Partial Class Form1
     Friend WithEvents lockOptionButton As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
     Friend WithEvents unlockOptionButton As ToolStripMenuItem
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents graphPanel6 As FlowLayoutPanel
     Friend WithEvents Label39 As Label
     Friend WithEvents smoothMaxBox As NumericUpDown
     Friend WithEvents Label40 As Label
