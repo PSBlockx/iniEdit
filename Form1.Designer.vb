@@ -71,8 +71,6 @@ Partial Class Form1
         Me.retColorButton = New System.Windows.Forms.Button()
         Me.custRetCheck = New System.Windows.Forms.CheckBox()
         Me.wideCheck = New System.Windows.Forms.CheckBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.lockOptionButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.FSRSharpBox = New System.Windows.Forms.NumericUpDown()
         Me.DLSSSharpBox = New System.Windows.Forms.NumericUpDown()
         Me.airRenDistBox = New System.Windows.Forms.NumericUpDown()
@@ -116,6 +114,8 @@ Partial Class Form1
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.fontSelectButton2 = New System.Windows.Forms.Button()
+        Me.selectedFontPath2 = New System.Windows.Forms.Label()
         Me.commandTextBox = New System.Windows.Forms.TextBox()
         Me.commandAutoCheck = New System.Windows.Forms.CheckBox()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -375,13 +375,13 @@ Partial Class Form1
         Me.Label62 = New System.Windows.Forms.Label()
         Me.upscaleDrop = New System.Windows.Forms.ComboBox()
         Me.DLSSPanel = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Label72 = New System.Windows.Forms.Label()
-        Me.DLSSQualDrop = New System.Windows.Forms.ComboBox()
         Me.Label71 = New System.Windows.Forms.Label()
+        Me.DLSSQualDrop = New System.Windows.Forms.ComboBox()
+        Me.Label72 = New System.Windows.Forms.Label()
         Me.FSRPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label66 = New System.Windows.Forms.Label()
-        Me.Label76 = New System.Windows.Forms.Label()
         Me.FSRQualDrop = New System.Windows.Forms.ComboBox()
+        Me.Label76 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.colorblindDrop = New System.Windows.Forms.ComboBox()
         Me.colorblindPanel = New System.Windows.Forms.FlowLayoutPanel()
@@ -398,8 +398,6 @@ Partial Class Form1
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.unlockOptionButton = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.duckVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.transmitVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.leaderVoiceVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -414,7 +412,6 @@ Partial Class Form1
         CType(Me.gamVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.masVolBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OSAlphaBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.FSRSharpBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DLSSSharpBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.airRenDistBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -519,7 +516,6 @@ Partial Class Form1
         Me.graphPanel4.SuspendLayout()
         Me.graphPanel6.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'duckVoiceVolBox
@@ -1081,7 +1077,6 @@ Partial Class Form1
         '
         Me.wideCheck.AutoSize = True
         Me.wideCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.wideCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.wideCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.wideCheck.Location = New System.Drawing.Point(3, 141)
         Me.wideCheck.Name = "wideCheck"
@@ -1091,21 +1086,8 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.wideCheck, "This option is required for FoVs" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "above 80 to work properly")
         Me.wideCheck.UseVisualStyleBackColor = False
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lockOptionButton})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(140, 26)
-        '
-        'lockOptionButton
-        '
-        Me.lockOptionButton.Name = "lockOptionButton"
-        Me.lockOptionButton.Size = New System.Drawing.Size(139, 22)
-        Me.lockOptionButton.Text = "Lock Option"
-        '
         'FSRSharpBox
         '
-        Me.FSRSharpBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.FSRSharpBox.DecimalPlaces = 2
         Me.FSRSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.FSRSharpBox.Location = New System.Drawing.Point(3, 64)
@@ -1117,7 +1099,6 @@ Partial Class Form1
         '
         'DLSSSharpBox
         '
-        Me.DLSSSharpBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.DLSSSharpBox.DecimalPlaces = 2
         Me.DLSSSharpBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.DLSSSharpBox.Location = New System.Drawing.Point(3, 64)
@@ -1129,7 +1110,6 @@ Partial Class Form1
         '
         'airRenDistBox
         '
-        Me.airRenDistBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.airRenDistBox.Location = New System.Drawing.Point(3, 172)
         Me.airRenDistBox.Maximum = New Decimal(New Integer() {6000, 0, 0, 0})
         Me.airRenDistBox.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1141,7 +1121,6 @@ Partial Class Form1
         '
         'vehRenDistbox
         '
-        Me.vehRenDistbox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.vehRenDistbox.Location = New System.Drawing.Point(3, 129)
         Me.vehRenDistbox.Maximum = New Decimal(New Integer() {6000, 0, 0, 0})
         Me.vehRenDistbox.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1153,7 +1132,6 @@ Partial Class Form1
         '
         'infRenDistBox
         '
-        Me.infRenDistBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.infRenDistBox.Location = New System.Drawing.Point(3, 86)
         Me.infRenDistBox.Maximum = New Decimal(New Integer() {6000, 0, 0, 0})
         Me.infRenDistBox.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1165,7 +1143,6 @@ Partial Class Form1
         '
         'globRenDistBox
         '
-        Me.globRenDistBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.globRenDistBox.Location = New System.Drawing.Point(3, 20)
         Me.globRenDistBox.Maximum = New Decimal(New Integer() {6000, 0, 0, 0})
         Me.globRenDistBox.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
@@ -1177,7 +1154,6 @@ Partial Class Form1
         '
         'AADrop
         '
-        Me.AADrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.AADrop.FormattingEnabled = True
         Me.AADrop.Items.AddRange(New Object() {"-1. Off", "0. Edge AA", "1. FXAA", "2. TAA", "3. TAA+FXAA"})
         Me.AADrop.Location = New System.Drawing.Point(3, 235)
@@ -1189,7 +1165,6 @@ Partial Class Form1
         '
         'gammaBox
         '
-        Me.gammaBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.gammaBox.DecimalPlaces = 2
         Me.gammaBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.gammaBox.Location = New System.Drawing.Point(3, 192)
@@ -1201,7 +1176,6 @@ Partial Class Form1
         '
         'maxFPSBox
         '
-        Me.maxFPSBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.maxFPSBox.Location = New System.Drawing.Point(3, 149)
         Me.maxFPSBox.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
         Me.maxFPSBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
@@ -1213,7 +1187,6 @@ Partial Class Form1
         '
         'fovBox
         '
-        Me.fovBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.fovBox.DecimalPlaces = 1
         Me.fovBox.Location = New System.Drawing.Point(3, 106)
         Me.fovBox.Maximum = New Decimal(New Integer() {170, 0, 0, 0})
@@ -1226,7 +1199,6 @@ Partial Class Form1
         '
         'partDistScaleBox
         '
-        Me.partDistScaleBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.partDistScaleBox.DecimalPlaces = 2
         Me.partDistScaleBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.partDistScaleBox.Location = New System.Drawing.Point(3, 63)
@@ -1238,7 +1210,6 @@ Partial Class Form1
         '
         'renQualBox
         '
-        Me.renQualBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.renQualBox.DecimalPlaces = 2
         Me.renQualBox.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.renQualBox.Location = New System.Drawing.Point(3, 20)
@@ -1252,9 +1223,8 @@ Partial Class Form1
         '
         'shadQualDrop
         '
-        Me.shadQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.shadQualDrop.FormattingEnabled = True
-        Me.shadQualDrop.Items.AddRange(New Object() {"0. Off", "1.Low", "2. Medium", "3. High", "4. Ultra", "5. Max"})
+        Me.shadQualDrop.Items.AddRange(New Object() {"0. Off", "1.Low", "2. Medium", "3. High", "4. Ultra", "5. Max", "11. Uber", "99. Custom"})
         Me.shadQualDrop.Location = New System.Drawing.Point(3, 108)
         Me.shadQualDrop.MaxDropDownItems = 6
         Me.shadQualDrop.Name = "shadQualDrop"
@@ -1264,7 +1234,6 @@ Partial Class Form1
         '
         'graphQualDrop
         '
-        Me.graphQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.graphQualDrop.FormattingEnabled = True
         Me.graphQualDrop.Items.AddRange(New Object() {"1. Low", "2. Medium", "3. High"})
         Me.graphQualDrop.Location = New System.Drawing.Point(3, 20)
@@ -1288,7 +1257,6 @@ Partial Class Form1
         '
         'smoothMaxBox
         '
-        Me.smoothMaxBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.smoothMaxBox.Location = New System.Drawing.Point(3, 20)
         Me.smoothMaxBox.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
         Me.smoothMaxBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
@@ -1300,7 +1268,6 @@ Partial Class Form1
         '
         'smoothMinBox
         '
-        Me.smoothMinBox.ContextMenuStrip = Me.ContextMenuStrip1
         Me.smoothMinBox.Location = New System.Drawing.Point(3, 63)
         Me.smoothMinBox.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
         Me.smoothMinBox.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
@@ -1493,19 +1460,19 @@ Partial Class Form1
         'openButton
         '
         Me.openButton.Name = "openButton"
-        Me.openButton.Size = New System.Drawing.Size(162, 22)
+        Me.openButton.Size = New System.Drawing.Size(180, 22)
         Me.openButton.Text = "Open Config"
         '
         'saveButton
         '
         Me.saveButton.Name = "saveButton"
-        Me.saveButton.Size = New System.Drawing.Size(162, 22)
+        Me.saveButton.Size = New System.Drawing.Size(180, 22)
         Me.saveButton.Text = "Save Config"
         '
         'saveToButton
         '
         Me.saveToButton.Name = "saveToButton"
-        Me.saveToButton.Size = New System.Drawing.Size(162, 22)
+        Me.saveToButton.Size = New System.Drawing.Size(180, 22)
         Me.saveToButton.Text = "Save Config As..."
         '
         'startLauncher
@@ -1554,6 +1521,8 @@ Partial Class Form1
         '
         Me.TabPage3.AutoScroll = True
         Me.TabPage3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.TabPage3.Controls.Add(Me.fontSelectButton2)
+        Me.TabPage3.Controls.Add(Me.selectedFontPath2)
         Me.TabPage3.Controls.Add(Me.commandTextBox)
         Me.TabPage3.Controls.Add(Me.commandAutoCheck)
         Me.TabPage3.Controls.Add(Me.Label38)
@@ -1572,10 +1541,32 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Advanced"
         '
+        'fontSelectButton2
+        '
+        Me.fontSelectButton2.Location = New System.Drawing.Point(169, 40)
+        Me.fontSelectButton2.Name = "fontSelectButton2"
+        Me.fontSelectButton2.Size = New System.Drawing.Size(75, 23)
+        Me.fontSelectButton2.TabIndex = 73
+        Me.fontSelectButton2.Text = "Select Font"
+        Me.fontSelectButton2.UseVisualStyleBackColor = True
+        Me.fontSelectButton2.Visible = False
+        '
+        'selectedFontPath2
+        '
+        Me.selectedFontPath2.AutoSize = True
+        Me.selectedFontPath2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.selectedFontPath2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.selectedFontPath2.ForeColor = System.Drawing.SystemColors.Control
+        Me.selectedFontPath2.Location = New System.Drawing.Point(8, 83)
+        Me.selectedFontPath2.Name = "selectedFontPath2"
+        Me.selectedFontPath2.Size = New System.Drawing.Size(0, 17)
+        Me.selectedFontPath2.TabIndex = 72
+        Me.selectedFontPath2.Visible = False
+        '
         'commandTextBox
         '
         Me.commandTextBox.AcceptsReturn = True
-        Me.commandTextBox.Location = New System.Drawing.Point(11, 261)
+        Me.commandTextBox.Location = New System.Drawing.Point(11, 276)
         Me.commandTextBox.MaxLength = 250
         Me.commandTextBox.Multiline = True
         Me.commandTextBox.Name = "commandTextBox"
@@ -1588,7 +1579,7 @@ Partial Class Form1
         '
         Me.commandAutoCheck.AutoSize = True
         Me.commandAutoCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.commandAutoCheck.Location = New System.Drawing.Point(8, 237)
+        Me.commandAutoCheck.Location = New System.Drawing.Point(8, 252)
         Me.commandAutoCheck.Name = "commandAutoCheck"
         Me.commandAutoCheck.Size = New System.Drawing.Size(216, 17)
         Me.commandAutoCheck.TabIndex = 8
@@ -1600,7 +1591,7 @@ Partial Class Form1
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label38.ForeColor = System.Drawing.Color.White
-        Me.Label38.Location = New System.Drawing.Point(8, 117)
+        Me.Label38.Location = New System.Drawing.Point(8, 132)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(323, 16)
         Me.Label38.TabIndex = 71
@@ -1613,7 +1604,7 @@ Partial Class Form1
         Me.selectedDatPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.selectedDatPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.selectedDatPath.ForeColor = System.Drawing.SystemColors.Control
-        Me.selectedDatPath.Location = New System.Drawing.Point(8, 217)
+        Me.selectedDatPath.Location = New System.Drawing.Point(8, 232)
         Me.selectedDatPath.Name = "selectedDatPath"
         Me.selectedDatPath.Size = New System.Drawing.Size(0, 17)
         Me.selectedDatPath.TabIndex = 70
@@ -1621,7 +1612,7 @@ Partial Class Form1
         '
         'localeDatButton
         '
-        Me.localeDatButton.Location = New System.Drawing.Point(8, 191)
+        Me.localeDatButton.Location = New System.Drawing.Point(8, 206)
         Me.localeDatButton.Name = "localeDatButton"
         Me.localeDatButton.Size = New System.Drawing.Size(75, 23)
         Me.localeDatButton.TabIndex = 7
@@ -1633,7 +1624,7 @@ Partial Class Form1
         '
         Me.localeReplaceCheck.AutoSize = True
         Me.localeReplaceCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.localeReplaceCheck.Location = New System.Drawing.Point(8, 97)
+        Me.localeReplaceCheck.Location = New System.Drawing.Point(8, 112)
         Me.localeReplaceCheck.Name = "localeReplaceCheck"
         Me.localeReplaceCheck.Size = New System.Drawing.Size(166, 17)
         Me.localeReplaceCheck.TabIndex = 5
@@ -1646,7 +1637,7 @@ Partial Class Form1
         Me.selectedDirPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.selectedDirPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.selectedDirPath.ForeColor = System.Drawing.SystemColors.Control
-        Me.selectedDirPath.Location = New System.Drawing.Point(8, 171)
+        Me.selectedDirPath.Location = New System.Drawing.Point(8, 186)
         Me.selectedDirPath.Name = "selectedDirPath"
         Me.selectedDirPath.Size = New System.Drawing.Size(0, 17)
         Me.selectedDirPath.TabIndex = 68
@@ -1654,7 +1645,7 @@ Partial Class Form1
         '
         'localeDirButton
         '
-        Me.localeDirButton.Location = New System.Drawing.Point(8, 145)
+        Me.localeDirButton.Location = New System.Drawing.Point(8, 160)
         Me.localeDirButton.Name = "localeDirButton"
         Me.localeDirButton.Size = New System.Drawing.Size(75, 23)
         Me.localeDirButton.TabIndex = 6
@@ -1668,11 +1659,10 @@ Partial Class Form1
         Me.fontAutoCheck2.ForeColor = System.Drawing.SystemColors.Control
         Me.fontAutoCheck2.Location = New System.Drawing.Point(169, 17)
         Me.fontAutoCheck2.Name = "fontAutoCheck2"
-        Me.fontAutoCheck2.Size = New System.Drawing.Size(138, 17)
+        Me.fontAutoCheck2.Size = New System.Drawing.Size(115, 17)
         Me.fontAutoCheck2.TabIndex = 3
-        Me.fontAutoCheck2.Text = "Also Replace Chat Font"
+        Me.fontAutoCheck2.Text = "Replace Chat Font"
         Me.fontAutoCheck2.UseVisualStyleBackColor = True
-        Me.fontAutoCheck2.Visible = False
         '
         'fontAutoCheck
         '
@@ -3474,7 +3464,6 @@ Partial Class Form1
         '
         'HUDModeDrop
         '
-        Me.HUDModeDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.HUDModeDrop.FormattingEnabled = True
         Me.HUDModeDrop.Items.AddRange(New Object() {"1. New Centralized", "2. Old Centralized", "3. Corner HUD"})
         Me.HUDModeDrop.Location = New System.Drawing.Point(3, 20)
@@ -4446,7 +4435,6 @@ Partial Class Form1
         '
         'texQualDrop
         '
-        Me.texQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.texQualDrop.FormattingEnabled = True
         Me.texQualDrop.Items.AddRange(New Object() {"0. Ultra", "1. High", "2. Medium", "3. Low"})
         Me.texQualDrop.Location = New System.Drawing.Point(3, 64)
@@ -4481,7 +4469,6 @@ Partial Class Form1
         '
         'lightQualDrop
         '
-        Me.lightQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lightQualDrop.FormattingEnabled = True
         Me.lightQualDrop.Items.AddRange(New Object() {"1. Low", "2. Medium", "3. High"})
         Me.lightQualDrop.Location = New System.Drawing.Point(3, 152)
@@ -4504,7 +4491,6 @@ Partial Class Form1
         '
         'effQualDrop
         '
-        Me.effQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.effQualDrop.FormattingEnabled = True
         Me.effQualDrop.Items.AddRange(New Object() {"1. Low", "2. Medium", "3. High"})
         Me.effQualDrop.Location = New System.Drawing.Point(3, 196)
@@ -4527,7 +4513,6 @@ Partial Class Form1
         '
         'terrQualDrop
         '
-        Me.terrQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.terrQualDrop.FormattingEnabled = True
         Me.terrQualDrop.Items.AddRange(New Object() {"1. Low", "2. Medium", "3. High"})
         Me.terrQualDrop.Location = New System.Drawing.Point(3, 240)
@@ -4550,7 +4535,6 @@ Partial Class Form1
         '
         'floraQualDrop
         '
-        Me.floraQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.floraQualDrop.FormattingEnabled = True
         Me.floraQualDrop.Items.AddRange(New Object() {"1. Low", "2. Medium", "3. High", "4. Off"})
         Me.floraQualDrop.Location = New System.Drawing.Point(3, 284)
@@ -4573,7 +4557,6 @@ Partial Class Form1
         '
         'modQualDrop
         '
-        Me.modQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.modQualDrop.FormattingEnabled = True
         Me.modQualDrop.Items.AddRange(New Object() {"1. Low", "2. Medium", "3. High"})
         Me.modQualDrop.Location = New System.Drawing.Point(3, 328)
@@ -4596,7 +4579,6 @@ Partial Class Form1
         '
         'partQualDrop
         '
-        Me.partQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.partQualDrop.FormattingEnabled = True
         Me.partQualDrop.Items.AddRange(New Object() {"0. Low", "1. Medium", "2. High", "3. Ultra"})
         Me.partQualDrop.Location = New System.Drawing.Point(3, 372)
@@ -4718,7 +4700,6 @@ Partial Class Form1
         '
         'waterReflectDrop
         '
-        Me.waterReflectDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.waterReflectDrop.FormattingEnabled = True
         Me.waterReflectDrop.Items.AddRange(New Object() {"0. Off", "1. Low", "2. High"})
         Me.waterReflectDrop.Location = New System.Drawing.Point(3, 279)
@@ -4741,7 +4722,6 @@ Partial Class Form1
         '
         'objReflectDrop
         '
-        Me.objReflectDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.objReflectDrop.FormattingEnabled = True
         Me.objReflectDrop.Items.AddRange(New Object() {"0. Off", "1. Low", "2. High"})
         Me.objReflectDrop.Location = New System.Drawing.Point(3, 323)
@@ -4785,7 +4765,6 @@ Partial Class Form1
         'useGlobRenCheck
         '
         Me.useGlobRenCheck.AutoSize = True
-        Me.useGlobRenCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.useGlobRenCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.useGlobRenCheck.Location = New System.Drawing.Point(3, 46)
         Me.useGlobRenCheck.Name = "useGlobRenCheck"
@@ -4861,7 +4840,6 @@ Partial Class Form1
         '
         'upscaleDrop
         '
-        Me.upscaleDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.upscaleDrop.FormattingEnabled = True
         Me.upscaleDrop.Items.AddRange(New Object() {"None", "DLSS", "FSR"})
         Me.upscaleDrop.Location = New System.Drawing.Point(3, 20)
@@ -4886,29 +4864,6 @@ Partial Class Form1
         Me.DLSSPanel.TabIndex = 81
         Me.DLSSPanel.Visible = False
         '
-        'Label72
-        '
-        Me.Label72.AutoSize = True
-        Me.Label72.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label72.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label72.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label72.Location = New System.Drawing.Point(3, 44)
-        Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(76, 17)
-        Me.Label72.TabIndex = 83
-        Me.Label72.Text = "Sharpness"
-        '
-        'DLSSQualDrop
-        '
-        Me.DLSSQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.DLSSQualDrop.FormattingEnabled = True
-        Me.DLSSQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
-        Me.DLSSQualDrop.Location = New System.Drawing.Point(3, 20)
-        Me.DLSSQualDrop.MaxDropDownItems = 4
-        Me.DLSSQualDrop.Name = "DLSSQualDrop"
-        Me.DLSSQualDrop.Size = New System.Drawing.Size(121, 21)
-        Me.DLSSQualDrop.TabIndex = 62
-        '
         'Label71
         '
         Me.Label71.AutoSize = True
@@ -4920,6 +4875,28 @@ Partial Class Form1
         Me.Label71.Size = New System.Drawing.Size(52, 17)
         Me.Label71.TabIndex = 82
         Me.Label71.Text = "Quality"
+        '
+        'DLSSQualDrop
+        '
+        Me.DLSSQualDrop.FormattingEnabled = True
+        Me.DLSSQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
+        Me.DLSSQualDrop.Location = New System.Drawing.Point(3, 20)
+        Me.DLSSQualDrop.MaxDropDownItems = 4
+        Me.DLSSQualDrop.Name = "DLSSQualDrop"
+        Me.DLSSQualDrop.Size = New System.Drawing.Size(121, 21)
+        Me.DLSSQualDrop.TabIndex = 62
+        '
+        'Label72
+        '
+        Me.Label72.AutoSize = True
+        Me.Label72.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label72.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label72.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label72.Location = New System.Drawing.Point(3, 44)
+        Me.Label72.Name = "Label72"
+        Me.Label72.Size = New System.Drawing.Size(76, 17)
+        Me.Label72.TabIndex = 83
+        Me.Label72.Text = "Sharpness"
         '
         'FSRPanel
         '
@@ -4949,6 +4926,16 @@ Partial Class Form1
         Me.Label66.TabIndex = 63
         Me.Label66.Text = "Quality"
         '
+        'FSRQualDrop
+        '
+        Me.FSRQualDrop.FormattingEnabled = True
+        Me.FSRQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
+        Me.FSRQualDrop.Location = New System.Drawing.Point(3, 20)
+        Me.FSRQualDrop.MaxDropDownItems = 4
+        Me.FSRQualDrop.Name = "FSRQualDrop"
+        Me.FSRQualDrop.Size = New System.Drawing.Size(121, 21)
+        Me.FSRQualDrop.TabIndex = 64
+        '
         'Label76
         '
         Me.Label76.AutoSize = True
@@ -4960,17 +4947,6 @@ Partial Class Form1
         Me.Label76.Size = New System.Drawing.Size(76, 17)
         Me.Label76.TabIndex = 72
         Me.Label76.Text = "Sharpness"
-        '
-        'FSRQualDrop
-        '
-        Me.FSRQualDrop.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.FSRQualDrop.FormattingEnabled = True
-        Me.FSRQualDrop.Items.AddRange(New Object() {"0. Quality", "1. Balanced", "2. Performance"})
-        Me.FSRQualDrop.Location = New System.Drawing.Point(3, 20)
-        Me.FSRQualDrop.MaxDropDownItems = 4
-        Me.FSRQualDrop.Name = "FSRQualDrop"
-        Me.FSRQualDrop.Size = New System.Drawing.Size(121, 21)
-        Me.FSRQualDrop.TabIndex = 64
         '
         'Label45
         '
@@ -4986,7 +4962,6 @@ Partial Class Form1
         '
         'colorblindDrop
         '
-        Me.colorblindDrop.ContextMenuStrip = Me.ContextMenuStrip1
         Me.colorblindDrop.FormattingEnabled = True
         Me.colorblindDrop.Items.AddRange(New Object() {"0. Disabled", "1. Protanopia", "2. Deuteranopia", "3. Tritanopia", "4. Achromatopsia"})
         Me.colorblindDrop.Location = New System.Drawing.Point(3, 250)
@@ -5056,7 +5031,6 @@ Partial Class Form1
         '
         Me.vsyncCheck.AutoSize = True
         Me.vsyncCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.vsyncCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.vsyncCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.vsyncCheck.Location = New System.Drawing.Point(3, 3)
         Me.vsyncCheck.Name = "vsyncCheck"
@@ -5069,7 +5043,6 @@ Partial Class Form1
         '
         Me.smoothCheck.AutoSize = True
         Me.smoothCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.smoothCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.smoothCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.smoothCheck.Location = New System.Drawing.Point(3, 26)
         Me.smoothCheck.Name = "smoothCheck"
@@ -5082,7 +5055,6 @@ Partial Class Form1
         '
         Me.ambOccCheck.AutoSize = True
         Me.ambOccCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ambOccCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.ambOccCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.ambOccCheck.Location = New System.Drawing.Point(3, 49)
         Me.ambOccCheck.Name = "ambOccCheck"
@@ -5095,7 +5067,6 @@ Partial Class Form1
         '
         Me.fogShadCheck.AutoSize = True
         Me.fogShadCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.fogShadCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.fogShadCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.fogShadCheck.Location = New System.Drawing.Point(3, 72)
         Me.fogShadCheck.Name = "fogShadCheck"
@@ -5108,7 +5079,6 @@ Partial Class Form1
         '
         Me.blurCheck.AutoSize = True
         Me.blurCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.blurCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.blurCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.blurCheck.Location = New System.Drawing.Point(3, 95)
         Me.blurCheck.Name = "blurCheck"
@@ -5122,7 +5092,6 @@ Partial Class Form1
         '
         Me.bloomCheck.AutoSize = True
         Me.bloomCheck.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.bloomCheck.ContextMenuStrip = Me.ContextMenuStrip1
         Me.bloomCheck.ForeColor = System.Drawing.SystemColors.Control
         Me.bloomCheck.Location = New System.Drawing.Point(3, 118)
         Me.bloomCheck.Name = "bloomCheck"
@@ -5192,18 +5161,6 @@ Partial Class Form1
         Me.TabControl1.TabIndex = 70
         Me.TabControl1.TabStop = False
         '
-        'ContextMenuStrip2
-        '
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.unlockOptionButton})
-        Me.ContextMenuStrip2.Name = "unlockOptionButton"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(152, 26)
-        '
-        'unlockOptionButton
-        '
-        Me.unlockOptionButton.Name = "unlockOptionButton"
-        Me.unlockOptionButton.Size = New System.Drawing.Size(151, 22)
-        Me.unlockOptionButton.Text = "Unlock Option"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5236,7 +5193,6 @@ Partial Class Form1
         CType(Me.gamVolBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.masVolBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OSAlphaBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.FSRSharpBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DLSSSharpBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.airRenDistBox, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5408,7 +5364,6 @@ Partial Class Form1
         Me.graphPanel6.ResumeLayout(False)
         Me.graphPanel6.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
-        Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -5743,10 +5698,6 @@ Partial Class Form1
     Friend WithEvents wideCheck As CheckBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents hideRetCheck As CheckBox
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents lockOptionButton As ToolStripMenuItem
-    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
-    Friend WithEvents unlockOptionButton As ToolStripMenuItem
     Friend WithEvents graphPanel6 As FlowLayoutPanel
     Friend WithEvents Label39 As Label
     Friend WithEvents smoothMaxBox As NumericUpDown
@@ -5789,4 +5740,6 @@ Partial Class Form1
     Friend WithEvents Label72 As Label
     Friend WithEvents Label71 As Label
     Friend WithEvents FSRPanel As FlowLayoutPanel
+    Friend WithEvents fontSelectButton2 As Button
+    Friend WithEvents selectedFontPath2 As Label
 End Class

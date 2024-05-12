@@ -1,10 +1,22 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
 Imports System.IO
 Imports System.ComponentModel
+Imports System.Threading
+Imports System.Linq.Expressions
 Public Class Form1
     Public Shared doneLoading As Boolean = False
+    'Declare Auto Function SetParent Lib "user32.dll" (ByVal hWndChild As IntPtr, ByVal hWndNewParent As IntPtr) As Integer
+    'Declare Auto Function SendMessage Lib "user32.dll" (ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
+    'Private Const WM_SYSCOMMAND As Integer = 274
+    'Private Const SC_MAXIMIZE As Integer = 61488
     Public Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Read ini into previously initialized empty list
+        'Try
+        '    Process.Start(CurDir() + "\LaunchPad.exe")
+        'Catch ex As Exception
+        '    MessageBox.Show("Could not locate PS2 LaunchPad. Please ensure exe is placed in PS2 game folder.")
+        '    End
+        'End Try
         Try
             curini = File.ReadAllLines("Useroptions.ini").ToList
         Catch ex As Exception
@@ -52,11 +64,14 @@ Public Class Form1
         partDistScaleBox.Text = GetState("ParticleDistanceScale=")
         graphQualDrop.SelectedIndex = Integer.Parse(GetState("GraphicsQuality=")) - 1
         texQualDrop.SelectedIndex = Integer.Parse(GetState("TextureQuality="))
-        If GetState("ShadowQuality=") > 5 Then
-            shadQualDrop.SelectedIndex = 0
-        Else
-            shadQualDrop.SelectedIndex = Integer.Parse(GetState("ShadowQuality="))
-        End If
+        Select Case GetState("ShadowQuality=")
+            Case 0 To 5
+                shadQualDrop.SelectedIndex = Integer.Parse(GetState("ShadowQuality="))
+            Case 11
+                shadQualDrop.SelectedIndex = 6
+            Case 99
+                shadQualDrop.SelectedIndex = 7
+        End Select
         lightQualDrop.SelectedIndex = Integer.Parse(GetState("LightingQuality=")) - 1
         effQualDrop.SelectedIndex = Integer.Parse(GetState("EffectsQuality=")) - 1
         terrQualDrop.SelectedIndex = Integer.Parse(GetState("TerrainQuality=")) - 1
@@ -207,15 +222,21 @@ Public Class Form1
         fontAutoCheck.Checked = GetStateMyIni("FontAutoReplace=")
         If fontAutoCheck.Checked Then
             selectedFontPath.Visible = True
-            fontAutoCheck2.Visible = True
             fontSelectButton.Visible = True
         Else
             selectedFontPath.Visible = False
-            fontAutoCheck2.Visible = False
             fontSelectButton.Visible = False
         End If
-        selectedFontPath.Text = GetStateMyIni("FontFilePath=")
         fontAutoCheck2.Checked = GetStateMyIni("FontAutoReplace2=")
+        If fontAutoCheck2.Checked Then
+            selectedFontPath2.Visible = True
+            fontSelectButton2.Visible = True
+        Else
+            selectedFontPath2.Visible = False
+            fontSelectButton2.Visible = False
+        End If
+        selectedFontPath.Text = GetStateMyIni("FontFilePath=")
+        selectedFontPath2.Text = GetStateMyIni("FontFilePath2=")
         localeReplaceCheck.Checked = GetStateMyIni("LocaleAutoReplace=")
         If localeReplaceCheck.Checked Then
             localeDatButton.Visible = True
@@ -1877,15 +1898,28 @@ Public Class Form1
             UpdateValMyIni("FontFilePath=", fontPath)
         End If
     End Sub
+    Private Sub fontSelectButton2_Click(sender As Object, e As EventArgs) Handles fontSelectButton2.Click
+        Dim fontPath As String = Nothing
+        Dim fontDialog As New OpenFileDialog()
+
+        fontDialog.Filter = "TrueType Font files (*.ttf)|*.ttf"
+        fontDialog.RestoreDirectory = True
+
+        If fontDialog.ShowDialog() = DialogResult.OK Then
+            'Using a dialog, get the desired font file path
+            fontPath = fontDialog.FileName.ToString
+            'Show user selected font path
+            selectedFontPath2.Text() = fontPath
+            UpdateValMyIni("FontFilePath2=", fontPath)
+        End If
+    End Sub
     Private Sub fontAutoCheck_CheckChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
         If fontAutoCheck.Checked Then
             UpdateValMyIni("FontAutoReplace=", True)
-            fontAutoCheck2.Visible = True
             selectedFontPath.Visible = True
             fontSelectButton.Visible = True
         Else
             UpdateValMyIni("FontAutoReplace=", False)
-            fontAutoCheck2.Visible = False
             selectedFontPath.Visible = False
             fontSelectButton.Visible = False
         End If
@@ -1893,8 +1927,12 @@ Public Class Form1
     Private Sub fontAutoCheck2_CheckChanged(sender As Object, e As EventArgs) Handles fontAutoCheck2.Click
         If fontAutoCheck2.Checked Then
             UpdateValMyIni("FontAutoReplace2=", True)
+            selectedFontPath2.Visible = True
+            fontSelectButton2.Visible = True
         Else
             UpdateValMyIni("FontAutoReplace2=", False)
+            selectedFontPath2.Visible = False
+            fontSelectButton2.Visible = False
         End If
     End Sub
     Public Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
@@ -1929,11 +1967,13 @@ Public Class Form1
                 Dim fontSource As String = GetStateMyIni("FontFilePath=")
                 Dim fontDest As String = CurDir() + "\UI\Resource\Fonts\Geo-Md.ttf"
                 File.Copy(fontSource, fontDest, True)
-                If fontAutoCheck2.Checked Then
-                    Dim fontDest2 As String = CurDir() + "\UI\Resource\Fonts\ARIALUNI.ttf"
-                    FileCopy(fontSource, fontDest2)
-                End If
-                Console.WriteLine("Copied fonts")
+                Console.WriteLine("Copied font")
+            End If
+            If fontAutoCheck2.Checked Then
+                Dim fontSource As String = GetStateMyIni("FontFilePath2=")
+                Dim fontDest As String = CurDir() + "\UI\Resource\Fonts\ARIALUNI.ttf"
+                File.Copy(fontSource, fontDest, True)
+                Console.WriteLine("Copied chat font")
             End If
             If localeReplaceCheck.Checked Then
                 Dim dirSource As String = GetStateMyIni("LocaleDirPath=")
@@ -2009,20 +2049,6 @@ Public Class Form1
     End Sub
     Private Sub commandTextBox_TextChanged(sender As Object, e As EventArgs) Handles commandTextBox.LostFocus
         File.WriteAllLines(commandPath, commandTextBox.Lines)
-    End Sub
-    Private Sub lockOptionButton_Click(sender As Object, e As EventArgs) Handles lockOptionButton.Click
-        Dim myItem As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
-        Dim cms As ContextMenuStrip = CType(myItem.Owner, ContextMenuStrip)
-        Console.WriteLine($"locking {cms.SourceControl.Name}")
-        cms.SourceControl.Tag = "locked"
-        cms.SourceControl.ContextMenuStrip = ContextMenuStrip2
-    End Sub
-    Private Sub unlockOptionButton_Click(sender As Object, e As EventArgs) Handles unlockOptionButton.Click
-        Dim myItem As ToolStripMenuItem = CType(sender, ToolStripMenuItem)
-        Dim cms As ContextMenuStrip = CType(myItem.Owner, ContextMenuStrip)
-        Console.WriteLine($"unlocking {cms.SourceControl.Name}")
-        cms.SourceControl.Tag = "unlocked"
-        cms.SourceControl.ContextMenuStrip = ContextMenuStrip1
     End Sub
 #End Region
 End Class

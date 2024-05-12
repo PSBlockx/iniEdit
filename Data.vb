@@ -281,6 +281,7 @@
                                                  "FontAutoReplace=",
                                                  "FontAutoReplace2=",
                                                  "FontFilePath=",
+                                                 "FontFilePath2=",
                                                  "LocaleAutoReplace=",
                                                  "LocaleDirPath=",
                                                  "LocaleDatPath=",
